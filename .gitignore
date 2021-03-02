@@ -1,6 +1,6 @@
 *.xml
 *.iml
-*.gradle
+*.gradle/
 *.json
 .idea/
 ios/
@@ -15,3 +15,4 @@ build/
 *.bin
 *.java
 fileHashes.*
+

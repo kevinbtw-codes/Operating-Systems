@@ -278,11 +278,10 @@ class _AlgorithmState extends State<Algorithm> {
     void deleteprs(int index) {
       setState(() {
         if (prs.length > 0) {
-          prs.removeAt(index);
           prs = sjfalgo(prs);
           startsjf(prs);
         } else {
-          prs.clear();
+          setState(() {});
         }
       });
     }
@@ -537,6 +536,7 @@ class _AlgorithmState extends State<Algorithm> {
               color: Colors.red.shade600,
               icon: Icons.delete_rounded,
               onTap: () {
+                prs.removeAt(index);
                 deleteprs(index);
               },
             ),

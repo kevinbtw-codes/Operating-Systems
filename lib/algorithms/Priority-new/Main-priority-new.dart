@@ -328,7 +328,7 @@ class _AlgorithmState extends State<Algorithm> {
           prs = priorityalgo(prs);
           initialpriorsort(prs);
         } else {
-          prs.clear();
+          setState(() {});
         }
       });
     }
@@ -629,7 +629,9 @@ class _AlgorithmState extends State<Algorithm> {
               color: Colors.red.shade600,
               icon: Icons.delete_rounded,
               onTap: () {
+                prs.removeAt(index);
                 deleteprs(index);
+                //setState(() {});
               },
             ),
           ),
