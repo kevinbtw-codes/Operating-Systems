@@ -6,4 +6,7 @@ ios/
 *.java
 *.dex
 *build/
+*.dart_tool/
+*.flutter-plugins
+*.flutter-plugins-dependencies
 
