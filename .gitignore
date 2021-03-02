@@ -6,5 +6,5 @@
 ios/
 android/
 .flutter-plugins
-.flutter-plugins*
+.flutter-plugins-dependencies
 .packages
