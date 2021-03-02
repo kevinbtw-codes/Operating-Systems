@@ -8,4 +8,8 @@ android/
 *.flutter-plugins
 *.flutter-plugins-dependencies
 *.packages
-*.properties
+**.properties
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.dart_tool/package_config.json
