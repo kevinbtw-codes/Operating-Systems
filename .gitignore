@@ -4,3 +4,7 @@
 *.json
 .idea/
 ios/
+android/
+.flutter-plugins
+.flutter-plugins*
+.packages
