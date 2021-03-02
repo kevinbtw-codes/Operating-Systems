@@ -69,6 +69,7 @@ class _AlgorithmState extends State<Algorithm> {
       control2.clear();
       assignPid(prs);
       prs = sjfalgo(prs);
+      startsjf(prs);
     });
   }
 
@@ -278,6 +279,7 @@ class _AlgorithmState extends State<Algorithm> {
       setState(() {
         prs.removeAt(index);
         prs = sjfalgo(prs);
+        startsjf(prs);
       });
     }
 
@@ -287,6 +289,7 @@ class _AlgorithmState extends State<Algorithm> {
         prs[index].at = int.parse(econtrol1.text);
         prs[index].bt = int.parse(econtrol2.text);
         prs = sjfalgo(prs);
+        startsjf(prs);
       });
     }
 
