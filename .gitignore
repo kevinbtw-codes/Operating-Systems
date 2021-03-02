@@ -1,11 +1,13 @@
 *.xml
 *.iml
-*.gradle/
+*.gradle
 *.json
 .idea/
 ios/
 android/
 build/
+.gradle/
+gradle/
 *.dart_tool
 *.flutter-plugins
 *.flutter-plugins-dependencies
