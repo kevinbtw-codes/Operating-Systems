@@ -40,13 +40,30 @@ class Process {
   }
 }
 
+void initialpriorsort(List<Process> l) {
+  l.sort((a, b) => a.at.compareTo(b.at));
+  for (int j = 1; j < l.length; j++) {
+    for (var i = 0; i < l.length - 1; i++) {
+      if (l[i].at == l[i + 1].at) {
+        if (l[i].priority > l[i + 1].priority) {
+          Process temp;
+          temp = l[i + 1];
+          l[i + 1] = l[i];
+          l[i] = temp;
+        }
+      }
+    }
+  }
+}
+
 List<Process> priorityalgo(List<Process> l) {
   List<Process> lgantt = [];
   lgantt = List.from(l); //lgantt is the local copy of the processes list
   List<Process> rq = List<Process>();
   List<Process> fq = [];
 
-  lgantt.sort((a, b) => a.at.compareTo(b.at));
+  //lgantt.sort((a, b) => a.at.compareTo(b.at));
+  initialpriorsort(lgantt);
 
   int i = 0;
   int time = lgantt[0].at;

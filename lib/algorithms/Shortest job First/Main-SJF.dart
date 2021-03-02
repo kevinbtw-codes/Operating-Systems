@@ -277,9 +277,13 @@ class _AlgorithmState extends State<Algorithm> {
 
     void deleteprs(int index) {
       setState(() {
-        prs.removeAt(index);
-        prs = sjfalgo(prs);
-        startsjf(prs);
+        if (prs.length > 0) {
+          prs.removeAt(index);
+          prs = sjfalgo(prs);
+          startsjf(prs);
+        } else {
+          prs.clear();
+        }
       });
     }
 

@@ -291,7 +291,12 @@ class _AlgorithmState extends State<Algorithm> {
 
     void deleteprs(int index) {
       setState(() {
-        prs.removeAt(index);
+        if (prs.length > 0) {
+          prs.removeAt(index);
+          fcfsalgo(prs);
+        } else {
+          prs.clear();
+        }
       });
     }
 
@@ -300,6 +305,7 @@ class _AlgorithmState extends State<Algorithm> {
       setState(() {
         prs[index].at = int.parse(econtrol1.text);
         prs[index].bt = int.parse(econtrol2.text);
+        fcfsalgo(prs);
         prs.sort((a, b) => a.at.compareTo(b.at));
       });
     }
