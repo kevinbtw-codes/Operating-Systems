@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'fcfs.dart';
 import 'table.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'dart:async';
+import 'dart:math';
 
 void main() {
   runApp(MyApp());
@@ -24,6 +27,37 @@ class Algorithm extends StatefulWidget {
 }
 
 class _AlgorithmState extends State<Algorithm> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  final GlobalKey<LiquidPullToRefreshState> _refreshIndicatorKey =
+      GlobalKey<LiquidPullToRefreshState>();
+
+  ScrollController _scrollController;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = new ScrollController();
+  }
+
+  Future<void> _handleRefresh() {
+    final Completer<void> completer = Completer<void>();
+    Timer(const Duration(milliseconds: 800), () {
+      completer.complete();
+    });
+    setState(() {
+      prs.removeRange(0, prs.length);
+    });
+    return completer.future.then<void>((_) {
+      _scaffoldKey.currentState?.showSnackBar(SnackBar(
+          content: const Text('Refresh complete'),
+          action: SnackBarAction(
+              label: 'RETRY',
+              onPressed: () {
+                _refreshIndicatorKey.currentState.show();
+              })));
+    });
+  }
+
   List<Process> prs = [];
   FocusNode nodebt = FocusNode();
 
@@ -186,7 +220,7 @@ class _AlgorithmState extends State<Algorithm> {
           Padding(
             padding: EdgeInsets.only(right: 20),
             child: FlatButton(
-              color : Color(0xff22456d),
+              color: Color(0xff22456d),
               onPressed: //null,
                   () {
                 prs.sort((a, b) => a.pid.compareTo(b.pid));
@@ -207,7 +241,7 @@ class _AlgorithmState extends State<Algorithm> {
           Padding(
             padding: EdgeInsets.only(right: 70),
             child: Container(
-              color : Color(0xff22456d),
+              color: Color(0xff22456d),
               width: 60,
               child: FlatButton(
                 onPressed: () {
@@ -227,10 +261,14 @@ class _AlgorithmState extends State<Algorithm> {
         children: <Widget>[
           Expanded(
             flex: 7,
-            child: new ListView.builder(
-                itemCount: prs.length,
-                itemBuilder: (BuildContext context, int index) =>
-                    buildProcesscard(context, index)),
+            child: LiquidPullToRefresh(
+              animSpeedFactor: 2.5,
+              onRefresh: _handleRefresh,
+              child: ListView.builder(
+                  itemCount: prs.length,
+                  itemBuilder: (BuildContext context, int index) =>
+                      buildProcesscard(context, index)),
+            ),
           )
         ],
       ),
