@@ -212,6 +212,12 @@
       "languageVersion": "2.7"
     },
     {
+      "name": "liquid_pull_to_refresh",
+      "rootUri": "file:///home/dev4901/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/liquid_pull_to_refresh-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
       "name": "logging",
       "rootUri": "file:///home/dev4901/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/logging-0.11.4",
       "packageUri": "lib/",
@@ -440,7 +446,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-03-02T05:46:25.190972Z",
+  "generated": "2021-03-02T14:53:34.273467Z",
   "generator": "pub",
   "generatorVersion": "2.10.5"
 }
