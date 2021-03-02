@@ -5,5 +5,5 @@
 ios/
 *.java
 *.dex
-
+*build/
 
