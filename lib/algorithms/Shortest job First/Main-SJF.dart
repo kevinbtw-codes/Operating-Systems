@@ -110,7 +110,7 @@ class _AlgorithmState extends State<Algorithm> {
                                 TextField(
                                   autofocus: true,
                                   cursorWidth: 3,
-                                  cursorColor: Colors.amber,
+                                  cursorColor: Color(0XFFF36735),
                                   textAlign: TextAlign.center,
                                   showCursor: true,
                                   controller: control1,
@@ -141,7 +141,7 @@ class _AlgorithmState extends State<Algorithm> {
                                   textAlign: TextAlign.center,
                                   focusNode: nodebt,
                                   cursorWidth: 3,
-                                  cursorColor: Colors.amber,
+                                  cursorColor: Color(0XFFF36735),
                                   showCursor: true,
                                   controller: control2,
                                   keyboardType: TextInputType.number,
@@ -533,7 +533,7 @@ class _AlgorithmState extends State<Algorithm> {
             ),
             child: IconSlideAction(
               //caption: 'Text2',
-              color: Colors.red.shade600,
+              color: Color(0XFFF36735),
               icon: Icons.delete_rounded,
               onTap: () {
                 prs.removeAt(index);
