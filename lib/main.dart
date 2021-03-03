@@ -10,7 +10,6 @@ import 'Algorithm page.dart';
 import 'package:os_project/main_sp.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
-
 void main() {
   runApp(MaterialApp(
     title: 'First',
@@ -61,7 +60,6 @@ class FirstScreen extends StatelessWidget {
                     },
                     text: [
                       " ",
-
                     ],
                     textStyle: TextStyle(
                       fontSize: 28.0,
