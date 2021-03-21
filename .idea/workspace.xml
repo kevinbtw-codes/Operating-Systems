@@ -19,26 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46c1c3e7-2b39-468d-b099-3fcbc1e92c49" name="Default Changelist" comment="timeline">
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/5.6.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.6.2/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/5.6.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.6.2/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/5.6.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.6.2/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/5.6.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.6.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
+    <list default="true" id="50f1a767-80f3-4b73-9873-58efe6fd752c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/lib/algorithms/FCFS/gantt.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/algorithms/FCFS/gantt.dart" afterDir="false" />
     </list>
-    <list id="9c8faa1c-cf0c-41f7-93d1-a63ffe39eac3" name="Revert &quot;Added unformatted timeline in FCFS TODO: - Sorting timeline items, - Making timeline dynamic with clock (each process or idle state is shown for a specific time interval) - Animating with the clock - Doing all this in the other algorithms&quot;" comment="timeline" />
-    <list id="5b0d9fca-9238-4dbb-9241-c1847c22b8a0" name="Revert &quot;Added unformatted timeline in FCFS TODO: - Sorting timeline items, - Making timeline dynamic with clock (each process or idle state is shown for a specific time interval) - Animating with the clock - Doing all this in the other algorithms&quot;-2" comment="Revert &quot;Added unformatted timeline in FCFS TODO: - Sorting timeline items, - Making timeline dynamic with clock (each process or idle state is shown for a specific time interval) - Animating with the clock - Doing all this in the other algorithms&quot;&#10;&#10;This reverts commit 053d923a" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Nexus_6_API_30]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[JVS4LRLZNRM7KNDQ]" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -117,7 +106,21 @@
       <option name="project" value="LOCAL" />
       <updated>1616325569010</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="timeline">
+      <created>1616332262118</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1616332262118</updated>
+    </task>
+    <task id="LOCAL-00006" summary="timeline">
+      <created>1616332634777</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1616332634777</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -147,10 +150,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="478" y="275" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1616317177982" />
-    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1616325816514">
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1616332633526">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1616325816514" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1616332633526" />
     <state width="578" height="442" key="Diff.GoToChangePopup" timestamp="1616323526922">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -171,30 +174,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="85" y="96" key="Git.Interactive.Rebase.Dialog/0.0.1536.824@0.0.1536.824" timestamp="1616325216471" />
-    <state width="1124" height="155" key="GridCell.Tab.0.bottom" timestamp="1616324901795">
+    <state width="737" height="207" key="GridCell.Tab.0.bottom" timestamp="1616332772916">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1124" height="155" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616324901795" />
-    <state width="1124" height="155" key="GridCell.Tab.0.center" timestamp="1616324901795">
+    <state width="737" height="207" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616332772916" />
+    <state width="737" height="207" key="GridCell.Tab.0.center" timestamp="1616332772915">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1124" height="155" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1616324901795" />
-    <state width="1124" height="155" key="GridCell.Tab.0.left" timestamp="1616324901795">
+    <state width="737" height="207" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1616332772915" />
+    <state width="737" height="207" key="GridCell.Tab.0.left" timestamp="1616332772915">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1124" height="155" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1616324901795" />
-    <state width="1124" height="155" key="GridCell.Tab.0.right" timestamp="1616324901795">
+    <state width="737" height="207" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1616332772915" />
+    <state width="737" height="207" key="GridCell.Tab.0.right" timestamp="1616332772915">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1124" height="155" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1616324901795" />
+    <state width="737" height="207" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1616332772915" />
     <state x="0" y="65" key="MergeDialog" timestamp="1614749961794">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="0" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1614749961794" />
-    <state x="231" y="174" key="MultipleFileMergeDialog" timestamp="1616325739147">
+    <state x="231" y="174" key="MultipleFileMergeDialog" timestamp="1616332652139">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="231" y="174" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1616325739147" />
+    <state x="231" y="174" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1616332652139" />
     <state x="292" y="133" key="RollbackChangesDialog" timestamp="1616324995721">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -215,9 +218,13 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="257" y="146" key="VcsDiffUtil.ChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1616325071182" />
-    <state x="402" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1616325823533">
+    <state x="402" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1616332310934">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="402" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1616325823533" />
+    <state x="402" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1616332310934" />
+    <state x="474" y="200" key="git4idea.merge.GitPullDialog" timestamp="1616332646380">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="474" y="200" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1616332646380" />
   </component>
 </project>

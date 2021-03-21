@@ -17,6 +17,9 @@ class _GanttChartState extends State<GanttChart> {
 
   @override
   Widget build(BuildContext context) {
+    var prsNew = prs;
+    prsNew.sort((a, b) => (a.ct-a.bt).compareTo(b.ct-b.bt));
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -77,7 +80,7 @@ class _GanttChartState extends State<GanttChart> {
                       child: Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Text(
-                          'Process $index',
+                          prsNew[index].pid.toString(),
                           style: TextStyle(
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold,
@@ -85,7 +88,7 @@ class _GanttChartState extends State<GanttChart> {
                         ),
                       ),
                     ),
-                    itemCount: prs.length,
+                    itemCount: prsNew.length,
                   ),
                 ),
               ),
