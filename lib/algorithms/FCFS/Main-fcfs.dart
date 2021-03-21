@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'fcfs.dart';
 import 'table.dart';
+import 'gantt.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'dart:async';
 import 'dart:math';
@@ -219,7 +220,7 @@ class _AlgorithmState extends State<Algorithm> {
         backgroundColor: Color(0xff22456d),
         actions: <Widget>[
           Padding(
-            padding: EdgeInsets.only(right: 20),
+            padding: EdgeInsets.only(right: 0),
             child: FlatButton(
               color: Color(0xff22456d),
               onPressed: //null,
@@ -240,7 +241,28 @@ class _AlgorithmState extends State<Algorithm> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(right: 70),
+            padding: EdgeInsets.only(right: 0),
+            child: FlatButton(
+              color: Color(0xff22456d),
+              onPressed: //null,
+                  () {
+                prs.sort((a, b) => a.pid.compareTo(b.pid));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => GanttChart(prs),
+                  ),
+                );
+              },
+              child: Icon(
+                Icons.table_view_rounded,
+                color: Colors.white,
+                size: 38,
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(right: 0),
             child: Container(
               color: Color(0xff22456d),
               width: 60,
