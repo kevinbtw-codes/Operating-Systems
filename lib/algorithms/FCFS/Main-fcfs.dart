@@ -69,7 +69,7 @@ class _AlgorithmState extends State<Algorithm> {
       control2.clear();
       assignPid(prs);
       fcfsalgo(prs);
-      prs.sort((a, b) => a.at.compareTo(b.at));
+      prs.sort((a, b) => a.pid.compareTo(b.pid));
     });
   }
 
@@ -83,7 +83,7 @@ class _AlgorithmState extends State<Algorithm> {
       }
       assignPid(prs);
       fcfsalgo(prs);
-      prs.sort((a, b) => a.at.compareTo(b.at));
+      prs.sort((a, b) => a.pid.compareTo(b.pid));
     });
   }
 
@@ -307,7 +307,7 @@ class _AlgorithmState extends State<Algorithm> {
         prs[index].at = int.parse(econtrol1.text);
         prs[index].bt = int.parse(econtrol2.text);
         fcfsalgo(prs);
-        prs.sort((a, b) => a.at.compareTo(b.at));
+        prs.sort((a, b) => a.pid.compareTo(b.pid));
       });
     }
 
