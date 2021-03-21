@@ -20,13 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46c1c3e7-2b39-468d-b099-3fcbc1e92c49" name="Default Changelist" comment="timeline">
-      <change beforePath="$PROJECT_DIR$/.idea/Operating-Systems-1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Operating-Systems-1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/algorithms/FCFS/Main-fcfs.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/algorithms/FCFS/Main-fcfs.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/algorithms/FCFS/gantt.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/algorithms/FCFS/gantt.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/5.6.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.6.2/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/5.6.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.6.2/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/5.6.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.6.2/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/5.6.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.6.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
     </list>
     <list id="9c8faa1c-cf0c-41f7-93d1-a63ffe39eac3" name="Revert &quot;Added unformatted timeline in FCFS TODO: - Sorting timeline items, - Making timeline dynamic with clock (each process or idle state is shown for a specific time interval) - Animating with the clock - Doing all this in the other algorithms&quot;" comment="timeline" />
     <list id="5b0d9fca-9238-4dbb-9241-c1847c22b8a0" name="Revert &quot;Added unformatted timeline in FCFS TODO: - Sorting timeline items, - Making timeline dynamic with clock (each process or idle state is shown for a specific time interval) - Animating with the clock - Doing all this in the other algorithms&quot;-2" comment="Revert &quot;Added unformatted timeline in FCFS TODO: - Sorting timeline items, - Making timeline dynamic with clock (each process or idle state is shown for a specific time interval) - Animating with the clock - Doing all this in the other algorithms&quot;&#10;&#10;This reverts commit 053d923a" />
@@ -107,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616323761438</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="timeline">
+      <created>1616325569010</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1616325569010</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -129,17 +139,18 @@
     <MESSAGE value="This reverts commit 34a080f0" />
     <MESSAGE value="Added unformatted timeline in FCFS TODO: &#10;- Sorting timeline items, &#10;- Making timeline dynamic with clock (each process or idle state is shown for a specific time interval) &#10;- Animating with the clock &#10;- Doing all this in the other algorithms&#10;&#10;This reverts commit 34a080f0" />
     <MESSAGE value="Revert &quot;Added unformatted timeline in FCFS TODO: - Sorting timeline items, - Making timeline dynamic with clock (each process or idle state is shown for a specific time interval) - Animating with the clock - Doing all this in the other algorithms&quot;&#10;&#10;This reverts commit 053d923a" />
-    <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;Added unformatted timeline in FCFS TODO: - Sorting timeline items, - Making timeline dynamic with clock (each process or idle state is shown for a specific time interval) - Animating with the clock - Doing all this in the other algorithms&quot;&#10;&#10;This reverts commit 053d923a" />
+    <MESSAGE value="timeline" />
+    <option name="LAST_COMMIT_MESSAGE" value="timeline" />
   </component>
   <component name="WindowStateProjectService">
     <state x="478" y="275" key="#Notifications" timestamp="1616317177982">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="478" y="275" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1616317177982" />
-    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1616325499675">
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1616325816514">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1616325499675" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1616325816514" />
     <state width="578" height="442" key="Diff.GoToChangePopup" timestamp="1616323526922">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -152,6 +163,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="373" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1616325430431" />
+    <state x="0" y="0" key="FileDocumentManager.FileCacheConflict" timestamp="1616325803215">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="0" y="0" key="FileDocumentManager.FileCacheConflict/0.0.1536.824@0.0.1536.824" timestamp="1616325803215" />
     <state x="85" y="96" key="Git.Interactive.Rebase.Dialog" timestamp="1616325216471">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -176,6 +191,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="0" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1614749961794" />
+    <state x="231" y="174" key="MultipleFileMergeDialog" timestamp="1616325739147">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="231" y="174" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1616325739147" />
     <state x="292" y="133" key="RollbackChangesDialog" timestamp="1616324995721">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -196,9 +215,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="257" y="146" key="VcsDiffUtil.ChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1616325071182" />
-    <state x="402" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1616325315507">
+    <state x="402" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1616325823533">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="402" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1616325315507" />
+    <state x="402" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1616325823533" />
   </component>
 </project>
