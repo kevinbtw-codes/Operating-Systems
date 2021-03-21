@@ -12,14 +12,14 @@ class GanttChart extends StatefulWidget {
 }
 
 class _GanttChartState extends State<GanttChart> {
-  List<Process> prs=[];
+  List<Process> prs;
   _GanttChartState(this.prs);
 
   @override
   Widget build(BuildContext context) {
-    var prsNew=prs;
-    var st=prs.ct-prs.bt;
-    prsNew.sort((a,b) => a.ct.compareTo(b.ct));
+    var prsNew = prs;
+    prsNew.sort((a, b) => a.wt.compareTo(b.wt));
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -80,7 +80,7 @@ class _GanttChartState extends State<GanttChart> {
                       child: Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Text(
-                          'Process $index',
+                          prsNew[index].pid.toString(),
                           style: TextStyle(
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold,
@@ -88,7 +88,7 @@ class _GanttChartState extends State<GanttChart> {
                         ),
                       ),
                     ),
-                    itemCount: prs.length,
+                    itemCount: prsNew.length,
                   ),
                 ),
               ),
