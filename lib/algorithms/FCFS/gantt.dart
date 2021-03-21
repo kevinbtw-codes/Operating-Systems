@@ -12,7 +12,7 @@ class GanttChart extends StatefulWidget {
 }
 
 class _GanttChartState extends State<GanttChart> {
-  List<Process> prs;
+  List<Process> prs=[];
   _GanttChartState(this.prs);
 
   @override
@@ -25,6 +25,12 @@ class _GanttChartState extends State<GanttChart> {
           leading: IconButton(
             icon: Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () {
+              /*for(var i= prs[index];i<prs.length;i++){
+                for(int j= i+1;j<prs.length;j++) {
+                  prs.sort((prs[j], i) => i.at.compareTo(j.at));
+                }
+              }*/
+              prs.sort((b, a) => a.at.compareTo(b.at));
               Navigator.of(context).pop();
             },
           ),
