@@ -73,7 +73,8 @@ class _AlgorithmState extends State<Algorithm> {
       control3.clear();
       assignPid(prs);
       prs = priorityalgo(prs);
-      initialpriorsort(prs);
+      //initialpriorsort(prs);
+      prs.sort((a, b) => a.pid.compareTo(b.pid));
     });
   }
 
@@ -326,7 +327,8 @@ class _AlgorithmState extends State<Algorithm> {
         if (prs.length > 0) {
           prs.removeAt(index);
           prs = priorityalgo(prs);
-          initialpriorsort(prs);
+          //initialpriorsort(prs);
+          prs.sort((a, b) => a.pid.compareTo(b.pid));
         } else {
           setState(() {});
         }
@@ -340,7 +342,8 @@ class _AlgorithmState extends State<Algorithm> {
         prs[index].bt = int.parse(econtrol2.text);
         prs[index].priority = int.parse(econtrol3.text);
         prs = priorityalgo(prs);
-        initialpriorsort(prs);
+        //initialpriorsort(prs);
+        prs.sort((a, b) => a.pid.compareTo(b.pid));
       });
     }
 

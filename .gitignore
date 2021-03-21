@@ -11,3 +11,4 @@ ios/
 *.flutter-plugins-dependencies
 *.properties
 *.lock
+*.packages

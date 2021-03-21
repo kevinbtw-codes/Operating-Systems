@@ -69,7 +69,8 @@ class _AlgorithmState extends State<Algorithm> {
       control2.clear();
       assignPid(prs);
       prs = sjfalgo(prs);
-      startsjf(prs);
+      prs.sort((a, b) => a.pid.compareTo(b.pid));
+      //startsjf(prs);
     });
   }
 
@@ -279,7 +280,8 @@ class _AlgorithmState extends State<Algorithm> {
       setState(() {
         if (prs.length > 0) {
           prs = sjfalgo(prs);
-          startsjf(prs);
+          prs.sort((a, b) => a.pid.compareTo(b.pid));
+          //startsjf(prs);
         } else {
           setState(() {});
         }
@@ -292,7 +294,8 @@ class _AlgorithmState extends State<Algorithm> {
         prs[index].at = int.parse(econtrol1.text);
         prs[index].bt = int.parse(econtrol2.text);
         prs = sjfalgo(prs);
-        startsjf(prs);
+        prs.sort((a, b) => a.pid.compareTo(b.pid));
+        //startsjf(prs);
       });
     }
 
