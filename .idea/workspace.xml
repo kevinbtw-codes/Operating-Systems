@@ -1,13 +1,204 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="46c1c3e7-2b39-468d-b099-3fcbc1e92c49" name="Default Changelist" comment="timeline">
+      <change beforePath="$PROJECT_DIR$/.idea/Operating-Systems-1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Operating-Systems-1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/algorithms/FCFS/Main-fcfs.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/algorithms/FCFS/Main-fcfs.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/algorithms/FCFS/gantt.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/algorithms/FCFS/gantt.dart" afterDir="false" />
+    </list>
+    <list id="9c8faa1c-cf0c-41f7-93d1-a63ffe39eac3" name="Revert &quot;Added unformatted timeline in FCFS TODO: - Sorting timeline items, - Making timeline dynamic with clock (each process or idle state is shown for a specific time interval) - Animating with the clock - Doing all this in the other algorithms&quot;" comment="timeline" />
+    <list id="5b0d9fca-9238-4dbb-9241-c1847c22b8a0" name="Revert &quot;Added unformatted timeline in FCFS TODO: - Sorting timeline items, - Making timeline dynamic with clock (each process or idle state is shown for a specific time interval) - Animating with the clock - Doing all this in the other algorithms&quot;-2" comment="Revert &quot;Added unformatted timeline in FCFS TODO: - Sorting timeline items, - Making timeline dynamic with clock (each process or idle state is shown for a specific time interval) - Animating with the clock - Doing all this in the other algorithms&quot;&#10;&#10;This reverts commit 053d923a" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Nexus_6_API_30]" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="28629ece2c4a1f8a06d12820557c32c9834bb2a5" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="ProjectId" id="1pC4JNhPyWv8q1OJglWL5QbDxQ4" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="flutter.settings" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RunManager">
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
       <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="46c1c3e7-2b39-468d-b099-3fcbc1e92c49" name="Default Changelist" comment="" />
+      <created>1614673665102</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1614673665102</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Added liquid pull to refresh on all algos">
+      <created>1614676034004</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1614676034004</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added unformatted timeline in FCFS&#10;TODO: &#10;- Sorting timeline items,&#10;- Making timeline dynamic with clock (each process or idle state is shown for a specific time interval)&#10;- Animating with the clock&#10;- Doing all this in the other algorithms">
+      <created>1616323433374</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1616323433375</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added unformatted timeline in FCFS TODO: &#10;- Sorting timeline items, &#10;- Making timeline dynamic with clock (each process or idle state is shown for a specific time interval) &#10;- Animating with the clock &#10;- Doing all this in the other algorithms&#10;&#10;This reverts commit 34a080f0">
+      <created>1616323761438</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1616323761438</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added liquid pull to refresh on all algos" />
+    <MESSAGE value="Added unformatted timeline in FCFS&#10;To-do: &#10;- Sorting timeline items,&#10;- Making timeline dynamic with clock (each process or idle state is shown for a specific time interval)&#10;- Animating with the clock&#10;- Doing all this in the other algorithms" />
+    <MESSAGE value="Added unformatted timeline in FCFS&#10;TODO: &#10;- Sorting timeline items,&#10;- Making timeline dynamic with clock (each process or idle state is shown for a specific time interval)&#10;- Animating with the clock&#10;- Doing all this in the other algorithms" />
+    <MESSAGE value="This reverts commit 34a080f0" />
+    <MESSAGE value="Added unformatted timeline in FCFS TODO: &#10;- Sorting timeline items, &#10;- Making timeline dynamic with clock (each process or idle state is shown for a specific time interval) &#10;- Animating with the clock &#10;- Doing all this in the other algorithms&#10;&#10;This reverts commit 34a080f0" />
+    <MESSAGE value="Revert &quot;Added unformatted timeline in FCFS TODO: - Sorting timeline items, - Making timeline dynamic with clock (each process or idle state is shown for a specific time interval) - Animating with the clock - Doing all this in the other algorithms&quot;&#10;&#10;This reverts commit 053d923a" />
+    <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;Added unformatted timeline in FCFS TODO: - Sorting timeline items, - Making timeline dynamic with clock (each process or idle state is shown for a specific time interval) - Animating with the clock - Doing all this in the other algorithms&quot;&#10;&#10;This reverts commit 053d923a" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="478" y="275" key="#Notifications" timestamp="1616317177982">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="478" y="275" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1616317177982" />
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1616325499675">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1616325499675" />
+    <state width="578" height="442" key="Diff.GoToChangePopup" timestamp="1616323526922">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="578" height="442" key="Diff.GoToChangePopup/0.0.1536.824@0.0.1536.824" timestamp="1616323526922" />
+    <state x="100" y="100" width="984" height="624" key="DiffContextDialog" timestamp="1616325494365">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="100" y="100" width="984" height="624" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1616325494365" />
+    <state x="373" y="167" key="FileChooserDialogImpl" timestamp="1616325430431">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="373" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1616325430431" />
+    <state x="85" y="96" key="Git.Interactive.Rebase.Dialog" timestamp="1616325216471">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="85" y="96" key="Git.Interactive.Rebase.Dialog/0.0.1536.824@0.0.1536.824" timestamp="1616325216471" />
+    <state width="1124" height="155" key="GridCell.Tab.0.bottom" timestamp="1616324901795">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1124" height="155" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616324901795" />
+    <state width="1124" height="155" key="GridCell.Tab.0.center" timestamp="1616324901795">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1124" height="155" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1616324901795" />
+    <state width="1124" height="155" key="GridCell.Tab.0.left" timestamp="1616324901795">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1124" height="155" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1616324901795" />
+    <state width="1124" height="155" key="GridCell.Tab.0.right" timestamp="1616324901795">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1124" height="155" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1616324901795" />
+    <state x="0" y="65" key="MergeDialog" timestamp="1614749961794">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="0" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1614749961794" />
+    <state x="292" y="133" key="RollbackChangesDialog" timestamp="1616324995721">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="292" y="133" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1616324995721" />
+    <state x="101" y="0" key="SettingsEditor" timestamp="1616325431897">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="101" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1616325431897" />
+    <state x="442" y="327" key="VCS.ChangelistChooser" timestamp="1616323692443">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="442" y="327" key="VCS.ChangelistChooser/0.0.1536.824@0.0.1536.824" timestamp="1616323692443" />
+    <state x="185" y="145" key="Vcs.Push.Dialog.v2" timestamp="1616325367821">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="185" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1616325367821" />
+    <state x="257" y="146" key="VcsDiffUtil.ChangesDialog" timestamp="1616325071182">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="257" y="146" key="VcsDiffUtil.ChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1616325071182" />
+    <state x="402" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1616325315507">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="402" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1616325315507" />
   </component>
 </project>

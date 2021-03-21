@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:os_project/algorithms/FCFS/fcfs.dart';
 import 'package:timelines/timelines.dart';
+import 'dart:math';
 
 class GanttChart extends StatefulWidget {
   List<Process> prs;

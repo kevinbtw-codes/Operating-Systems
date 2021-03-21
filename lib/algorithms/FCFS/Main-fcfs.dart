@@ -5,7 +5,6 @@ import 'table.dart';
 import 'gantt.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'dart:async';
-import 'dart:math';
 
 void main() {
   runApp(MyApp());
