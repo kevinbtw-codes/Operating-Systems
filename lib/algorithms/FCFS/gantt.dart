@@ -18,7 +18,7 @@ class _GanttChartState extends State<GanttChart> {
   @override
   Widget build(BuildContext context) {
     var prsNew = prs;
-    prsNew.sort((a, b) => a.wt.compareTo(b.wt));
+    prsNew.sort((a, b) => (a.ct-a.bt).compareTo(b.ct-b.bt));
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
