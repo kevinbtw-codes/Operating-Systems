@@ -46,11 +46,18 @@ class ioprocess {
 
 List<ioprocess> fcfsioalgo(List<ioprocess> l) {
   List<ioprocess> lgantt = [];
-  lgantt = List.from(l);
+  lgantt = List<ioprocess>.from(l);
+  for (var item in lgantt) {
+    item.ct = item.start_time =
+        item.start_time2 = item.tat = item.wt = item.ioexit = null;
+    item.io = false;
+  }
   printprocess(lgantt);
   List<ioprocess> readyq = [];
   List<ioprocess> finishedq = [];
   List<ioprocess> ioqueue = [];
+
+  print(lgantt);
 
   int time = 0;
   fillrq(readyq, time, lgantt);
@@ -136,6 +143,7 @@ int processexec(List<ioprocess> lgantt, int stime, int i) {
     time = lgantt[i].ct;
     lgantt[i].tat = lgantt[i].ct - lgantt[i].at;
     lgantt[i].wt = lgantt[i].tat - lgantt[i].bt2 - lgantt[i].bt1;
+    print(lgantt[i].pid + lgantt[i].ct.toString());
   } else {
     //this is when the process has not completed its io
     lgantt[i].start_time = stime;
