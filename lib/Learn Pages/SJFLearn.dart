@@ -252,10 +252,10 @@ class _HomePageState extends State<SJFLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/emma-1.jpg'),
+                                          'images/Learn page images/FCFS-1.jpg'),
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/emma-2.jpg'),
+                                          'images/Learn page images/FCFS-2.jpg'),
                                 ],
                               ),
                             )),
@@ -294,10 +294,7 @@ class _HomePageState extends State<SJFLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/emma-1.jpg'),
-                                  makeVideo(
-                                      image:
-                                          'images/Learn page images/emma-2.jpg'),
+                                          'images/Learn page images/FCFS-3.jpg'),
                                 ],
                               ),
                             )),
@@ -336,10 +333,7 @@ class _HomePageState extends State<SJFLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/emma-1.jpg'),
-                                  makeVideo(
-                                      image:
-                                          'images/Learn page images/emma-2.jpg'),
+                                          'images/Learn page images/FCFS-4.jpg'),
                                 ],
                               ),
                             )),
@@ -378,10 +372,7 @@ class _HomePageState extends State<SJFLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/emma-1.jpg'),
-                                  makeVideo(
-                                      image:
-                                          'images/Learn page images/emma-2.jpg'),
+                                          'images/Learn page images/FCFS-5.jpg'),
                                 ],
                               ),
                             )),
