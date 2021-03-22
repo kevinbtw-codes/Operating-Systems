@@ -7,7 +7,7 @@ import 'gantt.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'dart:async';
 import 'Main-fcfsio.dart';
-import 'gantt.dart';
+import 'package:fab_circular_menu/fab_circular_menu.dart';
 
 void main() {
   runApp(MyApp());
@@ -75,7 +75,6 @@ class _AlgorithmState extends State<Algorithm> {
       prs.sort((a, b) => a.pid.compareTo(b.pid));
     });
   }
-
 
   delete() {
     setState(() {
@@ -221,86 +220,6 @@ class _AlgorithmState extends State<Algorithm> {
       appBar: AppBar(
         title: Text('FCFS'),
         backgroundColor: Color(0xff22456d),
-        actions: <Widget>[
-          Padding(
-            padding: EdgeInsets.only(right: 0),
-            child: FlatButton(
-              onPressed: () {
-                prs.sort((a, b) => a.pid.compareTo(b.pid));
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => fcfsio_page(),
-                  ),
-                );
-              },
-              child: Icon(
-                Icons.error_outline,
-                color: Colors.white,
-                size: 38,
-              ), //Text('I/O input'),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(right: 0),
-            child: FlatButton(
-              color: Color(0xff22456d),
-              onPressed: //null,
-                  () {
-                prs.sort((a, b) => a.pid.compareTo(b.pid));
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => TheTable(prs),
-                  ),
-                );
-              },
-              child: Icon(
-                Icons.table_view_rounded,
-                color: Colors.white,
-                size: 38,
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(right: 0),
-            child: FlatButton(
-              color: Color(0xff22456d),
-              onPressed: //null,
-                  () {
-                prs.sort((a, b) => a.pid.compareTo(b.pid));
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => GanttChart(prs),
-                  ),
-                );
-              },
-              child: Icon(
-                Icons.table_view_rounded,
-                color: Colors.white,
-                size: 38,
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(right: 0),
-            child: Container(
-              color: Color(0xff22456d),
-              width: 60,
-              child: FlatButton(
-                onPressed: () {
-                  createaddDialog(context, prs);
-                },
-                child: Icon(
-                  Icons.add_box,
-                  color: Colors.white,
-                  size: 38,
-                ),
-              ),
-            ),
-          ),
-        ],
       ),
       body: Column(
         children: <Widget>[
@@ -315,6 +234,58 @@ class _AlgorithmState extends State<Algorithm> {
                       buildProcesscard(context, index)),
             ),
           )
+        ],
+      ),
+      floatingActionButton: FabCircularMenu(
+        ringDiameter: 500,
+        ringWidth: 100,
+        children: <Widget>[
+          IconButton(
+            iconSize: 30,
+            icon: Icon(Icons.settings_input_component_rounded),
+            onPressed: () {
+              prs.sort((a, b) => a.pid.compareTo(b.pid));
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => fcfsio_page(),
+                ),
+              );
+            },
+          ),
+          IconButton(
+            iconSize: 30,
+            icon: Icon(Icons.table_chart_rounded),
+            onPressed: () {
+              prs.sort((a, b) => a.pid.compareTo(b.pid));
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => TheTable(prs),
+                ),
+              );
+            },
+          ),
+          IconButton(
+            iconSize: 30,
+            icon: Icon(Icons.bar_chart),
+            onPressed: () {
+              prs.sort((a, b) => a.pid.compareTo(b.pid));
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => GanttChart(prs),
+                ),
+              );
+            },
+          ),
+          IconButton(
+            iconSize: 30,
+            icon: Icon(Icons.add_circle),
+            onPressed: () {
+              createaddDialog(context, prs);
+            },
+          ),
         ],
       ),
     );

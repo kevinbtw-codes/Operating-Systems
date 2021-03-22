@@ -419,17 +419,14 @@ class _HomePageState extends State<priorityLearn> {
                 DecorationImage(image: AssetImage(image), fit: BoxFit.cover)),
         child: Container(
           decoration: BoxDecoration(
-              gradient: LinearGradient(begin: Alignment.bottomRight, colors: [
-            Colors.black.withOpacity(.9),
-            Colors.black.withOpacity(.3)
-          ])),
-          child: Align(
-            child: Icon(
-              Icons.play_arrow,
-              color: Colors.white,
-              size: 70,
-            ),
-          ),
+              // gradient: LinearGradient(
+              //   begin: Alignment.bottomRight,
+              //   colors: [
+              //     Colors.black.withOpacity(.9),
+              //     Colors.black.withOpacity(.3)
+              //   ],
+              // ),
+              ),
         ),
       ),
     );
