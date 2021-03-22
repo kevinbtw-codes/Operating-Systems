@@ -1,5 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:os_project/Learn%20Pages/FCFSLearn.dart';
+import 'package:os_project/Learn%20Pages/SJFLearn.dart';
 import 'package:os_project/algorithms/Priority-new/Main-priority-new.dart';
 import 'package:os_project/algorithms/Shortest job First/Main-SJF.dart';
 import 'package:os_project/algorithms/FCFS/Main-fcfs.dart';
@@ -212,7 +214,13 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                                   color: Color(0xFFE3796C),
                                   textColor: Colors.white,
                                   onPressed: () {
-                                    // Perform some action
+                                    Navigator.push(
+                                      context,
+                                      new MaterialPageRoute(
+                                        builder: (context) => new FCFSLearn(),
+                                      ),
+                                    );
+                                    //code
                                   },
                                   child: const Text(
                                     'LEARN',
@@ -492,9 +500,10 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                                     Navigator.push(
                                       context,
                                       new MaterialPageRoute(
-                                        builder: (context) => new MySJFApp(),
+                                        builder: (context) => new SJFLearn(),
                                       ),
                                     );
+                                    //code
                                   },
                                   child: const Text(
                                     'LEARN',

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
+import 'package:os_project/algorithms/FCFS/Main-fcfsio.dart';
 import 'fcfs.dart';
 import 'table.dart';
 import 'gantt.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'dart:async';
+import 'Main-fcfsio.dart';
 
 void main() {
   runApp(MyApp());
@@ -218,6 +220,25 @@ class _AlgorithmState extends State<Algorithm> {
         title: Text('FCFS'),
         backgroundColor: Color(0xff22456d),
         actions: <Widget>[
+          Padding(
+            padding: EdgeInsets.only(right: 0),
+            child: FlatButton(
+              onPressed: () {
+                prs.sort((a, b) => a.pid.compareTo(b.pid));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => fcfsio_page(),
+                  ),
+                );
+              },
+              child: Icon(
+                Icons.error_outline,
+                color: Colors.white,
+                size: 38,
+              ), //Text('I/O input'),
+            ),
+          ),
           Padding(
             padding: EdgeInsets.only(right: 0),
             child: FlatButton(
