@@ -22,6 +22,12 @@ class _HomePageState extends State<FCFSLearn> {
           CustomScrollView(
             slivers: <Widget>[
               SliverAppBar(
+                automaticallyImplyLeading: false,
+                leading: Icon(
+                  Icons.arrow_back,
+                  size: 40,
+                  color: Colors.black,
+                ),
                 expandedHeight: 400,
                 backgroundColor: Colors.black,
                 flexibleSpace: FlexibleSpaceBar(
@@ -278,8 +284,8 @@ class _HomePageState extends State<FCFSLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                      'images/Learn page images/FCFS-3.jpg'),
-                                 /* makeVideo(
+                                          'images/Learn page images/FCFS-3.jpg'),
+                                  /* makeVideo(
                                       image:
                                           'images/Learn page images/emma-2.jpg'),*/
                                 ],
@@ -320,8 +326,8 @@ class _HomePageState extends State<FCFSLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                      'images/Learn page images/FCFS-4.jpg'),
-                                 /* makeVideo(
+                                          'images/Learn page images/FCFS-4.jpg'),
+                                  /* makeVideo(
                                       image:
                                           'images/Learn page images/emma-2.jpg'),*/
                                 ],
@@ -362,7 +368,7 @@ class _HomePageState extends State<FCFSLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                      'images/Learn page images/FCFS-5.jpg'),
+                                          'images/Learn page images/FCFS-5.jpg'),
                                   /*makeVideo(
                                       image:
                                           'images/Learn page images/emma-2.jpg'),*/
