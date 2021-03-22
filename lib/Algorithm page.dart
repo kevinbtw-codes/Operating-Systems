@@ -1,7 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:os_project/Learn%20Pages/FCFSLearn.dart';
-import 'package:os_project/Learn%20Pages/SJFLearn.dart';
+import 'package:os_project/Learn Pages/FCFSLearn.dart';
+import 'package:os_project/Learn Pages/SJFLearn.dart';
+import 'package:os_project/Learn Pages/priorityLearn.dart';
 import 'package:os_project/algorithms/Priority-new/Main-priority-new.dart';
 import 'package:os_project/algorithms/Shortest job First/Main-SJF.dart';
 import 'package:os_project/algorithms/FCFS/Main-fcfs.dart';
@@ -359,7 +360,13 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                                   color: Colors.cyan[500],
                                   textColor: Colors.white,
                                   onPressed: () {
-                                    // Perform some action
+                                    Navigator.push(
+                                      context,
+                                      new MaterialPageRoute(
+                                        builder: (context) =>
+                                            new priorityLearn(),
+                                      ),
+                                    );
                                   },
                                   child: const Text(
                                     'LEARN',
@@ -380,7 +387,8 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                                     Navigator.push(
                                       context,
                                       new MaterialPageRoute(
-                                        builder: (context) => new MyPriorityApp(),
+                                        builder: (context) =>
+                                            new MyPriorityApp(),
                                       ),
                                     );
                                   },
