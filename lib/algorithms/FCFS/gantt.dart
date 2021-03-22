@@ -79,7 +79,7 @@ class _GanttChartState extends State<GanttChart> {
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(10.0),
-                        
+
                         child: Text(
                           prsNew[index].pid.toString(),
                           style: TextStyle(

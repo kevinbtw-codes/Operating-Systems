@@ -1,6 +1,19 @@
 package com.aryanshah.os_project;
 
-import io.flutter.embedding.android.FlutterActivity;
-
-public class MainActivity extends FlutterActivity {
-}
+import android.content.Context
+import android.content.Intent
+import io.flutter.embedding.android.FlutterActivity
+open class FixFlutterActivity : FlutterActivity() {
+        override fun onDestroy() {
+        flutterEngine?.platformViewsController?.onFlutterViewDestroyed()
+        super.onDestroy()
+        }
+        companion object {
+        fun createIntent(context: Context, initialRoute: String = "/"): Intent {
+        return Intent(context, FixFlutterActivity::class.java)
+        .putExtra("initial_route", initialRoute)
+        .putExtra("background_mode", "opaque")
+        .putExtra("destroy_engine_with_activity", true)
+        }
+        }
+        }
