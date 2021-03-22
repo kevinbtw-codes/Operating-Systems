@@ -53,14 +53,23 @@ class _fcfsio_pageState extends State<fcfsio_page> {
       TextEditingController control3, TextEditingController control4) {
     setState(() {
       prs.sort((a, b) => a.pid.compareTo(b.pid));
-      prs.add(ioprocess(int.parse(control1.text), int.parse(control2.text),
-          int.parse(control3.text), int.parse(control4.text)));
+      //prs.add(ioprocess(0, 6, 10, 4));
+      //prs.add(ioprocess(0, 9, 15, 6));
+      //prs.add(ioprocess(0, 3, 5, 2));
+      int at = int.parse(control1.text);
+      int bt1 = int.parse(control2.text);
+      int bt2 = int.parse(control4.text);
+      int iobt = int.parse(control3.text);
+      //prs.add(ioprocess(int.parse(control1.text), int.parse(control2.text),
+      //int.parse(control3.text), int.parse(control4.text)));
+      prs.add(ioprocess(at, bt1, iobt, bt2));
+      assignPid(prs);
+      prs.sort((a, b) => a.at.compareTo(b.at));
+      prs = fcfsioalgo(prs);
       control1.clear();
       control2.clear();
       control3.clear();
       control4.clear();
-      assignPid(prs);
-      fcfsioalgo(prs);
       // prs.sort((a, b) => a.pid.compareTo(b.pid));
     });
   }
@@ -363,22 +372,21 @@ class _fcfsio_pageState extends State<fcfsio_page> {
     econtrol3 = TextEditingController(text: prs[index].iobt.toString());
     econtrol4 = TextEditingController(text: prs[index].bt2.toString());
 
-    var at = prs[index].at.toString();
-    var bt = prs[index].bt1.toString();
-    var bt2 = prs[index].bt2.toString();
-    var iobt = prs[index].iobt.toString();
-    var tat = prs[index].tat.toString();
-    var start = prs[index].start_time.toString();
-    var end = prs[index].ct.toString();
-    var wt = prs[index].wt.toString();
+    int at = prs[index].at;
+    int bt = prs[index].bt1;
+    int bt2 = prs[index].bt2;
+    int iobt = prs[index].iobt;
+    int tat = prs[index].tat;
+    int start = prs[index].start_time;
+    int end = prs[index].ct;
+    int wt = prs[index].wt;
 
     void deleteprs(int index) {
       setState(() {
         if (prs.length > 0) {
           prs.removeAt(index);
-          fcfsioalgo(prs);
-        } else {
-          setState(() {});
+          prs.sort((a, b) => a.at.compareTo(b.at));
+          prs = fcfsioalgo(prs);
         }
       });
     }
@@ -394,7 +402,8 @@ class _fcfsio_pageState extends State<fcfsio_page> {
         prs[index].bt1 = int.parse(econtrol2.text);
         prs[index].iobt = int.parse(econtrol3.text);
         prs[index].bt2 = int.parse(econtrol4.text);
-        fcfsioalgo(prs);
+        prs.sort((a, b) => a.at.compareTo(b.at));
+        prs = fcfsioalgo(prs);
         //prs.sort((a, b) => a.pid.compareTo(b.pid));
       });
     }
@@ -714,7 +723,7 @@ class _fcfsio_pageState extends State<fcfsio_page> {
               color: Color(0XFFF36735),
               icon: Icons.delete_rounded,
               onTap: () {
-                prs.removeAt(index);
+                //prs.removeAt(index);
                 deleteprs(index);
               },
             ),

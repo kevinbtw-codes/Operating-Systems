@@ -1,3 +1,4 @@
+//import 'dart:collection';
 import 'dart:io';
 import 'dart:core';
 
@@ -46,6 +47,7 @@ class ioprocess {
 List<ioprocess> fcfsioalgo(List<ioprocess> l) {
   List<ioprocess> lgantt = [];
   lgantt = List.from(l);
+  printprocess(lgantt);
   List<ioprocess> readyq = [];
   List<ioprocess> finishedq = [];
   List<ioprocess> ioqueue = [];
