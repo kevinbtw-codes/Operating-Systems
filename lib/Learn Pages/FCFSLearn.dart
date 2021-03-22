@@ -1,5 +1,6 @@
 import 'package:os_project/Learn Pages//Animations/FadeAnimation.dart';
 import 'package:flutter/material.dart';
+import 'package:os_project/algorithms/FCFS/Main-fcfs.dart';
 
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -181,8 +182,8 @@ class _HomePageState extends State<FCFSLearn> {
                             Text(
                               "HOW IT WORKS",
                               style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18,
+                                  color: Color(0XFFFFFFFFF),
+                                  fontSize: 40,
                                   fontWeight: FontWeight.bold),
                             )),
                         SizedBox(
@@ -233,16 +234,15 @@ class _HomePageState extends State<FCFSLearn> {
                                 scrollDirection: Axis.horizontal,
                                 children: <Widget>[
                                   makeVideo(
-                                      image:
-                                          'images/Learn page images/FCFS-1.jpg',
+                                    image:
+                                        'images/Learn page images/FCFS-1.jpg',
                                   ),
                                   makeVideo(
                                       image:
-                                      'images/Learn page images/FCFS-2.jpg'),
+                                          'images/Learn page images/FCFS-2.jpg'),
                                 ],
                               ),
-                            )
-                        ),
+                            )),
                         SizedBox(
                           height: 20,
                         ),
@@ -386,20 +386,30 @@ class _HomePageState extends State<FCFSLearn> {
                 alignment: Alignment.bottomCenter,
                 child: FadeAnimation(
                   2,
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 30),
-                    height: 50,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        color: Color(0XFFF36735)),
-                    child: Align(
-                        child: Text(
-                      "START",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold),
-                    )),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        new MaterialPageRoute(
+                          builder: (context) => new MyApp(),
+                        ),
+                      );
+                    },
+                    child: new Container(
+                      margin: EdgeInsets.symmetric(horizontal: 30),
+                      height: 50,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          color: Color(0XFFF36735)),
+                      child: Align(
+                          child: Text(
+                        "START",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold),
+                      )),
+                    ),
                   ),
                 ),
               ),
@@ -421,17 +431,14 @@ class _HomePageState extends State<FCFSLearn> {
                 DecorationImage(image: AssetImage(image), fit: BoxFit.cover)),
         child: Container(
           decoration: BoxDecoration(
-              gradient: LinearGradient(begin: Alignment.bottomRight, colors: [
-            Colors.black.withOpacity(.9),
-            Colors.black.withOpacity(.3)
-          ])),
-          child: Align(
-            child: Icon(
-              Icons.play_arrow,
-              color: Colors.white,
-              size: 70,
-            ),
-          ),
+              // gradient: LinearGradient(
+              //   begin: Alignment.bottomRight,
+              //   colors: [
+              //     Colors.black.withOpacity(.9),
+              //     Colors.black.withOpacity(.3)
+              //   ],
+              // ),
+              ),
         ),
       ),
     );

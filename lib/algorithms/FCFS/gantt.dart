@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:os_project/algorithms/FCFS/fcfs.dart';
 import 'package:timelines/timelines.dart';
+import 'fcfs.dart';
+import 'Main-fcfs.dart';
+import 'dart:math';
 
 class GanttChart extends StatefulWidget {
   List<Process> prs;
@@ -10,14 +13,36 @@ class GanttChart extends StatefulWidget {
   _GanttChartState createState() => _GanttChartState(prs);
 }
 
+void adder(int time1, int time2, List<Process> prsNew) {
+  prsNew.add(Process((time1), time2));
+  assignPid(prsNew);
+}
+
 class _GanttChartState extends State<GanttChart> {
   List<Process> prs;
   _GanttChartState(this.prs);
 
   @override
   Widget build(BuildContext context) {
-    var prsNew = prs;
+    List<Process> prsNew;
+    prsNew = prs.toList();
     prsNew.sort((a, b) => (a.ct - a.bt).compareTo(b.ct - b.bt));
+
+    if (prsNew.length >= 1) {
+      int i = 0;
+      while (i < prsNew.length - 1) {
+        print(prsNew[i].ct < prsNew[i + 1].at);
+        if (prsNew[i].ct < prsNew[i + 1].at) {
+          prsNew.insert(
+              i + 1, Process(prsNew[i].ct, prsNew[i + 1].at - prsNew[i].ct));
+          prsNew[i + 1].pid = "Idle";
+          prsNew[i + 1].ct = prsNew[i + 2].at;
+        }
+        i += 1;
+      }
+    }
+
+    print(prsNew);
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,

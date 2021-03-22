@@ -1,5 +1,6 @@
 import 'package:os_project/Learn Pages//Animations/FadeAnimation.dart';
 import 'package:flutter/material.dart';
+import 'package:os_project/algorithms/Priority-new/Main-priority-new.dart';
 
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -120,7 +121,7 @@ class _HomePageState extends State<priorityLearn> {
                         FadeAnimation(
                             1.6,
                             Text(
-                              "Input n processes with their respective arrival and burst time, upon which our app will provide average waiting time and average turn around time using FCFS scheduling algorithm.",
+                              "Priority scheduling is a non-preemptive algorithm and one of the most common scheduling algorithms in batch systems.",
                               //textAlign: TextAlign.justify,
                               style: TextStyle(
                                   color: Colors.white,
@@ -145,7 +146,7 @@ class _HomePageState extends State<priorityLearn> {
                         FadeAnimation(
                             1.6,
                             Text(
-                              "First in, first out (FIFO), also known as first come, first served (FCFS), is the simplest scheduling algorithm. FIFO simply queues processes in the order that they arrive in the ready queue.",
+                              "Each process is assigned a priority. Here process with least priority ( i.e. highest:1 and lowest:10 ) is to be executed first and so on.",
                               //textAlign: TextAlign.justify,
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16),
@@ -168,7 +169,7 @@ class _HomePageState extends State<priorityLearn> {
                         FadeAnimation(
                             1.6,
                             Text(
-                              "In this algorithm , the process that comes first will be executed first and next process starts only after the previous gets fully executed.",
+                              "In this algorithm , if both processes have similar priorities than it works like FCFS , the process that comes first will be executed first .",
                               //textAlign: TextAlign.justify,
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16),
@@ -182,7 +183,7 @@ class _HomePageState extends State<priorityLearn> {
                               "HOW IT WORKS",
                               style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 18,
+                                  fontSize: 40,
                                   fontWeight: FontWeight.bold),
                             )),
                         SizedBox(
@@ -259,7 +260,7 @@ class _HomePageState extends State<priorityLearn> {
                         FadeAnimation(
                             1.6,
                             Text(
-                              "For each process one can input respective value for \"AT\" and \"BT\" , failing to which the value will be considered as null.",
+                              "For each process one can input respective value for \"AT\" , \"BT\" and \"Priority\" , failing to which the value will be considered as null.",
                               //textAlign: TextAlign.justify,
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16),
@@ -383,23 +384,32 @@ class _HomePageState extends State<priorityLearn> {
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: FadeAnimation(
-                  2,
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 30),
-                    height: 50,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        color: Color(0XFFF36735)),
-                    child: Align(
-                        child: Text(
-                      "START",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold),
+                    2,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          new MaterialPageRoute(
+                            builder: (context) => new MyPriorityApp(),
+                          ),
+                        );
+                      },
+                      child: new Container(
+                        margin: EdgeInsets.symmetric(horizontal: 30),
+                        height: 50,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            color: Color(0XFFF36735)),
+                        child: Align(
+                            child: Text(
+                          "START",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold),
+                        )),
+                      ),
                     )),
-                  ),
-                ),
               ),
             ),
           )
@@ -419,17 +429,14 @@ class _HomePageState extends State<priorityLearn> {
                 DecorationImage(image: AssetImage(image), fit: BoxFit.cover)),
         child: Container(
           decoration: BoxDecoration(
-              gradient: LinearGradient(begin: Alignment.bottomRight, colors: [
-            Colors.black.withOpacity(.9),
-            Colors.black.withOpacity(.3)
-          ])),
-          child: Align(
-            child: Icon(
-              Icons.play_arrow,
-              color: Colors.white,
-              size: 70,
-            ),
-          ),
+              // gradient: LinearGradient(
+              //   begin: Alignment.bottomRight,
+              //   colors: [
+              //     Colors.black.withOpacity(.9),
+              //     Colors.black.withOpacity(.3)
+              //   ],
+              // ),
+              ),
         ),
       ),
     );
