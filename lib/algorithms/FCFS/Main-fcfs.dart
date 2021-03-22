@@ -7,6 +7,7 @@ import 'gantt.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'dart:async';
 import 'Main-fcfsio.dart';
+import 'gantt.dart';
 
 void main() {
   runApp(MyApp());
@@ -74,6 +75,7 @@ class _AlgorithmState extends State<Algorithm> {
       prs.sort((a, b) => a.pid.compareTo(b.pid));
     });
   }
+
 
   delete() {
     setState(() {
