@@ -1,6 +1,10 @@
 import 'dart:io';
 import 'dart:core';
 
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/scheduler.dart';
+
+
 class Process {
   var pid;
   int at = 0;
@@ -36,11 +40,20 @@ class Process {
     }
   }
 }
+void assignPid(List l) {
+  for (int i = 0; i < l.length; i++) {
+    l[i].pid = 'P$i';
+  }
+}
 
-void fcfsalgo(List<Process> lgantt) {
+
+
+
+void fcfsalgo(List<Process> lgantt ) {
   //var lgantt = List.of(l);
   lgantt.sort((a, b) => a.at.compareTo(b.at));
   int i = 0;
+  int flag=0;
   int time = lgantt[0].at;
   for (i = 0; i < lgantt.length; i++) {
     if (time >= lgantt[i].at) {
@@ -49,7 +62,8 @@ void fcfsalgo(List<Process> lgantt) {
       time = lgantt[i].ct;
       lgantt[i].tat = lgantt[i].ct - lgantt[i].at;
       lgantt[i].wt = lgantt[i].start_time - lgantt[i].at;
-    } else {
+    }
+    else {
       lgantt[i].start_time = lgantt[i].at;
       lgantt[i].ct = lgantt[i].bt + lgantt[i].start_time;
       time = lgantt[i].ct;
@@ -57,11 +71,6 @@ void fcfsalgo(List<Process> lgantt) {
       lgantt[i].wt = lgantt[i].start_time - lgantt[i].at;
     }
   }
-  //lgantt.sort((a, b) => a.pid.compareTo(b.pid));
+  lgantt.sort((a, b) => a.pid.compareTo(b.pid));
 }
 
-void assignPid(List l) {
-  for (int i = 0; i < l.length; i++) {
-    l[i].pid = 'P$i';
-  }
-}
