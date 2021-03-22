@@ -1,5 +1,6 @@
 import 'package:os_project/Learn Pages//Animations/FadeAnimation.dart';
 import 'package:flutter/material.dart';
+import 'package:os_project/algorithms/Shortest%20job%20First/Main-SJF.dart';
 
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -182,7 +183,7 @@ class _HomePageState extends State<SJFLearn> {
                               "HOW IT WORKS",
                               style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 18,
+                                  fontSize: 40,
                                   fontWeight: FontWeight.bold),
                             )),
                         SizedBox(
@@ -384,20 +385,30 @@ class _HomePageState extends State<SJFLearn> {
                 alignment: Alignment.bottomCenter,
                 child: FadeAnimation(
                   2,
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 30),
-                    height: 50,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        color: Color(0XFFF36735)),
-                    child: Align(
-                        child: Text(
-                      "START",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold),
-                    )),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        new MaterialPageRoute(
+                          builder: (context) => new MySJFApp(),
+                        ),
+                      );
+                    },
+                    child: new Container(
+                      margin: EdgeInsets.symmetric(horizontal: 30),
+                      height: 50,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          color: Color(0XFFF36735)),
+                      child: Align(
+                          child: Text(
+                        "START",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold),
+                      )),
+                    ),
                   ),
                 ),
               ),
