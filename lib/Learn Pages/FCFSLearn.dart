@@ -1,4 +1,4 @@
-import 'package:os_project/Learn Pages//Animations/FadeAnimation.dart';
+import 'package:os_project/Learn Pages/Animations/FadeAnimation.dart';
 import 'package:flutter/material.dart';
 import 'package:os_project/algorithms/FCFS/Main-fcfs.dart';
 
