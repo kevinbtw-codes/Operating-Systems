@@ -234,13 +234,15 @@ class _HomePageState extends State<FCFSLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/emma-1.jpg'),
+                                          'images/Learn page images/FCFS-1.jpg',
+                                  ),
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/emma-2.jpg'),
+                                      'images/Learn page images/FCFS-2.jpg'),
                                 ],
                               ),
-                            )),
+                            )
+                        ),
                         SizedBox(
                           height: 20,
                         ),
