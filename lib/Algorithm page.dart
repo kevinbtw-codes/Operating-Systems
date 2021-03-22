@@ -1,5 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:os_project/Learn Pages/FCFSLearn.dart';
+import 'package:os_project/Learn Pages/SJFLearn.dart';
+import 'package:os_project/Learn Pages/priorityLearn.dart';
 import 'package:os_project/algorithms/Priority-new/Main-priority-new.dart';
 import 'package:os_project/algorithms/Shortest job First/Main-SJF.dart';
 import 'package:os_project/algorithms/FCFS/Main-fcfs.dart';
@@ -212,7 +215,13 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                                   color: Color(0xFFE3796C),
                                   textColor: Colors.white,
                                   onPressed: () {
-                                    // Perform some action
+                                    Navigator.push(
+                                      context,
+                                      new MaterialPageRoute(
+                                        builder: (context) => new FCFSLearn(),
+                                      ),
+                                    );
+                                    //code
                                   },
                                   child: const Text(
                                     'LEARN',
@@ -351,7 +360,13 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                                   color: Colors.cyan[500],
                                   textColor: Colors.white,
                                   onPressed: () {
-                                    // Perform some action
+                                    Navigator.push(
+                                      context,
+                                      new MaterialPageRoute(
+                                        builder: (context) =>
+                                            new priorityLearn(),
+                                      ),
+                                    );
                                   },
                                   child: const Text(
                                     'LEARN',
@@ -372,7 +387,8 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                                     Navigator.push(
                                       context,
                                       new MaterialPageRoute(
-                                        builder: (context) => new MyPriorityApp(),
+                                        builder: (context) =>
+                                            new MyPriorityApp(),
                                       ),
                                     );
                                   },
@@ -468,7 +484,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                           Padding(
                             padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
                             child: AutoSizeText(
-                              "Shortest-Job-Next(SJN)",
+                              "Shortest-Job-First(SJF)",
                               style: TextStyle(
                                 fontSize: 30,
                                 fontWeight: FontWeight.bold,
@@ -492,9 +508,10 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                                     Navigator.push(
                                       context,
                                       new MaterialPageRoute(
-                                        builder: (context) => new MySJFApp(),
+                                        builder: (context) => new SJFLearn(),
                                       ),
                                     );
+                                    //code
                                   },
                                   child: const Text(
                                     'LEARN',
