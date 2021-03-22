@@ -278,10 +278,10 @@ class _HomePageState extends State<FCFSLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/emma-1.jpg'),
-                                  makeVideo(
+                                      'images/Learn page images/FCFS-3.jpg'),
+                                 /* makeVideo(
                                       image:
-                                          'images/Learn page images/emma-2.jpg'),
+                                          'images/Learn page images/emma-2.jpg'),*/
                                 ],
                               ),
                             )),
@@ -320,10 +320,10 @@ class _HomePageState extends State<FCFSLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/emma-1.jpg'),
-                                  makeVideo(
+                                      'images/Learn page images/FCFS-4.jpg'),
+                                 /* makeVideo(
                                       image:
-                                          'images/Learn page images/emma-2.jpg'),
+                                          'images/Learn page images/emma-2.jpg'),*/
                                 ],
                               ),
                             )),
@@ -362,10 +362,10 @@ class _HomePageState extends State<FCFSLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/emma-1.jpg'),
-                                  makeVideo(
+                                      'images/Learn page images/FCFS-5.jpg'),
+                                  /*makeVideo(
                                       image:
-                                          'images/Learn page images/emma-2.jpg'),
+                                          'images/Learn page images/emma-2.jpg'),*/
                                 ],
                               ),
                             )),
@@ -422,7 +422,7 @@ class _HomePageState extends State<FCFSLearn> {
 
   Widget makeVideo({image}) {
     return AspectRatio(
-      aspectRatio: 1.5 / 1,
+      aspectRatio: 1.7 / 1,
       child: Container(
         margin: EdgeInsets.only(right: 20),
         decoration: BoxDecoration(

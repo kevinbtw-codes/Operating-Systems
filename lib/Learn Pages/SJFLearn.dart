@@ -121,7 +121,7 @@ class _HomePageState extends State<SJFLearn> {
                         FadeAnimation(
                             1.6,
                             Text(
-                              "Input n processes with their respective arrival and burst time, upon which our app will provide average waiting time and average turn around time using FCFS scheduling algorithm.",
+                              "Input n processes with their respective arrival and burst time, upon which our app will provide average waiting time and average turn around time using SJF scheduling algorithm.",
                               //textAlign: TextAlign.justify,
                               style: TextStyle(
                                   color: Colors.white,
@@ -146,7 +146,7 @@ class _HomePageState extends State<SJFLearn> {
                         FadeAnimation(
                             1.6,
                             Text(
-                              "First in, first out (FIFO), also known as first come, first served (FCFS), is the simplest scheduling algorithm. FIFO simply queues processes in the order that they arrive in the ready queue.",
+                              "Shortest Job First (SJF) is an algorithm in which the process having the smallest execution time is chosen for the next execution. This scheduling method can be preemptive or non-preemptive. It significantly reduces the average waiting time for other processes awaiting execution.",
                               //textAlign: TextAlign.justify,
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16),
@@ -169,7 +169,7 @@ class _HomePageState extends State<SJFLearn> {
                         FadeAnimation(
                             1.6,
                             Text(
-                              "In this algorithm , the process that comes first will be executed first and next process starts only after the previous gets fully executed.",
+                              "In this algorithm , the process that has shortest remaining burst time will be executed first and next process starts only after the previous gets fully executed.",
                               //textAlign: TextAlign.justify,
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16),

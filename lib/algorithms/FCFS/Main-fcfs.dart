@@ -118,7 +118,7 @@ class _AlgorithmState extends State<Algorithm> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Text(
-                                  'at:',
+                                  'AT:',
                                   style: TextStyle(
                                     color: Color(0xFF22456D),
                                     fontWeight: FontWeight.bold,
@@ -149,7 +149,7 @@ class _AlgorithmState extends State<Algorithm> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Text(
-                                  'bt:',
+                                  'BT:',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20,
@@ -239,6 +239,8 @@ class _AlgorithmState extends State<Algorithm> {
       floatingActionButton: FabCircularMenu(
         ringDiameter: 500,
         ringWidth: 100,
+        ringColor: Color(0xFFc3ebef) ,
+        fabColor:Color(0xffc3ebef) ,
         children: <Widget>[
           IconButton(
             iconSize: 30,

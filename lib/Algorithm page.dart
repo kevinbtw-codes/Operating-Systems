@@ -484,7 +484,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                           Padding(
                             padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
                             child: AutoSizeText(
-                              "Shortest-Job-Next(SJN)",
+                              "Shortest-Job-First(SJF)",
                               style: TextStyle(
                                 fontSize: 30,
                                 fontWeight: FontWeight.bold,
