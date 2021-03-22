@@ -1,6 +1,8 @@
+import 'package:os_project/Algorithm%20page.dart';
 import 'package:os_project/Learn Pages//Animations/FadeAnimation.dart';
 import 'package:flutter/material.dart';
 import 'package:os_project/algorithms/Shortest%20job%20First/Main-SJF.dart';
+import 'package:os_project/algorithms/FCFS/Main-fcfs.dart';
 
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -22,6 +24,21 @@ class _HomePageState extends State<SJFLearn> {
           CustomScrollView(
             slivers: <Widget>[
               SliverAppBar(
+                automaticallyImplyLeading: false,
+                leading: IconButton(
+                  icon:const Icon(Icons.arrow_back),
+                  iconSize: 50,
+                  color: Colors.black,
+                  onPressed: ()
+                  {
+                    Navigator.push(
+                      context,
+                      new MaterialPageRoute(
+                        builder: (context) => WaveDemoApp(),
+                      ),
+                    );
+                  },
+                ),
                 expandedHeight: 400,
                 backgroundColor: Colors.black,
                 flexibleSpace: FlexibleSpaceBar(
@@ -235,10 +252,10 @@ class _HomePageState extends State<SJFLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/emma-1.jpg'),
+                                          'images/Learn page images/FCFS-1.jpg'),
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/emma-2.jpg'),
+                                          'images/Learn page images/FCFS-2.jpg'),
                                 ],
                               ),
                             )),
@@ -277,10 +294,7 @@ class _HomePageState extends State<SJFLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/emma-1.jpg'),
-                                  makeVideo(
-                                      image:
-                                          'images/Learn page images/emma-2.jpg'),
+                                          'images/Learn page images/FCFS-3.jpg'),
                                 ],
                               ),
                             )),
@@ -319,10 +333,7 @@ class _HomePageState extends State<SJFLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/emma-1.jpg'),
-                                  makeVideo(
-                                      image:
-                                          'images/Learn page images/emma-2.jpg'),
+                                          'images/Learn page images/FCFS-4.jpg'),
                                 ],
                               ),
                             )),
@@ -361,10 +372,7 @@ class _HomePageState extends State<SJFLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/emma-1.jpg'),
-                                  makeVideo(
-                                      image:
-                                          'images/Learn page images/emma-2.jpg'),
+                                          'images/Learn page images/FCFS-5.jpg'),
                                 ],
                               ),
                             )),

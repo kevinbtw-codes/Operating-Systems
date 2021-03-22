@@ -1,6 +1,9 @@
+import 'package:os_project/Algorithm%20page.dart';
 import 'package:os_project/Learn Pages//Animations/FadeAnimation.dart';
 import 'package:flutter/material.dart';
 import 'package:os_project/algorithms/Priority-new/Main-priority-new.dart';
+import 'package:os_project/algorithms/FCFS/Main-fcfs.dart';
+
 
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -22,6 +25,21 @@ class _HomePageState extends State<priorityLearn> {
           CustomScrollView(
             slivers: <Widget>[
               SliverAppBar(
+                automaticallyImplyLeading: false,
+                leading: IconButton(
+                  icon:const Icon(Icons.arrow_back),
+                  iconSize: 50,
+                  color: Colors.black,
+                  onPressed: ()
+                  {
+                    Navigator.push(
+                      context,
+                      new MaterialPageRoute(
+                        builder: (context) => WaveDemoApp(),
+                      ),
+                    );
+                  },
+                ),
                 expandedHeight: 400,
                 backgroundColor: Colors.black,
                 flexibleSpace: FlexibleSpaceBar(
