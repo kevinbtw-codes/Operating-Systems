@@ -233,16 +233,15 @@ class _HomePageState extends State<FCFSLearn> {
                                 scrollDirection: Axis.horizontal,
                                 children: <Widget>[
                                   makeVideo(
-                                      image:
-                                          'images/Learn page images/FCFS-1.jpg',
+                                    image:
+                                        'images/Learn page images/FCFS-1.jpg',
                                   ),
                                   makeVideo(
                                       image:
-                                      'images/Learn page images/FCFS-2.jpg'),
+                                          'images/Learn page images/FCFS-2.jpg'),
                                 ],
                               ),
-                            )
-                        ),
+                            )),
                         SizedBox(
                           height: 20,
                         ),
@@ -421,17 +420,14 @@ class _HomePageState extends State<FCFSLearn> {
                 DecorationImage(image: AssetImage(image), fit: BoxFit.cover)),
         child: Container(
           decoration: BoxDecoration(
-              gradient: LinearGradient(begin: Alignment.bottomRight, colors: [
-            Colors.black.withOpacity(.9),
-            Colors.black.withOpacity(.3)
-          ])),
-          child: Align(
-            child: Icon(
-              Icons.play_arrow,
-              color: Colors.white,
-              size: 70,
-            ),
-          ),
+              // gradient: LinearGradient(
+              //   begin: Alignment.bottomRight,
+              //   colors: [
+              //     Colors.black.withOpacity(.9),
+              //     Colors.black.withOpacity(.3)
+              //   ],
+              // ),
+              ),
         ),
       ),
     );
