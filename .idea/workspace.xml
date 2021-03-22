@@ -20,14 +20,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50f1a767-80f3-4b73-9873-58efe6fd752c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/lib/algorithms/FCFS/gantt.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/algorithms/FCFS/gantt.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/5.6.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.6.2/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/5.6.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.6.2/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/5.6.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.6.2/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/5.6.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.6.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_assets/kernel_blob.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_build.d" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/flutter/debug/flutter_build.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/intermediates/merged_assets/debug/out/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/intermediates/merged_assets/debug/out/flutter_assets/kernel_blob.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/apk/debug/app-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk.sha1" beforeDir="false" afterPath="$PROJECT_DIR$/build/app/outputs/flutter-apk/app.apk.sha1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/f872507f30e2ff2523f0f1d19160266e.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/f872507f30e2ff2523f0f1d19160266e.cache.dill.track.dill" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[JVS4LRLZNRM7KNDQ]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -72,7 +87,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="46c1c3e7-2b39-468d-b099-3fcbc1e92c49" name="Default Changelist" comment="" />
+      <changelist id="50f1a767-80f3-4b73-9873-58efe6fd752c" name="Default Changelist" comment="" />
       <created>1614673665102</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -120,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616332634777</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="timeline">
+      <created>1616332896024</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1616332896024</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -150,18 +172,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="478" y="275" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1616317177982" />
-    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1616332633526">
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1616332892645">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1616332633526" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1616332892645" />
     <state width="578" height="442" key="Diff.GoToChangePopup" timestamp="1616323526922">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="578" height="442" key="Diff.GoToChangePopup/0.0.1536.824@0.0.1536.824" timestamp="1616323526922" />
-    <state x="100" y="100" width="984" height="624" key="DiffContextDialog" timestamp="1616325494365">
+    <state x="100" y="100" width="984" height="624" key="DiffContextDialog" timestamp="1616337292401">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="100" y="100" width="984" height="624" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1616325494365" />
+    <state x="100" y="100" width="984" height="624" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1616337292401" />
     <state x="373" y="167" key="FileChooserDialogImpl" timestamp="1616325430431">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -174,22 +196,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="85" y="96" key="Git.Interactive.Rebase.Dialog/0.0.1536.824@0.0.1536.824" timestamp="1616325216471" />
-    <state width="737" height="207" key="GridCell.Tab.0.bottom" timestamp="1616332772916">
+    <state width="737" height="207" key="GridCell.Tab.0.bottom" timestamp="1616335656241">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="737" height="207" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616332772916" />
-    <state width="737" height="207" key="GridCell.Tab.0.center" timestamp="1616332772915">
+    <state width="737" height="207" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1616335656241" />
+    <state width="737" height="207" key="GridCell.Tab.0.center" timestamp="1616335656241">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="737" height="207" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1616332772915" />
-    <state width="737" height="207" key="GridCell.Tab.0.left" timestamp="1616332772915">
+    <state width="737" height="207" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1616335656241" />
+    <state width="737" height="207" key="GridCell.Tab.0.left" timestamp="1616335656240">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="737" height="207" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1616332772915" />
-    <state width="737" height="207" key="GridCell.Tab.0.right" timestamp="1616332772915">
+    <state width="737" height="207" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1616335656240" />
+    <state width="737" height="207" key="GridCell.Tab.0.right" timestamp="1616335656241">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="737" height="207" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1616332772915" />
+    <state width="737" height="207" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1616335656241" />
     <state x="0" y="65" key="MergeDialog" timestamp="1614749961794">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -198,10 +220,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="231" y="174" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1616332652139" />
-    <state x="292" y="133" key="RollbackChangesDialog" timestamp="1616324995721">
+    <state x="292" y="133" key="RollbackChangesDialog" timestamp="1616335820320">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="292" y="133" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1616324995721" />
+    <state x="292" y="133" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1616335820320" />
     <state x="101" y="0" key="SettingsEditor" timestamp="1616325431897">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -210,10 +232,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="442" y="327" key="VCS.ChangelistChooser/0.0.1536.824@0.0.1536.824" timestamp="1616323692443" />
-    <state x="185" y="145" key="Vcs.Push.Dialog.v2" timestamp="1616325367821">
+    <state x="185" y="145" key="Vcs.Push.Dialog.v2" timestamp="1616333100895">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="185" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1616325367821" />
+    <state x="185" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1616333100895" />
     <state x="257" y="146" key="VcsDiffUtil.ChangesDialog" timestamp="1616325071182">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -222,9 +244,13 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="402" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1616332310934" />
-    <state x="474" y="200" key="git4idea.merge.GitPullDialog" timestamp="1616332646380">
+    <state x="474" y="200" key="git4idea.merge.GitPullDialog" timestamp="1616335626847">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="474" y="200" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1616332646380" />
+    <state x="474" y="200" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1616335626847" />
+    <state x="511" y="306" key="git4idea.ui.GitResetDialog" timestamp="1616335704153">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="511" y="306" key="git4idea.ui.GitResetDialog/0.0.1536.824@0.0.1536.824" timestamp="1616335704153" />
   </component>
 </project>
