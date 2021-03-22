@@ -5,9 +5,8 @@ import 'package:os_project/algorithms/FCFS/Main-fcfs.dart';
 
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
-       home: FCFSLearn(),
+      home: FCFSLearn(),
     ));
-
 
 class FCFSLearn extends StatefulWidget {
   @override
@@ -26,12 +25,10 @@ class _HomePageState extends State<FCFSLearn> {
               SliverAppBar(
                 automaticallyImplyLeading: false,
                 leading: IconButton(
-                  icon:const Icon(Icons.arrow_back),
-                  iconSize: 50,
-                  color: Colors.black ,
-
-                  onPressed: ()
-                  {
+                  icon: const Icon(Icons.arrow_back),
+                  iconSize: 40,
+                  color: Colors.black,
+                  onPressed: () {
                     Navigator.push(
                       context,
                       new MaterialPageRoute(

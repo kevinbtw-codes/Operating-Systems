@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:os_project/algorithms/Priority-new/Main-priority-new.dart';
 import 'package:os_project/algorithms/FCFS/Main-fcfs.dart';
 
-
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
       home: priorityLearn(),
@@ -27,11 +26,10 @@ class _HomePageState extends State<priorityLearn> {
               SliverAppBar(
                 automaticallyImplyLeading: false,
                 leading: IconButton(
-                  icon:const Icon(Icons.arrow_back),
-                  iconSize: 50,
+                  icon: const Icon(Icons.arrow_back),
+                  iconSize: 40,
                   color: Colors.black,
-                  onPressed: ()
-                  {
+                  onPressed: () {
                     Navigator.push(
                       context,
                       new MaterialPageRoute(
@@ -253,10 +251,10 @@ class _HomePageState extends State<priorityLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/emma-1.jpg'),
+                                          'images/Learn page images/FCFS-1.jpg'),
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/emma-2.jpg'),
+                                          'images/Learn page images/FCFS-2.jpg'),
                                 ],
                               ),
                             )),
@@ -295,10 +293,10 @@ class _HomePageState extends State<priorityLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/emma-1.jpg'),
+                                          'images/Learn page images/FCFS-1.jpg'),
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/emma-2.jpg'),
+                                          'images/Learn page images/FCFS-2.jpg'),
                                 ],
                               ),
                             )),
@@ -337,10 +335,10 @@ class _HomePageState extends State<priorityLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/emma-1.jpg'),
+                                          'images/Learn page images/FCFS-1.jpg'),
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/emma-2.jpg'),
+                                          'images/Learn page images/FCFS-2.jpg'),
                                 ],
                               ),
                             )),
@@ -379,10 +377,10 @@ class _HomePageState extends State<priorityLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/emma-1.jpg'),
+                                          'images/Learn page images/FCFS-1.jpg'),
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/emma-2.jpg'),
+                                          'images/Learn page images/FCFS-2.jpg'),
                                 ],
                               ),
                             )),
