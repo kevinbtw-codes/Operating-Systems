@@ -104,7 +104,11 @@ class _GanttChartState extends State<GanttChart> {
                       child: Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Text(
-                          prsNew[index].pid.toString(),
+                          prsNew[index].pid.toString() +
+                              "\nTime: " +
+                              (prsNew[index].ct - prsNew[index].bt).toString() +
+                              " to " +
+                              (prsNew[index].ct).toString(),
                           style: TextStyle(
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold,
