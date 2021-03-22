@@ -44,7 +44,6 @@ class _GanttChartState extends State<GanttChart> {
       }
     }
 
-
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
