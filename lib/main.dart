@@ -24,7 +24,6 @@ void main() {
       '/second': (context) => IntroTwoPage(),
       '/third': (context) => WaveDemoApp(),
       '/fourth': (context) => PageReplacement(),
-      //'/FCFS': (context) => FCFS(),
     },
   ));
 }
