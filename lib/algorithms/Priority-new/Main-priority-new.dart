@@ -5,6 +5,8 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'dart:async';
 import 'dart:math';
+import 'gantt.dart';
+import 'package:fab_circular_menu/fab_circular_menu.dart';
 
 void main() {
   runApp(MyPriorityApp());
@@ -247,64 +249,78 @@ class _AlgorithmState extends State<Algorithm> {
       appBar: AppBar(
         title: Text('Priority'),
         backgroundColor: Color(0xff22456d),
-        actions: <Widget>[
-          Padding(
-            padding: EdgeInsets.only(right: 20),
-            child: FlatButton(
-              color: Color(0xff22456d),
-              onPressed: //null,
-                  () {
-                prs.sort((a, b) => a.pid.compareTo(b.pid));
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => TheTable(prs),
-                  ),
-                );
-              },
-              child: Icon(
-                Icons.table_view_rounded,
-                color: Colors.white,
-                size: 38,
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(right: 70),
-            child: Container(
-              color: Color(0xff22456d),
-              width: 60,
-              child: FlatButton(
-                onPressed: () {
-                  createaddDialog(context, prs);
-                },
-                child: Icon(
-                  Icons.add_box,
-                  color: Colors.white,
-                  size: 38,
-                ),
-              ),
-            ),
-          ),
-        ],
       ),
       body: Column(
-        children: <Widget>[
-          Expanded(
-            flex: 7,
-            child: LiquidPullToRefresh(
-              animSpeedFactor: 2.5,
-              onRefresh: _handleRefresh,
-              child: ListView.builder(
-                  itemCount: prs.length,
-                  itemBuilder: (BuildContext context, int index) =>
-                      buildProcesscard(context, index)),
-            ),
-          )
-        ],
+    children: <Widget>[
+    Expanded(
+      flex: 7,
+      child: LiquidPullToRefresh(
+        animSpeedFactor: 2.5,
+        onRefresh: _handleRefresh,
+        child: ListView.builder(
+            itemCount: prs.length,
+            itemBuilder: (BuildContext context, int index) =>
+                buildProcesscard(context, index)),
       ),
+    )
+    ],
+    ),
+    floatingActionButton: FabCircularMenu(
+    ringDiameter: 500,
+    ringWidth: 100,
+    ringColor: Color(0xFFc3ebef),
+    fabColor: Color(0xffc3ebef),
+    children: <Widget>[
+    IconButton(
+    iconSize: 30,
+    icon: Icon(Icons.settings_input_component_rounded),
+    onPressed: () {
+    prs.sort((a, b) => a.pid.compareTo(b.pid));
+    Navigator.push(
+    context,
+    MaterialPageRoute(
+    //
+    ),
     );
-  }
+    },
+    ),
+    IconButton(
+    iconSize: 30,
+    icon: Icon(Icons.table_chart_rounded),
+    onPressed: () {
+    prs.sort((a, b) => a.pid.compareTo(b.pid));
+    Navigator.push(
+    context,
+    MaterialPageRoute(
+    builder: (context) => TheTable(prs),
+    ),
+    );
+    },
+    ),
+    IconButton(
+    iconSize: 30,
+    icon: Icon(Icons.bar_chart),
+    onPressed: () {
+    prs.sort((a, b) => a.pid.compareTo(b.pid));
+    Navigator.push(
+    context,
+    MaterialPageRoute(
+    builder: (context) => GanttChart(prs),
+    ),
+    );
+    },
+    ),
+    IconButton(
+    iconSize: 30,
+    icon: Icon(Icons.add_circle),
+    onPressed: () {
+    createaddDialog(context, prs);
+    },
+    ),
+    ],
+    ),
+    );
+    }
 
   Widget buildProcesscard(BuildContext context, int index) {
     TextEditingController econtrol1 = new TextEditingController();

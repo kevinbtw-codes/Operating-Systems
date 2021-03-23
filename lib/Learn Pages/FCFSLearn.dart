@@ -26,7 +26,7 @@ class _HomePageState extends State<FCFSLearn> {
                 automaticallyImplyLeading: false,
                 leading: IconButton(
                   icon: const Icon(Icons.arrow_back),
-                  iconSize: 50,
+                  iconSize: 40,
                   color: Colors.black,
                   onPressed: () {
                     Navigator.push(

@@ -26,11 +26,10 @@ class _HomePageState extends State<SJFLearn> {
               SliverAppBar(
                 automaticallyImplyLeading: false,
                 leading: IconButton(
-                  icon:const Icon(Icons.arrow_back),
-                  iconSize: 50,
+                  icon: const Icon(Icons.arrow_back),
+                  iconSize: 40,
                   color: Colors.black,
-                  onPressed: ()
-                  {
+                  onPressed: () {
                     Navigator.push(
                       context,
                       new MaterialPageRoute(
