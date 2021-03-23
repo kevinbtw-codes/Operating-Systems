@@ -1,10 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:timelines/timelines.dart';
-import 'Main-SJF.dart';
-import 'SJF-algo.dart';
+import 'Main-LJF.dart';
+import 'LJF-algo.dart';
 import 'dart:math';
-//
 
 class GanttChart extends StatefulWidget {
   List<Process> prs;
@@ -25,15 +24,17 @@ class _GanttChartState extends State<GanttChart> {
 
   @override
   Widget build(BuildContext context) {
+    print(prs);
     List<Process> prsNew;
     prsNew = prs.toList();
-    prsNew.sort((a, b) => (a.ct - b.bt).compareTo(b.ct - b.bt));
+    //  prsNew.sort((a, b) => (a.ct - a.bt).compareTo(b.ct - b.bt));
+    prsNew.sort((a, b) => (a.ct - a.bt).compareTo(b.ct - b.bt));
+    print(prsNew);
 
     if (prsNew.length >= 1) {
       int i = 0;
 
       while (i < prsNew.length - 1) {
-        print(prsNew[i].ct < prsNew[i + 1].at);
         if (prsNew[i].ct < prsNew[i + 1].at) {
           prsNew.insert(
               i + 1, Process(prsNew[i].ct, prsNew[i + 1].at - prsNew[i].ct));
@@ -42,8 +43,6 @@ class _GanttChartState extends State<GanttChart> {
         }
         i += 1;
       }
-
-      print(prsNew);
 
       return MaterialApp(
         debugShowCheckedModeBanner: false,
