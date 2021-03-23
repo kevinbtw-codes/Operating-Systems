@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
-import 'fcfs_io.dart';
+import 'sjf_io.dart';
 import 'table.dart';
 import 'gantt.dart';
-//import 'Main-fcfsio.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'dart:async';
 import 'package:fab_circular_menu/fab_circular_menu.dart';
 
-class fcfsio_page extends StatefulWidget {
+class sjfio_page extends StatefulWidget {
   @override
-  _fcfsio_pageState createState() => _fcfsio_pageState();
+  _sjfio_pageState createState() => _sjfio_pageState();
 }
 
-class _fcfsio_pageState extends State<fcfsio_page> {
+class _sjfio_pageState extends State<sjfio_page> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final GlobalKey<LiquidPullToRefreshState> _refreshIndicatorKey =
       GlobalKey<LiquidPullToRefreshState>();
@@ -67,8 +66,8 @@ class _fcfsio_pageState extends State<fcfsio_page> {
       prs.add(ioprocess(at, bt1, iobt, bt2));
       assignPid(prs);
       prs.sort((a, b) => a.at.compareTo(b.at));
-      prs = fcfsioalgo(prs);
-      print(prs);
+      prs = sjfioalgo(prs);
+      //print(prs);
       control1.clear();
       control2.clear();
       control3.clear();
@@ -282,7 +281,7 @@ class _fcfsio_pageState extends State<fcfsio_page> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('FCFS IO'),
+        title: Text('SJN IO'),
         backgroundColor: Color(0xff22456d),
       ),
       body: Column(
@@ -314,7 +313,7 @@ class _fcfsio_pageState extends State<fcfsio_page> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => fcfsio_page(),
+                  builder: (context) => sjfio_page(),
                 ),
               );
             },
@@ -382,7 +381,7 @@ class _fcfsio_pageState extends State<fcfsio_page> {
         if (prs.length > 0) {
           prs.removeAt(index);
           prs.sort((a, b) => a.at.compareTo(b.at));
-          prs = fcfsioalgo(prs);
+          prs = sjfioalgo(prs);
         }
       });
     }
@@ -399,7 +398,7 @@ class _fcfsio_pageState extends State<fcfsio_page> {
         prs[index].iobt = int.parse(econtrol3.text);
         prs[index].bt2 = int.parse(econtrol4.text);
         prs.sort((a, b) => a.at.compareTo(b.at));
-        prs = fcfsioalgo(prs);
+        prs = sjfioalgo(prs);
         //prs.sort((a, b) => a.pid.compareTo(b.pid));
       });
     }
