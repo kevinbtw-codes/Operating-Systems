@@ -201,81 +201,81 @@ class _AlgorithmState extends State<Algorithm> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('SJF'),
-        backgroundColor: Color(0xff22456d),
+      return Scaffold(
+          appBar: AppBar(
+            title: Text('SJF'),
+            backgroundColor: Color(0xff22456d),
+          ),
+        body: Column(
+            children: <Widget>[
+            Expanded(
+              flex: 7,
+              child: LiquidPullToRefresh(
+                animSpeedFactor: 2.5,
+                onRefresh: _handleRefresh,
+                child: ListView.builder(
+                    itemCount: prs.length,
+                    itemBuilder: (BuildContext context, int index) =>
+                        buildProcesscard(context, index)),
+              ),
+            )
+            ],
+            ),
+            floatingActionButton: FabCircularMenu(
+            ringDiameter: 450,
+            ringWidth: 120,
+          ringColor: Color(0xFFc3ebef),
+          fabColor: Color(0xffc3ebef),
+          children: <Widget>[
+              IconButton(
+              iconSize: 30,
+              icon: Icon(Icons.settings_input_component_rounded),
+              onPressed: () {
+              prs.sort((a, b) => a.pid.compareTo(b.pid));
+              Navigator.push(
+              context,
+              MaterialPageRoute(
+              //
+              ),
+              );
+      },
       ),
-      body: Column(
-    children: <Widget>[
-    Expanded(
-      flex: 7,
-      child: LiquidPullToRefresh(
-        animSpeedFactor: 2.5,
-        onRefresh: _handleRefresh,
-        child: ListView.builder(
-            itemCount: prs.length,
-            itemBuilder: (BuildContext context, int index) =>
-                buildProcesscard(context, index)),
+                IconButton(
+                iconSize: 30,
+                icon: Icon(Icons.table_chart_rounded),
+                onPressed: () {
+                prs.sort((a, b) => a.pid.compareTo(b.pid));
+                Navigator.push(
+                context,
+                MaterialPageRoute(
+                builder: (context) => TheTable(prs),
+                ),
+                );
+                },
+                ),
+                IconButton(
+                iconSize: 30,
+                  icon: Icon(Icons.bar_chart),
+                  onPressed: () {
+                  prs.sort((a, b) => a.pid.compareTo(b.pid));
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                  builder: (context) => GanttChart(prs),
+                  ),
+                  );
+                  },
+                  ),
+                  IconButton(
+                  iconSize: 30,
+                  icon: Icon(Icons.add_circle),
+                  onPressed: () {
+                  createaddDialog(context, prs);
+      },
       ),
-    )
-    ],
-    ),
-    floatingActionButton: FabCircularMenu(
-    ringDiameter: 450,
-    ringWidth: 120,
-    ringColor: Color(0xFFc3ebef),
-    fabColor: Color(0xffc3ebef),
-    children: <Widget>[
-    IconButton(
-    iconSize: 30,
-    icon: Icon(Icons.settings_input_component_rounded),
-    onPressed: () {
-    prs.sort((a, b) => a.pid.compareTo(b.pid));
-    Navigator.push(
-    context,
-    MaterialPageRoute(
-    //
-    ),
-    );
-    },
-    ),
-    IconButton(
-    iconSize: 30,
-    icon: Icon(Icons.table_chart_rounded),
-    onPressed: () {
-    prs.sort((a, b) => a.pid.compareTo(b.pid));
-    Navigator.push(
-    context,
-    MaterialPageRoute(
-    builder: (context) => TheTable(prs),
-    ),
-    );
-    },
-    ),
-    IconButton(
-    iconSize: 30,
-    icon: Icon(Icons.bar_chart),
-    onPressed: () {
-    prs.sort((a, b) => a.pid.compareTo(b.pid));
-    Navigator.push(
-    context,
-    MaterialPageRoute(
-    builder: (context) => GanttChart(prs),
-    ),
-    );
-    },
-    ),
-    IconButton(
-    iconSize: 30,
-    icon: Icon(Icons.add_circle),
-    onPressed: () {
-    createaddDialog(context, prs);
-    },
-    ),
-    ],
-    ),
-    );
+      ],
+      ),
+      );
     }
 
 
