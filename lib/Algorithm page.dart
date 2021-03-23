@@ -5,6 +5,7 @@ import 'package:os_project/Learn Pages/SJFLearn.dart';
 import 'package:os_project/Learn Pages/priorityLearn.dart';
 import 'package:os_project/algorithms/Priority-new/Main-priority-new.dart';
 import 'package:os_project/algorithms/Shortest job First/Main-SJF.dart';
+import 'package:os_project/algorithms/Longest job First/Main-LJF.dart';
 import 'package:os_project/algorithms/FCFS/Main-fcfs.dart';
 import 'package:wave/config.dart';
 import 'package:wave/wave.dart';
@@ -718,7 +719,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                           Padding(
                             padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
                             child: AutoSizeText(
-                              "Multi Level Queues",
+                              "Longest Job First",
                               style: TextStyle(
                                 fontSize: 30,
                                 fontWeight: FontWeight.bold,
@@ -763,7 +764,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                           Padding(
                             padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
                             child: AutoSizeText(
-                              "Multi Level Queues",
+                              "Longest Job First",
                               style: TextStyle(
                                 fontSize: 30,
                                 fontWeight: FontWeight.bold,
@@ -802,7 +803,12 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                                   color: Colors.cyan[500],
                                   textColor: Colors.white,
                                   onPressed: () {
-                                    // Perform some action
+                                    Navigator.push(
+                                      context,
+                                      new MaterialPageRoute(
+                                        builder: (context) => new MyLJFApp(),
+                                      ),
+                                    );
                                   },
                                   child: const Text(
                                     'START',
