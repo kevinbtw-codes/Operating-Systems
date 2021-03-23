@@ -555,12 +555,12 @@ class _AlgorithmState extends State<Algorithm> {
           ],
         ),
         child: Padding(
-          padding: const EdgeInsets.all(2.0),
+          padding: const EdgeInsets.symmetric(vertical: 10.0),
           child: ExpansionTile(
             title: Text(
               "AT: $at\t \t BT: $bt\t  \t Priority: $priority",
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 23,
               ),
             ),
             leading: CircleAvatar(
