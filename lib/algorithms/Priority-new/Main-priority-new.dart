@@ -462,7 +462,7 @@ class _AlgorithmState extends State<Algorithm> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
                                   Text(
-                                    'Prioirity:',
+                                    'Priority:',
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 20,
@@ -555,12 +555,12 @@ class _AlgorithmState extends State<Algorithm> {
           ],
         ),
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(2.0),
           child: ExpansionTile(
             title: Text(
-              "AT: $at\t      \t BT: $bt\t  \t Priority:$priority",
+              "AT: $at\t \t BT: $bt\t  \t Priority: $priority",
               style: TextStyle(
-                fontSize: 23,
+                fontSize: 20,
               ),
             ),
             leading: CircleAvatar(
