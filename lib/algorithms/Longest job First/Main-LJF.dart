@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../Algorithm page.dart';
 import 'LJF-algo.dart';
 import 'table.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -205,6 +206,17 @@ class _AlgorithmState extends State<Algorithm> {
       appBar: AppBar(
         title: Text('LJF'),
         backgroundColor: Color(0xff22456d),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.push(
+              context,
+              new MaterialPageRoute(
+                builder: (context) => new WaveDemoApp(),
+              ),
+            );
+          },
+        ),
       ),
       body: Column(
         children: <Widget>[

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
+import 'package:os_project/Algorithm%20page.dart';
 import 'package:os_project/algorithms/FCFS/Main-fcfsio.dart';
 import 'fcfs.dart';
 import 'table.dart';
@@ -220,6 +221,17 @@ class _AlgorithmState extends State<Algorithm> {
       appBar: AppBar(
         title: Text('FCFS'),
         backgroundColor: Color(0xff22456d),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.push(
+              context,
+              new MaterialPageRoute(
+                builder: (context) => new WaveDemoApp(),
+              ),
+            );
+          },
+        ),
       ),
       body: Column(
         children: <Widget>[

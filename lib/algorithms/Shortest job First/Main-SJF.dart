@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:os_project/algorithms/Shortest%20job%20First/Main-sjfio.dart';
+import '../../Algorithm page.dart';
 import 'SJF-algo.dart';
 import 'table.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -206,6 +206,17 @@ class _AlgorithmState extends State<Algorithm> {
       appBar: AppBar(
         title: Text('SJF'),
         backgroundColor: Color(0xff22456d),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.push(
+              context,
+              new MaterialPageRoute(
+                builder: (context) => new WaveDemoApp(),
+              ),
+            );
+          },
+        ),
       ),
       body: Column(
         children: <Widget>[
@@ -236,9 +247,8 @@ class _AlgorithmState extends State<Algorithm> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => sjfio_page(),
-                  //
-                ),
+                    //
+                    ),
               );
             },
           ),
