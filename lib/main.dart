@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:os_project/PageReplacement.dart';
 import 'package:os_project/animation1.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:os_project/swiper_pagination.dart';
@@ -22,7 +23,7 @@ void main() {
       '/': (context) => FirstScreen(),
       '/second': (context) => IntroTwoPage(),
       '/third': (context) => WaveDemoApp(),
-      '/fourth': (context) => OSProject(),
+      '/fourth': (context) => PageReplacement(),
       //'/FCFS': (context) => FCFS(),
     },
   ));
