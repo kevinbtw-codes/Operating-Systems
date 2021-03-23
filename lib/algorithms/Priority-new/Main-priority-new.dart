@@ -168,6 +168,7 @@ class _AlgorithmState extends State<Algorithm> {
                                   ),
                                 ),
                               ),
+
                             ],
                           ),
                         ),
@@ -220,6 +221,7 @@ class _AlgorithmState extends State<Algorithm> {
                               onPressed: () {
                                 control1.clear();
                                 control2.clear();
+                                control3.clear();
                                 Navigator.of(context).pop();
                               }),
                           RaisedButton(
@@ -337,6 +339,7 @@ class _AlgorithmState extends State<Algorithm> {
     var start = prs[index].start_time.toString();
     var end = prs[index].ct.toString();
     var wt = prs[index].wt.toString();
+    var priority =prs[index].priority.toString();
 
     void deleteprs(int index) {
       setState(() {
@@ -501,6 +504,7 @@ class _AlgorithmState extends State<Algorithm> {
                                       onPressed: () {
                                         control1.clear();
                                         control2.clear();
+                                        control3.clear();
                                         Navigator.of(context).pop();
                                       }),
                                   RaisedButton(
@@ -554,7 +558,7 @@ class _AlgorithmState extends State<Algorithm> {
           padding: const EdgeInsets.all(10.0),
           child: ExpansionTile(
             title: Text(
-              "AT: $at\t      \t BT: $bt",
+              "AT: $at\t      \t BT: $bt\t  \t Priority:$priority",
               style: TextStyle(
                 fontSize: 23,
               ),
