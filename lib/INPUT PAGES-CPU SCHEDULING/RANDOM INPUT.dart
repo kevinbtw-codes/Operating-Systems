@@ -13,11 +13,11 @@ final pageCapacityTextBox = TextEditingController();
 int frame_capacity = 0;
 List<int> pages_arr = new List();
 
-class GetTextFieldValue extends StatefulWidget {
+class GetRANDOM extends StatefulWidget {
   _GetTextFieldValueState createState() => _GetTextFieldValueState();
 }
 
-class _GetTextFieldValueState extends State<GetTextFieldValue> {
+class _GetTextFieldValueState extends State<GetRANDOM> {
   int a;
   int b;
   int c;
@@ -123,19 +123,19 @@ class _GetTextFieldValueState extends State<GetTextFieldValue> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Container(
-                    width: 190,
-                    padding: EdgeInsets.all(20.0),
-                    child: TextField(
-                      controller: pageCapacityTextBox,
-                      autocorrect: true,
-                      decoration: InputDecoration(hintText: 'Enter the frame size'),
-                    )
+                      width: 190,
+                      padding: EdgeInsets.all(20.0),
+                      child: TextField(
+                        controller: pageCapacityTextBox,
+                        autocorrect: true,
+                        decoration: InputDecoration(hintText: 'Enter the frame size'),
+                      )
                   ),
                   RaisedButton(
                     onPressed: getCapacity,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18.0),
-                      side: BorderSide(color: Colors.orange)),
+                        borderRadius: BorderRadius.circular(18.0),
+                        side: BorderSide(color: Colors.orange)),
                     color: Colors.orange,
                     //textColor: Colors.white,
                     padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
@@ -259,7 +259,7 @@ class _GetTextFieldValueState extends State<GetTextFieldValue> {
                             Navigator.push(context, MaterialPageRoute(builder: (context) => LIFO()),);
                           }
                           else if(c == minvalue.first){
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => LRU()),);
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => LRU()),);
                           }
                           else{
                             Navigator.push(context, MaterialPageRoute(builder: (context) => RANDOM()),);

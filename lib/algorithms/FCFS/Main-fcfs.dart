@@ -237,10 +237,11 @@ class _AlgorithmState extends State<Algorithm> {
         ],
       ),
       floatingActionButton: FabCircularMenu(
-        ringDiameter: 500,
-        ringWidth: 100,
+        ringDiameter: 450,
+        ringWidth: 120,
         ringColor: Color(0xFFc3ebef),
         fabColor: Color(0xffc3ebef),
+        //fabCloseColor: Colors.transparent,
         children: <Widget>[
           IconButton(
             iconSize: 30,
