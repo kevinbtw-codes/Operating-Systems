@@ -83,9 +83,10 @@ List<Process> ljfalgo(List<Process> l) {
 
 void ljfsort(List<Process> l) {
   l.sort((a, b) => b.bt.compareTo(a.bt));
+  print(l);
   for (var i = 0; i < l.length - 1; i++) {
     if (l[i].bt == l[i + 1].bt) {
-      if (l[i].at < l[i + 1].at) {
+      if (l[i].at > l[i + 1].at) {
         Process temp;
         temp = l[i + 1];
         l[i + 1] = l[i];
