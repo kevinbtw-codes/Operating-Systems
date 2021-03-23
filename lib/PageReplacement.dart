@@ -1,6 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-
 import 'package:os_project/INPUT%20PAGES-Page%20replacement/FIFO%20INPUT.dart';
 import 'package:os_project/INPUT%20PAGES-Page%20replacement/LIFO%20INPUT.dart';
 import 'package:os_project/INPUT%20PAGES-Page%20replacement/LRU%20INPUT.dart';
