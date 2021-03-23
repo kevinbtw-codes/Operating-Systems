@@ -1,17 +1,14 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:os_project/INPUT%20PAGES-CPU%20SCHEDULING/FIFO%20INPUT.dart';
-import 'package:os_project/INPUT%20PAGES-CPU%20SCHEDULING/LIFO%20INPUT.dart';
-import 'package:os_project/INPUT%20PAGES-CPU%20SCHEDULING/LRU%20INPUT.dart';
-import 'package:os_project/INPUT%20PAGES-CPU%20SCHEDULING/OPTIMAL%20INPUT.dart';
-import 'package:os_project/INPUT%20PAGES-CPU%20SCHEDULING/RANDOM%20INPUT.dart';
+
+import 'package:os_project/INPUT%20PAGES-Page%20replacement/FIFO%20INPUT.dart';
+import 'package:os_project/INPUT%20PAGES-Page%20replacement/LIFO%20INPUT.dart';
+import 'package:os_project/INPUT%20PAGES-Page%20replacement/LRU%20INPUT.dart';
+import 'package:os_project/INPUT%20PAGES-Page%20replacement/OPTIMAL%20INPUT.dart';
+import 'package:os_project/INPUT%20PAGES-Page%20replacement/RANDOM%20INPUT.dart';
 import 'package:os_project/Learn Pages/FCFSLearn.dart';
 import 'package:os_project/Learn Pages/SJFLearn.dart';
 import 'package:os_project/Learn Pages/priorityLearn.dart';
-import 'package:os_project/algorithms/Priority-new/Main-priority-new.dart';
-import 'package:os_project/algorithms/Shortest job First/Main-SJF.dart';
-import 'package:os_project/algorithms/Longest job First/Main-LJF.dart';
-import 'package:os_project/algorithms/FCFS/Main-fcfs.dart';
 import 'package:os_project/ui%20pages/infopage.dart';
 import 'package:os_project/ui%20pages/inputpages.dart' as global;
 import 'package:wave/config.dart';
