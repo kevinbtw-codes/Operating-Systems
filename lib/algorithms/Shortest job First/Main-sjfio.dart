@@ -281,7 +281,7 @@ class _sjfio_pageState extends State<sjfio_page> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('FCFS IO'),
+        title: Text('SJN IO'),
         backgroundColor: Color(0xff22456d),
       ),
       body: Column(
