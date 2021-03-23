@@ -27,8 +27,7 @@ class _GanttChartState extends State<GanttChart> {
   Widget build(BuildContext context) {
     List<Process> prsNew;
     prsNew = prs.toList();
-    //  prsNew.sort((a, b) => (a.ct - a.bt).compareTo(b.ct - b.bt));
-    prsNew.sort((a, b) => (a.bt).compareTo(b.bt));
+    prsNew.sort((a, b) => (a.ct - b.bt).compareTo(b.ct - b.bt));
 
     if (prsNew.length >= 1) {
       int i = 0;
@@ -85,42 +84,41 @@ class _GanttChartState extends State<GanttChart> {
                     ),
                     builder: TimelineTileBuilder.fromStyle(
                       contentsAlign: ContentsAlign.alternating,
-                      contentsBuilder: (context, index) =>
-                          Container(
-                            margin: EdgeInsets.all(7),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(10),
-                                  topRight: Radius.circular(10),
-                                  bottomLeft: Radius.circular(10),
-                                  bottomRight: Radius.circular(10)),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.withOpacity(0.5),
-                                  spreadRadius: 3,
-                                  blurRadius: 5,
-                                  offset: Offset(
-                                      0, 3), // changes position of shadow
-                                ),
-                              ],
+                      contentsBuilder: (context, index) => Container(
+                        margin: EdgeInsets.all(7),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(10),
+                              topRight: Radius.circular(10),
+                              bottomLeft: Radius.circular(10),
+                              bottomRight: Radius.circular(10)),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 3,
+                              blurRadius: 5,
+                              offset:
+                                  Offset(0, 3), // changes position of shadow
                             ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Text(
-                                prsNew[index].pid.toString() +
-                                    "\nTime: " +
-                                    (prsNew[index].ct - prsNew[index].bt)
-                                        .toString() +
-                                    " to " +
-                                    (prsNew[index].ct).toString(),
-                                style: TextStyle(
-                                  fontSize: 20.0,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
+                          ],
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Text(
+                            prsNew[index].pid.toString() +
+                                "\nTime: " +
+                                (prsNew[index].ct - prsNew[index].bt)
+                                    .toString() +
+                                " to " +
+                                (prsNew[index].ct).toString(),
+                            style: TextStyle(
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
+                        ),
+                      ),
                       itemCount: prsNew.length,
                     ),
                   ),

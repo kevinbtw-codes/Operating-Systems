@@ -13,7 +13,6 @@ class GanttChart extends StatefulWidget {
   _GanttChartState createState() => _GanttChartState(prs);
 }
 
-
 class _GanttChartState extends State<GanttChart> {
   List<Process> prs;
   _GanttChartState(this.prs);
@@ -21,15 +20,15 @@ class _GanttChartState extends State<GanttChart> {
   Widget build(BuildContext context) {
     List<Process> prsNew;
     prsNew = prs.toList();
-    prsNew.sort((a, b) => a.priority.compareTo(b.priority));
+    prsNew.sort((a, b) => (a.ct - a.bt).compareTo(b.ct - b.bt));
 
     if (prsNew.length >= 1) {
       int i = 0;
       while (i < prsNew.length - 1) {
         print(prsNew[i].ct < prsNew[i + 1].at);
-        if (prsNew[i].ct< prsNew[i + 1].at) {
+        if (prsNew[i].ct < prsNew[i + 1].at) {
           prsNew.insert(
-              i + 1, Process(prsNew[i].ct, prsNew[i + 1].at - prsNew[i].ct,1));
+              i + 1, Process(prsNew[i].ct, prsNew[i + 1].at - prsNew[i].ct, 1));
           prsNew[i + 1].pid = "Idle";
           prsNew[i + 1].ct = prsNew[i + 2].at;
         }
