@@ -1,35 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:os_project/algorithms/Shortest%20job%20First/Main-sjfio.dart';
-import 'SJF-algo.dart';
-import 'table.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
-import 'dart:async';
-import 'dart:math';
+import 'sjf_io.dart';
+import 'table.dart';
 import 'gantt.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
+import 'dart:async';
 import 'package:fab_circular_menu/fab_circular_menu.dart';
 
-void main() {
-  runApp(MySJFApp());
-}
-
-class MySJFApp extends StatelessWidget {
-  // This widget is the root of your application.
+class sjfio_page extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Algorithm(),
-    );
-  }
+  _sjfio_pageState createState() => _sjfio_pageState();
 }
 
-class Algorithm extends StatefulWidget {
-  @override
-  _AlgorithmState createState() => _AlgorithmState();
-}
-
-class _AlgorithmState extends State<Algorithm> {
+class _sjfio_pageState extends State<sjfio_page> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final GlobalKey<LiquidPullToRefreshState> _refreshIndicatorKey =
       GlobalKey<LiquidPullToRefreshState>();
@@ -61,26 +44,44 @@ class _AlgorithmState extends State<Algorithm> {
     });
   }
 
-  List<Process> prs = [];
+  List<ioprocess> prs = [];
   FocusNode nodebt = FocusNode();
+  FocusNode nodebt2 = FocusNode();
+  FocusNode nodeiobt = FocusNode();
 
-  add(TextEditingController control1, TextEditingController control2) {
+  //control1 - at, control2 - bt1, control3 - iobt, control4 - bt2
+  add(TextEditingController control1, TextEditingController control2,
+      TextEditingController control3, TextEditingController control4) {
     setState(() {
       prs.sort((a, b) => a.pid.compareTo(b.pid));
-      prs.add(Process(int.parse(control1.text), int.parse(control2.text)));
+      //prs.add(ioprocess(0, 6, 10, 4));
+      //prs.add(ioprocess(0, 9, 15, 6));
+      //prs.add(ioprocess(0, 3, 5, 2));
+      int at = int.parse(control1.text);
+      int bt1 = int.parse(control2.text);
+      int bt2 = int.parse(control4.text);
+      int iobt = int.parse(control3.text);
+      //prs.add(ioprocess(int.parse(control1.text), int.parse(control2.text),
+      //int.parse(control3.text), int.parse(control4.text)));
+      prs.add(ioprocess(at, bt1, iobt, bt2));
+      assignPid(prs);
+      prs.sort((a, b) => a.at.compareTo(b.at));
+      prs = sjfioalgo(prs);
+      //print(prs);
       control1.clear();
       control2.clear();
-      assignPid(prs);
-      prs = sjfalgo(prs);
-      prs.sort((a, b) => a.pid.compareTo(b.pid));
-      //startsjf(prs);
+      control3.clear();
+      control4.clear();
+      // prs.sort((a, b) => a.pid.compareTo(b.pid));
     });
   }
 
   TextEditingController control1 = new TextEditingController();
   TextEditingController control2 = new TextEditingController();
+  TextEditingController control3 = new TextEditingController();
+  TextEditingController control4 = new TextEditingController();
 
-  createaddDialog(BuildContext context, List<Process> prs) {
+  createaddDialog(BuildContext context, List<ioprocess> prs) {
     return showDialog(
         context: context,
         builder: (context) {
@@ -107,6 +108,7 @@ class _AlgorithmState extends State<Algorithm> {
                                 Text(
                                   'at:',
                                   style: TextStyle(
+                                    color: Color(0xFF22456D),
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20,
                                   ),
@@ -120,7 +122,8 @@ class _AlgorithmState extends State<Algorithm> {
                                   controller: control1,
                                   keyboardType: TextInputType.number,
                                   onSubmitted: (control1) {
-                                    FocusScope.of(context).requestFocus(nodebt);
+                                    FocusScope.of(context)
+                                        .requestFocus(nodeiobt);
                                   },
                                 ),
                               ],
@@ -135,7 +138,7 @@ class _AlgorithmState extends State<Algorithm> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Text(
-                                  'bt:',
+                                  'iobt:',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20,
@@ -143,14 +146,88 @@ class _AlgorithmState extends State<Algorithm> {
                                 ),
                                 TextField(
                                   textAlign: TextAlign.center,
-                                  focusNode: nodebt,
+                                  focusNode: nodeiobt,
                                   cursorWidth: 3,
                                   cursorColor: Color(0XFFF36735),
                                   showCursor: true,
+                                  controller: control3,
+                                  keyboardType: TextInputType.number,
+                                  onSubmitted: (control3) {
+                                    FocusScope.of(context).requestFocus(nodebt);
+                                  },
+                                  /*(text) {
+                                    add(control1, control2);
+                                    Navigator.of(context)
+                                        .pop(); // Redraw the Stateful Widget
+                                  },*/
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 20.0, vertical: 10),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Text(
+                                  'bt1:',
+                                  style: TextStyle(
+                                    color: Color(0xFF22456D),
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                                TextField(
+                                  autofocus: true,
+                                  cursorWidth: 3,
+                                  cursorColor: Color(0XFFF36735),
+                                  focusNode: nodebt,
+                                  textAlign: TextAlign.center,
+                                  showCursor: true,
                                   controller: control2,
                                   keyboardType: TextInputType.number,
+                                  onSubmitted: (control2) {
+                                    FocusScope.of(context)
+                                        .requestFocus(nodebt2);
+                                  },
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 20.0, vertical: 10),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Text(
+                                  'bt2:',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                                TextField(
+                                  textAlign: TextAlign.center,
+                                  focusNode: nodebt2,
+                                  cursorWidth: 3,
+                                  cursorColor: Color(0XFFF36735),
+                                  showCursor: true,
+                                  controller: control4,
+                                  keyboardType: TextInputType.number,
                                   onSubmitted: (text) {
-                                    add(control1, control2);
+                                    add(control1, control2, control3, control4);
                                     Navigator.of(context)
                                         .pop(); // Redraw the Stateful Widget
                                   },
@@ -186,7 +263,7 @@ class _AlgorithmState extends State<Algorithm> {
                               ),
                               child: Text("Submit"),
                               onPressed: () {
-                                add(control1, control2);
+                                add(control1, control2, control3, control4);
                                 Navigator.of(context).pop();
                               }),
                         ],
@@ -204,7 +281,7 @@ class _AlgorithmState extends State<Algorithm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('SJF'),
+        title: Text('FCFS IO'),
         backgroundColor: Color(0xff22456d),
       ),
       body: Column(
@@ -223,8 +300,8 @@ class _AlgorithmState extends State<Algorithm> {
         ],
       ),
       floatingActionButton: FabCircularMenu(
-        ringDiameter: 450,
-        ringWidth: 120,
+        ringDiameter: 500,
+        ringWidth: 100,
         ringColor: Color(0xFFc3ebef),
         fabColor: Color(0xffc3ebef),
         children: <Widget>[
@@ -237,7 +314,6 @@ class _AlgorithmState extends State<Algorithm> {
                 context,
                 MaterialPageRoute(
                   builder: (context) => sjfio_page(),
-                  //
                 ),
               );
             },
@@ -250,8 +326,8 @@ class _AlgorithmState extends State<Algorithm> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => TheTable(prs),
-                ),
+                    // builder: (context) => TheTable(prs),
+                    ),
               );
             },
           ),
@@ -263,8 +339,8 @@ class _AlgorithmState extends State<Algorithm> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => GanttChart(prs),
-                ),
+                    //
+                    ),
               );
             },
           ),
@@ -283,41 +359,51 @@ class _AlgorithmState extends State<Algorithm> {
   Widget buildProcesscard(BuildContext context, int index) {
     TextEditingController econtrol1 = new TextEditingController();
     TextEditingController econtrol2 = new TextEditingController();
+    TextEditingController econtrol3 = new TextEditingController();
+    TextEditingController econtrol4 = new TextEditingController();
 
     econtrol1 = TextEditingController(text: prs[index].at.toString());
-    econtrol2 = TextEditingController(text: prs[index].bt.toString());
+    econtrol2 = TextEditingController(text: prs[index].bt1.toString());
+    econtrol3 = TextEditingController(text: prs[index].iobt.toString());
+    econtrol4 = TextEditingController(text: prs[index].bt2.toString());
 
-    var at = prs[index].at.toString();
-    var bt = prs[index].bt.toString();
-    var tat = prs[index].tat.toString();
-    var start = prs[index].start_time.toString();
-    var end = prs[index].ct.toString();
-    var wt = prs[index].wt.toString();
+    int at = prs[index].at;
+    int bt = prs[index].bt1;
+    int bt2 = prs[index].bt2;
+    int iobt = prs[index].iobt;
+    int tat = prs[index].tat;
+    int start = prs[index].start_time;
+    int end = prs[index].ct;
+    int wt = prs[index].wt;
 
     void deleteprs(int index) {
       setState(() {
         if (prs.length > 0) {
-          prs = sjfalgo(prs);
-          prs.sort((a, b) => a.pid.compareTo(b.pid));
-          //startsjf(prs);
-        } else {
-          setState(() {});
+          prs.removeAt(index);
+          prs.sort((a, b) => a.at.compareTo(b.at));
+          prs = sjfioalgo(prs);
         }
       });
     }
 
-    void editprs(int index, TextEditingController econtrol1,
-        TextEditingController econtrol2) {
+    void editprs(
+        int index,
+        TextEditingController econtrol1,
+        TextEditingController econtrol2,
+        TextEditingController econtrol3,
+        TextEditingController econtrol4) {
       setState(() {
         prs[index].at = int.parse(econtrol1.text);
-        prs[index].bt = int.parse(econtrol2.text);
-        prs = sjfalgo(prs);
-        prs.sort((a, b) => a.pid.compareTo(b.pid));
-        //startsjf(prs);
+        prs[index].bt1 = int.parse(econtrol2.text);
+        prs[index].iobt = int.parse(econtrol3.text);
+        prs[index].bt2 = int.parse(econtrol4.text);
+        prs.sort((a, b) => a.at.compareTo(b.at));
+        prs = sjfioalgo(prs);
+        //prs.sort((a, b) => a.pid.compareTo(b.pid));
       });
     }
 
-    editDialog(BuildContext context, List<Process> prs, int index) {
+    editDialog(BuildContext context, List<ioprocess> prs, int index) {
       return showDialog(
           context: context,
           builder: (context) {
@@ -358,7 +444,7 @@ class _AlgorithmState extends State<Algorithm> {
                                     keyboardType: TextInputType.number,
                                     onSubmitted: (text) {
                                       FocusScope.of(context)
-                                          .requestFocus(nodebt);
+                                          .requestFocus(nodeiobt);
                                     },
                                   ),
                                 ],
@@ -373,7 +459,80 @@ class _AlgorithmState extends State<Algorithm> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
                                   Text(
-                                    'bt:',
+                                    'iobt:',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                    ),
+                                  ),
+                                  TextField(
+                                    textAlign: TextAlign.center,
+                                    focusNode: nodeiobt,
+                                    cursorWidth: 3,
+                                    cursorColor: Colors.amber,
+                                    showCursor: true,
+                                    controller: econtrol3,
+                                    keyboardType: TextInputType.number,
+                                    onSubmitted: (text) {
+                                      FocusScope.of(context)
+                                          .requestFocus(nodebt);
+                                    },
+                                    /*(text) {
+                                      editprs(index, econtrol1, econtrol2);
+                                      Navigator.of(context)
+                                          .pop(); // Redraw the Stateful Widget
+                                    },*/
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 20.0, vertical: 10),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Text(
+                                    'bt1:',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                    ),
+                                  ),
+                                  TextField(
+                                    autofocus: true,
+                                    cursorWidth: 3,
+                                    cursorColor: Colors.amber,
+                                    textAlign: TextAlign.center,
+                                    showCursor: true,
+                                    controller: econtrol2,
+                                    keyboardType: TextInputType.number,
+                                    onSubmitted: (text) {
+                                      FocusScope.of(context)
+                                          .requestFocus(nodebt2);
+                                    },
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 20.0, vertical: 10),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Text(
+                                    'bt2:',
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 20,
@@ -385,10 +544,11 @@ class _AlgorithmState extends State<Algorithm> {
                                     cursorWidth: 3,
                                     cursorColor: Colors.amber,
                                     showCursor: true,
-                                    controller: econtrol2,
+                                    controller: econtrol4,
                                     keyboardType: TextInputType.number,
                                     onSubmitted: (text) {
-                                      editprs(index, econtrol1, econtrol2);
+                                      editprs(index, econtrol1, econtrol2,
+                                          econtrol3, econtrol4);
                                       Navigator.of(context)
                                           .pop(); // Redraw the Stateful Widget
                                     },
@@ -424,7 +584,8 @@ class _AlgorithmState extends State<Algorithm> {
                                 ),
                                 child: Text("Submit"),
                                 onPressed: () {
-                                  editprs(index, econtrol1, econtrol2);
+                                  editprs(index, econtrol1, econtrol2,
+                                      econtrol3, econtrol4);
                                   Navigator.of(context).pop();
                                 }),
                           ],
@@ -463,7 +624,7 @@ class _AlgorithmState extends State<Algorithm> {
           padding: const EdgeInsets.all(10.0),
           child: ExpansionTile(
             title: Text(
-              "at: $at\t      \t bt: $bt",
+              "at: $at\t bt1: $bt\t bt2: $bt2\t iobt: $iobt",
               style: TextStyle(
                 fontSize: 23,
               ),
@@ -557,7 +718,7 @@ class _AlgorithmState extends State<Algorithm> {
               color: Color(0XFFF36735),
               icon: Icons.delete_rounded,
               onTap: () {
-                prs.removeAt(index);
+                //prs.removeAt(index);
                 deleteprs(index);
               },
             ),
