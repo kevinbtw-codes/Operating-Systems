@@ -30,7 +30,7 @@ class ioprocess {
   }
 }
 
-void main(List<String> arguments) {
+/*void main(List<String> arguments) {
   List<ioprocess> prs = [];
   prs.add(ioprocess(0, 6, 10, 4));
   prs.add(ioprocess(0, 9, 15, 6));
@@ -44,7 +44,7 @@ void main(List<String> arguments) {
   fio = sjfioalgo(fio);
 
   printprocess(fio);
-}
+} */
 
 void startsjf(List<ioprocess> l) {
   l.sort((a, b) => a.at.compareTo(b.at));
@@ -65,11 +65,11 @@ void startsjf(List<ioprocess> l) {
 List<ioprocess> sjfioalgo(List<ioprocess> l) {
   List<ioprocess> lgantt = [];
   lgantt = List.from(l);
-  for (var item in lgantt) {
+  /*for (var item in lgantt) {
     item.ct = item.start_time =
         item.start_time2 = item.tat = item.wt = item.ioexit = null;
     item.io = false;
-  }
+  } */
   List<ioprocess> readyq = [];
   List<ioprocess> finishedq = [];
   List<ioprocess> ioqueue = [];

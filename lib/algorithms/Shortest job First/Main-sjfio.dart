@@ -54,18 +54,15 @@ class _sjfio_pageState extends State<sjfio_page> {
       TextEditingController control3, TextEditingController control4) {
     setState(() {
       prs.sort((a, b) => a.pid.compareTo(b.pid));
-      //prs.add(ioprocess(0, 6, 10, 4));
-      //prs.add(ioprocess(0, 9, 15, 6));
-      //prs.add(ioprocess(0, 3, 5, 2));
       int at = int.parse(control1.text);
       int bt1 = int.parse(control2.text);
       int bt2 = int.parse(control4.text);
       int iobt = int.parse(control3.text);
-      //prs.add(ioprocess(int.parse(control1.text), int.parse(control2.text),
-      //int.parse(control3.text), int.parse(control4.text)));
-      prs.add(ioprocess(at, bt1, iobt, bt2));
+      prs.add(ioprocess(int.parse(control1.text), int.parse(control2.text),
+          int.parse(control3.text), int.parse(control4.text)));
+      //prs.add(ioprocess(at, bt1, iobt, bt2));
       assignPid(prs);
-      prs.sort((a, b) => a.at.compareTo(b.at));
+      //prs.sort((a, b) => a.at.compareTo(b.at));
       prs = sjfioalgo(prs);
       //print(prs);
       control1.clear();
@@ -254,6 +251,8 @@ class _sjfio_pageState extends State<sjfio_page> {
                               onPressed: () {
                                 control1.clear();
                                 control2.clear();
+                                control3.clear();
+                                control4.clear();
                                 Navigator.of(context).pop();
                               }),
                           RaisedButton(
@@ -264,6 +263,7 @@ class _sjfio_pageState extends State<sjfio_page> {
                               child: Text("Submit"),
                               onPressed: () {
                                 add(control1, control2, control3, control4);
+                                printprocess(prs);
                                 Navigator.of(context).pop();
                               }),
                         ],
@@ -380,7 +380,7 @@ class _sjfio_pageState extends State<sjfio_page> {
       setState(() {
         if (prs.length > 0) {
           prs.removeAt(index);
-          prs.sort((a, b) => a.at.compareTo(b.at));
+          //prs.sort((a, b) => a.at.compareTo(b.at));
           prs = sjfioalgo(prs);
         }
       });

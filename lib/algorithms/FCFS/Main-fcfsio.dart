@@ -68,7 +68,7 @@ class _fcfsio_pageState extends State<fcfsio_page> {
       assignPid(prs);
       prs.sort((a, b) => a.at.compareTo(b.at));
       prs = fcfsioalgo(prs);
-      print(prs);
+      //printprocess(prs);
       control1.clear();
       control2.clear();
       control3.clear();
@@ -255,6 +255,8 @@ class _fcfsio_pageState extends State<fcfsio_page> {
                               onPressed: () {
                                 control1.clear();
                                 control2.clear();
+                                control3.clear();
+                                control4.clear();
                                 Navigator.of(context).pop();
                               }),
                           RaisedButton(
