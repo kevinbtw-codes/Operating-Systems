@@ -295,10 +295,14 @@ class _sjfio_pageState extends State<sjfio_page> {
         children: <Widget>[
           Expanded(
             //flex: 7,
-            child: ListView.builder(
-                itemCount: prs.length,
-                itemBuilder: (BuildContext context, int index) =>
-                    buildProcesscard(context, index, prs)),
+            child: LiquidPullToRefresh(
+              animSpeedFactor: 2.5,
+              onRefresh: _handleRefresh,
+              child: ListView.builder(
+                  itemCount: prs.length,
+                  itemBuilder: (BuildContext context, int index) =>
+                      buildProcesscard(context, index, prs)),
+            ),
           )
         ],
       ),
