@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:os_project/algorithms/Shortest%20job%20First/Main-sjfio.dart';
 import '../../Algorithm page.dart';
 import 'SJF-algo.dart';
 import 'table.dart';
@@ -247,8 +248,9 @@ class _AlgorithmState extends State<Algorithm> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    //
-                    ),
+                  builder: (context) => sjfio_page(),
+                  //
+                ),
               );
             },
           ),

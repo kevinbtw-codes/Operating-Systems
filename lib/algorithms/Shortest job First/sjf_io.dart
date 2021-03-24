@@ -9,13 +9,13 @@ class ioprocess {
   int bt2;
   int iobt;
   int total_burst;
-  int ioexit;
+  int ioexit = 0;
   bool io = false; //if io is completed then value is true, else false
-  int ct;
-  int start_time;
-  int start_time2;
-  int tat;
-  int wt;
+  int ct = 0;
+  int start_time = 0;
+  int start_time2 = 0;
+  int tat = 0;
+  int wt = 0;
 
   ioprocess(this.at, this.bt1, this.iobt, this.bt2);
 
@@ -48,6 +48,9 @@ class ioprocess {
 
 void startsjf(List<ioprocess> l) {
   l.sort((a, b) => a.at.compareTo(b.at));
+  for (var item in l) {
+    item.total_burst = item.bt1 + item.bt2 + item.iobt;
+  }
   for (int j = 1; j < l.length; j++) {
     for (var i = 0; i < l.length - 1; i++) {
       if (l[i].at == l[i + 1].at) {
@@ -62,14 +65,14 @@ void startsjf(List<ioprocess> l) {
   }
 }
 
-List<ioprocess> sjfioalgo(List<ioprocess> l) {
+void sjfioalgo(List<ioprocess> l) {
   List<ioprocess> lgantt = [];
   lgantt = List.from(l);
-  /*for (var item in lgantt) {
+  for (var item in lgantt) {
     item.ct = item.start_time =
-        item.start_time2 = item.tat = item.wt = item.ioexit = null;
+        item.start_time2 = item.tat = item.wt = item.ioexit = 0;
     item.io = false;
-  } */
+  }
   List<ioprocess> readyq = [];
   List<ioprocess> finishedq = [];
   List<ioprocess> ioqueue = [];
@@ -226,8 +229,8 @@ List<ioprocess> sjfioalgo(List<ioprocess> l) {
       }
     }
   }
-
-  return finishedq;
+  l = List.from(finishedq);
+  //return finishedq;
 }
 
 int executelist(List<ioprocess> l, int time, List<ioprocess> fq,
