@@ -62,8 +62,6 @@ class _fcfsio_pageState extends State<fcfsio_page> {
       int bt1 = int.parse(control2.text);
       int bt2 = int.parse(control4.text);
       int iobt = int.parse(control3.text);
-      //prs.add(ioprocess(int.parse(control1.text), int.parse(control2.text),
-      //int.parse(control3.text), int.parse(control4.text)));
       prs.add(ioprocess(at, bt1, iobt, bt2));
       assignPid(prs);
       prs.sort((a, b) => a.at.compareTo(b.at));
@@ -73,7 +71,7 @@ class _fcfsio_pageState extends State<fcfsio_page> {
       control2.clear();
       control3.clear();
       control4.clear();
-      // prs.sort((a, b) => a.pid.compareTo(b.pid));
+      prs.sort((a, b) => a.pid.compareTo(b.pid));
     });
   }
 
@@ -385,6 +383,7 @@ class _fcfsio_pageState extends State<fcfsio_page> {
           prs.removeAt(index);
           prs.sort((a, b) => a.at.compareTo(b.at));
           prs = fcfsioalgo(prs);
+          prs.sort((a, b) => a.pid.compareTo(b.pid));
         }
       });
     }
@@ -402,7 +401,7 @@ class _fcfsio_pageState extends State<fcfsio_page> {
         prs[index].bt2 = int.parse(econtrol4.text);
         prs.sort((a, b) => a.at.compareTo(b.at));
         prs = fcfsioalgo(prs);
-        //prs.sort((a, b) => a.pid.compareTo(b.pid));
+        prs.sort((a, b) => a.pid.compareTo(b.pid));
       });
     }
 
@@ -578,6 +577,8 @@ class _fcfsio_pageState extends State<fcfsio_page> {
                                 onPressed: () {
                                   control1.clear();
                                   control2.clear();
+                                  control3.clear();
+                                  control4.clear();
                                   Navigator.of(context).pop();
                                 }),
                             RaisedButton(

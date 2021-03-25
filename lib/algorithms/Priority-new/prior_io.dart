@@ -7,15 +7,16 @@ class ioprocess {
   int bt1;
   int bt2;
   int iobt;
-  int ioexit;
+  int priority;
+  int ioexit = 0;
   bool io = false; //if io is completed then value is true, else false
-  int ct;
-  int start_time;
-  int start_time2;
-  int tat;
-  int wt;
+  int ct = 0;
+  int start_time = 0;
+  int start_time2 = 0;
+  int tat = 0;
+  int wt = 0;
 
-  ioprocess(this.at, this.bt1, this.iobt, this.bt2);
+  ioprocess(this.priority, this.at, this.bt1, this.iobt, this.bt2);
 
   @override
   String toString() {
@@ -30,20 +31,36 @@ class ioprocess {
 
 /*void main(List<String> arguments) {
   List<ioprocess> prs = [];
-  prs.add(ioprocess(0, 6, 10, 4));
-  prs.add(ioprocess(0, 9, 15, 6));
-  prs.add(ioprocess(0, 3, 5, 2));
+  prs.add(ioprocess(2, 0, 6, 10, 4));
+  prs.add(ioprocess(1, 2, 9, 15, 6));
+  prs.add(ioprocess(3, 3, 3, 5, 2));
   assignPid(prs);
   List<ioprocess> fio = List.from(prs);
 
-  print('\n1.FCFSio2 Algo\n');
+  print('\n1.Priority io Algo\n');
   fio.sort((a, b) => a.at.compareTo(b.at));
-  fio = fcfsioalgo(fio);
+  fio = priorioalgo(fio);
 
   printprocess(fio);
 }*/
 
-List<ioprocess> fcfsioalgo(List<ioprocess> l) {
+void startprior(List<ioprocess> l) {
+  l.sort((a, b) => a.at.compareTo(b.at));
+  for (int j = 1; j < l.length; j++) {
+    for (var i = 0; i < l.length - 1; i++) {
+      if (l[i].at == l[i + 1].at) {
+        if (l[i].priority > l[i + 1].priority) {
+          ioprocess temp;
+          temp = l[i + 1];
+          l[i + 1] = l[i];
+          l[i] = temp;
+        }
+      }
+    }
+  }
+}
+
+List<ioprocess> priorioalgo(List<ioprocess> l) {
   List<ioprocess> lgantt = [];
   lgantt = List.from(l);
   for (var item in lgantt) {
@@ -56,6 +73,7 @@ List<ioprocess> fcfsioalgo(List<ioprocess> l) {
   List<ioprocess> ioqueue = [];
 
   int time = 0;
+  startprior(lgantt);
   fillrq(readyq, time, lgantt);
 
   while (time >= 0) {
@@ -158,6 +176,18 @@ void iofill(List<ioprocess> l, List<ioprocess> ioqueue, int time) {
   ioqueue.add(l[0]);
   l.removeAt(0);
   ioqueue.sort((a, b) => a.ioexit.compareTo(b.ioexit));
+  /*for (int j = 1; j <= ioqueue.length; j++) {
+    for (int i = 0; i < ioqueue.length - 1; i++) {
+      if (ioqueue[i].ioexit == ioqueue[i + 1].ioexit) {
+        if (ioqueue[i].priority > ioqueue[i + 1].priority) {
+          ioprocess temp;
+          temp = ioqueue[i + 1];
+          ioqueue[i + 1] = ioqueue[i];
+          ioqueue[i] = temp;
+        }
+      }
+    }
+  } */
   print("ioqueue at time: " + time.toString());
   printpid(ioqueue);
 }
@@ -195,7 +225,34 @@ void fillrq(List<ioprocess> readyq, int time, List<ioprocess> l) {
   }
 
   if (readyq.isNotEmpty) {
-    readyq.sort((a, b) => a.at.compareTo(b.at));
+    priorsort(readyq);
+  }
+}
+
+void priorsort(List<ioprocess> l) {
+  l.sort((a, b) => a.priority.compareTo(b.priority));
+  bool flag = true;
+  // false when swap has taken place, true if swap has not taken place
+  for (int j = 1; j < l.length; j++) {
+    flag = true;
+    for (var i = 0; i < l.length - 1; i++) {
+      flag = true;
+      if (l[i].priority == l[i + 1].priority) {
+        if (l[i].at > l[i + 1].at) {
+          flag = false;
+          ioprocess temp;
+          temp = l[i + 1];
+          l[i + 1] = l[i];
+          l[i] = temp;
+        }
+        if (flag) {
+          break;
+        }
+      }
+    }
+    if (flag) {
+      break;
+    }
   }
 }
 
@@ -216,11 +273,6 @@ void printpid(List<ioprocess> l) {
     for (var i = 0; i < l.length; i++) {
       // ignore: prefer_single_quotes
       stdout.write(l[i].pid + " - " + l[i].ioexit.toString() + ", ");
-    }
-  } else {
-    for (var i = 0; i < l.length; i++) {
-      // ignore: prefer_single_quotes
-      stdout.write(l[i].pid + ", ");
     }
   }
   print("\n");

@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
-import 'sjf_io.dart';
+import 'prior_io.dart';
 import 'table.dart';
 import 'gantt.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'dart:async';
 import 'package:fab_circular_menu/fab_circular_menu.dart';
 
-class sjfio_page extends StatefulWidget {
+class priorio_page extends StatefulWidget {
   @override
-  _sjfio_pageState createState() => _sjfio_pageState();
+  _priorio_pageState createState() => _priorio_pageState();
 }
 
-class _sjfio_pageState extends State<sjfio_page> {
+class _priorio_pageState extends State<priorio_page> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final GlobalKey<LiquidPullToRefreshState> _refreshIndicatorKey =
       GlobalKey<LiquidPullToRefreshState>();
@@ -45,36 +45,38 @@ class _sjfio_pageState extends State<sjfio_page> {
   }
 
   List<ioprocess> prs = [];
+  FocusNode nodeat = FocusNode();
   FocusNode nodebt = FocusNode();
   FocusNode nodebt2 = FocusNode();
   FocusNode nodeiobt = FocusNode();
 
-  //control1 - at, control2 - bt1, control3 - iobt, control4 - bt2
-  add(TextEditingController control1, TextEditingController control2,
-      TextEditingController control3, TextEditingController control4) {
+  //control1 - at, control2 - bt1, control3 - iobt, control4 - bt2 control5 - priority
+  add(
+      TextEditingController control1,
+      TextEditingController control2,
+      TextEditingController control3,
+      TextEditingController control4,
+      TextEditingController control5) {
     setState(() {
       //prs.sort((a, b) => a.pid.compareTo(b.pid));
-      /*prs.add(ioprocess(0, 6, 10, 4));
-      prs.add(ioprocess(0, 9, 15, 6));
-      prs.add(ioprocess(0, 3, 5, 2));*/
+      /*prs.add(ioprocess(2, 0, 6, 10, 4));
+  prs.add(ioprocess(1, 2, 9, 15, 6));
+  prs.add(ioprocess(3, 3, 3, 5, 2));*/
       //printprocess(prs);
       int at = int.parse(control1.text);
       int bt1 = int.parse(control2.text);
       int bt2 = int.parse(control4.text);
       int iobt = int.parse(control3.text);
-      //prs.add(ioprocess(int.parse(control1.text), int.parse(control2.text),
-      //    int.parse(control3.text), int.parse(control4.text)));
-      prs.add(ioprocess(at, bt1, iobt, bt2));
+      int priority = int.parse(control5.text);
+      prs.add(ioprocess(priority, at, bt1, iobt, bt2));
       assignPid(prs);
-      //prs.sort((a, b) => a.at.compareTo(b.at));
-      sjfioalgo(prs);
+      prs = priorioalgo(prs);
       printprocess(prs);
-      //print("algodone");
-      //print(prs);
       control1.clear();
       control2.clear();
       control3.clear();
       control4.clear();
+      control5.clear();
       prs.sort((a, b) => a.pid.compareTo(b.pid));
     });
   }
@@ -83,6 +85,7 @@ class _sjfio_pageState extends State<sjfio_page> {
   TextEditingController control2 = new TextEditingController();
   TextEditingController control3 = new TextEditingController();
   TextEditingController control4 = new TextEditingController();
+  TextEditingController control5 = new TextEditingController();
 
   createaddDialog(BuildContext context, List<ioprocess> prs) {
     return showDialog(
@@ -93,11 +96,42 @@ class _sjfio_pageState extends State<sjfio_page> {
               borderRadius: BorderRadius.circular(12.0),
             ), //this right here
             child: Container(
-              height: 280.0,
+              height: 450.0,
               width: 200.0,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 70.0, vertical: 10),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            'Priority:',
+                            style: TextStyle(
+                              color: Color(0xFF22456D),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
+                          ),
+                          TextField(
+                            autofocus: true,
+                            cursorWidth: 3,
+                            cursorColor: Color(0XFFF36735),
+                            textAlign: TextAlign.center,
+                            showCursor: true,
+                            controller: control5,
+                            keyboardType: TextInputType.number,
+                            onSubmitted: (control5) {
+                              FocusScope.of(context).requestFocus(nodeat);
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                   Expanded(
                     child: Row(
                       children: [
@@ -121,6 +155,7 @@ class _sjfio_pageState extends State<sjfio_page> {
                                   cursorWidth: 3,
                                   cursorColor: Color(0XFFF36735),
                                   textAlign: TextAlign.center,
+                                  focusNode: nodeat,
                                   showCursor: true,
                                   controller: control1,
                                   keyboardType: TextInputType.number,
@@ -230,7 +265,8 @@ class _sjfio_pageState extends State<sjfio_page> {
                                   controller: control4,
                                   keyboardType: TextInputType.number,
                                   onSubmitted: (text) {
-                                    add(control1, control2, control3, control4);
+                                    add(control1, control2, control3, control4,
+                                        control5);
                                     Navigator.of(context)
                                         .pop(); // Redraw the Stateful Widget
                                   },
@@ -255,10 +291,13 @@ class _sjfio_pageState extends State<sjfio_page> {
                               ),
                               child: Text("Cancel"),
                               onPressed: () {
-                                control1.clear();
-                                control2.clear();
-                                control3.clear();
-                                control4.clear();
+                                setState(() {
+                                  control1.clear();
+                                  control2.clear();
+                                  control3.clear();
+                                  control4.clear();
+                                  control5.clear();
+                                });
                                 Navigator.of(context).pop();
                               }),
                           RaisedButton(
@@ -268,9 +307,12 @@ class _sjfio_pageState extends State<sjfio_page> {
                               ),
                               child: Text("Submit"),
                               onPressed: () {
-                                add(control1, control2, control3, control4);
-                                printprocess(prs);
-                                print(prs.length);
+                                setState(() {
+                                  add(control1, control2, control3, control4,
+                                      control5);
+                                  printprocess(prs);
+                                  print(prs.length);
+                                });
                                 Navigator.of(context).pop();
                               }),
                         ],
@@ -288,7 +330,7 @@ class _sjfio_pageState extends State<sjfio_page> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('SJN IO'),
+        title: Text('Priority IO'),
         backgroundColor: Color(0xff22456d),
       ),
       body: Column(
@@ -369,16 +411,19 @@ class _sjfio_pageState extends State<sjfio_page> {
     TextEditingController econtrol2 = new TextEditingController();
     TextEditingController econtrol3 = new TextEditingController();
     TextEditingController econtrol4 = new TextEditingController();
+    TextEditingController econtrol5 = new TextEditingController();
 
     econtrol1 = TextEditingController(text: prs[index].at.toString());
     econtrol2 = TextEditingController(text: prs[index].bt1.toString());
     econtrol3 = TextEditingController(text: prs[index].iobt.toString());
     econtrol4 = TextEditingController(text: prs[index].bt2.toString());
+    econtrol5 = TextEditingController(text: prs[index].priority.toString());
 
     int at = prs[index].at;
     int bt = prs[index].bt1;
     int bt2 = prs[index].bt2;
     int iobt = prs[index].iobt;
+    int priority = prs[index].priority;
     int tat = prs[index].tat;
     int start = prs[index].start_time;
     int end = prs[index].ct;
@@ -390,7 +435,7 @@ class _sjfio_pageState extends State<sjfio_page> {
         if (prs.length > 0) {
           prs.removeAt(index);
           //prs.sort((a, b) => a.at.compareTo(b.at));
-          sjfioalgo(prs);
+          prs = priorioalgo(prs);
           prs.sort((a, b) => a.pid.compareTo(b.pid));
         }
         print("Length of prs is " + prs.length.toString());
@@ -403,14 +448,16 @@ class _sjfio_pageState extends State<sjfio_page> {
         TextEditingController econtrol1,
         TextEditingController econtrol2,
         TextEditingController econtrol3,
-        TextEditingController econtrol4) {
+        TextEditingController econtrol4,
+        TextEditingController econtrol5) {
       setState(() {
         prs[index].at = int.parse(econtrol1.text);
         prs[index].bt1 = int.parse(econtrol2.text);
         prs[index].iobt = int.parse(econtrol3.text);
         prs[index].bt2 = int.parse(econtrol4.text);
+        prs[index].priority = int.parse(econtrol5.text);
         prs.sort((a, b) => a.at.compareTo(b.at));
-        sjfioalgo(prs);
+        prs = priorioalgo(prs);
         prs.sort((a, b) => a.pid.compareTo(b.pid));
       });
     }
@@ -429,6 +476,37 @@ class _sjfio_pageState extends State<sjfio_page> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20.0, vertical: 10),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              'Priority:',
+                              style: TextStyle(
+                                color: Color(0xFF22456D),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                              ),
+                            ),
+                            TextField(
+                              autofocus: true,
+                              cursorWidth: 3,
+                              cursorColor: Color(0XFFF36735),
+                              textAlign: TextAlign.center,
+                              showCursor: true,
+                              controller: econtrol5,
+                              keyboardType: TextInputType.number,
+                              onSubmitted: (text) {
+                                FocusScope.of(context).requestFocus(nodeat);
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                     Expanded(
                       child: Row(
                         children: [
@@ -451,6 +529,7 @@ class _sjfio_pageState extends State<sjfio_page> {
                                     cursorWidth: 3,
                                     cursorColor: Colors.amber,
                                     textAlign: TextAlign.center,
+                                    focusNode: nodeat,
                                     showCursor: true,
                                     controller: econtrol1,
                                     keyboardType: TextInputType.number,
@@ -560,7 +639,7 @@ class _sjfio_pageState extends State<sjfio_page> {
                                     keyboardType: TextInputType.number,
                                     onSubmitted: (text) {
                                       editprs(index, econtrol1, econtrol2,
-                                          econtrol3, econtrol4);
+                                          econtrol3, econtrol4, econtrol5);
                                       Navigator.of(context)
                                           .pop(); // Redraw the Stateful Widget
                                     },
@@ -585,8 +664,6 @@ class _sjfio_pageState extends State<sjfio_page> {
                                 ),
                                 child: Text("Cancel"),
                                 onPressed: () {
-                                  control1.clear();
-                                  control2.clear();
                                   Navigator.of(context).pop();
                                 }),
                             RaisedButton(
@@ -597,7 +674,7 @@ class _sjfio_pageState extends State<sjfio_page> {
                                 child: Text("Submit"),
                                 onPressed: () {
                                   editprs(index, econtrol1, econtrol2,
-                                      econtrol3, econtrol4);
+                                      econtrol3, econtrol4, econtrol5);
                                   Navigator.of(context).pop();
                                 }),
                           ],
@@ -636,7 +713,7 @@ class _sjfio_pageState extends State<sjfio_page> {
           padding: const EdgeInsets.all(10.0),
           child: ExpansionTile(
             title: Text(
-              "at: $at\t bt1: $bt\t bt2: $bt2\t iobt: $iobt",
+              "at: $at\t bt1: $bt\t bt2: $bt2\t iobt: $iobt\t priority: $priority",
               style: TextStyle(
                 fontSize: 23,
               ),

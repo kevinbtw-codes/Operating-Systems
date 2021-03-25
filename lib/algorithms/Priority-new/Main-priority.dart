@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:os_project/algorithms/Priority-new/Main-priorio.dart';
 import '../../Algorithm page.dart';
 import 'priority.dart';
 import 'table.dart';
@@ -292,8 +293,9 @@ class _AlgorithmState extends State<Algorithm> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    //
-                    ),
+                  builder: (context) => priorio_page(),
+                  //
+                ),
               );
             },
           ),
