@@ -39,20 +39,20 @@ void main(List<String> arguments) {
   totalburst(prs);
   List<ioprocess> fio = List.from(prs);
 
-  print('\n1.Sjfio Algo 2\n');
+  print('\n1.Ljfio Algo   \n');
   fio.sort((a, b) => a.at.compareTo(b.at));
-  fio = sjfioalgo(fio);
+  fio = ljfioalgo(fio);
 
   printprocess(fio);
 }
 
-void startsjf(List<ioprocess> l) {
+void startljf(List<ioprocess> l) {
   totalburst(l);
   l.sort((a, b) => a.at.compareTo(b.at));
   for (int j = 1; j < l.length; j++) {
     for (var i = 0; i < l.length - 1; i++) {
       if (l[i].at == l[i + 1].at) {
-        if (l[i].total_burst > l[i + 1].total_burst) {
+        if (l[i].total_burst < l[i + 1].total_burst) {
           ioprocess temp;
           temp = l[i + 1];
           l[i + 1] = l[i];
@@ -63,7 +63,7 @@ void startsjf(List<ioprocess> l) {
   }
 }
 
-List<ioprocess> sjfioalgo(List<ioprocess> l) {
+List<ioprocess> ljfioalgo(List<ioprocess> l) {
   List<ioprocess> lgantt = [];
   lgantt = List.from(l);
   for (var item in lgantt) {
@@ -77,7 +77,7 @@ List<ioprocess> sjfioalgo(List<ioprocess> l) {
   List<ioprocess> ioqueue = [];
 
   int time = 0;
-  startsjf(lgantt);
+  startljf(lgantt);
   fillrq(readyq, time, lgantt);
 
   while (time >= 0) {
@@ -215,37 +215,37 @@ void fillrq(List<ioprocess> readyq, int time, List<ioprocess> l) {
   }
 
   if (readyq.isNotEmpty) {
-    sjfsort(readyq);
+    ljfsort(readyq);
   }
 }
 
-void sjfsort(List<ioprocess> l) {
-  l.sort((a, b) => a.total_burst.compareTo(b.total_burst));
+void ljfsort(List<ioprocess> l) {
+  l.sort((a, b) => b.total_burst.compareTo(a.total_burst));
   for (int j = 1; j <= l.length; j++) {
     for (var i = 0; i < l.length - 1; i++) {
       if (l[i].io && l[i + 1].io) {
-        if (l[i].bt2 > l[i + 1].bt2) {
+        if (l[i].bt2 < l[i + 1].bt2) {
           ioprocess temp;
           temp = l[i + 1];
           l[i + 1] = l[i];
           l[i] = temp;
         }
       } else if (l[i].io == false && l[i + 1].io == false) {
-        if (l[i].total_burst > l[i + 1].total_burst) {
+        if (l[i].total_burst < l[i + 1].total_burst) {
           ioprocess temp;
           temp = l[i + 1];
           l[i + 1] = l[i];
           l[i] = temp;
         }
       } else if (l[i].io == true && l[i + 1].io == false) {
-        if (l[i].bt2 > l[i + 1].total_burst) {
+        if (l[i].bt2 < l[i + 1].total_burst) {
           ioprocess temp;
           temp = l[i + 1];
           l[i + 1] = l[i];
           l[i] = temp;
         }
       } else if (l[i].io == false && l[i + 1].io == true) {
-        if (l[i].total_burst > l[i + 1].bt2) {
+        if (l[i].total_burst < l[i + 1].bt2) {
           ioprocess temp;
           temp = l[i + 1];
           l[i + 1] = l[i];
@@ -269,16 +269,20 @@ void printprocess(List l) {
 }
 
 void printpid(List<ioprocess> l) {
-  if (l[0].io) {
-    for (var i = 0; i < l.length; i++) {
-      // ignore: prefer_single_quotes
-      stdout.write(l[i].pid + " - " + l[i].ioexit.toString() + ", ");
+  if (l.isNotEmpty) {
+    if (l[0].io) {
+      for (var i = 0; i < l.length; i++) {
+        // ignore: prefer_single_quotes
+        stdout.write(l[i].pid + " - " + l[i].ioexit.toString() + ", ");
+      }
+    } else {
+      for (var i = 0; i < l.length; i++) {
+        // ignore: prefer_single_quotes
+        stdout.write(l[i].pid + ", ");
+      }
     }
   } else {
-    for (var i = 0; i < l.length; i++) {
-      // ignore: prefer_single_quotes
-      stdout.write(l[i].pid + ", ");
-    }
+    print("the list is empty");
   }
   print("\n");
 }
