@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:os_project/Learn Pages/FCFSLearn.dart';
 import 'package:os_project/Learn Pages/SJFLearn.dart';
 import 'package:os_project/Learn Pages/priorityLearn.dart';
-import 'package:os_project/algorithms/Priority-new/Main-priority-new.dart';
+import 'package:os_project/algorithms/Priority-new/Main-priority.dart';
 import 'package:os_project/algorithms/Shortest job First/Main-SJF.dart';
 import 'package:os_project/algorithms/Longest job First/Main-LJF.dart';
 import 'package:os_project/algorithms/FCFS/Main-fcfs.dart';

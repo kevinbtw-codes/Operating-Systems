@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lazy_data_table/lazy_data_table.dart';
-import 'package:os_project/algorithms/Priority-new/priority-new.dart';
+import 'package:os_project/algorithms/Priority-new/priority.dart';
 
 class TheTable extends StatefulWidget {
   List<Process> prs;
