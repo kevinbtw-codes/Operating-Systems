@@ -19,6 +19,10 @@ class Process {
     return '${this.pid}\t${this.at}\t${this.bt}\t${this.ct}\t${this.start_time}\t\t${this.tat}\t${this.wt}';
   }
 
+  void printatbt() {
+    stdout.write('$pid\t$at\t$bt\n');
+  }
+
   int tablevalue(int j) {
     switch (j) {
       case 1:
@@ -37,6 +41,23 @@ class Process {
   }
 }
 
+/*void main(List<String> arguments) {
+  List<Process> prs = List<Process>();
+  prs.add(Process(2, 1));
+  prs.add(Process(1, 5));
+  prs.add(Process(4, 1));
+  prs.add(Process(0, 6));
+  prs.add(Process(2, 3));
+  assignPid(prs);
+  List<Process> sjf = List.from(prs);
+
+  print('\n1.SJF Algo\n');
+  sjf.sort((a, b) => a.at.compareTo(b.at));
+  sjf = sjfalgo(sjf);
+  //sjf.sort((a, b) => a.pid.compareTo(b.pid));
+  printprocess(sjf);
+}
+*/
 void startsjf(List<Process> l) {
   l.sort((a, b) => a.at.compareTo(b.at));
   for (int j = 1; j < l.length; j++) {
@@ -55,29 +76,42 @@ void startsjf(List<Process> l) {
 
 List<Process> sjfalgo(List<Process> l) {
   List<Process> lgantt = [];
-  lgantt = List.from(l); //lgantt is the local copy of the processes list
-  List<Process> rq = List<Process>();
+  lgantt = List.from(l);
+  for (var item in lgantt) {
+    item.ct = item.start_time = item.tat = item.wt = item.ct = null;
+  } //lgantt is the local copy of the processes list
+  List<Process> rq = [];
   List<Process> fq = [];
 
   startsjf(lgantt);
-  int i = 0;
-  int time = lgantt[0].at;
+  int time = 0;
+  fillrq(rq, time, lgantt);
 
-  for (i = 0; i < l.length; i++) {
+  while (time >= 0) {
     if (rq.isEmpty) {
-      time = lgantt[0].at;
-      time = processexec(lgantt, time, 0);
-      fillfq(lgantt, fq, 0);
-      fillrq(rq, time, lgantt);
+      if (lgantt.isEmpty) {
+        break;
+      } else {
+        if (time >= lgantt[0].at) {
+          fillrq(rq, time, lgantt);
+          time = processexec(rq, time, fq);
+        } else {
+          time = lgantt[0].at;
+          fillrq(rq, time, lgantt);
+          time = processexec(rq, time, fq);
+        }
+      }
     } else {
-      sjfsort(rq);
-      time = processexec(rq, time, 0);
-      fillfq(rq, fq, 0);
+      if (lgantt.isNotEmpty) {
+        fillrq(rq, time, lgantt);
+      }
+      time = processexec(rq, time, fq);
       if (lgantt.isNotEmpty) {
         fillrq(rq, time, lgantt);
       }
     }
   }
+  fq.sort((a, b) => a.pid.compareTo(b.pid));
   return fq;
 }
 
@@ -101,7 +135,6 @@ void fillrq(List<Process> rq, int time, List<Process> l) {
   int count = 0;
   l.sort((a, b) => a.at.compareTo(b.at));
   while (l.isNotEmpty && count < l.length) {
-    i = 0;
     if (l[i].at <= time) {
       rq.add(l[i]);
       l.removeAt(i);
@@ -124,13 +157,14 @@ void fillfq(List<Process> l, List<Process> fq, int i) {
   l.removeAt(i);
 }
 
-int processexec(List<Process> lgantt, int stime, int i) {
+int processexec(List<Process> lgantt, int stime, List<Process> fq) {
   int time;
-  lgantt[i].start_time = stime;
-  lgantt[i].ct = lgantt[i].bt + lgantt[i].start_time;
-  time = lgantt[i].ct;
-  lgantt[i].tat = lgantt[i].ct - lgantt[i].at;
-  lgantt[i].wt = lgantt[i].tat - lgantt[i].bt;
+  lgantt[0].start_time = stime;
+  lgantt[0].ct = lgantt[0].bt + lgantt[0].start_time;
+  time = lgantt[0].ct;
+  lgantt[0].tat = lgantt[0].ct - lgantt[0].at;
+  lgantt[0].wt = lgantt[0].tat - lgantt[0].bt;
+  fillfq(lgantt, fq, 0);
   return time;
 }
 
@@ -138,4 +172,18 @@ void assignPid(List l) {
   for (int i = 0; i < l.length; i++) {
     l[i].pid = 'P$i';
   }
+}
+
+void printprocess(List l) {
+  print('Pid\tat\tbt\tct\tstart_time\ttat\t wt');
+  for (var item in l) {
+    print(item);
+  }
+}
+
+void printpid(List<Process> l) {
+  for (var i = 0; i < l.length; i++) {
+    stdout.write(l[i].pid + " , ");
+  }
+  print("\n");
 }

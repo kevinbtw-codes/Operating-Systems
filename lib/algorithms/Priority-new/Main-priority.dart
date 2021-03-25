@@ -78,7 +78,7 @@ class _AlgorithmState extends State<Algorithm> {
       assignPid(prs);
       prs = priorityalgo(prs);
       //initialpriorsort(prs);
-      prs.sort((a, b) => a.pid.compareTo(b.pid));
+      //prs.sort((a, b) => a.pid.compareTo(b.pid));
     });
   }
 
@@ -360,7 +360,7 @@ class _AlgorithmState extends State<Algorithm> {
           prs.removeAt(index);
           prs = priorityalgo(prs);
           //initialpriorsort(prs);
-          prs.sort((a, b) => a.pid.compareTo(b.pid));
+          //prs.sort((a, b) => a.pid.compareTo(b.pid));
         } else {
           setState(() {});
         }
@@ -375,7 +375,7 @@ class _AlgorithmState extends State<Algorithm> {
         prs[index].priority = int.parse(econtrol3.text);
         prs = priorityalgo(prs);
         //initialpriorsort(prs);
-        prs.sort((a, b) => a.pid.compareTo(b.pid));
+        //prs.sort((a, b) => a.pid.compareTo(b.pid));
       });
     }
 
