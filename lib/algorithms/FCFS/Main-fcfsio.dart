@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
+import 'package:os_project/algorithms/FCFS/Main-fcfs.dart';
 import 'fcfs_io.dart';
 import 'iogantt.dart';
 import 'iotable.dart';
@@ -301,8 +302,8 @@ class _fcfsio_pageState extends State<fcfsio_page> {
         ],
       ),
       floatingActionButton: FabCircularMenu(
-        ringDiameter: 500,
-        ringWidth: 100,
+        ringDiameter: 450,
+        ringWidth: 120,
         ringColor: Color(0xFFc3ebef),
         fabColor: Color(0xffc3ebef),
         children: <Widget>[
@@ -314,7 +315,7 @@ class _fcfsio_pageState extends State<fcfsio_page> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => fcfsio_page(),
+                  builder: (context) => MyApp(),
                 ),
               );
             },
