@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
+import 'package:os_project/algorithms/Longest%20job%20First/Main-LJF.dart';
 import 'ljf_io.dart';
 import 'iogantt.dart';
 import 'iotable.dart';
@@ -307,8 +308,8 @@ class _ljfio_pageState extends State<ljfio_page> {
         ],
       ),
       floatingActionButton: FabCircularMenu(
-        ringDiameter: 500,
-        ringWidth: 100,
+        ringDiameter: 450,
+        ringWidth: 120,
         ringColor: Color(0xFFc3ebef),
         fabColor: Color(0xffc3ebef),
         children: <Widget>[
@@ -320,7 +321,7 @@ class _ljfio_pageState extends State<ljfio_page> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    //builder: (context) => sjfio_page(),
+                    builder: (context) => MyLJFApp(),
                     ),
               );
             },

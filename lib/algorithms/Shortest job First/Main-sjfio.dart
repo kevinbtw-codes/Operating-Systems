@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
+import 'package:os_project/algorithms/Shortest%20job%20First/Main-SJF.dart';
 import 'sjf_io.dart';
 //import 'SJF-algo.dart';
 import 'iogantt.dart';
@@ -308,8 +309,8 @@ class _sjfio_pageState extends State<sjfio_page> {
         ],
       ),
       floatingActionButton: FabCircularMenu(
-        ringDiameter: 500,
-        ringWidth: 100,
+        ringDiameter: 450,
+        ringWidth: 120,
         ringColor: Color(0xFFc3ebef),
         fabColor: Color(0xffc3ebef),
         children: <Widget>[
@@ -321,7 +322,7 @@ class _sjfio_pageState extends State<sjfio_page> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                //    builder: (context) => MainSJF_page(),
+                 builder: (context) => MySJFApp(),
                     ),
               );
             },
