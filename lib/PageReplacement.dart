@@ -130,140 +130,140 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                 duration: Duration(milliseconds: 300),
                 child: flag1
                     ? Stack(
-                  key: ValueKey('stack1-1'),
-                  children: <Widget>[
-                    _buildCard(
-                      height: 240,
-                      backgroundColor: Colors.white,
-                      config: CustomConfig(
-                        gradients: [
-                          [Color(0XFF22456D), Color(0xFF22456D)],
-                          [Color(0XFFF36735), Color(0xFFF36735)],
-                          [Color(0xFFEE97D0), Color(0xFFEE97D0)],
-                          [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
+                        key: ValueKey('stack1-1'),
+                        children: <Widget>[
+                          _buildCard(
+                            height: 240,
+                            backgroundColor: Colors.white,
+                            config: CustomConfig(
+                              gradients: [
+                                [Color(0XFF22456D), Color(0xFF22456D)],
+                                [Color(0XFFF36735), Color(0xFFF36735)],
+                                [Color(0xFFEE97D0), Color(0xFFEE97D0)],
+                                [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
+                              ],
+                              durations: [35000, 19440, 10800, 6000],
+                              heightPercentages: [0.20, 0.23, 0.25, 0.30],
+                              blur: _blur,
+                              gradientBegin: Alignment.bottomLeft,
+                              gradientEnd: Alignment.topRight,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
+                            child: AutoSizeText(
+                              "FIFO PRA",
+                              style: TextStyle(
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.brown,
+                              ),
+                              maxLines: 4,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(30, 105, 30, 0),
+                            child: AutoSizeText(
+                              "First Come First Serve scheduling executes processes in order of their arrival.",
+                              style: TextStyle(
+                                fontSize: 19,
+                                color: Colors.brown[700],
+                              ),
+                              maxLines: 4,
+                            ),
+                          ),
                         ],
-                        durations: [35000, 19440, 10800, 6000],
-                        heightPercentages: [0.20, 0.23, 0.25, 0.30],
-                        blur: _blur,
-                        gradientBegin: Alignment.bottomLeft,
-                        gradientEnd: Alignment.topRight,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
-                      child: AutoSizeText(
-                        "FIFO PRA",
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.brown,
-                        ),
-                        maxLines: 4,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(30, 105, 30, 0),
-                      child: AutoSizeText(
-                        "First Come First Serve scheduling executes processes in order of their arrival.",
-                        style: TextStyle(
-                          fontSize: 19,
-                          color: Colors.brown[700],
-                        ),
-                        maxLines: 4,
-                      ),
-                    ),
-                  ],
-                )
+                      )
                     : Stack(
-                  key: ValueKey('stack1-2'),
-                  children: <Widget>[
-                    _buildCard(
-                      height: 240,
-                      backgroundColor: Colors.white,
-                      config: CustomConfig(
-                        gradients: [
-                          [Color(0XFF22456D), Color(0xFF22456D)],
-                          [Color(0XFFF36735), Color(0xFFF36735)],
-                          [Color(0xFFEE97D0), Color(0xFFEE97D0)],
-                          [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
+                        key: ValueKey('stack1-2'),
+                        children: <Widget>[
+                          _buildCard(
+                            height: 240,
+                            backgroundColor: Colors.white,
+                            config: CustomConfig(
+                              gradients: [
+                                [Color(0XFF22456D), Color(0xFF22456D)],
+                                [Color(0XFFF36735), Color(0xFFF36735)],
+                                [Color(0xFFEE97D0), Color(0xFFEE97D0)],
+                                [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
+                              ],
+                              durations: [35000, 19440, 10800, 6000],
+                              heightPercentages: [0.20, 0.23, 0.25, 0.30],
+                              blur: _blur,
+                              gradientBegin: Alignment.bottomLeft,
+                              gradientEnd: Alignment.topRight,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
+                            child: AutoSizeText(
+                              "FIFO PRA",
+                              style: TextStyle(
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.brown,
+                              ),
+                              maxLines: 4,
+                            ),
+                          ),
+                          ButtonBar(
+                            buttonMinWidth: 100,
+                            buttonHeight: 50,
+                            alignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(50, 120, 30, 0),
+                                child: RaisedButton(
+                                  color: Color(0XFF22456D),
+                                  textColor: Colors.white,
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      new MaterialPageRoute(
+                                        builder: (context) => new FCFSLearn(),
+                                      ),
+                                    );
+                                    //code
+                                  },
+                                  child: const Text(
+                                    'LEARN',
+                                    style: TextStyle(
+                                      fontSize: 19,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(0, 120, 50, 0),
+                                child: RaisedButton(
+                                  color: Color(0XFF22456D),
+                                  textColor: Colors.white,
+                                  onPressed: () {
+                                    globals.signal = 1;
+                                    Navigator.push(
+                                      context,
+                                      new MaterialPageRoute(
+                                        builder: (context) => new GetFIFO(),
+                                      ),
+                                    );
+                                    //code
+                                  },
+                                  child: const Text(
+                                    'START',
+                                    style: TextStyle(
+                                      fontSize: 19,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ],
-                        durations: [35000, 19440, 10800, 6000],
-                        heightPercentages: [0.20, 0.23, 0.25, 0.30],
-                        blur: _blur,
-                        gradientBegin: Alignment.bottomLeft,
-                        gradientEnd: Alignment.topRight,
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
-                      child: AutoSizeText(
-                        "FIFO PRA",
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.brown,
-                        ),
-                        maxLines: 4,
-                      ),
-                    ),
-                    ButtonBar(
-                      buttonMinWidth: 100,
-                      buttonHeight: 50,
-                      alignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Padding(
-                          padding:
-                          const EdgeInsets.fromLTRB(50, 120, 30, 0),
-                          child: RaisedButton(
-                            color: Color(0xFFE3796C),
-                            textColor: Colors.white,
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                new MaterialPageRoute(
-                                  builder: (context) => new FCFSLearn(),
-                                ),
-                              );
-                              //code
-                            },
-                            child: const Text(
-                              'LEARN',
-                              style: TextStyle(
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding:
-                          const EdgeInsets.fromLTRB(0, 120, 50, 0),
-                          child: RaisedButton(
-                            color: Color(0xFFE3796C),
-                            textColor: Colors.white,
-                            onPressed: () {
-                              globals.signal=1;
-                              Navigator.push(
-                                context,
-                                new MaterialPageRoute(
-                                  builder: (context) => new GetFIFO(),
-                                ),
-                              );
-                              //code
-                            },
-                            child: const Text(
-                              'START',
-                              style: TextStyle(
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
               ),
             ),
             GestureDetector(
@@ -276,140 +276,140 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                 duration: Duration(milliseconds: 300),
                 child: flag2
                     ? Stack(
-                  key: ValueKey('stack1-1'),
-                  children: <Widget>[
-                    _buildCard(
-                      height: 240,
-                      backgroundColor: Colors.white,
-                      config: CustomConfig(
-                        gradients: [
-                          [Color(0XFF22456D), Color(0xFF22456D)],
-                          [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
-                          [Color(0XFFEE97D0), Color(0xFFEE97D0)],
-                          [Color(0xFFFFFFFF), Color(0xFFFFFFFF)],
+                        key: ValueKey('stack1-1'),
+                        children: <Widget>[
+                          _buildCard(
+                            height: 240,
+                            backgroundColor: Color(0XFFFF36735),
+                            config: CustomConfig(
+                              gradients: [
+                                [Color(0XFF22456D), Color(0xFF22456D)],
+                                [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
+                                [Color(0XFFEE97D0), Color(0xFFEE97D0)],
+                                [Color(0xFFFFFFFF), Color(0xFFFFFFFF)],
+                              ],
+                              durations: [35000, 19440, 10800, 6000],
+                              heightPercentages: [0.20, 0.23, 0.25, 0.30],
+                              blur: _blur,
+                              gradientBegin: Alignment.bottomLeft,
+                              gradientEnd: Alignment.topRight,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
+                            child: AutoSizeText(
+                              "LIFO PRA",
+                              style: TextStyle(
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                              maxLines: 1,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(30, 105, 30, 0),
+                            child: AutoSizeText(
+                              "Priority Scheduling is a method of scheduling processes that is based on priority.",
+                              style: TextStyle(
+                                fontSize: 19,
+                                color: Colors.brown[700],
+                              ),
+                              maxLines: 4,
+                            ),
+                          ),
                         ],
-                        durations: [35000, 19440, 10800, 6000],
-                        heightPercentages: [0.20, 0.23, 0.25, 0.30],
-                        blur: _blur,
-                        gradientBegin: Alignment.bottomLeft,
-                        gradientEnd: Alignment.topRight,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
-                      child: AutoSizeText(
-                        "LIFO PRA",
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.brown,
-                        ),
-                        maxLines: 1,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(30, 105, 30, 0),
-                      child: AutoSizeText(
-                        "Priority Scheduling is a method of scheduling processes that is based on priority.",
-                        style: TextStyle(
-                          fontSize: 19,
-                          color: Colors.brown[700],
-                        ),
-                        maxLines: 4,
-                      ),
-                    ),
-                  ],
-                )
+                      )
                     : Stack(
-                  key: ValueKey('stack1-2'),
-                  children: <Widget>[
-                    _buildCard(
-                      height: 240,
-                      backgroundColor: Colors.white,
-                      config: CustomConfig(
-                        gradients: [
-                          [Color(0XFF22456D), Color(0xFF22456D)],
-                          [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
-                          [Color(0XFFEE97D0), Color(0xFFEE97D0)],
-                          [Color(0xFFFFFFFF), Color(0xFFFFFFFF)],
+                        key: ValueKey('stack1-2'),
+                        children: <Widget>[
+                          _buildCard(
+                            height: 240,
+                            backgroundColor: Color(0XFFFF36735),
+                            config: CustomConfig(
+                              gradients: [
+                                [Color(0XFF22456D), Color(0xFF22456D)],
+                                [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
+                                [Color(0XFFEE97D0), Color(0xFFEE97D0)],
+                                [Color(0xFFFFFFFF), Color(0xFFFFFFFF)],
+                              ],
+                              durations: [35000, 19440, 10800, 6000],
+                              heightPercentages: [0.20, 0.23, 0.25, 0.30],
+                              blur: _blur,
+                              gradientBegin: Alignment.bottomLeft,
+                              gradientEnd: Alignment.topRight,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
+                            child: AutoSizeText(
+                              "LIFO PRA",
+                              style: TextStyle(
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                              maxLines: 1,
+                            ),
+                          ),
+                          ButtonBar(
+                            buttonMinWidth: 100,
+                            buttonHeight: 50,
+                            alignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(50, 120, 30, 0),
+                                child: RaisedButton(
+                                  color: Color(0XFFF36735),
+                                  textColor: Colors.white,
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      new MaterialPageRoute(
+                                        builder: (context) =>
+                                            new priorityLearn(),
+                                      ),
+                                    );
+                                  },
+                                  child: const Text(
+                                    'LEARN',
+                                    style: TextStyle(
+                                      fontSize: 19,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(0, 120, 50, 0),
+                                child: RaisedButton(
+                                  color: Color(0XFFF36735),
+                                  textColor: Colors.white,
+                                  onPressed: () {
+                                    globals.signal = 2;
+                                    Navigator.push(
+                                      context,
+                                      new MaterialPageRoute(
+                                        builder: (context) => new GetLIFO(),
+                                      ),
+                                    );
+                                    //code
+                                  },
+                                  child: const Text(
+                                    'START',
+                                    style: TextStyle(
+                                      fontSize: 19,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ],
-                        durations: [35000, 19440, 10800, 6000],
-                        heightPercentages: [0.20, 0.23, 0.25, 0.30],
-                        blur: _blur,
-                        gradientBegin: Alignment.bottomLeft,
-                        gradientEnd: Alignment.topRight,
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
-                      child: AutoSizeText(
-                        "LIFO PRA",
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.brown,
-                        ),
-                        maxLines: 1,
-                      ),
-                    ),
-                    ButtonBar(
-                      buttonMinWidth: 100,
-                      buttonHeight: 50,
-                      alignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Padding(
-                          padding:
-                          const EdgeInsets.fromLTRB(50, 120, 30, 0),
-                          child: RaisedButton(
-                            color: Colors.cyan[500],
-                            textColor: Colors.white,
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                new MaterialPageRoute(
-                                  builder: (context) =>
-                                  new priorityLearn(),
-                                ),
-                              );
-                            },
-                            child: const Text(
-                              'LEARN',
-                              style: TextStyle(
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding:
-                          const EdgeInsets.fromLTRB(0, 120, 50, 0),
-                          child: RaisedButton(
-                            color: Colors.cyan[500],
-                            textColor: Colors.white,
-                            onPressed: () {
-                              globals.signal=2;
-                              Navigator.push(
-                                context,
-                                new MaterialPageRoute(
-                                  builder: (context) => new GetLIFO(),
-                                ),
-                              );
-                              //code
-                            },
-                            child: const Text(
-                              'START',
-                              style: TextStyle(
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
               ),
             ),
             GestureDetector(
@@ -422,140 +422,140 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                 duration: Duration(milliseconds: 300),
                 child: flag3
                     ? Stack(
-                  key: ValueKey('stack1-1'),
-                  children: <Widget>[
-                    _buildCard(
-                      height: 240,
-                      backgroundColor: Colors.white,
-                      config: CustomConfig(
-                        gradients: [
-                          [Colors.purple[50], Color(0xFFFF968A)],
-                          [Colors.purple[300], Colors.purpleAccent],
-                          [Colors.purple[100], Colors.purple[400]],
-                          [Colors.purple[200], Colors.purple[50]],
+                        key: ValueKey('stack1-1'),
+                        children: <Widget>[
+                          _buildCard(
+                            height: 240,
+                            backgroundColor: Colors.white,
+                            config: CustomConfig(
+                              gradients: [
+                                [Color(0XFF22456D), Color(0xFF22456D)],
+                                [Color(0XFFF36735), Color(0xFFF36735)],
+                                [Color(0xFFEE97D0), Color(0xFFEE97D0)],
+                                [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
+                              ],
+                              durations: [35000, 19440, 10800, 6000],
+                              heightPercentages: [0.20, 0.23, 0.25, 0.30],
+                              blur: _blur,
+                              gradientBegin: Alignment.bottomLeft,
+                              gradientEnd: Alignment.topRight,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
+                            child: AutoSizeText(
+                              "LRU PRA",
+                              style: TextStyle(
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.brown,
+                              ),
+                              maxLines: 1,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(30, 105, 30, 0),
+                            child: AutoSizeText(
+                              "Shortest job next, is a scheduling policy that selects the waiting process.",
+                              style: TextStyle(
+                                fontSize: 19,
+                                color: Colors.brown[700],
+                              ),
+                              maxLines: 4,
+                            ),
+                          ),
                         ],
-                        durations: [35000, 19440, 10800, 6000],
-                        heightPercentages: [0.20, 0.23, 0.25, 0.30],
-                        blur: _blur,
-                        gradientBegin: Alignment.bottomLeft,
-                        gradientEnd: Alignment.topRight,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
-                      child: AutoSizeText(
-                        "LRU PRA",
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.brown,
-                        ),
-                        maxLines: 1,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(30, 105, 30, 0),
-                      child: AutoSizeText(
-                        "Shortest job next, is a scheduling policy that selects the waiting process.",
-                        style: TextStyle(
-                          fontSize: 19,
-                          color: Colors.brown[700],
-                        ),
-                        maxLines: 4,
-                      ),
-                    ),
-                  ],
-                )
+                      )
                     : Stack(
-                  key: ValueKey('stack1-2'),
-                  children: <Widget>[
-                    _buildCard(
-                      height: 240,
-                      backgroundColor: Colors.white,
-                      config: CustomConfig(
-                        gradients: [
-                          [Colors.purple[50], Color(0xFFFF968A)],
-                          [Colors.purple[300], Colors.purpleAccent],
-                          [Colors.purple[100], Colors.purple[400]],
-                          [Colors.purple[200], Colors.purple[50]],
+                        key: ValueKey('stack1-2'),
+                        children: <Widget>[
+                          _buildCard(
+                            height: 240,
+                            backgroundColor: Colors.white,
+                            config: CustomConfig(
+                              gradients: [
+                                [Color(0XFF22456D), Color(0xFF22456D)],
+                                [Color(0XFFF36735), Color(0xFFF36735)],
+                                [Color(0xFFEE97D0), Color(0xFFEE97D0)],
+                                [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
+                              ],
+                              durations: [35000, 19440, 10800, 6000],
+                              heightPercentages: [0.20, 0.23, 0.25, 0.30],
+                              blur: _blur,
+                              gradientBegin: Alignment.bottomLeft,
+                              gradientEnd: Alignment.topRight,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
+                            child: AutoSizeText(
+                              "LRU PRA",
+                              style: TextStyle(
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.brown,
+                              ),
+                              maxLines: 1,
+                            ),
+                          ),
+                          ButtonBar(
+                            buttonMinWidth: 100,
+                            buttonHeight: 50,
+                            alignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(50, 120, 30, 0),
+                                child: RaisedButton(
+                                  color: Color(0XFF22456D),
+                                  textColor: Colors.white,
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      new MaterialPageRoute(
+                                        builder: (context) => new SJFLearn(),
+                                      ),
+                                    );
+                                    //code
+                                  },
+                                  child: const Text(
+                                    'LEARN',
+                                    style: TextStyle(
+                                      fontSize: 19,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(0, 120, 50, 0),
+                                child: RaisedButton(
+                                  color: Color(0XFF22456D),
+                                  textColor: Colors.white,
+                                  onPressed: () {
+                                    globals.signal = 3;
+                                    Navigator.push(
+                                      context,
+                                      new MaterialPageRoute(
+                                        builder: (context) => new GetLRU(),
+                                      ),
+                                    );
+                                    //code
+                                  },
+                                  child: const Text(
+                                    'START',
+                                    style: TextStyle(
+                                      fontSize: 19,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ],
-                        durations: [35000, 19440, 10800, 6000],
-                        heightPercentages: [0.20, 0.23, 0.25, 0.30],
-                        blur: _blur,
-                        gradientBegin: Alignment.bottomLeft,
-                        gradientEnd: Alignment.topRight,
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
-                      child: AutoSizeText(
-                        "LRU PRA",
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.brown,
-                        ),
-                        maxLines: 1,
-                      ),
-                    ),
-                    ButtonBar(
-                      buttonMinWidth: 100,
-                      buttonHeight: 50,
-                      alignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Padding(
-                          padding:
-                          const EdgeInsets.fromLTRB(50, 120, 30, 0),
-                          child: RaisedButton(
-                            color: Colors.purple[400],
-                            textColor: Colors.white,
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                new MaterialPageRoute(
-                                  builder: (context) => new SJFLearn(),
-                                ),
-                              );
-                              //code
-                            },
-                            child: const Text(
-                              'LEARN',
-                              style: TextStyle(
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding:
-                          const EdgeInsets.fromLTRB(0, 120, 50, 0),
-                          child: RaisedButton(
-                            color: Colors.purple[400],
-                            textColor: Colors.white,
-                            onPressed: () {
-                              globals.signal=3;
-                              Navigator.push(
-                                context,
-                                new MaterialPageRoute(
-                                  builder: (context) => new GetLRU(),
-                                ),
-                              );
-                              //code
-                            },
-                            child: const Text(
-                              'START',
-                              style: TextStyle(
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
               ),
             ),
             GestureDetector(
@@ -568,136 +568,134 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                 duration: Duration(milliseconds: 300),
                 child: flag4
                     ? Stack(
-                  key: ValueKey('stack1-1'),
-                  children: <Widget>[
-                    _buildCard(
-                      height: 240,
-                      backgroundColor: Colors.white,
-                      config: CustomConfig(
-                        gradients: [
-                          [Colors.deepOrange[50], Color(0xFFFF968A)],
-                          [Color(0xFFFFC8A2), Color(0xFFFFAEA5)],
-                          /*  [Colors.red[100], Color(0xEBEA9090)],*/
-                          [Color(0xFFAEA5), Color(0xFFC5BF)],
-                          [Colors.deepOrange[200], Color(0xFFFFDBCC)],
+                        key: ValueKey('stack1-1'),
+                        children: <Widget>[
+                          _buildCard(
+                            height: 240,
+                            backgroundColor: Color(0XFFFF36735),
+                            config: CustomConfig(
+                              gradients: [
+                                [Color(0XFF22456D), Color(0xFF22456D)],
+                                [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
+                                [Color(0XFFEE97D0), Color(0xFFEE97D0)],
+                                [Color(0xFFFFFFFF), Color(0xFFFFFFFF)],
+                              ],
+                              durations: [35000, 19440, 10800, 6000],
+                              heightPercentages: [0.20, 0.23, 0.25, 0.30],
+                              blur: _blur,
+                              gradientBegin: Alignment.bottomLeft,
+                              gradientEnd: Alignment.topRight,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
+                            child: AutoSizeText(
+                              "OPTIMAL PRA",
+                              style: TextStyle(
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                              maxLines: 1,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(30, 105, 30, 0),
+                            child: AutoSizeText(
+                              "Round robin is a CPU scheduling algorithm where each process is assigned a fix time slot in cyclic way.",
+                              style: TextStyle(
+                                fontSize: 19,
+                                color: Colors.brown[700],
+                              ),
+                              maxLines: 4,
+                            ),
+                          ),
                         ],
-                        durations: [35000, 19440, 10800, 6000],
-                        heightPercentages: [0.20, 0.23, 0.25, 0.30],
-                        blur: _blur,
-                        gradientBegin: Alignment.bottomLeft,
-                        gradientEnd: Alignment.topRight,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
-                      child: AutoSizeText(
-                        "OPTIMAL PRA",
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.brown,
-                        ),
-                        maxLines: 1,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(30, 105, 30, 0),
-                      child: AutoSizeText(
-                        "Round robin is a CPU scheduling algorithm where each process is assigned a fix time slot in cyclic way.",
-                        style: TextStyle(
-                          fontSize: 19,
-                          color: Colors.brown[700],
-                        ),
-                        maxLines: 4,
-                      ),
-                    ),
-                  ],
-                )
+                      )
                     : Stack(
-                  key: ValueKey('stack1-2'),
-                  children: <Widget>[
-                    _buildCard(
-                      height: 240,
-                      backgroundColor: Colors.white,
-                      config: CustomConfig(
-                        gradients: [
-                          [Colors.deepOrange[50], Color(0xFFFF968A)],
-                          [Color(0xFFFFC8A2), Color(0xFFFFAEA5)],
-                          /*  [Colors.red[100], Color(0xEBEA9090)],*/
-                          [Color(0xFFAEA5), Color(0xFFC5BF)],
-                          [Colors.deepOrange[200], Color(0xFFFFDBCC)],
-                        ],
-                        durations: [35000, 19440, 10800, 6000],
-                        heightPercentages: [0.20, 0.23, 0.25, 0.30],
-                        blur: _blur,
-                        gradientBegin: Alignment.bottomLeft,
-                        gradientEnd: Alignment.topRight,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
-                      child: AutoSizeText(
-                        "OPTIMAL PRA",
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.brown,
-                        ),
-                        maxLines: 1,
-                      ),
-                    ),
-                    ButtonBar(
-                      buttonMinWidth: 100,
-                      buttonHeight: 50,
-                      alignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Padding(
-                          padding:
-                          const EdgeInsets.fromLTRB(50, 120, 30, 0),
-                          child: RaisedButton(
-                            color: Color(0xFFE3796C),
-                            textColor: Colors.white,
-                            onPressed: () {
-                              // Perform some action
-                            },
-                            child: const Text(
-                              'LEARN',
-                              style: TextStyle(
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              ),
+                        key: ValueKey('stack1-2'),
+                        children: <Widget>[
+                          _buildCard(
+                            height: 240,
+                            backgroundColor: Color(0XFFFF36735),
+                            config: CustomConfig(
+                              gradients: [
+                                [Color(0XFF22456D), Color(0xFF22456D)],
+                                [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
+                                [Color(0XFFEE97D0), Color(0xFFEE97D0)],
+                                [Color(0xFFFFFFFF), Color(0xFFFFFFFF)],
+                              ],
+                              durations: [35000, 19440, 10800, 6000],
+                              heightPercentages: [0.20, 0.23, 0.25, 0.30],
+                              blur: _blur,
+                              gradientBegin: Alignment.bottomLeft,
+                              gradientEnd: Alignment.topRight,
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding:
-                          const EdgeInsets.fromLTRB(0, 120, 50, 0),
-                          child: RaisedButton(
-                            color: Color(0xFFE3796C),
-                            textColor: Colors.white,
-                            onPressed: () {
-                              globals.signal=4;
-                              Navigator.push(
-                                context,
-                                new MaterialPageRoute(
-                                  builder: (context) => new GetOPTIMAL(),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
+                            child: AutoSizeText(
+                              "OPTIMAL PRA",
+                              style: TextStyle(
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                              maxLines: 1,
+                            ),
+                          ),
+                          ButtonBar(
+                            buttonMinWidth: 100,
+                            buttonHeight: 50,
+                            alignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(50, 120, 30, 0),
+                                child: RaisedButton(
+                                  color: Color(0XFFFF36735),
+                                  textColor: Colors.white,
+                                  onPressed: () {
+                                    // Perform some action
+                                  },
+                                  child: const Text(
+                                    'LEARN',
+                                    style: TextStyle(
+                                      fontSize: 19,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
                                 ),
-                              );
-                              //code
-                            },
-                            child: const Text(
-                              'START',
-                              style: TextStyle(
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
                               ),
-                            ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(0, 120, 50, 0),
+                                child: RaisedButton(
+                                  color: Color(0XFFFF36735),
+                                  textColor: Colors.white,
+                                  onPressed: () {
+                                    globals.signal = 4;
+                                    Navigator.push(
+                                      context,
+                                      new MaterialPageRoute(
+                                        builder: (context) => new GetOPTIMAL(),
+                                      ),
+                                    );
+                                    //code
+                                  },
+                                  child: const Text(
+                                    'START',
+                                    style: TextStyle(
+                                      fontSize: 19,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                        ],
+                      ),
               ),
             ),
             GestureDetector(
@@ -710,134 +708,134 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                 duration: Duration(milliseconds: 300),
                 child: flag5
                     ? Stack(
-                  key: ValueKey('stack1-1'),
-                  children: <Widget>[
-                    _buildCard(
-                      height: 240,
-                      backgroundColor: Colors.white,
-                      config: CustomConfig(
-                        gradients: [
-                          [Color(0xFF8FCACA), Color(0xFFD4F0F0)],
-                          [Colors.cyan[100], Color(0xFF55CBCD)],
-                          [Colors.cyan[50], Color(0xFFABDEE6)],
-                          [Colors.white70, Colors.cyan[400]]
+                        key: ValueKey('stack1-1'),
+                        children: <Widget>[
+                          _buildCard(
+                            height: 240,
+                            backgroundColor: Colors.white,
+                            config: CustomConfig(
+                              gradients: [
+                                [Color(0XFF22456D), Color(0xFF22456D)],
+                                [Color(0XFFF36735), Color(0xFFF36735)],
+                                [Color(0xFFEE97D0), Color(0xFFEE97D0)],
+                                [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
+                              ],
+                              durations: [35000, 19440, 10800, 6000],
+                              heightPercentages: [0.20, 0.23, 0.25, 0.30],
+                              blur: _blur,
+                              gradientBegin: Alignment.bottomLeft,
+                              gradientEnd: Alignment.topRight,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
+                            child: AutoSizeText(
+                              "RANDOM PRA",
+                              style: TextStyle(
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.brown,
+                              ),
+                              maxLines: 1,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(30, 105, 30, 0),
+                            child: AutoSizeText(
+                              "This is the simplest scheduling algorithm. It simply queues processes in the order that they arrive in the ready queue.",
+                              style: TextStyle(
+                                fontSize: 19,
+                                color: Colors.brown[700],
+                              ),
+                              maxLines: 4,
+                            ),
+                          ),
                         ],
-                        durations: [35000, 19440, 10800, 6000],
-                        heightPercentages: [0.20, 0.23, 0.25, 0.30],
-                        blur: _blur,
-                        gradientBegin: Alignment.bottomLeft,
-                        gradientEnd: Alignment.topRight,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
-                      child: AutoSizeText(
-                        "RANDOM PRA",
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.brown,
-                        ),
-                        maxLines: 1,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(30, 105, 30, 0),
-                      child: AutoSizeText(
-                        "This is the simplest scheduling algorithm. It simply queues processes in the order that they arrive in the ready queue.",
-                        style: TextStyle(
-                          fontSize: 19,
-                          color: Colors.brown[700],
-                        ),
-                        maxLines: 4,
-                      ),
-                    ),
-                  ],
-                )
+                      )
                     : Stack(
-                  key: ValueKey('stack1-2'),
-                  children: <Widget>[
-                    _buildCard(
-                      height: 240,
-                      backgroundColor: Colors.white,
-                      config: CustomConfig(
-                        gradients: [
-                          [Color(0xFF8FCACA), Color(0xFFD4F0F0)],
-                          [Colors.cyan[100], Color(0xFF55CBCD)],
-                          [Colors.cyan[50], Color(0xFFABDEE6)],
-                          [Colors.white70, Colors.cyan[400]]
-                        ],
-                        durations: [35000, 19440, 10800, 6000],
-                        heightPercentages: [0.20, 0.23, 0.25, 0.30],
-                        blur: _blur,
-                        gradientBegin: Alignment.bottomLeft,
-                        gradientEnd: Alignment.topRight,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
-                      child: AutoSizeText(
-                        "RANDOM PRA",
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.brown,
-                        ),
-                        maxLines: 1,
-                      ),
-                    ),
-                    ButtonBar(
-                      buttonMinWidth: 100,
-                      buttonHeight: 50,
-                      alignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Padding(
-                          padding:
-                          const EdgeInsets.fromLTRB(50, 120, 30, 0),
-                          child: RaisedButton(
-                            color: Colors.cyan[500],
-                            textColor: Colors.white,
-                            onPressed: () {
-                              // Perform some action
-                            },
-                            child: const Text(
-                              'LEARN',
-                              style: TextStyle(
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              ),
+                        key: ValueKey('stack1-2'),
+                        children: <Widget>[
+                          _buildCard(
+                            height: 240,
+                            backgroundColor: Colors.white,
+                            config: CustomConfig(
+                              gradients: [
+                                [Color(0XFF22456D), Color(0xFF22456D)],
+                                [Color(0XFFF36735), Color(0xFFF36735)],
+                                [Color(0xFFEE97D0), Color(0xFFEE97D0)],
+                                [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
+                              ],
+                              durations: [35000, 19440, 10800, 6000],
+                              heightPercentages: [0.20, 0.23, 0.25, 0.30],
+                              blur: _blur,
+                              gradientBegin: Alignment.bottomLeft,
+                              gradientEnd: Alignment.topRight,
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding:
-                          const EdgeInsets.fromLTRB(0, 120, 50, 0),
-                          child: RaisedButton(
-                            color: Colors.cyan[500],
-                            textColor: Colors.white,
-                            onPressed: () {
-                              globals.signal=5;
-                              Navigator.push(
-                                context,
-                                new MaterialPageRoute(
-                                  builder: (context) => new GetRANDOM(),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
+                            child: AutoSizeText(
+                              "RANDOM PRA",
+                              style: TextStyle(
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.brown,
+                              ),
+                              maxLines: 1,
+                            ),
+                          ),
+                          ButtonBar(
+                            buttonMinWidth: 100,
+                            buttonHeight: 50,
+                            alignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(50, 120, 30, 0),
+                                child: RaisedButton(
+                                  color: Color(0XFF22456D),
+                                  textColor: Colors.white,
+                                  onPressed: () {
+                                    // Perform some action
+                                  },
+                                  child: const Text(
+                                    'LEARN',
+                                    style: TextStyle(
+                                      fontSize: 19,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
                                 ),
-                              );
-                              //code
-                            },
-                            child: const Text(
-                              'START',
-                              style: TextStyle(
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
                               ),
-                            ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(0, 120, 50, 0),
+                                child: RaisedButton(
+                                  color: Color(0XFF22456D),
+                                  textColor: Colors.white,
+                                  onPressed: () {
+                                    globals.signal = 5;
+                                    Navigator.push(
+                                      context,
+                                      new MaterialPageRoute(
+                                        builder: (context) => new GetRANDOM(),
+                                      ),
+                                    );
+                                    //code
+                                  },
+                                  child: const Text(
+                                    'START',
+                                    style: TextStyle(
+                                      fontSize: 19,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                        ],
+                      ),
               ),
             ),
             GestureDetector(
@@ -850,134 +848,135 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                 duration: Duration(milliseconds: 300),
                 child: flag6
                     ? Stack(
-                  key: ValueKey('stack1-1'),
-                  children: <Widget>[
-                    _buildCard(
-                      height: 240,
-                      backgroundColor: Colors.white,
-                      config: CustomConfig(
-                        gradients: [
-                          [Colors.purple[50], Color(0xFFFF968A)],
-                          [Colors.purple[300], Colors.purpleAccent],
-                          [Colors.purple[100], Colors.purple[400]],
-                          [Colors.purple[200], Colors.purple[50]],
+                        key: ValueKey('stack1-1'),
+                        children: <Widget>[
+                          _buildCard(
+                            height: 240,
+                            backgroundColor: Color(0XFFF36735),
+                            config: CustomConfig(
+                              gradients: [
+                                [Color(0XFF22456D), Color(0xFF22456D)],
+                                [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
+                                [Color(0XFFEE97D0), Color(0xFFEE97D0)],
+                                [Color(0xFFFFFFFF), Color(0xFFFFFFFF)],
+                              ],
+                              durations: [35000, 19440, 10800, 6000],
+                              heightPercentages: [0.20, 0.23, 0.25, 0.30],
+                              blur: _blur,
+                              gradientBegin: Alignment.bottomLeft,
+                              gradientEnd: Alignment.topRight,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
+                            child: AutoSizeText(
+                              "AUTO SELECT PRA",
+                              style: TextStyle(
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                              maxLines: 1,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(30, 105, 30, 0),
+                            child: AutoSizeText(
+                              "The process with the smallest amount of time remaining until completion is selected to execute.",
+                              style: TextStyle(
+                                fontSize: 19,
+                                color: Colors.brown[700],
+                              ),
+                              maxLines: 4,
+                            ),
+                          ),
                         ],
-                        durations: [35000, 19440, 10800, 6000],
-                        heightPercentages: [0.20, 0.23, 0.25, 0.30],
-                        blur: _blur,
-                        gradientBegin: Alignment.bottomLeft,
-                        gradientEnd: Alignment.topRight,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
-                      child: AutoSizeText(
-                        "AUTO SELECT PRA",
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.brown,
-                        ),
-                        maxLines: 1,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(30, 105, 30, 0),
-                      child: AutoSizeText(
-                        "The process with the smallest amount of time remaining until completion is selected to execute.",
-                        style: TextStyle(
-                          fontSize: 19,
-                          color: Colors.brown[700],
-                        ),
-                        maxLines: 4,
-                      ),
-                    ),
-                  ],
-                )
+                      )
                     : Stack(
-                  key: ValueKey('stack1-2'),
-                  children: <Widget>[
-                    _buildCard(
-                      height: 240,
-                      backgroundColor: Colors.white,
-                      config: CustomConfig(
-                        gradients: [
-                          [Colors.purple[50], Color(0xFFFF968A)],
-                          [Colors.purple[300], Colors.purpleAccent],
-                          [Colors.purple[100], Colors.purple[400]],
-                          [Colors.purple[200], Colors.purple[50]],
-                        ],
-                        durations: [35000, 19440, 10800, 6000],
-                        heightPercentages: [0.20, 0.23, 0.25, 0.30],
-                        blur: _blur,
-                        gradientBegin: Alignment.bottomLeft,
-                        gradientEnd: Alignment.topRight,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
-                      child: AutoSizeText(
-                        "AUTO SELECT PRA",
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.brown,
-                        ),
-                        maxLines: 1,
-                      ),
-                    ),
-                    ButtonBar(
-                      buttonMinWidth: 100,
-                      buttonHeight: 50,
-                      alignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Padding(
-                          padding:
-                          const EdgeInsets.fromLTRB(50, 120, 30, 0),
-                          child: RaisedButton(
-                            color: Colors.purple[400],
-                            textColor: Colors.white,
-                            onPressed: () {
-                              // Perform some action
-                            },
-                            child: const Text(
-                              'LEARN',
-                              style: TextStyle(
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
-                              ),
+                        key: ValueKey('stack1-2'),
+                        children: <Widget>[
+                          _buildCard(
+                            height: 240,
+                            backgroundColor: Color(0XFFF36735),
+                            config: CustomConfig(
+                              gradients: [
+                                [Color(0XFF22456D), Color(0xFF22456D)],
+                                [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
+                                [Color(0XFFEE97D0), Color(0xFFEE97D0)],
+                                [Color(0xFFFFFFFF), Color(0xFFFFFFFF)],
+                              ],
+                              durations: [35000, 19440, 10800, 6000],
+                              heightPercentages: [0.20, 0.23, 0.25, 0.30],
+                              blur: _blur,
+                              gradientBegin: Alignment.bottomLeft,
+                              gradientEnd: Alignment.topRight,
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding:
-                          const EdgeInsets.fromLTRB(0, 120, 50, 0),
-                          child: RaisedButton(
-                            color: Colors.purple[400],
-                            textColor: Colors.white,
-                            onPressed: () {
-                              globals.signal=6;
-                              Navigator.push(
-                                context,
-                                new MaterialPageRoute(
-                                  builder: (context) => new global.GetTextFieldValue(),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
+                            child: AutoSizeText(
+                              "AUTO SELECT PRA",
+                              style: TextStyle(
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                              maxLines: 1,
+                            ),
+                          ),
+                          ButtonBar(
+                            buttonMinWidth: 100,
+                            buttonHeight: 50,
+                            alignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(50, 120, 30, 0),
+                                child: RaisedButton(
+                                  color: Color(0XFFF36735),
+                                  textColor: Colors.white,
+                                  onPressed: () {
+                                    // Perform some action
+                                  },
+                                  child: const Text(
+                                    'LEARN',
+                                    style: TextStyle(
+                                      fontSize: 19,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
                                 ),
-                              );
-                              //code
-                            },
-                            child: const Text(
-                              'START',
-                              style: TextStyle(
-                                fontSize: 19,
-                                fontWeight: FontWeight.bold,
                               ),
-                            ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(0, 120, 50, 0),
+                                child: RaisedButton(
+                                  color: Color(0XFFF36735),
+                                  textColor: Colors.white,
+                                  onPressed: () {
+                                    globals.signal = 6;
+                                    Navigator.push(
+                                      context,
+                                      new MaterialPageRoute(
+                                        builder: (context) =>
+                                            new global.GetTextFieldValue(),
+                                      ),
+                                    );
+                                    //code
+                                  },
+                                  child: const Text(
+                                    'START',
+                                    style: TextStyle(
+                                      fontSize: 19,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                        ],
+                      ),
               ),
             ),
           ],
