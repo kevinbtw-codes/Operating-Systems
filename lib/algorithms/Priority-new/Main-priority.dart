@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'priority-new.dart';
-import 'table-new.dart';
+import 'package:os_project/algorithms/Priority-new/Main-priorio.dart';
+import '../../Algorithm page.dart';
+import 'priority.dart';
+import 'table.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'dart:async';
@@ -76,7 +78,7 @@ class _AlgorithmState extends State<Algorithm> {
       assignPid(prs);
       prs = priorityalgo(prs);
       //initialpriorsort(prs);
-      prs.sort((a, b) => a.pid.compareTo(b.pid));
+      //prs.sort((a, b) => a.pid.compareTo(b.pid));
     });
   }
 
@@ -168,7 +170,6 @@ class _AlgorithmState extends State<Algorithm> {
                                   ),
                                 ),
                               ),
-
                             ],
                           ),
                         ),
@@ -251,78 +252,90 @@ class _AlgorithmState extends State<Algorithm> {
       appBar: AppBar(
         title: Text('Priority'),
         backgroundColor: Color(0xff22456d),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.push(
+              context,
+              new MaterialPageRoute(
+                builder: (context) => new WaveDemoApp(),
+              ),
+            );
+          },
+        ),
       ),
       body: Column(
-    children: <Widget>[
-    Expanded(
-      flex: 7,
-      child: LiquidPullToRefresh(
-        animSpeedFactor: 2.5,
-        onRefresh: _handleRefresh,
-        child: ListView.builder(
-            itemCount: prs.length,
-            itemBuilder: (BuildContext context, int index) =>
-                buildProcesscard(context, index)),
+        children: <Widget>[
+          Expanded(
+            flex: 7,
+            child: LiquidPullToRefresh(
+              animSpeedFactor: 2.5,
+              onRefresh: _handleRefresh,
+              child: ListView.builder(
+                  itemCount: prs.length,
+                  itemBuilder: (BuildContext context, int index) =>
+                      buildProcesscard(context, index)),
+            ),
+          )
+        ],
       ),
-    )
-    ],
-    ),
-    floatingActionButton: FabCircularMenu(
-    ringDiameter: 500,
-    ringWidth: 100,
-    ringColor: Color(0xFFc3ebef),
-    fabColor: Color(0xffc3ebef),
-    children: <Widget>[
-    IconButton(
-    iconSize: 30,
-    icon: Icon(Icons.settings_input_component_rounded),
-    onPressed: () {
-    prs.sort((a, b) => a.pid.compareTo(b.pid));
-    Navigator.push(
-    context,
-    MaterialPageRoute(
-    //
-    ),
+      floatingActionButton: FabCircularMenu(
+        ringDiameter: 450,
+        ringWidth: 120,
+        ringColor: Color(0xFFc3ebef),
+        fabColor: Color(0xffc3ebef),
+        children: <Widget>[
+          IconButton(
+            iconSize: 30,
+            icon: Icon(Icons.settings_input_component_rounded),
+            onPressed: () {
+              prs.sort((a, b) => a.pid.compareTo(b.pid));
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => priorio_page(),
+                  //
+                ),
+              );
+            },
+          ),
+          IconButton(
+            iconSize: 30,
+            icon: Icon(Icons.table_chart_rounded),
+            onPressed: () {
+              prs.sort((a, b) => a.pid.compareTo(b.pid));
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => TheTable(prs),
+                ),
+              );
+            },
+          ),
+          IconButton(
+            iconSize: 30,
+            icon: Icon(Icons.bar_chart),
+            onPressed: () {
+              prs.sort((a, b) => a.pid.compareTo(b.pid));
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => GanttChart(prs),
+                ),
+              );
+            },
+          ),
+          IconButton(
+            iconSize: 30,
+            icon: Icon(Icons.add_circle),
+            onPressed: () {
+              createaddDialog(context, prs);
+            },
+          ),
+        ],
+      ),
     );
-    },
-    ),
-    IconButton(
-    iconSize: 30,
-    icon: Icon(Icons.table_chart_rounded),
-    onPressed: () {
-    prs.sort((a, b) => a.pid.compareTo(b.pid));
-    Navigator.push(
-    context,
-    MaterialPageRoute(
-    builder: (context) => TheTable(prs),
-    ),
-    );
-    },
-    ),
-    IconButton(
-    iconSize: 30,
-    icon: Icon(Icons.bar_chart),
-    onPressed: () {
-    prs.sort((a, b) => a.pid.compareTo(b.pid));
-    Navigator.push(
-    context,
-    MaterialPageRoute(
-    builder: (context) => GanttChart(prs),
-    ),
-    );
-    },
-    ),
-    IconButton(
-    iconSize: 30,
-    icon: Icon(Icons.add_circle),
-    onPressed: () {
-    createaddDialog(context, prs);
-    },
-    ),
-    ],
-    ),
-    );
-    }
+  }
 
   Widget buildProcesscard(BuildContext context, int index) {
     TextEditingController econtrol1 = new TextEditingController();
@@ -339,7 +352,7 @@ class _AlgorithmState extends State<Algorithm> {
     var start = prs[index].start_time.toString();
     var end = prs[index].ct.toString();
     var wt = prs[index].wt.toString();
-    var priority =prs[index].priority.toString();
+    var priority = prs[index].priority.toString();
 
     void deleteprs(int index) {
       setState(() {
@@ -347,7 +360,7 @@ class _AlgorithmState extends State<Algorithm> {
           prs.removeAt(index);
           prs = priorityalgo(prs);
           //initialpriorsort(prs);
-          prs.sort((a, b) => a.pid.compareTo(b.pid));
+          //prs.sort((a, b) => a.pid.compareTo(b.pid));
         } else {
           setState(() {});
         }
@@ -362,7 +375,7 @@ class _AlgorithmState extends State<Algorithm> {
         prs[index].priority = int.parse(econtrol3.text);
         prs = priorityalgo(prs);
         //initialpriorsort(prs);
-        prs.sort((a, b) => a.pid.compareTo(b.pid));
+        //prs.sort((a, b) => a.pid.compareTo(b.pid));
       });
     }
 

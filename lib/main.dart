@@ -1,15 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:os_project/PageReplacement.dart';
 import 'package:os_project/animation1.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:os_project/swiper_pagination.dart';
-import 'package:os_project/assets.dart';
 import 'Algorithm page.dart';
-import 'package:os_project/main_sp.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
-
 
 void main() {
   runApp(MaterialApp(
@@ -22,12 +19,10 @@ void main() {
       '/': (context) => FirstScreen(),
       '/second': (context) => IntroTwoPage(),
       '/third': (context) => WaveDemoApp(),
-      '/fourth': (context) => OSProject(),
-      //'/FCFS': (context) => FCFS(),
+      '/fourth': (context) => PageReplacement(),
     },
   ));
 }
-
 
 class FirstScreen extends StatelessWidget {
   @override
@@ -62,7 +57,6 @@ class FirstScreen extends StatelessWidget {
                     },
                     text: [
                       " ",
-
                     ],
                     textStyle: TextStyle(
                       fontSize: 28.0,

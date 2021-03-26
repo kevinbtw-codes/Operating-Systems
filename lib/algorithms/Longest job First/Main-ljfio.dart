@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
-import 'fcfs_io.dart';
+import 'ljf_io.dart';
 import 'iogantt.dart';
 import 'iotable.dart';
-//import 'Main-fcfsio.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'dart:async';
 import 'package:fab_circular_menu/fab_circular_menu.dart';
 
-class fcfsio_page extends StatefulWidget {
+class ljfio_page extends StatefulWidget {
   @override
-  _fcfsio_pageState createState() => _fcfsio_pageState();
+  _ljfio_pageState createState() => _ljfio_pageState();
 }
 
-class _fcfsio_pageState extends State<fcfsio_page> {
+class _ljfio_pageState extends State<ljfio_page> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final GlobalKey<LiquidPullToRefreshState> _refreshIndicatorKey =
       GlobalKey<LiquidPullToRefreshState>();
@@ -54,19 +53,24 @@ class _fcfsio_pageState extends State<fcfsio_page> {
   add(TextEditingController control1, TextEditingController control2,
       TextEditingController control3, TextEditingController control4) {
     setState(() {
-      prs.sort((a, b) => a.pid.compareTo(b.pid));
-      //prs.add(ioprocess(0, 6, 10, 4));
-      //prs.add(ioprocess(0, 9, 15, 6));
-      //prs.add(ioprocess(0, 3, 5, 2));
+      //prs.sort((a, b) => a.pid.compareTo(b.pid));
+      /*prs.add(ioprocess(0, 6, 10, 4));
+      prs.add(ioprocess(0, 9, 15, 6));
+      prs.add(ioprocess(0, 3, 5, 2));*/
+      //printprocess(prs);
       int at = int.parse(control1.text);
       int bt1 = int.parse(control2.text);
       int bt2 = int.parse(control4.text);
       int iobt = int.parse(control3.text);
+      //prs.add(ioprocess(int.parse(control1.text), int.parse(control2.text),
+      //    int.parse(control3.text), int.parse(control4.text)));
       prs.add(ioprocess(at, bt1, iobt, bt2));
       assignPid(prs);
-      prs.sort((a, b) => a.at.compareTo(b.at));
-      prs = fcfsioalgo(prs);
-      //printprocess(prs);
+      //prs.sort((a, b) => a.at.compareTo(b.at));
+      prs = ljfioalgo(prs);
+      printprocess(prs);
+      //print("algodone");
+      //print(prs);
       control1.clear();
       control2.clear();
       control3.clear();
@@ -265,6 +269,8 @@ class _fcfsio_pageState extends State<fcfsio_page> {
                               child: Text("Submit"),
                               onPressed: () {
                                 add(control1, control2, control3, control4);
+                                printprocess(prs);
+                                print(prs.length);
                                 Navigator.of(context).pop();
                               }),
                         ],
@@ -282,20 +288,20 @@ class _fcfsio_pageState extends State<fcfsio_page> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('FCFS IO'),
+        title: Text('SJN IO'),
         backgroundColor: Color(0xff22456d),
       ),
       body: Column(
         children: <Widget>[
           Expanded(
-            flex: 7,
+            //flex: 7,
             child: LiquidPullToRefresh(
               animSpeedFactor: 2.5,
               onRefresh: _handleRefresh,
               child: ListView.builder(
                   itemCount: prs.length,
                   itemBuilder: (BuildContext context, int index) =>
-                      buildProcesscard(context, index)),
+                      buildProcesscard(context, index, prs)),
             ),
           )
         ],
@@ -314,8 +320,8 @@ class _fcfsio_pageState extends State<fcfsio_page> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => fcfsio_page(),
-                ),
+                    //builder: (context) => sjfio_page(),
+                    ),
               );
             },
           ),
@@ -357,7 +363,8 @@ class _fcfsio_pageState extends State<fcfsio_page> {
     );
   }
 
-  Widget buildProcesscard(BuildContext context, int index) {
+  Widget buildProcesscard(
+      BuildContext context, int index, List<ioprocess> prs) {
     TextEditingController econtrol1 = new TextEditingController();
     TextEditingController econtrol2 = new TextEditingController();
     TextEditingController econtrol3 = new TextEditingController();
@@ -379,11 +386,13 @@ class _fcfsio_pageState extends State<fcfsio_page> {
 
     void deleteprs(int index) {
       setState(() {
-        if (prs.length > 0) {
-          prs.removeAt(index);
-          prs.sort((a, b) => a.at.compareTo(b.at));
-          prs = fcfsioalgo(prs);
+        prs.removeAt(index);
+        //prs.sort((a, b) => a.at.compareTo(b.at));
+        if (prs.isNotEmpty) {
+          prs = ljfioalgo(prs);
           prs.sort((a, b) => a.pid.compareTo(b.pid));
+          print("Length of prs is " + prs.length.toString());
+          printprocess(prs);
         }
       });
     }
@@ -400,7 +409,7 @@ class _fcfsio_pageState extends State<fcfsio_page> {
         prs[index].iobt = int.parse(econtrol3.text);
         prs[index].bt2 = int.parse(econtrol4.text);
         prs.sort((a, b) => a.at.compareTo(b.at));
-        prs = fcfsioalgo(prs);
+        prs = ljfioalgo(prs);
         prs.sort((a, b) => a.pid.compareTo(b.pid));
       });
     }
@@ -575,10 +584,6 @@ class _fcfsio_pageState extends State<fcfsio_page> {
                                 ),
                                 child: Text("Cancel"),
                                 onPressed: () {
-                                  control1.clear();
-                                  control2.clear();
-                                  control3.clear();
-                                  control4.clear();
                                   Navigator.of(context).pop();
                                 }),
                             RaisedButton(
@@ -722,8 +727,12 @@ class _fcfsio_pageState extends State<fcfsio_page> {
               color: Color(0XFFF36735),
               icon: Icons.delete_rounded,
               onTap: () {
-                //prs.removeAt(index);
-                deleteprs(index);
+                setState(() {
+                  //prs.removeAt(index);
+                  deleteprs(index);
+                  print("length of prs is " + prs.length.toString());
+                });
+                //deleteprs(index);
               },
             ),
           ),

@@ -1,7 +1,7 @@
 import 'package:os_project/Algorithm%20page.dart';
 import 'package:os_project/Learn Pages//Animations/FadeAnimation.dart';
 import 'package:flutter/material.dart';
-import 'package:os_project/algorithms/Priority-new/Main-priority-new.dart';
+import 'package:os_project/algorithms/Priority-new/Main-priority.dart';
 import 'package:os_project/algorithms/FCFS/Main-fcfs.dart';
 
 void main() => runApp(MaterialApp(

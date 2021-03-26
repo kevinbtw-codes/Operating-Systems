@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:os_project/Learn Pages/FCFSLearn.dart';
 import 'package:os_project/Learn Pages/SJFLearn.dart';
 import 'package:os_project/Learn Pages/priorityLearn.dart';
-import 'package:os_project/algorithms/Priority-new/Main-priority-new.dart';
+import 'package:os_project/algorithms/Priority-new/Main-priority.dart';
 import 'package:os_project/algorithms/Shortest job First/Main-SJF.dart';
 import 'package:os_project/algorithms/Longest job First/Main-LJF.dart';
 import 'package:os_project/algorithms/FCFS/Main-fcfs.dart';
@@ -133,11 +133,10 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                             backgroundColor: Colors.white,
                             config: CustomConfig(
                               gradients: [
-                                [Colors.deepOrange[50], Color(0xFFFF968A)],
-                                [Color(0xFFFFC8A2), Color(0xFFFFAEA5)],
-                                /*  [Colors.red[100], Color(0xEBEA9090)],*/
-                                [Color(0xFFAEA5), Color(0xFFC5BF)],
-                                [Colors.deepOrange[200], Color(0xFFFFDBCC)],
+                                [Color(0XFF22456D), Color(0xFF22456D)],
+                                [Color(0XFFF36735), Color(0xFFF36735)],
+                                [Color(0xFFEE97D0), Color(0xFFEE97D0)],
+                                [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
                               ],
                               durations: [35000, 19440, 10800, 6000],
                               heightPercentages: [0.20, 0.23, 0.25, 0.30],
@@ -179,11 +178,10 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                             backgroundColor: Colors.white,
                             config: CustomConfig(
                               gradients: [
-                                [Colors.deepOrange[50], Color(0xFFFF968A)],
-                                [Color(0xFFFFC8A2), Color(0xFFFFAEA5)],
-                                /*  [Colors.red[100], Color(0xEBEA9090)],*/
-                                [Color(0xFFAEA5), Color(0xFFC5BF)],
-                                [Colors.deepOrange[200], Color(0xFFFFDBCC)],
+                                [Color(0XFF22456D), Color(0xFF22456D)],
+                                [Color(0XFFF36735), Color(0xFFF36735)],
+                                [Color(0xFFEE97D0), Color(0xFFEE97D0)],
+                                [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
                               ],
                               durations: [35000, 19440, 10800, 6000],
                               heightPercentages: [0.20, 0.23, 0.25, 0.30],
@@ -213,7 +211,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                                 padding:
                                     const EdgeInsets.fromLTRB(50, 120, 30, 0),
                                 child: RaisedButton(
-                                  color: Color(0xFFE3796C),
+                                  color: Color(0XFF22456D),
                                   textColor: Colors.white,
                                   onPressed: () {
                                     Navigator.push(
@@ -237,7 +235,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                                 padding:
                                     const EdgeInsets.fromLTRB(0, 120, 50, 0),
                                 child: RaisedButton(
-                                  color: Color(0xFFE3796C),
+                                  color: Color(0XFF22456D),
                                   textColor: Colors.white,
                                   onPressed: () {
                                     Navigator.push(
@@ -277,13 +275,13 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                         children: <Widget>[
                           _buildCard(
                             height: 240,
-                            backgroundColor: Colors.white,
+                            backgroundColor: Color(0XFFFF36735),
                             config: CustomConfig(
                               gradients: [
-                                [Color(0xFF8FCACA), Color(0xFFD4F0F0)],
-                                [Colors.cyan[100], Color(0xFF55CBCD)],
-                                [Colors.cyan[50], Color(0xFFABDEE6)],
-                                [Colors.white70, Colors.cyan[400]]
+                                [Color(0XFF22456D), Color(0xFF22456D)],
+                                [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
+                                [Color(0XFFEE97D0), Color(0xFFEE97D0)],
+                                [Color(0xFFFFFFFF), Color(0xFFFFFFFF)],
                               ],
                               durations: [35000, 19440, 10800, 6000],
                               heightPercentages: [0.20, 0.23, 0.25, 0.30],
@@ -299,7 +297,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                               style: TextStyle(
                                 fontSize: 30,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.brown,
+                                color: Colors.white,
                               ),
                               maxLines: 1,
                             ),
@@ -322,13 +320,13 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                         children: <Widget>[
                           _buildCard(
                             height: 240,
-                            backgroundColor: Colors.white,
+                            backgroundColor: Color(0XFFFF36735),
                             config: CustomConfig(
                               gradients: [
-                                [Color(0xFF8FCACA), Color(0xFFD4F0F0)],
-                                [Colors.cyan[100], Color(0xFF55CBCD)],
-                                [Colors.cyan[50], Color(0xFFABDEE6)],
-                                [Colors.white70, Colors.cyan[400]]
+                                [Color(0XFF22456D), Color(0xFF22456D)],
+                                [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
+                                [Color(0XFFEE97D0), Color(0xFFEE97D0)],
+                                [Color(0xFFFFFFFF), Color(0xFFFFFFFF)],
                               ],
                               durations: [35000, 19440, 10800, 6000],
                               heightPercentages: [0.20, 0.23, 0.25, 0.30],
@@ -344,7 +342,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                               style: TextStyle(
                                 fontSize: 30,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.brown,
+                                color: Colors.white,
                               ),
                               maxLines: 1,
                             ),
@@ -358,7 +356,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                                 padding:
                                     const EdgeInsets.fromLTRB(50, 120, 30, 0),
                                 child: RaisedButton(
-                                  color: Colors.cyan[500],
+                                  color: Color(0XFFF36735),
                                   textColor: Colors.white,
                                   onPressed: () {
                                     Navigator.push(
@@ -382,7 +380,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                                 padding:
                                     const EdgeInsets.fromLTRB(0, 120, 50, 0),
                                 child: RaisedButton(
-                                  color: Colors.cyan[500],
+                                  color: Color(0XFFF36735),
                                   textColor: Colors.white,
                                   onPressed: () {
                                     Navigator.push(
@@ -425,10 +423,10 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                             backgroundColor: Colors.white,
                             config: CustomConfig(
                               gradients: [
-                                [Colors.purple[50], Color(0xFFFF968A)],
-                                [Colors.purple[300], Colors.purpleAccent],
-                                [Colors.purple[100], Colors.purple[400]],
-                                [Colors.purple[200], Colors.purple[50]],
+                                [Color(0XFF22456D), Color(0xFF22456D)],
+                                [Color(0XFFF36735), Color(0xFFF36735)],
+                                [Color(0xFFEE97D0), Color(0xFFEE97D0)],
+                                [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
                               ],
                               durations: [35000, 19440, 10800, 6000],
                               heightPercentages: [0.20, 0.23, 0.25, 0.30],
@@ -470,10 +468,10 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                             backgroundColor: Colors.white,
                             config: CustomConfig(
                               gradients: [
-                                [Colors.purple[50], Color(0xFFFF968A)],
-                                [Colors.purple[300], Colors.purpleAccent],
-                                [Colors.purple[100], Colors.purple[400]],
-                                [Colors.purple[200], Colors.purple[50]],
+                                [Color(0XFF22456D), Color(0xFF22456D)],
+                                [Color(0XFFF36735), Color(0xFFF36735)],
+                                [Color(0xFFEE97D0), Color(0xFFEE97D0)],
+                                [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
                               ],
                               durations: [35000, 19440, 10800, 6000],
                               heightPercentages: [0.20, 0.23, 0.25, 0.30],
@@ -485,7 +483,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                           Padding(
                             padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
                             child: AutoSizeText(
-                              "Shortest-Job-First(SJF)",
+                              "Shortest-Job-Next(SJN)",
                               style: TextStyle(
                                 fontSize: 30,
                                 fontWeight: FontWeight.bold,
@@ -503,7 +501,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                                 padding:
                                     const EdgeInsets.fromLTRB(50, 120, 30, 0),
                                 child: RaisedButton(
-                                  color: Colors.purple[400],
+                                  color: Color(0XFF22456D),
                                   textColor: Colors.white,
                                   onPressed: () {
                                     Navigator.push(
@@ -527,7 +525,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                                 padding:
                                     const EdgeInsets.fromLTRB(0, 120, 50, 0),
                                 child: RaisedButton(
-                                  color: Colors.purple[400],
+                                  color: Color(0XFF22456D),
                                   textColor: Colors.white,
                                   onPressed: () {
                                     Navigator.push(
@@ -566,14 +564,13 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                         children: <Widget>[
                           _buildCard(
                             height: 240,
-                            backgroundColor: Colors.white,
+                            backgroundColor: Color(0XFFF36735),
                             config: CustomConfig(
                               gradients: [
-                                [Colors.deepOrange[50], Color(0xFFFF968A)],
-                                [Color(0xFFFFC8A2), Color(0xFFFFAEA5)],
-                                /*  [Colors.red[100], Color(0xEBEA9090)],*/
-                                [Color(0xFFAEA5), Color(0xFFC5BF)],
-                                [Colors.deepOrange[200], Color(0xFFFFDBCC)],
+                                [Color(0XFF22456D), Color(0xFF22456D)],
+                                [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
+                                [Color(0XFFEE97D0), Color(0xFFEE97D0)],
+                                [Color(0xFFFFFFFF), Color(0xFFFFFFFF)],
                               ],
                               durations: [35000, 19440, 10800, 6000],
                               heightPercentages: [0.20, 0.23, 0.25, 0.30],
@@ -589,7 +586,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                               style: TextStyle(
                                 fontSize: 30,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.brown,
+                                color: Colors.white,
                               ),
                               maxLines: 1,
                             ),
@@ -612,14 +609,13 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                         children: <Widget>[
                           _buildCard(
                             height: 240,
-                            backgroundColor: Colors.white,
+                            backgroundColor: Color(0XFFF36735),
                             config: CustomConfig(
                               gradients: [
-                                [Colors.deepOrange[50], Color(0xFFFF968A)],
-                                [Color(0xFFFFC8A2), Color(0xFFFFAEA5)],
-                                /*  [Colors.red[100], Color(0xEBEA9090)],*/
-                                [Color(0xFFAEA5), Color(0xFFC5BF)],
-                                [Colors.deepOrange[200], Color(0xFFFFDBCC)],
+                                [Color(0XFF22456D), Color(0xFF22456D)],
+                                [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
+                                [Color(0XFFEE97D0), Color(0xFFEE97D0)],
+                                [Color(0xFFFFFFFF), Color(0xFFFFFFFF)],
                               ],
                               durations: [35000, 19440, 10800, 6000],
                               heightPercentages: [0.20, 0.23, 0.25, 0.30],
@@ -635,7 +631,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                               style: TextStyle(
                                 fontSize: 30,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.brown,
+                                color: Colors.white,
                               ),
                               maxLines: 1,
                             ),
@@ -649,7 +645,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                                 padding:
                                     const EdgeInsets.fromLTRB(50, 120, 30, 0),
                                 child: RaisedButton(
-                                  color: Color(0xFFE3796C),
+                                  color: Color(0XFFF36735),
                                   textColor: Colors.white,
                                   onPressed: () {
                                     // Perform some action
@@ -667,7 +663,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                                 padding:
                                     const EdgeInsets.fromLTRB(0, 120, 50, 0),
                                 child: RaisedButton(
-                                  color: Color(0xFFE3796C),
+                                  color: Color(0XFFF36735),
                                   textColor: Colors.white,
                                   onPressed: () {
                                     // Perform some action
@@ -704,10 +700,10 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                             backgroundColor: Colors.white,
                             config: CustomConfig(
                               gradients: [
-                                [Color(0xFF8FCACA), Color(0xFFD4F0F0)],
-                                [Colors.cyan[100], Color(0xFF55CBCD)],
-                                [Colors.cyan[50], Color(0xFFABDEE6)],
-                                [Colors.white70, Colors.cyan[400]]
+                                [Color(0XFF22456D), Color(0xFF22456D)],
+                                [Color(0XFFF36735), Color(0xFFF36735)],
+                                [Color(0xFFEE97D0), Color(0xFFEE97D0)],
+                                [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
                               ],
                               durations: [35000, 19440, 10800, 6000],
                               heightPercentages: [0.20, 0.23, 0.25, 0.30],
@@ -749,10 +745,10 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                             backgroundColor: Colors.white,
                             config: CustomConfig(
                               gradients: [
-                                [Color(0xFF8FCACA), Color(0xFFD4F0F0)],
-                                [Colors.cyan[100], Color(0xFF55CBCD)],
-                                [Colors.cyan[50], Color(0xFFABDEE6)],
-                                [Colors.white70, Colors.cyan[400]]
+                                [Color(0XFF22456D), Color(0xFF22456D)],
+                                [Color(0XFFF36735), Color(0xFFF36735)],
+                                [Color(0xFFEE97D0), Color(0xFFEE97D0)],
+                                [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
                               ],
                               durations: [35000, 19440, 10800, 6000],
                               heightPercentages: [0.20, 0.23, 0.25, 0.30],
@@ -782,7 +778,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                                 padding:
                                     const EdgeInsets.fromLTRB(50, 120, 30, 0),
                                 child: RaisedButton(
-                                  color: Colors.cyan[500],
+                                  color: Color(0XFF22456D),
                                   textColor: Colors.white,
                                   onPressed: () {
                                     // Perform some action
@@ -800,7 +796,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                                 padding:
                                     const EdgeInsets.fromLTRB(0, 120, 50, 0),
                                 child: RaisedButton(
-                                  color: Colors.cyan[500],
+                                  color: Color(0XFF22456D),
                                   textColor: Colors.white,
                                   onPressed: () {
                                     Navigator.push(
@@ -839,13 +835,13 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                         children: <Widget>[
                           _buildCard(
                             height: 240,
-                            backgroundColor: Colors.white,
+                            backgroundColor: Color(0XFFF36735),
                             config: CustomConfig(
                               gradients: [
-                                [Colors.purple[50], Color(0xFFFF968A)],
-                                [Colors.purple[300], Colors.purpleAccent],
-                                [Colors.purple[100], Colors.purple[400]],
-                                [Colors.purple[200], Colors.purple[50]],
+                                [Color(0XFF22456D), Color(0xFF22456D)],
+                                [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
+                                [Color(0XFFEE97D0), Color(0xFFEE97D0)],
+                                [Color(0xFFFFFFFF), Color(0xFFFFFFFF)],
                               ],
                               durations: [35000, 19440, 10800, 6000],
                               heightPercentages: [0.20, 0.23, 0.25, 0.30],
@@ -861,7 +857,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                               style: TextStyle(
                                 fontSize: 30,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.brown,
+                                color: Colors.white,
                               ),
                               maxLines: 1,
                             ),
@@ -884,13 +880,13 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                         children: <Widget>[
                           _buildCard(
                             height: 240,
-                            backgroundColor: Colors.white,
+                            backgroundColor: Color(0XFFF36735),
                             config: CustomConfig(
                               gradients: [
-                                [Colors.purple[50], Color(0xFFFF968A)],
-                                [Colors.purple[300], Colors.purpleAccent],
-                                [Colors.purple[100], Colors.purple[400]],
-                                [Colors.purple[200], Colors.purple[50]],
+                                [Color(0XFF22456D), Color(0xFF22456D)],
+                                [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
+                                [Color(0XFFEE97D0), Color(0xFFEE97D0)],
+                                [Color(0xFFFFFFFF), Color(0xFFFFFFFF)],
                               ],
                               durations: [35000, 19440, 10800, 6000],
                               heightPercentages: [0.20, 0.23, 0.25, 0.30],
@@ -906,7 +902,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                               style: TextStyle(
                                 fontSize: 30,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.brown,
+                                color: Colors.white,
                               ),
                               maxLines: 1,
                             ),
@@ -920,7 +916,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                                 padding:
                                     const EdgeInsets.fromLTRB(50, 120, 30, 0),
                                 child: RaisedButton(
-                                  color: Colors.purple[400],
+                                  color: Color(0XFFF36735),
                                   textColor: Colors.white,
                                   onPressed: () {
                                     // Perform some action
@@ -938,7 +934,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                                 padding:
                                     const EdgeInsets.fromLTRB(0, 120, 50, 0),
                                 child: RaisedButton(
-                                  color: Colors.purple[400],
+                                  color: Color(0XFFF36735),
                                   textColor: Colors.white,
                                   onPressed: () {
                                     // Perform some action

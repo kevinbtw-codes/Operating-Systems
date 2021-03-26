@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
+import 'package:os_project/Algorithm%20page.dart';
 import 'package:os_project/algorithms/FCFS/Main-fcfsio.dart';
 import 'fcfs.dart';
 import 'table.dart';
@@ -71,22 +72,8 @@ class _AlgorithmState extends State<Algorithm> {
       control1.clear();
       control2.clear();
       assignPid(prs);
-      fcfsalgo(prs);
-      prs.sort((a, b) => a.pid.compareTo(b.pid));
-    });
-  }
-
-  delete() {
-    setState(() {
-      prs.sort((a, b) => a.pid.compareTo(b.pid));
-      if (prs.length > 1) {
-        prs.removeLast();
-      } else {
-        prs.remove(prs.length - 1);
-      }
-      assignPid(prs);
-      fcfsalgo(prs);
-      prs.sort((a, b) => a.pid.compareTo(b.pid));
+      prs = fcfsalgo(prs);
+      //prs.sort((a, b) => a.pid.compareTo(b.pid));
     });
   }
 
@@ -220,6 +207,17 @@ class _AlgorithmState extends State<Algorithm> {
       appBar: AppBar(
         title: Text('FCFS'),
         backgroundColor: Color(0xff22456d),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.push(
+              context,
+              new MaterialPageRoute(
+                builder: (context) => new WaveDemoApp(),
+              ),
+            );
+          },
+        ),
       ),
       body: Column(
         children: <Widget>[
@@ -241,6 +239,7 @@ class _AlgorithmState extends State<Algorithm> {
         ringWidth: 120,
         ringColor: Color(0xFFc3ebef),
         fabColor: Color(0xffc3ebef),
+        //fabCloseColor: Colors.transparent,
         children: <Widget>[
           IconButton(
             iconSize: 30,
@@ -311,7 +310,7 @@ class _AlgorithmState extends State<Algorithm> {
       setState(() {
         if (prs.length > 0) {
           prs.removeAt(index);
-          fcfsalgo(prs);
+          prs = fcfsalgo(prs);
         } else {
           setState(() {});
         }
@@ -323,8 +322,8 @@ class _AlgorithmState extends State<Algorithm> {
       setState(() {
         prs[index].at = int.parse(econtrol1.text);
         prs[index].bt = int.parse(econtrol2.text);
-        fcfsalgo(prs);
-        prs.sort((a, b) => a.pid.compareTo(b.pid));
+        prs = fcfsalgo(prs);
+        //prs.sort((a, b) => a.pid.compareTo(b.pid));
       });
     }
 

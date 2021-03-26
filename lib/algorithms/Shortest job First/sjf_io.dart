@@ -1,3 +1,4 @@
+//import 'dart:collection';
 import 'dart:io';
 import 'dart:core';
 
@@ -7,6 +8,7 @@ class ioprocess {
   int bt1;
   int bt2;
   int iobt;
+  int total_burst;
   int ioexit;
   bool io = false; //if io is completed then value is true, else false
   int ct;
@@ -26,45 +28,42 @@ class ioprocess {
   void printatbt() {
     stdout.write('$pid\t$at\t$bt1\t$iobt\t$bt2\t\n');
   }
-
-  int tablevalue(int j) {
-    switch (j) {
-      case 1:
-        return this.at;
-      case 2:
-        return this.bt1;
-      case 3:
-        return this.bt2;
-      case 4:
-        return this.iobt;
-      case 5:
-        return this.ct;
-      case 6:
-        return this.tat;
-      case 7:
-        return this.wt;
-      default:
-        return 0;
-    }
-  }
 }
 
-/*void main(List<String> arguments) {
+void main(List<String> arguments) {
   List<ioprocess> prs = [];
   prs.add(ioprocess(0, 6, 10, 4));
   prs.add(ioprocess(0, 9, 15, 6));
   prs.add(ioprocess(0, 3, 5, 2));
   assignPid(prs);
+  totalburst(prs);
   List<ioprocess> fio = List.from(prs);
 
-  print('\n1.FCFSio2 Algo\n');
+  print('\n1.Sjfio Algo 2\n');
   fio.sort((a, b) => a.at.compareTo(b.at));
-  fio = fcfsioalgo(fio);
+  fio = sjfioalgo(fio);
 
   printprocess(fio);
-}*/
+}
 
-List<ioprocess> fcfsioalgo(List<ioprocess> l) {
+void startsjf(List<ioprocess> l) {
+  totalburst(l);
+  l.sort((a, b) => a.at.compareTo(b.at));
+  for (int j = 1; j < l.length; j++) {
+    for (var i = 0; i < l.length - 1; i++) {
+      if (l[i].at == l[i + 1].at) {
+        if (l[i].total_burst > l[i + 1].total_burst) {
+          ioprocess temp;
+          temp = l[i + 1];
+          l[i + 1] = l[i];
+          l[i] = temp;
+        }
+      }
+    }
+  }
+}
+
+List<ioprocess> sjfioalgo(List<ioprocess> l) {
   List<ioprocess> lgantt = [];
   lgantt = List.from(l);
   for (var item in lgantt) {
@@ -72,11 +71,13 @@ List<ioprocess> fcfsioalgo(List<ioprocess> l) {
         item.start_time2 = item.tat = item.wt = item.ioexit = null;
     item.io = false;
   }
+  totalburst(lgantt);
   List<ioprocess> readyq = [];
   List<ioprocess> finishedq = [];
   List<ioprocess> ioqueue = [];
 
   int time = 0;
+  startsjf(lgantt);
   fillrq(readyq, time, lgantt);
 
   while (time >= 0) {
@@ -100,8 +101,6 @@ List<ioprocess> fcfsioalgo(List<ioprocess> l) {
             time = processexec(readyq, time, finishedq, ioqueue);
           } else {
             //4 false - ioq[0] has not arrived
-            //here x = ioq[0].ioexit - time , x = duration of idle state,
-            // between time and ioq[0].ioexit machine is in idle state
             time = ioqueue[0].ioexit;
             fillrq(readyq, time, ioqueue);
             print(
@@ -121,8 +120,6 @@ List<ioprocess> fcfsioalgo(List<ioprocess> l) {
             time = processexec(readyq, time, finishedq, ioqueue);
           } else {
             //4 false - process from lgantt has not arrived
-            //here x = lgantt[0].at - time , x = duration of idle state,
-            // between time and lgantt[0].at machine is in idle state
             time = lgantt[0].at;
             fillrq(readyq, time, lgantt);
             time = processexec(readyq, time, finishedq, ioqueue);
@@ -151,7 +148,6 @@ List<ioprocess> fcfsioalgo(List<ioprocess> l) {
       }
     }
   }
-
   return finishedq;
 }
 
@@ -189,7 +185,6 @@ void iofill(List<ioprocess> l, List<ioprocess> ioqueue, int time) {
 
 //readyq is the reference of readyq list identifier
 // l is the reference of the main list
-// time is the value of current time
 void fillrq(List<ioprocess> readyq, int time, List<ioprocess> l) {
   int i = 0;
   int count = 0;
@@ -220,7 +215,44 @@ void fillrq(List<ioprocess> readyq, int time, List<ioprocess> l) {
   }
 
   if (readyq.isNotEmpty) {
-    readyq.sort((a, b) => a.at.compareTo(b.at));
+    sjfsort(readyq);
+  }
+}
+
+void sjfsort(List<ioprocess> l) {
+  l.sort((a, b) => a.total_burst.compareTo(b.total_burst));
+  for (int j = 1; j <= l.length; j++) {
+    for (var i = 0; i < l.length - 1; i++) {
+      if (l[i].io && l[i + 1].io) {
+        if (l[i].bt2 > l[i + 1].bt2) {
+          ioprocess temp;
+          temp = l[i + 1];
+          l[i + 1] = l[i];
+          l[i] = temp;
+        }
+      } else if (l[i].io == false && l[i + 1].io == false) {
+        if (l[i].total_burst > l[i + 1].total_burst) {
+          ioprocess temp;
+          temp = l[i + 1];
+          l[i + 1] = l[i];
+          l[i] = temp;
+        }
+      } else if (l[i].io == true && l[i + 1].io == false) {
+        if (l[i].bt2 > l[i + 1].total_burst) {
+          ioprocess temp;
+          temp = l[i + 1];
+          l[i + 1] = l[i];
+          l[i] = temp;
+        }
+      } else if (l[i].io == false && l[i + 1].io == true) {
+        if (l[i].total_burst > l[i + 1].bt2) {
+          ioprocess temp;
+          temp = l[i + 1];
+          l[i + 1] = l[i];
+          l[i] = temp;
+        }
+      }
+    }
   }
 }
 
@@ -258,5 +290,12 @@ void printpid(List<ioprocess> l) {
 void assignPid(List l) {
   for (int i = 0; i < l.length; i++) {
     l[i].pid = 'P$i';
+  }
+}
+
+void totalburst(List<ioprocess> l) {
+  int i;
+  for (i = 0; i < l.length; i++) {
+    l[i].total_burst = l[i].bt1 + l[i].bt2 + l[i].iobt;
   }
 }
