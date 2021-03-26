@@ -473,7 +473,7 @@ class _AlgorithmState extends State<Algorithm> {
           padding: const EdgeInsets.all(10.0),
           child: ExpansionTile(
             title: Text(
-              "at: $at\t      \t bt: $bt",
+              "AT: $at\t      \t BT: $bt",
               style: TextStyle(
                 fontSize: 23,
               ),
