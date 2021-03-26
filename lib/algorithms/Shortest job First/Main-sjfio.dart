@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'sjf_io.dart';
+//import 'SJF-algo.dart';
 import 'iogantt.dart';
 import 'iotable.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -53,7 +54,7 @@ class _sjfio_pageState extends State<sjfio_page> {
   add(TextEditingController control1, TextEditingController control2,
       TextEditingController control3, TextEditingController control4) {
     setState(() {
-      //prs.sort((a, b) => a.pid.compareTo(b.pid));
+      prs.sort((a, b) => a.pid.compareTo(b.pid));
       /*prs.add(ioprocess(0, 6, 10, 4));
       prs.add(ioprocess(0, 9, 15, 6));
       prs.add(ioprocess(0, 3, 5, 2));*/
@@ -66,9 +67,9 @@ class _sjfio_pageState extends State<sjfio_page> {
       //    int.parse(control3.text), int.parse(control4.text)));
       prs.add(ioprocess(at, bt1, iobt, bt2));
       assignPid(prs);
-      //prs.sort((a, b) => a.at.compareTo(b.at));
+      prs.sort((a, b) => a.at.compareTo(b.at));
       sjfioalgo(prs);
-      printprocess(prs);
+      //printprocess(prs);
       //print("algodone");
       //print(prs);
       control1.clear();
@@ -320,7 +321,7 @@ class _sjfio_pageState extends State<sjfio_page> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    //builder: (context) => sjfio_page(),
+                //    builder: (context) => MainSJF_page(),
                     ),
               );
             },
@@ -333,7 +334,7 @@ class _sjfio_pageState extends State<sjfio_page> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    // builder: (context) => TheTable(prs),
+                     builder: (context) => TheTable(prs),
                     ),
               );
             },

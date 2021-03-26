@@ -2,18 +2,28 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lazy_data_table/lazy_data_table.dart';
 import 'package:os_project/algorithms/Priority-new/priority.dart';
+import 'prior_io.dart';
 
 class TheTable extends StatefulWidget {
-  List<Process> prs;
+  List<ioprocess> prs;
   TheTable(this.prs);
   @override
   _TheTableState createState() => _TheTableState(prs);
 }
 
 class _TheTableState extends State<TheTable> {
-  List<Process> prs;
+  List<ioprocess> prs;
   _TheTableState(this.prs);
-  final List colum_head = ['pid', 'at', 'bt', 'priority', 'ct', 'tat', 'wt'];
+  final List colum_head = [
+    'pid',
+    'at',
+    'bt1',
+    'bt2',
+    'iobt',
+    'ct',
+    'tat',
+    'wt'
+  ];
   final int j = 0;
   int thing(i, j) {
     return prs[i].tablevalue(j);

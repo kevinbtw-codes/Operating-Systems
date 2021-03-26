@@ -27,6 +27,27 @@ class ioprocess {
   void printatbt() {
     stdout.write('$pid\t$at\t$bt1\t$iobt\t$bt2\t\n');
   }
+
+  int tablevalue(int j) {
+    switch (j) {
+      case 1:
+        return this.at;
+      case 2:
+        return this.bt1;
+      case 3:
+        return this.bt2;
+      case 4:
+        return this.iobt;
+      case 5:
+        return this.ct;
+      case 6:
+        return this.tat;
+      case 7:
+        return this.wt;
+      default:
+        return 0;
+    }
+  }
 }
 
 /*void main(List<String> arguments) {
