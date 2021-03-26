@@ -110,7 +110,7 @@ class _ljfio_pageState extends State<ljfio_page> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Text(
-                                  'at:',
+                                  'AT:',
                                   style: TextStyle(
                                     color: Color(0xFF22456D),
                                     fontWeight: FontWeight.bold,
@@ -142,7 +142,7 @@ class _ljfio_pageState extends State<ljfio_page> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Text(
-                                  'iobt:',
+                                  'IOBT:',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20,
@@ -183,7 +183,7 @@ class _ljfio_pageState extends State<ljfio_page> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Text(
-                                  'bt1:',
+                                  'BT1:',
                                   style: TextStyle(
                                     color: Color(0xFF22456D),
                                     fontWeight: FontWeight.bold,
@@ -216,7 +216,7 @@ class _ljfio_pageState extends State<ljfio_page> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Text(
-                                  'bt2:',
+                                  'BT2:',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20,
@@ -289,7 +289,7 @@ class _ljfio_pageState extends State<ljfio_page> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('SJN IO'),
+        title: Text('LJF IO'),
         backgroundColor: Color(0xff22456d),
       ),
       body: Column(
@@ -440,7 +440,7 @@ class _ljfio_pageState extends State<ljfio_page> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
                                   Text(
-                                    'at:',
+                                    'BT:',
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 20,
@@ -471,7 +471,7 @@ class _ljfio_pageState extends State<ljfio_page> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
                                   Text(
-                                    'iobt:',
+                                    'IOBT:',
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 20,
@@ -634,14 +634,14 @@ class _ljfio_pageState extends State<ljfio_page> {
           padding: const EdgeInsets.all(10.0),
           child: ExpansionTile(
             title: Text(
-              "at: $at\t bt1: $bt\t bt2: $bt2\t iobt: $iobt",
+              "AT: $at\t BT1: $bt\nBT2: $bt2\t IOBT: $iobt",
               style: TextStyle(
                 fontSize: 23,
               ),
             ),
             leading: CircleAvatar(
               radius: 40,
-              backgroundColor: Colors.blue.shade200,
+              backgroundColor: Color(0xFFc3ebef),
               child: Text(
                 prs[index].pid,
                 style: TextStyle(

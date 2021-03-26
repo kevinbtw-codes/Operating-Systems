@@ -106,7 +106,7 @@ class _AlgorithmState extends State<Algorithm> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Text(
-                                  'at:',
+                                  'AT:',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20,
@@ -136,7 +136,7 @@ class _AlgorithmState extends State<Algorithm> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Text(
-                                  'bt:',
+                                  'BT:',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20,
@@ -235,8 +235,8 @@ class _AlgorithmState extends State<Algorithm> {
         ],
       ),
       floatingActionButton: FabCircularMenu(
-        ringDiameter: 500,
-        ringWidth: 100,
+        ringDiameter: 450,
+        ringWidth: 120,
         ringColor: Color(0xFFc3ebef),
         fabColor: Color(0xffc3ebef),
         children: <Widget>[
@@ -248,7 +248,6 @@ class _AlgorithmState extends State<Algorithm> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  //
                   builder: (context) => ljfio_page(),
                 ),
               );
@@ -354,7 +353,7 @@ class _AlgorithmState extends State<Algorithm> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
                                   Text(
-                                    'at:',
+                                    'AT:',
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 20,
@@ -385,7 +384,7 @@ class _AlgorithmState extends State<Algorithm> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
                                   Text(
-                                    'bt:',
+                                    'BT:',
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 20,
@@ -475,14 +474,14 @@ class _AlgorithmState extends State<Algorithm> {
           padding: const EdgeInsets.all(10.0),
           child: ExpansionTile(
             title: Text(
-              "at: $at\t      \t bt: $bt",
+              "AT: $at\t      \t BT: $bt",
               style: TextStyle(
                 fontSize: 23,
               ),
             ),
             leading: CircleAvatar(
               radius: 40,
-              backgroundColor: Colors.blue.shade200,
+              backgroundColor: Color(0xFFc3ebef),
               child: Text(
                 prs[index].pid,
                 style: TextStyle(
