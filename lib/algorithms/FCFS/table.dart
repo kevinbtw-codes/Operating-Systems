@@ -47,6 +47,7 @@ class _TheTableState extends State<TheTable> {
             children: [
               Expanded(
                 child: LazyDataTable(
+                  //Color: Color(0xff22456d),
                   columns: 6,
                   rows: prs.length,
                   tableDimensions: LazyDataTableDimensions(

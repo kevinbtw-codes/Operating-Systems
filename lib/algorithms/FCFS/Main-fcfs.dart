@@ -107,7 +107,6 @@ class _AlgorithmState extends State<Algorithm> {
                                 Text(
                                   'AT:',
                                   style: TextStyle(
-                                    color: Color(0xFF22456D),
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20,
                                   ),

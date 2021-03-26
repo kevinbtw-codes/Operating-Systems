@@ -73,11 +73,12 @@ class _GanttChartState extends State<GanttChart> {
                   theme: TimelineThemeData(
                     direction: Axis.vertical,
                     connectorTheme: ConnectorThemeData(
-                      color: Colors.redAccent,
+                      color: Color(0XFF22456D),
                       space: 30.0,
                       thickness: 5.0,
                     ),
                     indicatorTheme: IndicatorThemeData(
+                      color: Color(0xFFEE97D0),
                       size: 20.0,
                     ),
                   ),
@@ -86,7 +87,7 @@ class _GanttChartState extends State<GanttChart> {
                     contentsBuilder: (context, index) => Container(
                       margin: EdgeInsets.all(7),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Color(0XFFF36735),
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(10),
                             topRight: Radius.circular(10),
@@ -110,6 +111,7 @@ class _GanttChartState extends State<GanttChart> {
                               " to " +
                               (prsNew[index].ct).toString(),
                           style: TextStyle(
+                            color: Colors.white,
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold,
                           ),
