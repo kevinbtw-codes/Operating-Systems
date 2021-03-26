@@ -472,14 +472,15 @@ class _AlgorithmState extends State<Algorithm> {
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: ExpansionTile(
-            title: Text("AT: $at\t      \t BT: $bt",
-                style: TextStyle(
-                  fontSize: 23,
-                  color: Color(0xff22456d),
-                )),
+            title: Text(
+              "AT: $at\t      \t BT: $bt",
+              style: TextStyle(
+                fontSize: 23,
+              ),
+            ),
             leading: CircleAvatar(
               radius: 40,
-              backgroundColor: Color(0xFFc3ebef),
+              backgroundColor: Colors.blue.shade200,
               child: Text(
                 prs[index].pid,
                 style: TextStyle(
