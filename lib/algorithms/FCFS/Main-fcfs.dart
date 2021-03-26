@@ -480,7 +480,7 @@ class _AlgorithmState extends State<Algorithm> {
             ),
             leading: CircleAvatar(
               radius: 40,
-              backgroundColor: Colors.blue.shade200,
+              backgroundColor: Color(0xFFc3ebef),
               child: Text(
                 prs[index].pid,
                 style: TextStyle(
