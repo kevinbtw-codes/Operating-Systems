@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'sjf_io.dart';
-import 'table.dart';
-import 'gantt.dart';
+import 'iogantt.dart';
+import 'iotable.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'dart:async';
 import 'package:fab_circular_menu/fab_circular_menu.dart';
