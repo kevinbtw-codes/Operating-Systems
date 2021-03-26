@@ -79,6 +79,8 @@ List<ioprocess> fcfsioalgo(List<ioprocess> l) {
             time = processexec(readyq, time, finishedq, ioqueue);
           } else {
             //4 false - ioq[0] has not arrived
+            //here x = ioq[0].ioexit - time , x = duration of idle state,
+            // between time and ioq[0].ioexit machine is in idle state
             time = ioqueue[0].ioexit;
             fillrq(readyq, time, ioqueue);
             print(
@@ -98,6 +100,8 @@ List<ioprocess> fcfsioalgo(List<ioprocess> l) {
             time = processexec(readyq, time, finishedq, ioqueue);
           } else {
             //4 false - process from lgantt has not arrived
+            //here x = lgantt[0].at - time , x = duration of idle state,
+            // between time and lgantt[0].at machine is in idle state
             time = lgantt[0].at;
             fillrq(readyq, time, lgantt);
             time = processexec(readyq, time, finishedq, ioqueue);
@@ -212,16 +216,20 @@ void printprocess(List l) {
 }
 
 void printpid(List<ioprocess> l) {
-  if (l[0].io) {
-    for (var i = 0; i < l.length; i++) {
-      // ignore: prefer_single_quotes
-      stdout.write(l[i].pid + " - " + l[i].ioexit.toString() + ", ");
+  if (l.isNotEmpty) {
+    if (l[0].io) {
+      for (var i = 0; i < l.length; i++) {
+        // ignore: prefer_single_quotes
+        stdout.write(l[i].pid + " - " + l[i].ioexit.toString() + ", ");
+      }
+    } else {
+      for (var i = 0; i < l.length; i++) {
+        // ignore: prefer_single_quotes
+        stdout.write(l[i].pid + ", ");
+      }
     }
   } else {
-    for (var i = 0; i < l.length; i++) {
-      // ignore: prefer_single_quotes
-      stdout.write(l[i].pid + ", ");
-    }
+    print("the list is empty");
   }
   print("\n");
 }

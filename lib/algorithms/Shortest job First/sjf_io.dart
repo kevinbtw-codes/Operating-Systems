@@ -269,16 +269,20 @@ void printprocess(List l) {
 }
 
 void printpid(List<ioprocess> l) {
-  if (l[0].io) {
-    for (var i = 0; i < l.length; i++) {
-      // ignore: prefer_single_quotes
-      stdout.write(l[i].pid + " - " + l[i].ioexit.toString() + ", ");
+  if (l.isNotEmpty) {
+    if (l[0].io) {
+      for (var i = 0; i < l.length; i++) {
+        // ignore: prefer_single_quotes
+        stdout.write(l[i].pid + " - " + l[i].ioexit.toString() + ", ");
+      }
+    } else {
+      for (var i = 0; i < l.length; i++) {
+        // ignore: prefer_single_quotes
+        stdout.write(l[i].pid + ", ");
+      }
     }
   } else {
-    for (var i = 0; i < l.length; i++) {
-      // ignore: prefer_single_quotes
-      stdout.write(l[i].pid + ", ");
-    }
+    print("the list is empty");
   }
   print("\n");
 }
