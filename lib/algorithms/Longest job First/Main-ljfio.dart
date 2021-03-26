@@ -333,8 +333,8 @@ class _ljfio_pageState extends State<ljfio_page> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    // builder: (context) => TheTable(prs),
-                    ),
+                  builder: (context) => TheTable(prs),
+                ),
               );
             },
           ),
