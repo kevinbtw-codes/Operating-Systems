@@ -116,7 +116,7 @@ class _AlgorithmState extends State<Algorithm> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
                                       Text(
-                                        'at:',
+                                        'AT:',
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 20,
@@ -147,7 +147,7 @@ class _AlgorithmState extends State<Algorithm> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
                                       Text(
-                                        'bt:',
+                                        'BT:',
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 20,
