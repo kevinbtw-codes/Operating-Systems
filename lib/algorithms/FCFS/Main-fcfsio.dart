@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
+import 'package:os_project/algorithms/FCFS/Main-fcfs.dart';
 import 'fcfs_io.dart';
-import 'table.dart';
-import 'gantt.dart';
+import 'iogantt.dart';
+import 'iotable.dart';
 //import 'Main-fcfsio.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'dart:async';
@@ -62,18 +63,16 @@ class _fcfsio_pageState extends State<fcfsio_page> {
       int bt1 = int.parse(control2.text);
       int bt2 = int.parse(control4.text);
       int iobt = int.parse(control3.text);
-      //prs.add(ioprocess(int.parse(control1.text), int.parse(control2.text),
-      //int.parse(control3.text), int.parse(control4.text)));
       prs.add(ioprocess(at, bt1, iobt, bt2));
       assignPid(prs);
       prs.sort((a, b) => a.at.compareTo(b.at));
       prs = fcfsioalgo(prs);
-      print(prs);
+      //printprocess(prs);
       control1.clear();
       control2.clear();
       control3.clear();
       control4.clear();
-      // prs.sort((a, b) => a.pid.compareTo(b.pid));
+      prs.sort((a, b) => a.pid.compareTo(b.pid));
     });
   }
 
@@ -255,6 +254,8 @@ class _fcfsio_pageState extends State<fcfsio_page> {
                               onPressed: () {
                                 control1.clear();
                                 control2.clear();
+                                control3.clear();
+                                control4.clear();
                                 Navigator.of(context).pop();
                               }),
                           RaisedButton(
@@ -301,8 +302,8 @@ class _fcfsio_pageState extends State<fcfsio_page> {
         ],
       ),
       floatingActionButton: FabCircularMenu(
-        ringDiameter: 500,
-        ringWidth: 100,
+        ringDiameter: 450,
+        ringWidth: 120,
         ringColor: Color(0xFFc3ebef),
         fabColor: Color(0xffc3ebef),
         children: <Widget>[
@@ -314,7 +315,7 @@ class _fcfsio_pageState extends State<fcfsio_page> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => fcfsio_page(),
+                  builder: (context) => MyApp(),
                 ),
               );
             },
@@ -327,8 +328,8 @@ class _fcfsio_pageState extends State<fcfsio_page> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    // builder: (context) => TheTable(prs),
-                    ),
+                  builder: (context) => TheTable(prs),
+                ),
               );
             },
           ),
@@ -383,6 +384,7 @@ class _fcfsio_pageState extends State<fcfsio_page> {
           prs.removeAt(index);
           prs.sort((a, b) => a.at.compareTo(b.at));
           prs = fcfsioalgo(prs);
+          prs.sort((a, b) => a.pid.compareTo(b.pid));
         }
       });
     }
@@ -400,7 +402,7 @@ class _fcfsio_pageState extends State<fcfsio_page> {
         prs[index].bt2 = int.parse(econtrol4.text);
         prs.sort((a, b) => a.at.compareTo(b.at));
         prs = fcfsioalgo(prs);
-        //prs.sort((a, b) => a.pid.compareTo(b.pid));
+        prs.sort((a, b) => a.pid.compareTo(b.pid));
       });
     }
 
@@ -576,6 +578,8 @@ class _fcfsio_pageState extends State<fcfsio_page> {
                                 onPressed: () {
                                   control1.clear();
                                   control2.clear();
+                                  control3.clear();
+                                  control4.clear();
                                   Navigator.of(context).pop();
                                 }),
                             RaisedButton(

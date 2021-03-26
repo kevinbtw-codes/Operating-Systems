@@ -56,6 +56,9 @@ void startljf(List<Process> l) {
 List<Process> ljfalgo(List<Process> l) {
   List<Process> lgantt = [];
   lgantt = List.from(l); //lgantt is the local copy of the processes list
+  for (var item in lgantt) {
+    item.ct = item.start_time = item.tat = item.wt = item.ct = null;
+  }
   List<Process> rq = List<Process>();
   List<Process> fq = [];
 
@@ -63,21 +66,31 @@ List<Process> ljfalgo(List<Process> l) {
   int i = 0;
   int time = lgantt[0].at;
 
-  for (i = 0; i < l.length; i++) {
+  while (time >= 0) {
     if (rq.isEmpty) {
-      time = lgantt[0].at;
-      time = processexec(lgantt, time, 0);
-      fillfq(lgantt, fq, 0);
-      fillrq(rq, time, lgantt);
+      if (lgantt.isEmpty) {
+        break;
+      } else {
+        if (time >= lgantt[0].at) {
+          fillrq(rq, time, lgantt);
+          time = processexec(rq, time, fq);
+        } else {
+          time = lgantt[0].at;
+          fillrq(rq, time, lgantt);
+          time = processexec(rq, time, fq);
+        }
+      }
     } else {
-      ljfsort(rq);
-      time = processexec(rq, time, 0);
-      fillfq(rq, fq, 0);
+      if (lgantt.isNotEmpty) {
+        fillrq(rq, time, lgantt);
+      }
+      time = processexec(rq, time, fq);
       if (lgantt.isNotEmpty) {
         fillrq(rq, time, lgantt);
       }
     }
   }
+  fq.sort((a, b) => a.pid.compareTo(b.pid));
   return fq;
 }
 
@@ -125,13 +138,14 @@ void fillfq(List<Process> l, List<Process> fq, int i) {
   l.removeAt(i);
 }
 
-int processexec(List<Process> lgantt, int stime, int i) {
+int processexec(List<Process> lgantt, int stime, List<Process> fq) {
   int time;
-  lgantt[i].start_time = stime;
-  lgantt[i].ct = lgantt[i].bt + lgantt[i].start_time;
-  time = lgantt[i].ct;
-  lgantt[i].tat = lgantt[i].ct - lgantt[i].at;
-  lgantt[i].wt = lgantt[i].tat - lgantt[i].bt;
+  lgantt[0].start_time = stime;
+  lgantt[0].ct = lgantt[0].bt + lgantt[0].start_time;
+  time = lgantt[0].ct;
+  lgantt[0].tat = lgantt[0].ct - lgantt[0].at;
+  lgantt[0].wt = lgantt[0].tat - lgantt[0].bt;
+  fillfq(lgantt, fq, 0);
   return time;
 }
 

@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:os_project/Learn%20Pages/priorityLearn.dart';
 import 'package:timelines/timelines.dart';
-import 'Main-priority-new.dart';
-import 'priority-new.dart';
+import 'Main-priority.dart';
+import 'priority.dart';
 import 'dart:math';
 
 class GanttChart extends StatefulWidget {

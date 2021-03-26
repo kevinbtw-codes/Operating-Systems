@@ -137,11 +137,10 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                       backgroundColor: Colors.white,
                       config: CustomConfig(
                         gradients: [
-                          [Colors.deepOrange[50], Color(0xFFFF968A)],
-                          [Color(0xFFFFC8A2), Color(0xFFFFAEA5)],
-                          /*  [Colors.red[100], Color(0xEBEA9090)],*/
-                          [Color(0xFFAEA5), Color(0xFFC5BF)],
-                          [Colors.deepOrange[200], Color(0xFFFFDBCC)],
+                          [Color(0XFF22456D), Color(0xFF22456D)],
+                          [Color(0XFFF36735), Color(0xFFF36735)],
+                          [Color(0xFFEE97D0), Color(0xFFEE97D0)],
+                          [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
                         ],
                         durations: [35000, 19440, 10800, 6000],
                         heightPercentages: [0.20, 0.23, 0.25, 0.30],
@@ -183,11 +182,10 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                       backgroundColor: Colors.white,
                       config: CustomConfig(
                         gradients: [
-                          [Colors.deepOrange[50], Color(0xFFFF968A)],
-                          [Color(0xFFFFC8A2), Color(0xFFFFAEA5)],
-                          /*  [Colors.red[100], Color(0xEBEA9090)],*/
-                          [Color(0xFFAEA5), Color(0xFFC5BF)],
-                          [Colors.deepOrange[200], Color(0xFFFFDBCC)],
+                          [Color(0XFF22456D), Color(0xFF22456D)],
+                          [Color(0XFFF36735), Color(0xFFF36735)],
+                          [Color(0xFFEE97D0), Color(0xFFEE97D0)],
+                          [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
                         ],
                         durations: [35000, 19440, 10800, 6000],
                         heightPercentages: [0.20, 0.23, 0.25, 0.30],
@@ -285,10 +283,10 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                       backgroundColor: Colors.white,
                       config: CustomConfig(
                         gradients: [
-                          [Color(0xFF8FCACA), Color(0xFFD4F0F0)],
-                          [Colors.cyan[100], Color(0xFF55CBCD)],
-                          [Colors.cyan[50], Color(0xFFABDEE6)],
-                          [Colors.white70, Colors.cyan[400]]
+                          [Color(0XFF22456D), Color(0xFF22456D)],
+                          [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
+                          [Color(0XFFEE97D0), Color(0xFFEE97D0)],
+                          [Color(0xFFFFFFFF), Color(0xFFFFFFFF)],
                         ],
                         durations: [35000, 19440, 10800, 6000],
                         heightPercentages: [0.20, 0.23, 0.25, 0.30],
@@ -330,10 +328,10 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                       backgroundColor: Colors.white,
                       config: CustomConfig(
                         gradients: [
-                          [Color(0xFF8FCACA), Color(0xFFD4F0F0)],
-                          [Colors.cyan[100], Color(0xFF55CBCD)],
-                          [Colors.cyan[50], Color(0xFFABDEE6)],
-                          [Colors.white70, Colors.cyan[400]]
+                          [Color(0XFF22456D), Color(0xFF22456D)],
+                          [Color(0xFFC3EBEF), Color(0xFFC3EBEF)],
+                          [Color(0XFFEE97D0), Color(0xFFEE97D0)],
+                          [Color(0xFFFFFFFF), Color(0xFFFFFFFF)],
                         ],
                         durations: [35000, 19440, 10800, 6000],
                         heightPercentages: [0.20, 0.23, 0.25, 0.30],

@@ -1,4 +1,3 @@
-//import 'dart:collection';
 import 'dart:io';
 import 'dart:core';
 
@@ -27,6 +26,27 @@ class ioprocess {
   void printatbt() {
     stdout.write('$pid\t$at\t$bt1\t$iobt\t$bt2\t\n');
   }
+
+  int tablevalue(int j) {
+    switch (j) {
+      case 1:
+        return this.at;
+      case 2:
+        return this.bt1;
+      case 3:
+        return this.bt2;
+      case 4:
+        return this.iobt;
+      case 5:
+        return this.ct;
+      case 6:
+        return this.tat;
+      case 7:
+        return this.wt;
+      default:
+        return 0;
+    }
+  }
 }
 
 /*void main(List<String> arguments) {
@@ -37,83 +57,97 @@ class ioprocess {
   assignPid(prs);
   List<ioprocess> fio = List.from(prs);
 
-  print('\n1.FCFSio Algo\n');
+  print('\n1.FCFSio2 Algo\n');
   fio.sort((a, b) => a.at.compareTo(b.at));
   fio = fcfsioalgo(fio);
 
   printprocess(fio);
-} */
+}*/
 
 List<ioprocess> fcfsioalgo(List<ioprocess> l) {
   List<ioprocess> lgantt = [];
-  lgantt = List<ioprocess>.from(l);
+  lgantt = List.from(l);
   for (var item in lgantt) {
     item.ct = item.start_time =
         item.start_time2 = item.tat = item.wt = item.ioexit = null;
     item.io = false;
   }
-  printprocess(lgantt);
   List<ioprocess> readyq = [];
   List<ioprocess> finishedq = [];
   List<ioprocess> ioqueue = [];
-
-  print(lgantt);
 
   int time = 0;
   fillrq(readyq, time, lgantt);
 
   while (time >= 0) {
     if (readyq.isEmpty) {
+      //1 true - readyq is empty
       if (lgantt.isEmpty) {
+        //2 true - lgantt and readyq both are empty
         if (ioqueue.isEmpty) {
+          //3 - true - all 3 queues are empty
           break;
         } else {
-          if (time < ioqueue[0].ioexit) {
-            time = ioqueue[0].ioexit;
-            //executelist(ioqueue, time, finishedq, ioqueue, readyq);
-            time = processexec(ioqueue, time, 0);
-            fillfq(ioqueue, finishedq, 0);
+          //3 - false - only ioqueue is not empty
+          if (time >= ioqueue[0].ioexit) {
+            //4 true - ioq[0] has arrived
+            fillrq(readyq, time, ioqueue);
+            print("readyq after filling it from ioq at time - " +
+                time.toString());
+            printpid(readyq);
+            print("ioq at that time");
+            printpid(ioqueue);
+            time = processexec(readyq, time, finishedq, ioqueue);
           } else {
-            //time = executelist(ioqueue, time, finishedq, ioqueue, readyq);
-            time = processexec(ioqueue, time, 0);
-            fillfq(ioqueue, finishedq, 0);
+            //4 false - ioq[0] has not arrived
+            //here x = ioq[0].ioexit - time , x = duration of idle state,
+            // between time and ioq[0].ioexit machine is in idle state
+            time = ioqueue[0].ioexit;
+            fillrq(readyq, time, ioqueue);
+            print(
+                "readyq after filling it from ioq when ioq[0] has not arrived at time - " +
+                    time.toString());
+            printpid(readyq);
+            time = processexec(readyq, time, finishedq, ioqueue);
           }
         }
       } else {
+        //2 false - lgantt is not empty
         if (ioqueue.isEmpty) {
-          time = lgantt[0].at;
-          time = executelist(lgantt, time, finishedq, ioqueue, readyq);
-        } else {
-          if (l[0].at >= ioqueue[0].ioexit) {
-            time = ioqueue[0].ioexit;
-            time = executelist(ioqueue, time, finishedq, ioqueue, readyq);
+          //3 true - ioqueue and readyq both are empty
+          if (time >= lgantt[0].at) {
+            //4 true - process from lgantt has arrived
+            fillrq(readyq, time, lgantt);
+            time = processexec(readyq, time, finishedq, ioqueue);
           } else {
+            //4 false - process from lgantt has not arrived
+            //here x = lgantt[0].at - time , x = duration of idle state,
+            // between time and lgantt[0].at machine is in idle state
             time = lgantt[0].at;
-            time = executelist(lgantt, time, finishedq, ioqueue, readyq);
+            fillrq(readyq, time, lgantt);
+            time = processexec(readyq, time, finishedq, ioqueue);
           }
+        } else {
+          //3 false - only readyq is empty
+          fillrq(readyq, time, lgantt);
+          fillrq(readyq, time, ioqueue);
+          time = processexec(readyq, time, finishedq, ioqueue);
         }
       }
     } else {
-      if (ioqueue.isEmpty) {
-        //executelist(readyq, time, finishedq, ioqueue, readyq);
-        time = processexec(readyq, time, 0);
-        if (readyq[0].io) {
-          fillfq(readyq, finishedq, 0);
-        } else {
-          iofill(readyq, ioqueue, time);
-        }
-      } else {
-        if (ioqueue[0].ioexit <= readyq[0].at) {
-          time = executelist(ioqueue, time, finishedq, ioqueue, readyq);
-        } else {
-          //executelist(readyq, time, finishedq, ioqueue, readyq);
-          time = processexec(readyq, time, 0);
-          if (readyq[0].io) {
-            fillfq(readyq, finishedq, 0);
-          } else {
-            iofill(readyq, ioqueue, time);
-          }
-        }
+      //1 readyq is not empty
+      if (lgantt.isNotEmpty) {
+        fillrq(readyq, time, lgantt);
+      }
+      if (ioqueue.isNotEmpty) {
+        fillrq(readyq, time, ioqueue);
+      }
+      time = processexec(readyq, time, finishedq, ioqueue);
+      if (lgantt.isNotEmpty) {
+        fillrq(readyq, time, lgantt);
+      }
+      if (ioqueue.isNotEmpty) {
+        fillrq(readyq, time, ioqueue);
       }
     }
   }
@@ -121,35 +155,24 @@ List<ioprocess> fcfsioalgo(List<ioprocess> l) {
   return finishedq;
 }
 
-int executelist(List<ioprocess> l, int time, List<ioprocess> fq,
-    List<ioprocess> ioqueue, List<ioprocess> readyq) {
-  time = processexec(l, time, 0);
-  if (l[0].io) {
-    fillfq(l, fq, 0);
-  } else {
-    iofill(l, ioqueue, time);
-  }
-
-  fillrq(readyq, time, l);
-  return time;
-}
-
-int processexec(List<ioprocess> lgantt, int stime, int i) {
+int processexec(List<ioprocess> lgantt, int stime, List<ioprocess> fq,
+    List<ioprocess> ioqueue) {
   int time;
-  if (lgantt[i].io) {
+  if (lgantt[0].io == true) {
     // this is when the process has completed its io
-    lgantt[i].start_time2 = stime;
-    lgantt[i].ct = lgantt[i].bt2 + stime;
-    time = lgantt[i].ct;
-    lgantt[i].tat = lgantt[i].ct - lgantt[i].at;
-    lgantt[i].wt = lgantt[i].tat - lgantt[i].bt2 - lgantt[i].bt1;
-    print(lgantt[i].pid + lgantt[i].ct.toString());
+    lgantt[0].start_time2 = stime;
+    lgantt[0].ct = lgantt[0].bt2 + stime;
+    time = lgantt[0].ct;
+    lgantt[0].tat = lgantt[0].ct - lgantt[0].at;
+    lgantt[0].wt = lgantt[0].tat - lgantt[0].bt2 - lgantt[0].bt1;
+    fillfq(lgantt, fq, 0);
   } else {
     //this is when the process has not completed its io
-    lgantt[i].start_time = stime;
-    lgantt[i].ct = lgantt[i].bt1 + lgantt[i].start_time;
-    time = lgantt[i].ct;
-    //lgantt[i].tat = lgantt[i].ct - lgantt[i].at;
+    lgantt[0].start_time = stime;
+    lgantt[0].ct = lgantt[0].bt1 + lgantt[0].start_time;
+    time = lgantt[0].ct;
+    iofill(lgantt, ioqueue, time);
+    //lgantt[0].tat = lgantt[0].ct - lgantt[0].at;
   }
   return time;
 }
@@ -164,19 +187,36 @@ void iofill(List<ioprocess> l, List<ioprocess> ioqueue, int time) {
   printpid(ioqueue);
 }
 
+//readyq is the reference of readyq list identifier
+// l is the reference of the main list
+// time is the value of current time
 void fillrq(List<ioprocess> readyq, int time, List<ioprocess> l) {
   int i = 0;
   int count = 0;
   l.sort((a, b) => a.at.compareTo(b.at));
-  while (l.isNotEmpty && count < l.length) {
-    if (l[i].at <= time) {
-      readyq.add(l[i]);
-      l.removeAt(i);
-      count--;
-    } else {
-      i++;
+  if (l[0].io == false) {
+    while (l.isNotEmpty && count < l.length) {
+      if (l[i].at <= time) {
+        readyq.add(l[i]);
+        l.removeAt(i);
+        count--;
+      } else {
+        i++;
+      }
+      count++;
     }
-    count++;
+  } else {
+    while (l.isNotEmpty && count < l.length) {
+      if (l[i].ioexit <= time) {
+        readyq.add(l[i]);
+        l.removeAt(i);
+        count--;
+      } else {
+        i++;
+      }
+      count++;
+    }
+    l.sort((a, b) => a.ioexit.compareTo(b.ioexit));
   }
 
   if (readyq.isNotEmpty) {
@@ -197,9 +237,20 @@ void printprocess(List l) {
 }
 
 void printpid(List<ioprocess> l) {
-  for (var i = 0; i < l.length; i++) {
-    // ignore: prefer_single_quotes
-    stdout.write(l[i].pid + " , ");
+  if (l.isNotEmpty) {
+    if (l[0].io) {
+      for (var i = 0; i < l.length; i++) {
+        // ignore: prefer_single_quotes
+        stdout.write(l[i].pid + " - " + l[i].ioexit.toString() + ", ");
+      }
+    } else {
+      for (var i = 0; i < l.length; i++) {
+        // ignore: prefer_single_quotes
+        stdout.write(l[i].pid + ", ");
+      }
+    }
+  } else {
+    print("the list is empty");
   }
   print("\n");
 }
