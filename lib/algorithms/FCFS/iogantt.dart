@@ -166,8 +166,8 @@ class _GanttChartState extends State<GanttChart> {
             ? Container(
                 decoration: BoxDecoration(
                     color: color.withAlpha(100),
-                    borderRadius: BorderRadius.circular(10.0)),
-                height: 25.0,
+                    borderRadius: BorderRadius.circular(30.0)),
+                height: 35.0,
                 width: remainingWidth1 * chartViewWidth / viewRangeToFitScreen,
                 margin: EdgeInsets.only(
                     left: calculateDistanceToLeftBorder(
@@ -178,13 +178,13 @@ class _GanttChartState extends State<GanttChart> {
                     bottom: i == data.length - 1 ? 4.0 : 2.0),
                 alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 8.0),
+                  padding: const EdgeInsets.only(left: 10.0),
                   child: Text(
                     data[i].pid,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
-                      fontSize: 10.0,
+                      fontSize: 14.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -195,8 +195,8 @@ class _GanttChartState extends State<GanttChart> {
                   Container(
                     decoration: BoxDecoration(
                         color: color.withAlpha(100),
-                        borderRadius: BorderRadius.circular(10.0)),
-                    height: 25.0,
+                        borderRadius: BorderRadius.circular(30.0)),
+                    height: 35.0,
                     width:
                         remainingWidth1 * chartViewWidth / viewRangeToFitScreen,
                     margin: EdgeInsets.only(
@@ -208,13 +208,13 @@ class _GanttChartState extends State<GanttChart> {
                         bottom: i == data.length - 1 ? 4.0 : 2.0),
                     alignment: Alignment.centerLeft,
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 8.0),
+                      padding: const EdgeInsets.only(left: 10.0),
                       child: Text(
                         data[i].pid,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
-                          fontSize: 10.0,
+                          fontSize: 14.0,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -223,8 +223,8 @@ class _GanttChartState extends State<GanttChart> {
                   Container(
                     decoration: BoxDecoration(
                         color: color.withAlpha(100),
-                        borderRadius: BorderRadius.circular(10.0)),
-                    height: 25.0,
+                        borderRadius: BorderRadius.circular(30.0)),
+                    height: 35.0,
                     width:
                         remainingWidth2 * chartViewWidth / viewRangeToFitScreen,
                     margin: EdgeInsets.only(
@@ -238,13 +238,13 @@ class _GanttChartState extends State<GanttChart> {
                         bottom: i == data.length - 1 ? 4.0 : 2.0),
                     alignment: Alignment.centerLeft,
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 8.0),
+                      padding: const EdgeInsets.only(left: 10.0),
                       child: Text(
                         data[i].pid,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
-                          fontSize: 10.0,
+                          fontSize: 14.0,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -263,10 +263,10 @@ class _GanttChartState extends State<GanttChart> {
     Color color = randomColorGenerator();
     var chartBars = buildChartBars(userData, chartViewWidth, color);
     return Container(
-      height: chartBars.length * 29.0 + 44.0 + 4.0,
+      height: chartBars.length * 39.0 + 44.0 + 4.0,
       // height: 200,
       child: ListView(
-        physics: new ClampingScrollPhysics(),
+        physics: ClampingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         children: <Widget>[
           Stack(fit: StackFit.loose, children: <Widget>[
@@ -282,13 +282,13 @@ class _GanttChartState extends State<GanttChart> {
                           children: <Widget>[
                             Container(
                                 width: chartViewWidth / viewRangeToFitScreen,
-                                height: chartBars.length * 29.0 + 4.0,
+                                height: chartBars.length * 39.0 + 4.0,
                                 // height: 150,
                                 color: color.withAlpha(100),
                                 child: Center(
                                   child: new RotatedBox(
                                     quarterTurns:
-                                        chartBars.length * 29.0 + 4.0 > 50
+                                        chartBars.length * 39.0 + 4.0 > 50
                                             ? 0
                                             : 0,
                                     child: Text(
@@ -355,7 +355,7 @@ class _GanttChartState extends State<GanttChart> {
         prsIO.add(Process(prs[i].at, prs[i].iobt));
         prsIO[prsIO.length - 1].ct =
             prs[i].start_time + prs[i].bt1 + prs[i].iobt;
-        prsIO[prsIO.length - 1].pid = prs[i].pid + "IO";
+        prsIO[prsIO.length - 1].pid = prs[i].pid;
         print(prsIO);
         i += 1;
       }
@@ -384,10 +384,15 @@ class _GanttChartState extends State<GanttChart> {
           ),
           centerTitle: true,
         ),
-        body: Column(
-          children: <Widget>[
-            buildChartForEachUser(prsNew, 300.0, "Prs"),
-            buildChartForEachUser(prsIO, 300.0, "IO"),
+        body: ListView(
+          physics: BouncingScrollPhysics(),
+          children: [
+            Column(
+              children: <Widget>[
+                buildChartForEachUser(prsNew, 300.0, "Prs"),
+                buildChartForEachUser(prsIO, 300.0, "IO"),
+              ],
+            ),
           ],
         ),
       ),
