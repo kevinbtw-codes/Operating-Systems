@@ -341,8 +341,8 @@ class _fcfsio_pageState extends State<fcfsio_page> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    //
-                    ),
+                  builder: (context) => GanttChart(prs),
+                ),
               );
             },
           ),
