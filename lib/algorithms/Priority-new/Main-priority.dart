@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:os_project/algorithms/Priority-new/Main-priorio.dart';
 import '../../Algorithm page.dart';
@@ -117,7 +116,7 @@ class _AlgorithmState extends State<Algorithm> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
                                       Text(
-                                        'at:',
+                                        'AT:',
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 20,
@@ -148,7 +147,7 @@ class _AlgorithmState extends State<Algorithm> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
                                       Text(
-                                        'bt:',
+                                        'BT:',
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 20,
@@ -572,14 +571,14 @@ class _AlgorithmState extends State<Algorithm> {
           padding: const EdgeInsets.symmetric(vertical: 10.0),
           child: ExpansionTile(
             title: Text(
-              "AT: $at\t \t BT: $bt\t  \t Priority: $priority",
+              "AT: $at\t \t BT: $bt\t  \t P: $priority",
               style: TextStyle(
                 fontSize: 23,
               ),
             ),
             leading: CircleAvatar(
               radius: 40,
-              backgroundColor: Colors.blue.shade200,
+              backgroundColor: Color(0xFFC3EBEF),
               child: Text(
                 prs[index].pid,
                 style: TextStyle(

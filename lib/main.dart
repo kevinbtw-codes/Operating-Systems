@@ -50,20 +50,21 @@ class FirstScreen extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  height: 600,
                   child: RotateAnimatedTextKit(
                     onTap: () {
                       print("Tap Event");
                     },
                     text: [
-                      " ",
+                      "",
                     ],
                     textStyle: TextStyle(
                       fontSize: 28.0,
+                      color: Colors.black
                     ),
                     textAlign: TextAlign.start,
                     transitionHeight: 86,
                   ),
+                  height: MediaQuery.of(context).size.height*0.4,
                 ),
                 RaisedButton(
                   color: Color(0xFF22456D),

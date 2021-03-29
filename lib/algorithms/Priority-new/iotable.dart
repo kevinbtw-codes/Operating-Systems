@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lazy_data_table/lazy_data_table.dart';
@@ -36,7 +35,7 @@ class _TheTableState extends State<TheTable> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.red,
+          backgroundColor: Color(0xff22456d),
           leading: IconButton(
             icon: Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () {
@@ -47,7 +46,7 @@ class _TheTableState extends State<TheTable> {
             'Process Table',
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 14,
+              //fontSize: 14,
               color: Colors.white,
             ),
           ),
@@ -63,7 +62,7 @@ class _TheTableState extends State<TheTable> {
                   tableDimensions: LazyDataTableDimensions(
                     columnHeaderHeight: 50,
                     cellHeight: 50,
-                    cellWidth: 72.5,
+                    cellWidth: (MediaQuery.of(context).size.width) / 7,
                   ),
                   columnHeaderBuilder: (i) =>
                       Center(child: Text(colum_head[i].toUpperCase())),

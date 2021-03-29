@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
+import 'package:os_project/algorithms/FCFS/Main-fcfs.dart';
 import 'fcfs_io.dart';
 import 'iogantt.dart';
 import 'iotable.dart';
@@ -105,9 +106,9 @@ class _fcfsio_pageState extends State<fcfsio_page> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Text(
-                                  'at:',
+                                  'AT:',
                                   style: TextStyle(
-                                    color: Color(0xFF22456D),
+                                    //color: Color(0xFF22456D),
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20,
                                   ),
@@ -137,7 +138,7 @@ class _fcfsio_pageState extends State<fcfsio_page> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Text(
-                                  'iobt:',
+                                  'IOBT:',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20,
@@ -178,9 +179,9 @@ class _fcfsio_pageState extends State<fcfsio_page> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Text(
-                                  'bt1:',
+                                  'BT1:',
                                   style: TextStyle(
-                                    color: Color(0xFF22456D),
+                                    //color: Color(0xFF22456D),
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20,
                                   ),
@@ -211,7 +212,7 @@ class _fcfsio_pageState extends State<fcfsio_page> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Text(
-                                  'bt2:',
+                                  'BT2:',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20,
@@ -301,8 +302,8 @@ class _fcfsio_pageState extends State<fcfsio_page> {
         ],
       ),
       floatingActionButton: FabCircularMenu(
-        ringDiameter: 500,
-        ringWidth: 100,
+        ringDiameter: 450,
+        ringWidth: 120,
         ringColor: Color(0xFFc3ebef),
         fabColor: Color(0xffc3ebef),
         children: <Widget>[
@@ -314,7 +315,7 @@ class _fcfsio_pageState extends State<fcfsio_page> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => fcfsio_page(),
+                  builder: (context) => MyApp(),
                 ),
               );
             },
@@ -340,8 +341,8 @@ class _fcfsio_pageState extends State<fcfsio_page> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    //
-                    ),
+                  builder: (context) => GanttChart(prs),
+                ),
               );
             },
           ),
@@ -628,14 +629,14 @@ class _fcfsio_pageState extends State<fcfsio_page> {
           padding: const EdgeInsets.all(10.0),
           child: ExpansionTile(
             title: Text(
-              "at: $at\t bt1: $bt\t bt2: $bt2\t iobt: $iobt",
+              "AT: $at\t BT1: $bt\t BT2: $bt2\t IOBT: $iobt",
               style: TextStyle(
                 fontSize: 23,
               ),
             ),
             leading: CircleAvatar(
               radius: 40,
-              backgroundColor: Colors.blue.shade200,
+              backgroundColor: Color(0xFFC3EBEF),
               child: Text(
                 prs[index].pid,
                 style: TextStyle(

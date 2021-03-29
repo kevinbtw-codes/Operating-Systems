@@ -34,7 +34,7 @@ class _TheTableState extends State<TheTable> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.red,
+          backgroundColor:Color(0xff22456d),
           leading: IconButton(
             icon: Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () {
@@ -45,7 +45,7 @@ class _TheTableState extends State<TheTable> {
             'Process Table',
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 14,
+              //fontSize: 14,
               color: Colors.white,
             ),
           ),
@@ -61,7 +61,7 @@ class _TheTableState extends State<TheTable> {
                   tableDimensions: LazyDataTableDimensions(
                     columnHeaderHeight: 50,
                     cellHeight: 50,
-                    cellWidth: 68.5,
+                    cellWidth:(MediaQuery.of(context).size.width)/8,
                   ),
                   columnHeaderBuilder: (i) =>
                       Center(child: Text(colum_head[i].toUpperCase())),

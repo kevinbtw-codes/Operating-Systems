@@ -107,7 +107,6 @@ class _AlgorithmState extends State<Algorithm> {
                                 Text(
                                   'AT:',
                                   style: TextStyle(
-                                    color: Color(0xFF22456D),
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20,
                                   ),
@@ -473,14 +472,14 @@ class _AlgorithmState extends State<Algorithm> {
           padding: const EdgeInsets.all(10.0),
           child: ExpansionTile(
             title: Text(
-              "at: $at\t      \t bt: $bt",
+              "AT: $at\t      \t BT: $bt",
               style: TextStyle(
                 fontSize: 23,
               ),
             ),
             leading: CircleAvatar(
               radius: 40,
-              backgroundColor: Colors.blue.shade200,
+              backgroundColor: Color(0xFFc3ebef),
               child: Text(
                 prs[index].pid,
                 style: TextStyle(

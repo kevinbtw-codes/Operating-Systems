@@ -36,7 +36,7 @@ class TheTable extends StatefulWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.red,
+          backgroundColor: Color(0xff22456d),
           leading: IconButton(
             icon: Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () {
@@ -47,7 +47,6 @@ class TheTable extends StatefulWidget {
             'Process Table',
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 14,
               color: Colors.white,
             ),
           ),
@@ -63,7 +62,7 @@ class TheTable extends StatefulWidget {
                   tableDimensions: LazyDataTableDimensions(
                     columnHeaderHeight: 50,
                     cellHeight: 50,
-                    cellWidth: 68.5,
+                    cellWidth:(MediaQuery.of(context).size.width)/8,
                   ),
                   columnHeaderBuilder: (i) =>
                       Center(child: Text(colum_head[i].toUpperCase())),
