@@ -264,61 +264,48 @@ class _GanttChartState extends State<GanttChart> {
     return Container(
       height: chartBars.length * 39.0 + 44.0 + 4.0,
       // height: 200,
-      child: ListView(
-        physics: ClampingScrollPhysics(),
-        scrollDirection: Axis.horizontal,
-        children: <Widget>[
-          Stack(fit: StackFit.loose, children: <Widget>[
-            buildGrid(chartViewWidth),
-            buildHeader(chartViewWidth, color),
-            Container(
-                margin: EdgeInsets.only(top: 44.0),
-                child: Container(
-                  child: Column(
-                    children: <Widget>[
-                      Container(
-                        child: Row(
-                          children: <Widget>[
-                            Container(
-                                width: chartViewWidth / viewRangeToFitScreen,
-                                height: chartBars.length * 39.0 + 4.0,
-                                // height: 150,
-                                color: color.withAlpha(100),
-                                child: Center(
-                                  child: new RotatedBox(
-                                    quarterTurns:
-                                        chartBars.length * 39.0 + 4.0 > 50
-                                            ? 0
-                                            : 0,
-                                    child: Text(
-                                      user,
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                      textAlign: TextAlign.center,
-                                      maxLines: 2,
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
+      child: Stack(fit: StackFit.loose, children: <Widget>[
+        buildGrid(chartViewWidth),
+        buildHeader(chartViewWidth, color),
+        Container(
+            margin: EdgeInsets.only(top: 44.0),
+            child: Container(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                            width: chartViewWidth / viewRangeToFitScreen,
+                            height: chartBars.length * 39.0 + 4.0,
+                            // height: 150,
+                            color: color.withAlpha(100),
+                            child: Center(
+                              child: new RotatedBox(
+                                quarterTurns:
+                                    chartBars.length * 39.0 + 4.0 > 50 ? 0 : 0,
+                                child: Text(
+                                  user,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
                                   ),
-                                )),
-                            GestureDetector(
-                              onTap: () => {
-                                if (chartBars.length >= 1) {print(chartBars[0])}
-                              },
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: chartBars,
+                                  textAlign: TextAlign.center,
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
                               ),
-                            ),
-                          ],
+                            )),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: chartBars,
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                )),
-          ]),
-        ],
-      ),
+                ],
+              ),
+            )),
+      ]),
     );
   }
 
@@ -344,8 +331,8 @@ class _GanttChartState extends State<GanttChart> {
       }
     }
 
-    print("prs: " + prs.toString());
-    print("prsNew: " + prsNew.toString());
+    // print("prs: " + prs.toString());
+    // print("prsNew: " + prsNew.toString());
 
     List<Process> prsIO = [];
     if (prs.length >= 1) {
@@ -355,7 +342,6 @@ class _GanttChartState extends State<GanttChart> {
         prsIO[prsIO.length - 1].ct =
             prs[i].start_time + prs[i].bt1 + prs[i].iobt;
         prsIO[prsIO.length - 1].pid = prs[i].pid;
-        print(prsIO);
         i += 1;
       }
     }
@@ -383,16 +369,19 @@ class _GanttChartState extends State<GanttChart> {
           ),
           centerTitle: true,
         ),
-        body: ListView(
+        body: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
           physics: BouncingScrollPhysics(),
-          children: [
-            Column(
+          child: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
+            scrollDirection: Axis.vertical,
+            child: Column(
               children: <Widget>[
                 buildChartForEachUser(prsNew, 300.0, "Prs"),
                 buildChartForEachUser(prsIO, 300.0, "IO"),
               ],
             ),
-          ],
+          ),
         ),
       ),
     );
