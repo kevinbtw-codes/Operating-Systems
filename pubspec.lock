@@ -502,9 +502,11 @@ packages:
   wave:
     dependency: "direct main"
     description:
-      name: wave
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "."
+      ref: HEAD
+      resolved-ref: "0377d3b06b8df762d481e64bf4057d73fdafdaa2"
+      url: "git://github.com/searchy2/wave.git"
+    source: git
     version: "0.1.0"
   win32:
     dependency: transitive
