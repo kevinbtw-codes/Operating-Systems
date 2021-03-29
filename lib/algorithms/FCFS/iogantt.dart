@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:os_project/algorithms/FCFS/fcfs_io.dart';
-import 'package:timelines/timelines.dart';
 import 'dart:math';
 import 'fcfs.dart';
 
@@ -367,7 +366,7 @@ class _GanttChartState extends State<GanttChart> {
       //   debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.red,
+          backgroundColor: Color(0xff22456d),
           leading: IconButton(
             icon: Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () {
@@ -378,7 +377,7 @@ class _GanttChartState extends State<GanttChart> {
             'Gantt Chart',
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 14,
+              //fontSize: 14,
               color: Colors.white,
             ),
           ),
