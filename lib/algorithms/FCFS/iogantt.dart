@@ -38,7 +38,7 @@ class _GanttChartState extends State<GanttChart> {
   int toTime;
   int viewRange = 10;
   Bruh() {
-    prs.sort((a, b) => a.ct.compareTo(b.ct));
+    prs.sort((a, b) => a.start_time.compareTo(b.start_time));
     if (prs.length >= 1) {
       fromTime = prs[0].at;
       toTime = prs[prs.length - 1].ct;
@@ -341,11 +341,12 @@ class _GanttChartState extends State<GanttChart> {
         prsNew.add(Process(prs[i].at, prs[i].bt2));
         prsNew[prsNew.length - 1].ct = prs[i].start_time2 + prs[i].bt2;
         prsNew[prsNew.length - 1].pid = prs[i].pid;
-        print("prs: " + prs.toString());
-        print("prsNew: " + prsNew.toString());
         i += 1;
       }
     }
+
+    print("prs: " + prs.toString());
+    print("prsNew: " + prsNew.toString());
 
     List<Process> prsIO = [];
     if (prs.length >= 1) {
