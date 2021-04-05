@@ -438,8 +438,10 @@ class _priorio_pageState extends State<priorio_page> {
         if (prs.length > 0) {
           prs.removeAt(index);
           //prs.sort((a, b) => a.at.compareTo(b.at));
-          prs = priorioalgo(prs);
-          prs.sort((a, b) => a.pid.compareTo(b.pid));
+          if (prs.isNotEmpty) {
+            prs = priorioalgo(prs);
+            prs.sort((a, b) => a.pid.compareTo(b.pid));
+          }
         }
         print("Length of prs is " + prs.length.toString());
         printprocess(prs);
