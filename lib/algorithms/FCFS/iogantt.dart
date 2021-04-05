@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:os_project/algorithms/FCFS/fcfs_io.dart';
-import 'package:timelines/timelines.dart';
 import 'dart:math';
 import 'fcfs.dart';
 
@@ -38,7 +37,7 @@ class _GanttChartState extends State<GanttChart> {
   int toTime;
   int viewRange = 10;
   Bruh() {
-    prs.sort((a, b) => a.ct.compareTo(b.ct));
+    prs.sort((a, b) => a.start_time.compareTo(b.start_time));
     if (prs.length >= 1) {
       fromTime = prs[0].at;
       toTime = prs[prs.length - 1].ct;
@@ -166,8 +165,8 @@ class _GanttChartState extends State<GanttChart> {
             ? Container(
                 decoration: BoxDecoration(
                     color: color.withAlpha(100),
-                    borderRadius: BorderRadius.circular(10.0)),
-                height: 25.0,
+                    borderRadius: BorderRadius.circular(30.0)),
+                height: 35.0,
                 width: remainingWidth1 * chartViewWidth / viewRangeToFitScreen,
                 margin: EdgeInsets.only(
                     left: calculateDistanceToLeftBorder(
@@ -178,13 +177,13 @@ class _GanttChartState extends State<GanttChart> {
                     bottom: i == data.length - 1 ? 4.0 : 2.0),
                 alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 8.0),
+                  padding: const EdgeInsets.only(left: 10.0),
                   child: Text(
                     data[i].pid,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
-                      fontSize: 10.0,
+                      fontSize: 14.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -195,8 +194,8 @@ class _GanttChartState extends State<GanttChart> {
                   Container(
                     decoration: BoxDecoration(
                         color: color.withAlpha(100),
-                        borderRadius: BorderRadius.circular(10.0)),
-                    height: 25.0,
+                        borderRadius: BorderRadius.circular(30.0)),
+                    height: 35.0,
                     width:
                         remainingWidth1 * chartViewWidth / viewRangeToFitScreen,
                     margin: EdgeInsets.only(
@@ -208,13 +207,13 @@ class _GanttChartState extends State<GanttChart> {
                         bottom: i == data.length - 1 ? 4.0 : 2.0),
                     alignment: Alignment.centerLeft,
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 8.0),
+                      padding: const EdgeInsets.only(left: 10.0),
                       child: Text(
                         data[i].pid,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
-                          fontSize: 10.0,
+                          fontSize: 14.0,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -223,8 +222,8 @@ class _GanttChartState extends State<GanttChart> {
                   Container(
                     decoration: BoxDecoration(
                         color: color.withAlpha(100),
-                        borderRadius: BorderRadius.circular(10.0)),
-                    height: 25.0,
+                        borderRadius: BorderRadius.circular(30.0)),
+                    height: 35.0,
                     width:
                         remainingWidth2 * chartViewWidth / viewRangeToFitScreen,
                     margin: EdgeInsets.only(
@@ -238,13 +237,13 @@ class _GanttChartState extends State<GanttChart> {
                         bottom: i == data.length - 1 ? 4.0 : 2.0),
                     alignment: Alignment.centerLeft,
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 8.0),
+                      padding: const EdgeInsets.only(left: 10.0),
                       child: Text(
                         data[i].pid,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
-                          fontSize: 10.0,
+                          fontSize: 14.0,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -263,63 +262,50 @@ class _GanttChartState extends State<GanttChart> {
     Color color = randomColorGenerator();
     var chartBars = buildChartBars(userData, chartViewWidth, color);
     return Container(
-      height: chartBars.length * 29.0 + 44.0 + 4.0,
+      height: chartBars.length * 39.0 + 44.0 + 4.0,
       // height: 200,
-      child: ListView(
-        physics: new ClampingScrollPhysics(),
-        scrollDirection: Axis.horizontal,
-        children: <Widget>[
-          Stack(fit: StackFit.loose, children: <Widget>[
-            buildGrid(chartViewWidth),
-            buildHeader(chartViewWidth, color),
-            Container(
-                margin: EdgeInsets.only(top: 44.0),
-                child: Container(
-                  child: Column(
-                    children: <Widget>[
-                      Container(
-                        child: Row(
-                          children: <Widget>[
-                            Container(
-                                width: chartViewWidth / viewRangeToFitScreen,
-                                height: chartBars.length * 29.0 + 4.0,
-                                // height: 150,
-                                color: color.withAlpha(100),
-                                child: Center(
-                                  child: new RotatedBox(
-                                    quarterTurns:
-                                        chartBars.length * 29.0 + 4.0 > 50
-                                            ? 0
-                                            : 0,
-                                    child: Text(
-                                      user,
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                      textAlign: TextAlign.center,
-                                      maxLines: 2,
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
+      child: Stack(fit: StackFit.loose, children: <Widget>[
+        buildGrid(chartViewWidth),
+        buildHeader(chartViewWidth, color),
+        Container(
+            margin: EdgeInsets.only(top: 44.0),
+            child: Container(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                            width: chartViewWidth / viewRangeToFitScreen,
+                            height: chartBars.length * 39.0 + 4.0,
+                            // height: 150,
+                            color: color.withAlpha(100),
+                            child: Center(
+                              child: new RotatedBox(
+                                quarterTurns:
+                                    chartBars.length * 39.0 + 4.0 > 50 ? 0 : 0,
+                                child: Text(
+                                  user,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
                                   ),
-                                )),
-                            GestureDetector(
-                              onTap: () => {
-                                if (chartBars.length >= 1) {print(chartBars[0])}
-                              },
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: chartBars,
+                                  textAlign: TextAlign.center,
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
                               ),
-                            ),
-                          ],
+                            )),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: chartBars,
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                )),
-          ]),
-        ],
-      ),
+                ],
+              ),
+            )),
+      ]),
     );
   }
 
@@ -341,11 +327,12 @@ class _GanttChartState extends State<GanttChart> {
         prsNew.add(Process(prs[i].at, prs[i].bt2));
         prsNew[prsNew.length - 1].ct = prs[i].start_time2 + prs[i].bt2;
         prsNew[prsNew.length - 1].pid = prs[i].pid;
-        print("prs: " + prs.toString());
-        print("prsNew: " + prsNew.toString());
         i += 1;
       }
     }
+
+    // print("prs: " + prs.toString());
+    // print("prsNew: " + prsNew.toString());
 
     List<Process> prsIO = [];
     if (prs.length >= 1) {
@@ -354,8 +341,7 @@ class _GanttChartState extends State<GanttChart> {
         prsIO.add(Process(prs[i].at, prs[i].iobt));
         prsIO[prsIO.length - 1].ct =
             prs[i].start_time + prs[i].bt1 + prs[i].iobt;
-        prsIO[prsIO.length - 1].pid = prs[i].pid + "IO";
-        print(prsIO);
+        prsIO[prsIO.length - 1].pid = prs[i].pid;
         i += 1;
       }
     }
@@ -366,7 +352,7 @@ class _GanttChartState extends State<GanttChart> {
       //   debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.red,
+          backgroundColor: Color(0xff22456d),
           leading: IconButton(
             icon: Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () {
@@ -377,17 +363,25 @@ class _GanttChartState extends State<GanttChart> {
             'Gantt Chart',
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 14,
+              //fontSize: 14,
               color: Colors.white,
             ),
           ),
           centerTitle: true,
         ),
-        body: Column(
-          children: <Widget>[
-            buildChartForEachUser(prsNew, 300.0, "Prs"),
-            buildChartForEachUser(prsIO, 300.0, "IO"),
-          ],
+        body: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          physics: BouncingScrollPhysics(),
+          child: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
+            scrollDirection: Axis.vertical,
+            child: Column(
+              children: <Widget>[
+                buildChartForEachUser(prsNew, 300.0, "Prs"),
+                buildChartForEachUser(prsIO, 300.0, "IO"),
+              ],
+            ),
+          ),
         ),
       ),
     );
