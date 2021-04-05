@@ -360,7 +360,8 @@ class _HomePageState extends State<FCFSLearn> {
                         FadeAnimation(
                             1.6,
                             Text(
-                              "To edit or delete a process swipe the respective dialog box to the left . On editing a process you may see the visible changes sorted according to arrival times .",
+                              "To edit or delete a process swipe the respective dialog box to the left . On editing a process you may see the visible changes "
+                                  "sorted according to arrival times.\nTo delete all the processes at once, just drag the page down to reset it.",
                               //textAlign: TextAlign.justify,
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16),
@@ -378,6 +379,48 @@ class _HomePageState extends State<FCFSLearn> {
                                   makeVideo(
                                       image:
                                           'images/Learn page images/FCFS-5.jpg'),
+                                  /*makeVideo(
+                                      image:
+                                          'images/Learn page images/emma-2.jpg'),*/
+                                ],
+                              ),
+                            )),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "5.",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "To edit or delete a process swipe the respective dialog box to the left . On editing a process you may see the visible changes sorted according to arrival times .",
+                              //textAlign: TextAlign.justify,
+                              style:
+                              TextStyle(color: Colors.white, fontSize: 16),
+                            )),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.8,
+                            Container(
+                              height: 200,
+                              child: ListView(
+                                scrollDirection: Axis.horizontal,
+                                children: <Widget>[
+                                  makeVideo(
+                                      image:
+                                      'images/Learn page images/FCFS-5.jpg'),
                                   /*makeVideo(
                                       image:
                                           'images/Learn page images/emma-2.jpg'),*/

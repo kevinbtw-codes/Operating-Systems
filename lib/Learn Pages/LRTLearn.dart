@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:os_project/algorithms/FCFS/Main-fcfs.dart';
 
 void main() => runApp(MaterialApp(
-  debugShowCheckedModeBanner: false,
-  home: LRTLearn(),
-));
+      debugShowCheckedModeBanner: false,
+      home: LRTLearn(),
+    ));
 
 class LRTLearn extends StatefulWidget {
   @override
@@ -44,19 +44,19 @@ class _HomePageState extends State<LRTLearn> {
                   background: Container(
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage('images/FCFS.gif'),
+                            image: AssetImage('images/LRTF.gif'),
                             fit: BoxFit.cover)),
                     child: Container(
                       decoration: BoxDecoration(
                           gradient: LinearGradient(
                               begin: Alignment.bottomRight,
                               colors: [
-                                Color(0XFFF36735).withOpacity(0.0),
-                                //Color(0XFFF36735).withOpacity(0.75),
-                                Colors.transparent
-                                //Color(0xff22456d).withOpacity(0.7),
-                                //Color(0xff22456d).withOpacity(0.9)
-                              ])),
+                            Color(0XFFF36735).withOpacity(0.0),
+                            //Color(0XFFF36735).withOpacity(0.75),
+                            Colors.transparent
+                            //Color(0xff22456d).withOpacity(0.7),
+                            //Color(0xff22456d).withOpacity(0.9)
+                          ])),
                       child: Padding(
                         padding: EdgeInsets.all(20),
                         child: Column(
@@ -164,7 +164,7 @@ class _HomePageState extends State<LRTLearn> {
                               "First in, first out (FIFO), also known as first come, first served (FCFS), is the simplest scheduling algorithm. FIFO simply queues processes in the order that they arrive in the ready queue.",
                               //textAlign: TextAlign.justify,
                               style:
-                              TextStyle(color: Colors.white, fontSize: 16),
+                                  TextStyle(color: Colors.white, fontSize: 16),
                             )),
                         SizedBox(
                           height: 20,
@@ -187,7 +187,7 @@ class _HomePageState extends State<LRTLearn> {
                               "In this algorithm , the process that comes first will be executed first and next process starts only after the previous gets fully executed.",
                               //textAlign: TextAlign.justify,
                               style:
-                              TextStyle(color: Colors.white, fontSize: 16),
+                                  TextStyle(color: Colors.white, fontSize: 16),
                             )),
                         SizedBox(
                           height: 20,
@@ -250,11 +250,11 @@ class _HomePageState extends State<LRTLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                     image:
-                                    'images/Learn page images/FCFS-1.jpg',
+                                        'images/Learn page images/FCFS-1.jpg',
                                   ),
                                   makeVideo(
                                       image:
-                                      'images/Learn page images/FCFS-2.jpg'),
+                                          'images/Learn page images/FCFS-2.jpg'),
                                 ],
                               ),
                             )),
@@ -279,7 +279,7 @@ class _HomePageState extends State<LRTLearn> {
                               "For each process one can input respective value for \"AT\" and \"BT\" , failing to which the value will be considered as null.",
                               //textAlign: TextAlign.justify,
                               style:
-                              TextStyle(color: Colors.white, fontSize: 16),
+                                  TextStyle(color: Colors.white, fontSize: 16),
                             )),
                         SizedBox(
                           height: 20,
@@ -293,7 +293,7 @@ class _HomePageState extends State<LRTLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                      'images/Learn page images/FCFS-3.jpg'),
+                                          'images/Learn page images/FCFS-3.jpg'),
                                   /* makeVideo(
                                       image:
                                           'images/Learn page images/emma-2.jpg'),*/
@@ -321,7 +321,7 @@ class _HomePageState extends State<LRTLearn> {
                               "Once you're done with entering the data hit the \"Submit\" button. Repeating the above step will let you add multiple processes .",
                               //textAlign: TextAlign.justify,
                               style:
-                              TextStyle(color: Colors.white, fontSize: 16),
+                                  TextStyle(color: Colors.white, fontSize: 16),
                             )),
                         SizedBox(
                           height: 20,
@@ -335,7 +335,7 @@ class _HomePageState extends State<LRTLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                      'images/Learn page images/FCFS-4.jpg'),
+                                          'images/Learn page images/FCFS-4.jpg'),
                                   /* makeVideo(
                                       image:
                                           'images/Learn page images/emma-2.jpg'),*/
@@ -363,7 +363,7 @@ class _HomePageState extends State<LRTLearn> {
                               "To edit or delete a process swipe the respective dialog box to the left . On editing a process you may see the visible changes sorted according to arrival times .",
                               //textAlign: TextAlign.justify,
                               style:
-                              TextStyle(color: Colors.white, fontSize: 16),
+                                  TextStyle(color: Colors.white, fontSize: 16),
                             )),
                         SizedBox(
                           height: 20,
@@ -377,7 +377,7 @@ class _HomePageState extends State<LRTLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                      'images/Learn page images/FCFS-5.jpg'),
+                                          'images/Learn page images/FCFS-5.jpg'),
                                   /*makeVideo(
                                       image:
                                           'images/Learn page images/emma-2.jpg'),*/
@@ -418,12 +418,12 @@ class _HomePageState extends State<LRTLearn> {
                           color: Color(0XFFF36735)),
                       child: Align(
                           child: Text(
-                            "START",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold),
-                          )),
+                        "START",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold),
+                      )),
                     ),
                   ),
                 ),
@@ -443,17 +443,17 @@ class _HomePageState extends State<LRTLearn> {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             image:
-            DecorationImage(image: AssetImage(image), fit: BoxFit.cover)),
+                DecorationImage(image: AssetImage(image), fit: BoxFit.cover)),
         child: Container(
           decoration: BoxDecoration(
-            // gradient: LinearGradient(
-            //   begin: Alignment.bottomRight,
-            //   colors: [
-            //     Colors.black.withOpacity(.9),
-            //     Colors.black.withOpacity(.3)
-            //   ],
-            // ),
-          ),
+              // gradient: LinearGradient(
+              //   begin: Alignment.bottomRight,
+              //   colors: [
+              //     Colors.black.withOpacity(.9),
+              //     Colors.black.withOpacity(.3)
+              //   ],
+              // ),
+              ),
         ),
       ),
     );
