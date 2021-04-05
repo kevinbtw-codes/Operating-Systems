@@ -137,7 +137,7 @@ class _HomePageState extends State<RRLearn> {
                         FadeAnimation(
                             1.6,
                             Text(
-                              "Input n processes with their respective arrival and burst time, upon which our app will provide average waiting time and average turn around time using FCFS scheduling algorithm.",
+                              "The name of this algorithm comes from the round-robin principle, where each person gets an equal share of something in turns. It is the oldest, simplest scheduling algorithm, which is mostly used for multitasking.",
                               //textAlign: TextAlign.justify,
                               style: TextStyle(
                                   color: Colors.white,
@@ -162,7 +162,7 @@ class _HomePageState extends State<RRLearn> {
                         FadeAnimation(
                             1.6,
                             Text(
-                              "First in, first out (FIFO), also known as first come, first served (FCFS), is the simplest scheduling algorithm. FIFO simply queues processes in the order that they arrive in the ready queue.",
+                              "In Round-robin scheduling, each ready task runs turn by turn only in a cyclic queue for a limited time slice , which is called time quantum ( or time slice ) which depends on value entered by user .",
                               //textAlign: TextAlign.justify,
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16),
@@ -185,7 +185,32 @@ class _HomePageState extends State<RRLearn> {
                         FadeAnimation(
                             1.6,
                             Text(
-                              "In this algorithm , the process that comes first will be executed first and next process starts only after the previous gets fully executed.",
+                              "Time quantum should be minimum, which is assigned for a specific task that needs to be processed. However, it may differ OS to OS.",
+                              //textAlign: TextAlign.justify,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.normal),
+                            )),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "4.",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "The process that is preempted is added to the end of the queue . This algorithm also offers starvation free execution of processes.",
                               //textAlign: TextAlign.justify,
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16),
