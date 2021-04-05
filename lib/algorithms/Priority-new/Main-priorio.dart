@@ -1,9 +1,7 @@
-//
 import 'package:flutter/material.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'package:os_project/algorithms/Priority-new/Main-priority.dart';
 import 'prior_io.dart';
-//import 'Main-priority.dart';
 import 'iogantt.dart';
 import 'iotable.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -391,8 +389,9 @@ class _priorio_pageState extends State<priorio_page> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    //
-                    ),
+                  builder: (context) => GanttChart(prs),
+                  //
+                ),
               );
             },
           ),
