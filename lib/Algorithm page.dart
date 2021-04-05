@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:os_project/Learn Pages/FCFSLearn.dart';
 import 'package:os_project/Learn Pages/SJFLearn.dart';
 import 'package:os_project/Learn Pages/priorityLearn.dart';
+import 'package:os_project/Learn%20Pages/LJFLearn.dart';
+import 'package:os_project/Learn%20Pages/LRTLearn.dart';
+import 'package:os_project/Learn%20Pages/PriorityPreLearn.dart';
+import 'package:os_project/Learn%20Pages/RRLearn.dart';
+import 'package:os_project/Learn%20Pages/SRTLearn.dart';
 import 'package:os_project/algorithms/Priority-new/Main-priority.dart';
 import 'package:os_project/algorithms/Shortest job First/Main-SJF.dart';
 import 'package:os_project/algorithms/Longest job First/Main-LJF.dart';
@@ -648,7 +653,12 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                                   color: Color(0XFFF36735),
                                   textColor: Colors.white,
                                   onPressed: () {
-                                    // Perform some action
+                                    Navigator.push(
+                                      context,
+                                      new MaterialPageRoute(
+                                        builder: (context) => new RRLearn(),
+                                      ),
+                                    );
                                   },
                                   child: const Text(
                                     'LEARN',
@@ -781,7 +791,12 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                                   color: Color(0XFF22456D),
                                   textColor: Colors.white,
                                   onPressed: () {
-                                    // Perform some action
+                                    Navigator.push(
+                                      context,
+                                      new MaterialPageRoute(
+                                        builder: (context) => new LJFLearn(),
+                                      ),
+                                    );
                                   },
                                   child: const Text(
                                     'LEARN',
@@ -919,7 +934,12 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                                   color: Color(0XFFF36735),
                                   textColor: Colors.white,
                                   onPressed: () {
-                                    // Perform some action
+                                    Navigator.push(
+                                      context,
+                                      new MaterialPageRoute(
+                                        builder: (context) => new SRTLearn(),
+                                      ),
+                                    );
                                   },
                                   child: const Text(
                                     'LEARN',
@@ -1052,7 +1072,12 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                             color: Color(0XFF22456D),
                             textColor: Colors.white,
                             onPressed: () {
-                              // Perform some action
+                              Navigator.push(
+                                context,
+                                new MaterialPageRoute(
+                                  builder: (context) => new LRTLearn(),
+                                ),
+                              );
                             },
                             child: const Text(
                               'LEARN',
@@ -1190,7 +1215,12 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                             color: Color(0XFFF36735),
                             textColor: Colors.white,
                             onPressed: () {
-                              // Perform some action
+                              Navigator.push(
+                                context,
+                                new MaterialPageRoute(
+                                  builder: (context) => new PriopreLearn(),
+                                ),
+                              );
                             },
                             child: const Text(
                               'LEARN',
