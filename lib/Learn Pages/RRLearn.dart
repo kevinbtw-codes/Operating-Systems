@@ -2,6 +2,7 @@ import 'package:os_project/Algorithm%20page.dart';
 import 'package:os_project/Learn Pages/Animations/FadeAnimation.dart';
 import 'package:flutter/material.dart';
 import 'package:os_project/algorithms/FCFS/Main-fcfs.dart';
+import 'package:os_project/algorithms/Round-robin/Main-rr.dart';
 
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -406,7 +407,7 @@ class _HomePageState extends State<RRLearn> {
                       Navigator.push(
                         context,
                         new MaterialPageRoute(
-                          builder: (context) => new MyApp(),
+                          builder: (context) => new Myrrapp(),
                         ),
                       );
                     },
