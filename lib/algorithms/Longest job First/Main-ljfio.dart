@@ -321,8 +321,8 @@ class _ljfio_pageState extends State<ljfio_page> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => MyLJFApp(),
-                    ),
+                  builder: (context) => MyLJFApp(),
+                ),
               );
             },
           ),
@@ -347,8 +347,8 @@ class _ljfio_pageState extends State<ljfio_page> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    //
-                    ),
+                  builder: (context) => GanttChart(prs),
+                ),
               );
             },
           ),

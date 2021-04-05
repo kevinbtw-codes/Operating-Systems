@@ -137,7 +137,7 @@ class _HomePageState extends State<RRLearn> {
                         FadeAnimation(
                             1.6,
                             Text(
-                              "Input n processes with their respective arrival and burst time, upon which our app will provide average waiting time and average turn around time using FCFS scheduling algorithm.",
+                              "The name of this algorithm comes from the round-robin principle, where each person gets an equal share of something in turns. It is the oldest, simplest scheduling algorithm, which is mostly used for multitasking.",
                               //textAlign: TextAlign.justify,
                               style: TextStyle(
                                   color: Colors.white,
@@ -162,7 +162,7 @@ class _HomePageState extends State<RRLearn> {
                         FadeAnimation(
                             1.6,
                             Text(
-                              "First in, first out (FIFO), also known as first come, first served (FCFS), is the simplest scheduling algorithm. FIFO simply queues processes in the order that they arrive in the ready queue.",
+                              "In Round-robin scheduling, each ready task runs turn by turn only in a cyclic queue for a limited time slice , which is called time quantum ( or time slice ) which depends on value entered by user .",
                               //textAlign: TextAlign.justify,
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16),
@@ -185,7 +185,32 @@ class _HomePageState extends State<RRLearn> {
                         FadeAnimation(
                             1.6,
                             Text(
-                              "In this algorithm , the process that comes first will be executed first and next process starts only after the previous gets fully executed.",
+                              "Time quantum should be minimum, which is assigned for a specific task that needs to be processed. However, it may differ OS to OS.",
+                              //textAlign: TextAlign.justify,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.normal),
+                            )),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "4.",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "The process that is preempted is added to the end of the queue . This algorithm also offers starvation free execution of processes.",
                               //textAlign: TextAlign.justify,
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16),
@@ -201,6 +226,63 @@ class _HomePageState extends State<RRLearn> {
                                   color: Color(0XFFFFFFFFF),
                                   fontSize: 40,
                                   fontWeight: FontWeight.bold),
+                            )),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "Time-quantum.",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "Before we input any of the processes in RR, we have to ensure the time quantum is given to the algorithm.\nFor that click on the following button and submit.",
+                              //textAlign: TextAlign.justify,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.normal),
+                            )),
+                        /*SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "IMAGES",
+                              style: TextStyle(
+                                  color: Color(0xFFF36735),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            )),*/
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.8,
+                            Container(
+                              height: 200,
+                              child: ListView(
+                                scrollDirection: Axis.horizontal,
+                                children: <Widget>[
+                                  makeVideo(
+                                    image:
+                                    'images/Learn page images/RR-1.jpg',
+                                  ),
+                                  makeVideo(
+                                      image:
+                                      'images/Learn page images/RR-2.jpg'),
+                                ],
+                              ),
                             )),
                         SizedBox(
                           height: 20,
@@ -251,11 +333,11 @@ class _HomePageState extends State<RRLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                     image:
-                                        'images/Learn page images/FCFS-1.jpg',
+                                    'images/Learn page images/FCFS-1.jpg',
                                   ),
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/FCFS-2.jpg'),
+                                      'images/Learn page images/FCFS-2.jpg'),
                                 ],
                               ),
                             )),
@@ -280,7 +362,7 @@ class _HomePageState extends State<RRLearn> {
                               "For each process one can input respective value for \"AT\" and \"BT\" , failing to which the value will be considered as null.",
                               //textAlign: TextAlign.justify,
                               style:
-                                  TextStyle(color: Colors.white, fontSize: 16),
+                              TextStyle(color: Colors.white, fontSize: 16),
                             )),
                         SizedBox(
                           height: 20,
@@ -294,7 +376,7 @@ class _HomePageState extends State<RRLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/FCFS-3.jpg'),
+                                      'images/Learn page images/FCFS-3.jpg'),
                                   /* makeVideo(
                                       image:
                                           'images/Learn page images/emma-2.jpg'),*/
@@ -322,7 +404,7 @@ class _HomePageState extends State<RRLearn> {
                               "Once you're done with entering the data hit the \"Submit\" button. Repeating the above step will let you add multiple processes .",
                               //textAlign: TextAlign.justify,
                               style:
-                                  TextStyle(color: Colors.white, fontSize: 16),
+                              TextStyle(color: Colors.white, fontSize: 16),
                             )),
                         SizedBox(
                           height: 20,
@@ -336,7 +418,7 @@ class _HomePageState extends State<RRLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/FCFS-4.jpg'),
+                                      'images/Learn page images/FCFS-4.jpg'),
                                   /* makeVideo(
                                       image:
                                           'images/Learn page images/emma-2.jpg'),*/
@@ -361,10 +443,11 @@ class _HomePageState extends State<RRLearn> {
                         FadeAnimation(
                             1.6,
                             Text(
-                              "To edit or delete a process swipe the respective dialog box to the left . On editing a process you may see the visible changes sorted according to arrival times .",
+                              "To edit or delete a process swipe the respective dialog box to the left . On editing a process you may see the visible changes "
+                                  "sorted according to arrival times.\nTo delete all the processes at once, just drag the page down to reset it.",
                               //textAlign: TextAlign.justify,
                               style:
-                                  TextStyle(color: Colors.white, fontSize: 16),
+                              TextStyle(color: Colors.white, fontSize: 16),
                             )),
                         SizedBox(
                           height: 20,
@@ -378,8 +461,281 @@ class _HomePageState extends State<RRLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/FCFS-5.jpg'),
+                                      'images/Learn page images/FCFS-5.jpg'),
+                                  makeVideo(
+                                      image:
+                                      'images/Learn page images/FCFS-6.jpg'),
+                                ],
+                              ),
+                            )),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "5.",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "To proceed to:\n(1) Gannt chart\n(2) Process table\n"
+                                  "(3) I/O\n Press the following buttons to navigate there.",
+
+                              //textAlign: TextAlign.justify,
+                              style:
+                              TextStyle(color: Colors.white, fontSize: 16),
+                            )),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.8,
+                            Container(
+                              height: 200,
+                              child: ListView(
+                                scrollDirection: Axis.horizontal,
+                                children: <Widget>[
+                                  makeVideo(
+                                      image:
+                                      'images/Learn page images/FCFS-7.jpg'),
                                   /*makeVideo(
+                                      image:
+                                          'images/Learn page images/emma-2.jpg'),*/
+                                ],
+                              ),
+                            )),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "HOW I/O WORKS",
+                              style: TextStyle(
+                                  color: Color(0XFFFFFFFFF),
+                                  fontSize: 40,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "6.",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "After reaching the I/O page again click on the plus icon to add I/O processes along with burst times.",
+                              //textAlign: TextAlign.justify,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.normal),
+                            )),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.8,
+                            Container(
+                              height: 200,
+                              child: ListView(
+                                scrollDirection: Axis.horizontal,
+                                children: <Widget>[
+                                  makeVideo(
+                                    image:
+                                    'images/Learn page images/FCFS-1.jpg',
+                                  ),
+                                  makeVideo(
+                                      image:
+                                      'images/Learn page images/FCFS-2.jpg'),
+                                ],
+                              ),
+                            )),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "7.",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "For each process one can input respective value for \"AT\" , \"IOBT\" , \"BT1\" and \"BT2\" , failing to which the value will be considered as null.",
+                              //textAlign: TextAlign.justify,
+                              style:
+                              TextStyle(color: Colors.white, fontSize: 16),
+                            )),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.8,
+                            Container(
+                              height: 200,
+                              child: ListView(
+                                scrollDirection: Axis.horizontal,
+                                children: <Widget>[
+                                  makeVideo(
+                                      image:
+                                      'images/Learn page images/FCFS-9.jpg'),
+                                  /* makeVideo(
+                                      image:
+                                          'images/Learn page images/emma-2.jpg'),*/
+                                ],
+                              ),
+                            )),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "8.",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "Once you're done with entering the data hit the \"Submit\" button. Repeating the above step will let you add multiple processes .",
+                              //textAlign: TextAlign.justify,
+                              style:
+                              TextStyle(color: Colors.white, fontSize: 16),
+                            )),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.8,
+                            Container(
+                              height: 200,
+                              child: ListView(
+                                scrollDirection: Axis.horizontal,
+                                children: <Widget>[
+                                  makeVideo(
+                                      image:
+                                      'images/Learn page images/FCFS-8.jpg'),
+                                  /* makeVideo(
+                                      image:
+                                          'images/Learn page images/emma-2.jpg'),*/
+                                ],
+                              ),
+                            )),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "9.",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "To edit or delete a process swipe the respective dialog box to the left . On editing a process you may see the visible changes "
+                                  "sorted according to arrival times.\nTo delete all the processes at once, just drag the page down to reset it."
+                                  "\nRepeat all the processes as mentioned above in step 4",
+                              //textAlign: TextAlign.justify,
+                              style:
+                              TextStyle(color: Colors.white, fontSize: 16),
+                            )),
+                        /*SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.8,
+                            Container(
+                              height: 200,
+                              child: ListView(
+                                scrollDirection: Axis.horizontal,
+                                children: <Widget>[
+                                  makeVideo(
+                                      image:
+                                      'images/Learn page images/FCFS-5.jpg'),
+                                  makeVideo(
+                                      image:
+                                      'images/Learn page images/FCFS-6.jpg'),
+                                ],
+                              ),
+                            )),*/
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "10.",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "To proceed to:\n(1) Gannt chart\n(2) Process table\n"
+                                  "(3) Back to main algorithm\n Press the following buttons to navigate there.",
+
+                              //textAlign: TextAlign.justify,
+                              style:
+                              TextStyle(color: Colors.white, fontSize: 16),
+                            )),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.8,
+                            Container(
+                              height: 200,
+                              child: ListView(
+                                scrollDirection: Axis.horizontal,
+                                children: <Widget>[
+                                  makeVideo(
+                                      image:
+                                      'images/Learn page images/FCFS-7.jpg'),
+                                  /* makeVideo(
                                       image:
                                           'images/Learn page images/emma-2.jpg'),*/
                                 ],

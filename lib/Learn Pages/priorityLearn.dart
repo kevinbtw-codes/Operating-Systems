@@ -250,11 +250,12 @@ class _HomePageState extends State<priorityLearn> {
                                 scrollDirection: Axis.horizontal,
                                 children: <Widget>[
                                   makeVideo(
-                                      image:
-                                          'images/Learn page images/FCFS-1.jpg'),
+                                    image:
+                                    'images/Learn page images/FCFS-1.jpg',
+                                  ),
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/FCFS-2.jpg'),
+                                      'images/Learn page images/PRIORITY-1.jpg'),
                                 ],
                               ),
                             )),
@@ -279,7 +280,7 @@ class _HomePageState extends State<priorityLearn> {
                               "For each process one can input respective value for \"AT\" , \"BT\" and \"Priority\" , failing to which the value will be considered as null.",
                               //textAlign: TextAlign.justify,
                               style:
-                                  TextStyle(color: Colors.white, fontSize: 16),
+                              TextStyle(color: Colors.white, fontSize: 16),
                             )),
                         SizedBox(
                           height: 20,
@@ -293,10 +294,7 @@ class _HomePageState extends State<priorityLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/FCFS-1.jpg'),
-                                  makeVideo(
-                                      image:
-                                          'images/Learn page images/FCFS-2.jpg'),
+                                          'images/Learn page images/PRIORITY-5.jpg'),
                                 ],
                               ),
                             )),
@@ -321,7 +319,7 @@ class _HomePageState extends State<priorityLearn> {
                               "Once you're done with entering the data hit the \"Submit\" button. Repeating the above step will let you add multiple processes .",
                               //textAlign: TextAlign.justify,
                               style:
-                                  TextStyle(color: Colors.white, fontSize: 16),
+                              TextStyle(color: Colors.white, fontSize: 16),
                             )),
                         SizedBox(
                           height: 20,
@@ -335,10 +333,10 @@ class _HomePageState extends State<priorityLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/FCFS-1.jpg'),
-                                  makeVideo(
+                                      'images/Learn page images/PRIORITY-4.jpg'),
+                                  /* makeVideo(
                                       image:
-                                          'images/Learn page images/FCFS-2.jpg'),
+                                          'images/Learn page images/emma-2.jpg'),*/
                                 ],
                               ),
                             )),
@@ -360,10 +358,11 @@ class _HomePageState extends State<priorityLearn> {
                         FadeAnimation(
                             1.6,
                             Text(
-                              "To edit or delete a process swipe the respective dialog box to the left . On editing a process you may see the visible changes sorted according to arrival times .",
+                              "To edit or delete a process swipe the respective dialog box to the left . On editing a process you may see the visible changes "
+                                  "sorted according to arrival times.\nTo delete all the processes at once, just drag the page down to reset it.",
                               //textAlign: TextAlign.justify,
                               style:
-                                  TextStyle(color: Colors.white, fontSize: 16),
+                              TextStyle(color: Colors.white, fontSize: 16),
                             )),
                         SizedBox(
                           height: 20,
@@ -377,10 +376,286 @@ class _HomePageState extends State<priorityLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/FCFS-1.jpg'),
+                                      'images/Learn page images/PRIORITY-8.jpg'),
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/FCFS-2.jpg'),
+                                      'images/Learn page images/FCFS-6.jpg'),
+                                ],
+                              ),
+                            )),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "5.",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "To proceed to:\n(1) Gannt chart\n(2) Process table\n"
+                                  "(3) I/O\n Press the following buttons to navigate there.",
+
+                              //textAlign: TextAlign.justify,
+                              style:
+                              TextStyle(color: Colors.white, fontSize: 16),
+                            )),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.8,
+                            Container(
+                              height: 200,
+                              child: ListView(
+                                scrollDirection: Axis.horizontal,
+                                children: <Widget>[
+                                  makeVideo(
+                                      image:
+                                      'images/Learn page images/FCFS-7.jpg'),
+                                  /*makeVideo(
+                                      image:
+                                          'images/Learn page images/emma-2.jpg'),*/
+                                ],
+                              ),
+                            )),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "HOW I/O WORKS",
+                              style: TextStyle(
+                                  color: Color(0XFFFFFFFFF),
+                                  fontSize: 40,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "6.",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "After reaching the I/O page again click on the plus icon to add I/O processes along with burst times.",
+                              //textAlign: TextAlign.justify,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.normal),
+                            )),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.8,
+                            Container(
+                              height: 200,
+                              child: ListView(
+                                scrollDirection: Axis.horizontal,
+                                children: <Widget>[
+                                  makeVideo(
+                                    image:
+                                    'images/Learn page images/FCFS-1.jpg',
+                                  ),
+                                  makeVideo(
+                                      image:
+                                      'images/Learn page images/PRIORITY-2.jpg'),
+                                  makeVideo(
+                                      image:
+                                      'images/Learn page images/PRIORITY-3.jpg')
+                                ],
+                              ),
+                            )),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "7.",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "For each process one can input respective value for \"AT\" , \"Priority\" , \"IOBT\" , \"BT1\" and \"BT2\" , failing to which the value will be considered as null.",
+                              //textAlign: TextAlign.justify,
+                              style:
+                              TextStyle(color: Colors.white, fontSize: 16),
+                            )),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.8,
+                            Container(
+                              height: 200,
+                              child: ListView(
+                                scrollDirection: Axis.horizontal,
+                                children: <Widget>[
+                                  makeVideo(
+                                      image:
+                                      'images/Learn page images/PRIORITY-5.jpg'),
+                                  makeVideo(
+                                      image:
+                                          'images/Learn page images/PRIORITY-7.jpg'),
+                                ],
+                              ),
+                            )),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "8.",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "Once you're done with entering the data hit the \"Submit\" button. Repeating the above step will let you add multiple processes .",
+                              //textAlign: TextAlign.justify,
+                              style:
+                              TextStyle(color: Colors.white, fontSize: 16),
+                            )),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.8,
+                            Container(
+                              height: 200,
+                              child: ListView(
+                                scrollDirection: Axis.horizontal,
+                                children: <Widget>[
+                                  makeVideo(
+                                      image:
+                                      'images/Learn page images/PRIORITY-6.jpg'),
+                                  /* makeVideo(
+                                      image:
+                                          'images/Learn page images/emma-2.jpg'),*/
+                                ],
+                              ),
+                            )),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "9.",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "To edit or delete a process swipe the respective dialog box to the left . On editing a process you may see the visible changes "
+                                  "sorted according to arrival times.\nTo delete all the processes at once, just drag the page down to reset it."
+                                  "\nRepeat all the processes as mentioned above in step 4",
+                              //textAlign: TextAlign.justify,
+                              style:
+                              TextStyle(color: Colors.white, fontSize: 16),
+                            )),
+                        /*SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.8,
+                            Container(
+                              height: 200,
+                              child: ListView(
+                                scrollDirection: Axis.horizontal,
+                                children: <Widget>[
+                                  makeVideo(
+                                      image:
+                                      'images/Learn page images/FCFS-5.jpg'),
+                                  makeVideo(
+                                      image:
+                                      'images/Learn page images/FCFS-6.jpg'),
+                                ],
+                              ),
+                            )),*/
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "10.",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "To proceed to:\n(1) Gannt chart\n(2) Process table\n"
+                                  "(3) Back to main algorithm\n Press the following buttons to navigate there.",
+
+                              //textAlign: TextAlign.justify,
+                              style:
+                              TextStyle(color: Colors.white, fontSize: 16),
+                            )),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.8,
+                            Container(
+                              height: 200,
+                              child: ListView(
+                                scrollDirection: Axis.horizontal,
+                                children: <Widget>[
+                                  makeVideo(
+                                      image:
+                                      'images/Learn page images/FCFS-7.jpg'),
+                                  /* makeVideo(
+                                      image:
+                                          'images/Learn page images/emma-2.jpg'),*/
                                 ],
                               ),
                             )),
