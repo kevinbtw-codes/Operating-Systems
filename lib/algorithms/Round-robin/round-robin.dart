@@ -13,6 +13,7 @@ class Process {
   int start_time;
   int tat;
   int wt;
+  int tq;
 
   Process(this.at, this.bt);
 
