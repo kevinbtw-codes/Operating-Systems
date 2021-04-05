@@ -322,8 +322,8 @@ class _sjfio_pageState extends State<sjfio_page> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                 builder: (context) => MySJFApp(),
-                    ),
+                  builder: (context) => MySJFApp(),
+                ),
               );
             },
           ),
@@ -335,8 +335,8 @@ class _sjfio_pageState extends State<sjfio_page> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                     builder: (context) => TheTable(prs),
-                    ),
+                  builder: (context) => TheTable(prs),
+                ),
               );
             },
           ),
@@ -348,8 +348,8 @@ class _sjfio_pageState extends State<sjfio_page> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    //
-                    ),
+                  builder: (context) => GanttChart(prs),
+                ),
               );
             },
           ),
