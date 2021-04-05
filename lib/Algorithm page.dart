@@ -459,7 +459,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                           Padding(
                             padding: const EdgeInsets.fromLTRB(30, 105, 30, 0),
                             child: AutoSizeText(
-                              "Shortest job next, is a scheduling policy that selects the waiting process.",
+                              "Shortest Job First (SJF) is an algorithm in which the process having the smallest execution time is chosen for the next execution.",
                               style: TextStyle(
                                 fontSize: 19,
                                 color: Colors.brown[700],
@@ -747,7 +747,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                           Padding(
                             padding: const EdgeInsets.fromLTRB(30, 105, 30, 0),
                             child: AutoSizeText(
-                              "This is the simplest scheduling algorithm. It simply queues processes in the order that they arrive in the ready queue.",
+                              "Longest Job First (SJF) is an algorithm in which the process having the largest execution time is chosen for the next execution.",
                               style: TextStyle(
                                 fontSize: 19,
                                 color: Colors.brown[700],
@@ -890,7 +890,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                           Padding(
                             padding: const EdgeInsets.fromLTRB(30, 105, 30, 0),
                             child: AutoSizeText(
-                              "The process with the smallest amount of time remaining until completion is selected to execute.",
+                              "In this process scheduling algorithm(SRT),the process with the smallest amount of time remaining until completion is selected to execute.",
                               style: TextStyle(
                                 fontSize: 19,
                                 color: Colors.brown[700],
