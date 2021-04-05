@@ -46,7 +46,10 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
       flag3 = true,
       flag4 = true,
       flag5 = true,
-      flag6 = true;
+      flag6 = true,
+      flag7 = true,
+      flag8 = true;
+
 
   _buildCard({
     Config config,
@@ -984,12 +987,12 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
             GestureDetector(
               onTap: () {
                 setState(() {
-                  flag5 = flag5 ? false : true;
+                  flag7 = flag7 ? false : true;
                 });
               },
               child: AnimatedSwitcher(
                 duration: Duration(milliseconds: 300),
-                child: flag5
+                child: flag7
                     ? Stack(
                         key: ValueKey('stack1-1'),
                         children: <Widget>[
@@ -1127,12 +1130,12 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
             GestureDetector(
               onTap: () {
                 setState(() {
-                  flag6 = flag6 ? false : true;
+                  flag8 = flag8 ? false : true;
                 });
               },
               child: AnimatedSwitcher(
                 duration: Duration(milliseconds: 300),
-                child: flag6
+                child: flag8
                     ? Stack(
                         key: ValueKey('stack1-1'),
                         children: <Widget>[
