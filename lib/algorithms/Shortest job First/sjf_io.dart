@@ -1,4 +1,3 @@
-
 import 'dart:io';
 import 'dart:core';
 
@@ -30,25 +29,25 @@ class ioprocess {
   }
 
   int tablevalue(int j) {
-  switch (j) {
-    case 1:
-      return this.at;
-    case 2:
-      return this.bt1;
-    case 3:
-      return this.bt2;
-    case 4:
-      return this.iobt;
-    case 5:
-      return this.ct;
-    case 6:
-      return this.tat;
-    case 7:
-      return this.wt;
-    default:
-      return 0;
+    switch (j) {
+      case 1:
+        return this.at;
+      case 2:
+        return this.bt1;
+      case 3:
+        return this.bt2;
+      case 4:
+        return this.iobt;
+      case 5:
+        return this.ct;
+      case 6:
+        return this.tat;
+      case 7:
+        return this.wt;
+      default:
+        return 0;
+    }
   }
-}
 }
 
 /*
@@ -84,7 +83,6 @@ void startsjf(List<ioprocess> l) {
     }
   }
 }
-
 
 List<ioprocess> sjfioalgo(List<ioprocess> l) {
   List<ioprocess> lgantt = [];
@@ -149,9 +147,21 @@ List<ioprocess> sjfioalgo(List<ioprocess> l) {
           }
         } else {
           //3 false - only readyq is empty
-          fillrq(readyq, time, lgantt);
-          fillrq(readyq, time, ioqueue);
-          time = processexec(readyq, time, finishedq, ioqueue);
+          if (lgantt[0].at > time && ioqueue[0].ioexit > time) {
+            if (lgantt[0].at < ioqueue[0].ioexit) {
+              time = lgantt[0].at;
+              fillrq(readyq, time, lgantt);
+            } else {
+              time = ioqueue[0].ioexit;
+              fillrq(readyq, time, ioqueue);
+            }
+          } else {
+            fillrq(readyq, time, lgantt);
+            fillrq(readyq, time, ioqueue);
+          }
+          if (readyq.isNotEmpty) {
+            time = processexec(readyq, time, finishedq, ioqueue);
+          }
         }
       }
     } else {
