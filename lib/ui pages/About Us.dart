@@ -23,7 +23,9 @@ class AboutUs extends StatelessWidget {
         //title: Text('About Us', textAlign: TextAlign.center),
       ),
       body: Container(
+        margin: const EdgeInsets.all(13.0),
         decoration: BoxDecoration(
+          color: Color(0XFF22456D),
           image: DecorationImage(
             image: AssetImage("images/About Us.jpg"),
             fit: BoxFit.cover,
