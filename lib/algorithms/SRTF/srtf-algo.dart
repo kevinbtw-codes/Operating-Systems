@@ -204,11 +204,18 @@ int processexec(
       rq[0].start_time = time;
     }
     rq[0].ct = rq[0].remain_time + time;
-    time1 = rq[0].ct;
+    print(rq[0].pid +
+        " rt value is " +
+        rq[0].remain_time.toString() +
+        " and time is " +
+        time.toString());
+    time = rq[0].ct;
     rq[0].remain_time = 0;
     rq[0].tat = rq[0].ct - rq[0].at;
     rq[0].wt = rq[0].tat - rq[0].bt;
+    //print(rq[0].pid + " ended at " + time.toString());
     fillfq(rq, fq, 0);
+    time1 = time;
     return time1;
   }
 }

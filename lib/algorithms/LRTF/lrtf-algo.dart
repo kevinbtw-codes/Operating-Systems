@@ -43,7 +43,7 @@ class Process {
   }
 }
 
-void main(List<String> arguments) {
+/*void main(List<String> arguments) {
   List<Process> prs = List<Process>();
   prs.add(Process(1, 2));
   prs.add(Process(2, 4));
@@ -58,7 +58,7 @@ void main(List<String> arguments) {
   sjf = lrtfalgo(sjf);
   //sjf.sort((a, b) => a.pid.compareTo(b.pid));
   printprocess(sjf);
-}
+} */
 
 void lganttsortlrt(List<Process> l) {
   l.sort((a, b) => a.at.compareTo(b.at));
