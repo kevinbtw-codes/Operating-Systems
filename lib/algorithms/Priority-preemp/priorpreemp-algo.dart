@@ -44,22 +44,25 @@ class Process {
   }
 }
 
-void main(List<String> arguments) {
+/*void main(List<String> arguments) {
   List<Process> prs = List<Process>();
-  /*prs.add(Process(1, 2));
-  prs.add(Process(2, 4));
-  prs.add(Process(3, 6));
-  prs.add(Process(4, 8));*/
+  prs.add(Process(0, 8, 3));
+  prs.add(Process(1, 2, 4));
+  prs.add(Process(3, 4, 4));
+  prs.add(Process(4, 1, 5));
+  prs.add(Process(5, 6, 2));
+  prs.add(Process(6, 5, 6));
+  prs.add(Process(10, 1, 1));
 
   assignPid(prs);
   List<Process> sjf = List.from(prs);
 
   print('\n1.LRTF Algo\n');
   sjf.sort((a, b) => a.at.compareTo(b.at));
-  sjf = priorpreempalgo(sjf);
+  prs = priorpreempalgo(prs);
   //sjf.sort((a, b) => a.pid.compareTo(b.pid));
   printprocess(sjf);
-}
+} */
 
 void lganttsortprior(List<Process> l) {
   l.sort((a, b) => a.at.compareTo(b.at));
@@ -101,7 +104,8 @@ List<Process> priorpreempalgo(List<Process> l) {
       //preemption would be done while executing
       time = processexec(rq, time, fq, lgantt);
     } else {
-      print("doing ljf");
+      print("doing priornp");
+      printpid(rq);
       while (rq.isNotEmpty) {
         time = processexec(rq, time, fq, lgantt);
         // printprocess(fq);
@@ -117,7 +121,7 @@ List<Process> priorpreempalgo(List<Process> l) {
 void priorpreempsort(List<Process> l) {
   l.sort((a, b) => a.priority.compareTo(b.priority));
   for (var i = 0; i < l.length - 1; i++) {
-    if (l[i].remain_time == l[i + 1].remain_time) {
+    if (l[i].priority == l[i + 1].priority) {
       if (l[i].at > l[i + 1].at) {
         Process temp;
         temp = l[i + 1];
@@ -162,8 +166,8 @@ int processexec(
 
   if (lgantt.isNotEmpty) {
     //preemption
+    print("started preemption");
     while (lgantt.isNotEmpty) {
-      print("started preemption");
       if (rq.isEmpty) {
         time = lgantt[0].at;
         fillrq(rq, time, lgantt);
@@ -221,7 +225,7 @@ void printprocess(List l) {
 
 void printpid(List<Process> l) {
   for (var i = 0; i < l.length; i++) {
-    stdout.write(l[i].pid + " , ");
+    stdout.write(l[i].pid + " - " + l[i].priority.toString() + "  , ");
   }
   print("\n");
 }
