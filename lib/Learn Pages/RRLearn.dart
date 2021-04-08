@@ -487,7 +487,7 @@ class _HomePageState extends State<RRLearn> {
                             1.6,
                             Text(
                               "To proceed to:\n(1) Gannt chart\n(2) Process table\n"
-                                  "(3) I/O\n Press the following buttons to navigate there.",
+                                  "Press the following buttons to navigate there.",
 
                               //textAlign: TextAlign.justify,
                               style:
@@ -505,7 +505,7 @@ class _HomePageState extends State<RRLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                      'images/Learn page images/FCFS-7.jpg'),
+                                      'images/Learn page images/RR-4.jpg'),
                                   /*makeVideo(
                                       image:
                                           'images/Learn page images/emma-2.jpg'),*/
