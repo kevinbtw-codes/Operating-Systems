@@ -11,6 +11,11 @@ class GanttChart extends StatefulWidget {
   _GanttChartState createState() => _GanttChartState(prs);
 }
 
+void adder(int time1, int time2, List<Process> prsNew) {
+  List<Process> prs;
+  prsNew.add(Process((time1), time2));
+  assignPid(prsNew);
+}
 
 class _GanttChartState extends State<GanttChart> {
   List<Process> prs;
