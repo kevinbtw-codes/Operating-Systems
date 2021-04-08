@@ -8,6 +8,7 @@ import 'package:os_project/Learn%20Pages/LRTLearn.dart';
 import 'package:os_project/Learn%20Pages/PriorityPreLearn.dart';
 import 'package:os_project/Learn%20Pages/RRLearn.dart';
 import 'package:os_project/Learn%20Pages/SRTLearn.dart';
+import 'package:os_project/algorithms/LRTF/Main-LRTF.dart';
 import 'package:os_project/algorithms/SRTF/Main-SRTF.dart';
 import 'package:os_project/algorithms/Priority-new/Main-priority.dart';
 import 'package:os_project/algorithms/Round-robin/Main-rr.dart';
@@ -1022,7 +1023,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                           Padding(
                             padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
                             child: AutoSizeText(
-                              "Longest Remaining time",
+                              "Longest Remaining time first",
                               style: TextStyle(
                                 fontSize: 30,
                                 fontWeight: FontWeight.bold,
@@ -1067,7 +1068,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                           Padding(
                             padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
                             child: AutoSizeText(
-                              "Longest Remaining time",
+                              "Longest Remaining time first",
                               style: TextStyle(
                                 fontSize: 30,
                                 fontWeight: FontWeight.bold,
@@ -1114,7 +1115,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                                     Navigator.push(
                                       context,
                                       new MaterialPageRoute(
-                                        builder: (context) => new MyLJFApp(),
+                                        builder: (context) => new MylrtfApp(),
                                       ),
                                     );
                                   },

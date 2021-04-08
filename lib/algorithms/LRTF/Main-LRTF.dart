@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
-import 'package:os_project/Algorithm%20page.dart';
-import 'round-robin-algo.dart';
+import 'package:os_project/algorithms/Shortest%20job%20First/Main-sjfio.dart';
+import '../../Algorithm page.dart';
+import 'lrtf-algo.dart';
 //import 'table.dart';
-//import 'gantt.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'dart:async';
+import 'dart:math';
+//import 'gantt.dart';
 import 'package:fab_circular_menu/fab_circular_menu.dart';
 
-void main() {
-  runApp(Myrrapp());
+main(List<String> args) {
+  runApp(MylrtfApp());
 }
 
-class Myrrapp extends StatelessWidget {
+class MylrtfApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -60,130 +62,28 @@ class _AlgorithmState extends State<Algorithm> {
   }
 
   List<Process> prs = [];
-  int timeq;
   FocusNode nodebt = FocusNode();
 
-  add(TextEditingController control1, TextEditingController control2, int tq) {
+  add(TextEditingController control1, TextEditingController control2) {
     setState(() {
       prs.sort((a, b) => a.pid.compareTo(b.pid));
+      /*prs.add(Process(2, 1));
+      prs.add(Process(1, 5));
+      prs.add(Process(4, 1));
+      prs.add(Process(0, 6));
+      prs.add(Process(2, 3));*/
       prs.add(Process(int.parse(control1.text), int.parse(control2.text)));
       control1.clear();
       control2.clear();
       assignPid(prs);
-      printprocess(prs);
-      print("tq is " + tq.toString());
-      prs = rralgo(prs, tq);
-      //prs.sort((a, b) => a.pid.compareTo(b.pid));
+      prs = lrtfalgo(prs);
     });
   }
 
   TextEditingController control1 = new TextEditingController();
   TextEditingController control2 = new TextEditingController();
-  TextEditingController controltq = new TextEditingController();
 
-  createtqDialog(BuildContext context, List<Process> prs, int tq) {
-    return showDialog(
-        context: context,
-        builder: (context) {
-          return Dialog(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12.0),
-            ), //this right here
-            child: Container(
-              height: 180.0,
-              width: 100.0,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 20.0, vertical: 10),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Text(
-                              'Time Quantum:',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20,
-                              ),
-                            ),
-                            TextField(
-                              autofocus: true,
-                              cursorWidth: 3,
-                              cursorColor: Color(0XFFF36735),
-                              textAlign: TextAlign.center,
-                              showCursor: true,
-                              controller: controltq,
-                              keyboardType: TextInputType.number,
-                              onSubmitted: (controltq) {
-                                setState(
-                                  () {
-                                    tq = int.parse(controltq);
-                                    print("TQ is " + tq.toString());
-                                    if (prs.isNotEmpty) {
-                                      rralgo(prs, tq);
-                                      printprocess(prs);
-                                    }
-                                  },
-                                );
-                                Navigator.of(context).pop();
-                              },
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 38),
-                    child: Container(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          RaisedButton(
-                              elevation: 8.0,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12.0),
-                              ),
-                              child: Text("Cancel"),
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                              }),
-                          RaisedButton(
-                              elevation: 8.0,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12.0),
-                              ),
-                              child: Text("Submit"),
-                              onPressed: () {
-                                //add(control1, control2);
-                                setState(
-                                  () {
-                                    tq = int.parse(controltq.text);
-                                    print("TQ is " + tq.toString());
-                                    if (prs.isNotEmpty) {
-                                      rralgo(prs, tq);
-                                    }
-                                    print("TQ is " + tq.toString());
-                                  },
-                                );
-                                Navigator.of(context).pop();
-                              }),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          );
-        });
-  }
-
-  createaddDialog(BuildContext context, List<Process> prs, int tq) {
+  createaddDialog(BuildContext context, List<Process> prs) {
     return showDialog(
         context: context,
         builder: (context) {
@@ -253,8 +153,7 @@ class _AlgorithmState extends State<Algorithm> {
                                   controller: control2,
                                   keyboardType: TextInputType.number,
                                   onSubmitted: (text) {
-                                    timeq = int.parse(controltq.text);
-                                    add(control1, control2, timeq);
+                                    add(control1, control2);
                                     Navigator.of(context)
                                         .pop(); // Redraw the Stateful Widget
                                   },
@@ -290,8 +189,7 @@ class _AlgorithmState extends State<Algorithm> {
                               ),
                               child: Text("Submit"),
                               onPressed: () {
-                                timeq = int.parse(controltq.text);
-                                add(control1, control2, timeq);
+                                add(control1, control2);
                                 Navigator.of(context).pop();
                               }),
                         ],
@@ -309,7 +207,7 @@ class _AlgorithmState extends State<Algorithm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Round Robin'),
+        title: Text('LRTF'),
         backgroundColor: Color(0xff22456d),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
@@ -343,23 +241,23 @@ class _AlgorithmState extends State<Algorithm> {
         ringWidth: 120,
         ringColor: Color(0xFFc3ebef),
         fabColor: Color(0xffc3ebef),
-        //fabCloseColor: Colors.transparent,
         children: <Widget>[
           IconButton(
-            iconSize: 20,
+            iconSize: 30,
             icon: Icon(Icons.settings_input_component_rounded),
             onPressed: () {
               prs.sort((a, b) => a.pid.compareTo(b.pid));
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    //builder: (context) => fcfsio_page(),
-                    ),
+                  builder: (context) => sjfio_page(),
+                  //
+                ),
               );
             },
           ),
           IconButton(
-            iconSize: 20,
+            iconSize: 30,
             icon: Icon(Icons.table_chart_rounded),
             onPressed: () {
               prs.sort((a, b) => a.pid.compareTo(b.pid));
@@ -372,7 +270,7 @@ class _AlgorithmState extends State<Algorithm> {
             },
           ),
           IconButton(
-            iconSize: 20,
+            iconSize: 30,
             icon: Icon(Icons.bar_chart),
             onPressed: () {
               prs.sort((a, b) => a.pid.compareTo(b.pid));
@@ -385,17 +283,10 @@ class _AlgorithmState extends State<Algorithm> {
             },
           ),
           IconButton(
-            iconSize: 20,
+            iconSize: 30,
             icon: Icon(Icons.add_circle),
             onPressed: () {
-              createaddDialog(context, prs, timeq);
-            },
-          ),
-          IconButton(
-            iconSize: 20,
-            icon: Icon(Icons.more_time_rounded),
-            onPressed: () {
-              createtqDialog(context, prs, timeq);
+              createaddDialog(context, prs);
             },
           ),
         ],
@@ -416,20 +307,16 @@ class _AlgorithmState extends State<Algorithm> {
     var start = prs[index].start_time.toString();
     var end = prs[index].ct.toString();
     var wt = prs[index].wt.toString();
-    timeq = int.parse(controltq.text);
-    void deleteprs(int index, int tq) {
-      print("Length of prs before removal is " + prs.length.toString());
-      print("TQ is " + tq.toString());
-      setState(
-        () {
-          prs.removeAt(index);
-          if (prs.isNotEmpty) {
-            prs = rralgo(prs, tq);
-          }
-        },
-      );
-      print("Length of prs after removal is " + prs.length.toString());
-      printprocess(prs);
+
+    void deleteprs(int index) {
+      setState(() {
+        prs.removeAt(index);
+        if (prs.isNotEmpty) {
+          prs = lrtfalgo(prs);
+        } else {
+          setState(() {});
+        }
+      });
     }
 
     void editprs(int index, TextEditingController econtrol1,
@@ -437,8 +324,9 @@ class _AlgorithmState extends State<Algorithm> {
       setState(() {
         prs[index].at = int.parse(econtrol1.text);
         prs[index].bt = int.parse(econtrol2.text);
-        prs = rralgo(prs, timeq);
+        prs = lrtfalgo(prs);
         //prs.sort((a, b) => a.pid.compareTo(b.pid));
+        //startsjf(prs);
       });
     }
 
@@ -683,8 +571,7 @@ class _AlgorithmState extends State<Algorithm> {
               icon: Icons.delete_rounded,
               onTap: () {
                 //prs.removeAt(index);
-                timeq = int.parse(controltq.text);
-                deleteprs(index, timeq);
+                deleteprs(index);
               },
             ),
           ),

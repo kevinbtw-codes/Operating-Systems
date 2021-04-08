@@ -70,6 +70,7 @@ List<Process> rralgo(List<Process> l, int tq) {
   for (var item in lgantt) {
     item.ct = item.start_time = item.tat = item.wt = 0;
     item.remain_time = item.bt;
+    item.started = false;
   }
 
   lgantt.sort((a, b) => a.at.compareTo(b.at));
