@@ -56,17 +56,17 @@ void main(List<String> arguments) {
 
   print('\n1.LRTF Algo\n');
   sjf.sort((a, b) => a.at.compareTo(b.at));
-  sjf = lrtfalgo(sjf);
+  sjf = priorpreempalgo(sjf);
   //sjf.sort((a, b) => a.pid.compareTo(b.pid));
   printprocess(sjf);
 }
 
-void lganttsortlrt(List<Process> l) {
+void lganttsortprior(List<Process> l) {
   l.sort((a, b) => a.at.compareTo(b.at));
   for (int j = 1; j < l.length; j++) {
     for (var i = 0; i < l.length - 1; i++) {
       if (l[i].at == l[i + 1].at) {
-        if (l[i].remain_time < l[i + 1].remain_time) {
+        if (l[i].priority > l[i + 1].priority) {
           Process temp;
           temp = l[i + 1];
           l[i + 1] = l[i];
@@ -77,7 +77,7 @@ void lganttsortlrt(List<Process> l) {
   }
 }
 
-List<Process> lrtfalgo(List<Process> l) {
+List<Process> priorpreempalgo(List<Process> l) {
   List<Process> lgantt = [];
   lgantt = List.from(l); //lgantt is the local copy of the processes list
   List<Process> rq = [];
@@ -91,7 +91,7 @@ List<Process> lrtfalgo(List<Process> l) {
 
   // printprocess(lgantt);
 
-  lganttsortlrt(lgantt);
+  lganttsortprior(lgantt);
   int time = 0;
   fillrq(rq, time, lgantt);
 
@@ -114,8 +114,8 @@ List<Process> lrtfalgo(List<Process> l) {
   return fq;
 }
 
-void lrtfsort(List<Process> l) {
-  l.sort((a, b) => b.remain_time.compareTo(a.remain_time));
+void priorpreempsort(List<Process> l) {
+  l.sort((a, b) => a.priority.compareTo(b.priority));
   for (var i = 0; i < l.length - 1; i++) {
     if (l[i].remain_time == l[i + 1].remain_time) {
       if (l[i].at > l[i + 1].at) {
@@ -145,7 +145,7 @@ void fillrq(List<Process> rq, int time, List<Process> l) {
   }
 
   if (rq.isNotEmpty) {
-    lrtfsort(rq);
+    priorpreempsort(rq);
   }
 }
 
@@ -196,11 +196,6 @@ int processexec(
       rq[0].start_time = time;
     }
     rq[0].ct = rq[0].remain_time + time;
-    print(rq[0].pid +
-        " rt value is " +
-        rq[0].remain_time.toString() +
-        " and time is " +
-        time.toString());
     time = rq[0].ct;
     rq[0].remain_time = 0;
     rq[0].tat = rq[0].ct - rq[0].at;
