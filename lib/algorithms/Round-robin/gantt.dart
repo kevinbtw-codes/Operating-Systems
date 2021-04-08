@@ -11,11 +11,6 @@ class GanttChart extends StatefulWidget {
   _GanttChartState createState() => _GanttChartState(prs);
 }
 
-void adder(int time1, int time2, List<Process> prsNew) {
-  List<Process> prs;
-  prsNew.add(Process((time1), time2));
-  assignPid(prsNew);
-}
 
 class _GanttChartState extends State<GanttChart> {
   List<Process> prs;
@@ -32,7 +27,7 @@ class _GanttChartState extends State<GanttChart> {
 
     if (prsNew.length >= 1) {
       int i = 0;
-      int current_time=prsNew[0].at; // the time currecntly
+      int current_time=prsNew[0].at; // the time currently
       while (ready.length>0 ) {
         //print(prsNew[i].ct < prsNew[i + 1].at);
         if (prsNew[i].bt > prsNew[i].tq) { // to check that if burst time of process is greater than tq than process executes for tq only
@@ -42,8 +37,8 @@ class _GanttChartState extends State<GanttChart> {
           ready.add(Process(current_time, prsNew[i].bt));
         }
         else {
-          prsadd.add(Process(current_time, prsNew[i].bt)); // if burst time of process is lesser than tq than whole process execute
-          current_time=current_time+prsNew[i].bt; ////updating current time
+          prsadd.add(Process(current_time, prsNew[i].bt)); // if burst time of process is lesser than tq then whole process execute
+          current_time=current_time+prsNew[i].bt; //updating current time
           ready.removeWhere((item) => item.pid == i);
         }
         if (prsNew[i+1].at < current_time) {
