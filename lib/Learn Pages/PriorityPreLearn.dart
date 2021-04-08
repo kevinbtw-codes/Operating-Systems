@@ -251,11 +251,11 @@ class _HomePageState extends State<PriopreLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                     image:
-                                    'images/Learn page images/FCFS-1.jpg',
+                                        'images/Learn page images/FCFS-1.jpg',
                                   ),
                                   makeVideo(
                                       image:
-                                      'images/Learn page images/PRIORITY-1.jpg'),
+                                          'images/Learn page images/PRIORITY-1.jpg'),
                                 ],
                               ),
                             )),
@@ -280,7 +280,7 @@ class _HomePageState extends State<PriopreLearn> {
                               "For each process one can input respective value for \"AT\" , \"BT\" and \"Priority\" , failing to which the value will be considered as null.",
                               //textAlign: TextAlign.justify,
                               style:
-                              TextStyle(color: Colors.white, fontSize: 16),
+                                  TextStyle(color: Colors.white, fontSize: 16),
                             )),
                         SizedBox(
                           height: 20,
@@ -294,7 +294,7 @@ class _HomePageState extends State<PriopreLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                      'images/Learn page images/PRIORITY-5.jpg'),
+                                          'images/Learn page images/PRIORITY-5.jpg'),
                                 ],
                               ),
                             )),
@@ -319,7 +319,7 @@ class _HomePageState extends State<PriopreLearn> {
                               "Once you're done with entering the data hit the \"Submit\" button. Repeating the above step will let you add multiple processes .",
                               //textAlign: TextAlign.justify,
                               style:
-                              TextStyle(color: Colors.white, fontSize: 16),
+                                  TextStyle(color: Colors.white, fontSize: 16),
                             )),
                         SizedBox(
                           height: 20,
@@ -333,7 +333,7 @@ class _HomePageState extends State<PriopreLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                      'images/Learn page images/PRIORITY-4.jpg'),
+                                          'images/Learn page images/PRIORITY-4.jpg'),
                                   /* makeVideo(
                                       image:
                                           'images/Learn page images/emma-2.jpg'),*/
@@ -359,10 +359,10 @@ class _HomePageState extends State<PriopreLearn> {
                             1.6,
                             Text(
                               "To edit or delete a process swipe the respective dialog box to the left . On editing a process you may see the visible changes "
-                                  "sorted according to arrival times.\nTo delete all the processes at once, just drag the page down to reset it.",
+                              "sorted according to arrival times.\nTo delete all the processes at once, just drag the page down to reset it.",
                               //textAlign: TextAlign.justify,
                               style:
-                              TextStyle(color: Colors.white, fontSize: 16),
+                                  TextStyle(color: Colors.white, fontSize: 16),
                             )),
                         SizedBox(
                           height: 20,
@@ -376,10 +376,10 @@ class _HomePageState extends State<PriopreLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                      'images/Learn page images/PRIORITY-8.jpg'),
+                                          'images/Learn page images/PRIORITY-8.jpg'),
                                   makeVideo(
                                       image:
-                                      'images/Learn page images/FCFS-6.jpg'),
+                                          'images/Learn page images/FCFS-6.jpg'),
                                 ],
                               ),
                             )),
@@ -402,11 +402,11 @@ class _HomePageState extends State<PriopreLearn> {
                             1.6,
                             Text(
                               "To proceed to:\n(1) Gannt chart\n(2) Process table\n"
-                                  "Press the following buttons to navigate there.",
+                              "Press the following buttons to navigate there.",
 
                               //textAlign: TextAlign.justify,
                               style:
-                              TextStyle(color: Colors.white, fontSize: 16),
+                                  TextStyle(color: Colors.white, fontSize: 16),
                             )),
                         SizedBox(
                           height: 20,
@@ -420,7 +420,7 @@ class _HomePageState extends State<PriopreLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                      'images/Learn page images/RR-3.jpg'),
+                                          'images/Learn page images/RR-3.jpg'),
                                   /*makeVideo(
                                       image:
                                           'images/Learn page images/emma-2.jpg'),*/
@@ -449,7 +449,7 @@ class _HomePageState extends State<PriopreLearn> {
                       Navigator.push(
                         context,
                         new MaterialPageRoute(
-                          builder: (context) => new MyPrePriorityApp(),
+                          builder: (context) => new MyPrioritypreempApp(),
                         ),
                       );
                     },

@@ -10,10 +10,10 @@ import 'dart:math';
 import 'package:fab_circular_menu/fab_circular_menu.dart';
 
 void main() {
-  runApp(MyPrePriorityApp());
+  runApp(MyPrioritypreempApp());
 }
 
-class MyPrePriorityApp extends StatelessWidget {
+class MyPrioritypreempApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
