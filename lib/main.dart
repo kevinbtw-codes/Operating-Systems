@@ -32,7 +32,7 @@ class FirstScreen extends StatelessWidget {
     return Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("images/homepage.gif"),
+            image: AssetImage("images/homepage.jpg"),
             fit: BoxFit.cover,
           ),
         ),
@@ -65,10 +65,36 @@ class FirstScreen extends StatelessWidget {
                   ),
                   height: MediaQuery.of(context).size.height * 0.4,
                 ),*/
+
                 Container(
-                  //padding: EdgeInsets.only(bottom: 100.0),
+                  height: MediaQuery.of(context).size.height * 0.6,
+                  //padding: EdgeInsets.only(top: 150),
                   child: Align(
-                    alignment: Alignment.topLeft,
+                    alignment: Alignment.bottomCenter,
+                    child: RaisedButton(
+                      color: Color(0xFF22456D),
+                      child: Text(
+                        'LAUNCH',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+
+                      onPressed: () {
+                        // Navigate to the second screen using a named route.
+                        Navigator.pushNamed(context, '/second');
+                      },
+                    ),
+                  ),
+                ),
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.05,
+                  // width: 320,
+                  //alignment: Alignment.center,
+                  // padding: EdgeInsets.only(top: 100),
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
                     child: FloatingActionButton.extended(
                       onPressed: () {
                         Navigator.push(
@@ -83,26 +109,6 @@ class FirstScreen extends StatelessWidget {
                       ),
                       icon: Icon(Icons.group_outlined),
                       backgroundColor: Color(0xFFEE97D0),
-                    ),
-                  ),
-                ),
-                Container(
-                  //padding: EdgeInsets.only(bottom: 100.0),
-                  child: Align(
-                    alignment: Alignment.bottomCenter,
-                    child: RaisedButton(
-                      color: Color(0xFF22456D),
-                      child: Text(
-                        'LAUNCH',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      onPressed: () {
-                        // Navigate to the second screen using a named route.
-                        Navigator.pushNamed(context, '/second');
-                      },
                     ),
                   ),
                 ),
