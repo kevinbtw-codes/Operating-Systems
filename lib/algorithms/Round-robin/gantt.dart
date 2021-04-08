@@ -183,4 +183,3 @@ class _GanttChartState extends State<GanttChart> {
     );
   }
 }
-//rr gannt

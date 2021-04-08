@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:os_project/algorithms/Priority-new/Main-priorio.dart';
 import '../../Algorithm page.dart';
 import 'priorpreemp-algo.dart';
-//import 'table.dart';
+import 'table.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'dart:async';
@@ -293,7 +292,7 @@ class _AlgorithmState extends State<Algorithm> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    //builder: (context) => TheTable(prs),
+                    builder: (context) => TheTable(prs),
                     ),
               );
             },

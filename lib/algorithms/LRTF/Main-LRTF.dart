@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:os_project/algorithms/Shortest%20job%20First/Main-sjfio.dart';
 import '../../Algorithm page.dart';
 import 'lrtf-algo.dart';
-//import 'table.dart';
+import 'table.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'dart:async';
@@ -250,7 +249,7 @@ class _AlgorithmState extends State<Algorithm> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    //builder: (context) => TheTable(prs),
+                    builder: (context) => TheTable(prs),
                     ),
               );
             },
