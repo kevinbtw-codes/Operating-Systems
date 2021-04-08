@@ -11,10 +11,10 @@ import 'dart:math';
 import 'package:fab_circular_menu/fab_circular_menu.dart';
 
 void main() {
-  runApp(MyPriorityApp());
+  runApp(MyPrioritypreempApp());
 }
 
-class MyPriorityApp extends StatelessWidget {
+class MyPrioritypreempApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -76,7 +76,7 @@ class _AlgorithmState extends State<Algorithm> {
       control2.clear();
       control3.clear();
       assignPid(prs);
-      //prs = priorityalgo(prs);
+      prs = priorpreempalgo(prs);
       //initialpriorsort(prs);
       //prs.sort((a, b) => a.pid.compareTo(b.pid));
     });
@@ -286,21 +286,7 @@ class _AlgorithmState extends State<Algorithm> {
         fabColor: Color(0xffc3ebef),
         children: <Widget>[
           IconButton(
-            iconSize: 30,
-            icon: Icon(Icons.settings_input_component_rounded),
-            onPressed: () {
-              prs.sort((a, b) => a.pid.compareTo(b.pid));
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    //builder: (context) => priorio_page(),
-                    //
-                    ),
-              );
-            },
-          ),
-          IconButton(
-            iconSize: 30,
+            iconSize: 40,
             icon: Icon(Icons.table_chart_rounded),
             onPressed: () {
               prs.sort((a, b) => a.pid.compareTo(b.pid));
@@ -313,7 +299,7 @@ class _AlgorithmState extends State<Algorithm> {
             },
           ),
           IconButton(
-            iconSize: 30,
+            iconSize: 40,
             icon: Icon(Icons.bar_chart),
             onPressed: () {
               prs.sort((a, b) => a.pid.compareTo(b.pid));
@@ -326,7 +312,7 @@ class _AlgorithmState extends State<Algorithm> {
             },
           ),
           IconButton(
-            iconSize: 30,
+            iconSize: 40,
             icon: Icon(Icons.add_circle),
             onPressed: () {
               createaddDialog(context, prs);
@@ -358,9 +344,7 @@ class _AlgorithmState extends State<Algorithm> {
       setState(() {
         if (prs.length > 0) {
           prs.removeAt(index);
-          //prs = priorityalgo(prs);
-          //initialpriorsort(prs);
-          //prs.sort((a, b) => a.pid.compareTo(b.pid));
+          prs = priorpreempalgo(prs);
         } else {
           setState(() {});
         }
@@ -373,9 +357,7 @@ class _AlgorithmState extends State<Algorithm> {
         prs[index].at = int.parse(econtrol1.text);
         prs[index].bt = int.parse(econtrol2.text);
         prs[index].priority = int.parse(econtrol3.text);
-        //prs = priorityalgo(prs);
-        //initialpriorsort(prs);
-        //prs.sort((a, b) => a.pid.compareTo(b.pid));
+        prs = priorpreempalgo(prs);
       });
     }
 

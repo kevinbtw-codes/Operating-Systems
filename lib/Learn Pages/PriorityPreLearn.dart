@@ -2,6 +2,7 @@ import 'package:os_project/Algorithm%20page.dart';
 import 'package:os_project/Learn Pages/Animations/FadeAnimation.dart';
 import 'package:flutter/material.dart';
 import 'package:os_project/algorithms/FCFS/Main-fcfs.dart';
+import 'package:os_project/algorithms/Priority-preemp/Main-priorpreemp.dart';
 
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -197,7 +198,7 @@ class _HomePageState extends State<PriopreLearn> {
                             Text(
                               "HOW IT WORKS",
                               style: TextStyle(
-                                  color: Color(0XFFFFFFFFF),
+                                  color: Colors.white,
                                   fontSize: 40,
                                   fontWeight: FontWeight.bold),
                             )),
@@ -254,7 +255,7 @@ class _HomePageState extends State<PriopreLearn> {
                                   ),
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/FCFS-2.jpg'),
+                                          'images/Learn page images/PRIORITY-1.jpg'),
                                 ],
                               ),
                             )),
@@ -276,7 +277,7 @@ class _HomePageState extends State<PriopreLearn> {
                         FadeAnimation(
                             1.6,
                             Text(
-                              "For each process one can input respective value for \"AT\" and \"BT\" , failing to which the value will be considered as null.",
+                              "For each process one can input respective value for \"AT\" , \"BT\" and \"Priority\" , failing to which the value will be considered as null.",
                               //textAlign: TextAlign.justify,
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16),
@@ -293,10 +294,7 @@ class _HomePageState extends State<PriopreLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/FCFS-3.jpg'),
-                                  /* makeVideo(
-                                      image:
-                                          'images/Learn page images/emma-2.jpg'),*/
+                                          'images/Learn page images/PRIORITY-5.jpg'),
                                 ],
                               ),
                             )),
@@ -335,7 +333,7 @@ class _HomePageState extends State<PriopreLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/FCFS-4.jpg'),
+                                          'images/Learn page images/PRIORITY-4.jpg'),
                                   /* makeVideo(
                                       image:
                                           'images/Learn page images/emma-2.jpg'),*/
@@ -360,7 +358,8 @@ class _HomePageState extends State<PriopreLearn> {
                         FadeAnimation(
                             1.6,
                             Text(
-                              "To edit or delete a process swipe the respective dialog box to the left . On editing a process you may see the visible changes sorted according to arrival times .",
+                              "To edit or delete a process swipe the respective dialog box to the left . On editing a process you may see the visible changes "
+                              "sorted according to arrival times.\nTo delete all the processes at once, just drag the page down to reset it.",
                               //textAlign: TextAlign.justify,
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16),
@@ -377,7 +376,51 @@ class _HomePageState extends State<PriopreLearn> {
                                 children: <Widget>[
                                   makeVideo(
                                       image:
-                                          'images/Learn page images/FCFS-5.jpg'),
+                                          'images/Learn page images/PRIORITY-8.jpg'),
+                                  makeVideo(
+                                      image:
+                                          'images/Learn page images/FCFS-6.jpg'),
+                                ],
+                              ),
+                            )),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "5.",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        FadeAnimation(
+                            1.6,
+                            Text(
+                              "To proceed to:\n(1) Gannt chart\n(2) Process table\n"
+                              "Press the following buttons to navigate there.",
+
+                              //textAlign: TextAlign.justify,
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 16),
+                            )),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        FadeAnimation(
+                            1.8,
+                            Container(
+                              height: 200,
+                              child: ListView(
+                                scrollDirection: Axis.horizontal,
+                                children: <Widget>[
+                                  makeVideo(
+                                      image:
+                                          'images/Learn page images/RR-3.jpg'),
                                   /*makeVideo(
                                       image:
                                           'images/Learn page images/emma-2.jpg'),*/
@@ -406,7 +449,7 @@ class _HomePageState extends State<PriopreLearn> {
                       Navigator.push(
                         context,
                         new MaterialPageRoute(
-                          builder: (context) => new MyApp(),
+                          builder: (context) => new MyPrioritypreempApp(),
                         ),
                       );
                     },
