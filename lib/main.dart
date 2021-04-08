@@ -70,7 +70,7 @@ class FirstScreen extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.55,
                   padding: EdgeInsets.only(bottom: 0),
                   child: Align(
-                    alignment: Alignment.bottomCenter,
+                    alignment: Alignment.center,
                     child: RaisedButton(
                       color: Color(0xFF22456D),
                       child: Text(
