@@ -4,7 +4,7 @@ import 'package:os_project/Algorithm%20page.dart';
 import 'package:os_project/algorithms/FCFS/Main-fcfsio.dart';
 import 'round-robin.dart';
 //import 'table.dart';
-import 'ganntt.dart';
+import 'gantt.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'dart:async';
 //import 'Main-fcfsio.dart';
