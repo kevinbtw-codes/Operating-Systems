@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:os_project/algorithms/Shortest%20job%20First/Main-sjfio.dart';
 import '../../Algorithm page.dart';
 import 'srtf-algo.dart';
-//import 'table.dart';
+import 'table.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'dart:async';
 import 'dart:math';
-//import 'gantt.dart';
 import 'package:fab_circular_menu/fab_circular_menu.dart';
 
 main(List<String> args) {
@@ -32,7 +30,7 @@ class Algorithm extends StatefulWidget {
 class _AlgorithmState extends State<Algorithm> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final GlobalKey<LiquidPullToRefreshState> _refreshIndicatorKey =
-      GlobalKey<LiquidPullToRefreshState>();
+  GlobalKey<LiquidPullToRefreshState>();
 
   ScrollController _scrollController;
 
@@ -246,8 +244,8 @@ class _AlgorithmState extends State<Algorithm> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    //builder: (context) => TheTable(prs),
-                    ),
+                  builder: (context) => TheTable(prs),
+                ),
               );
             },
           ),
@@ -259,8 +257,8 @@ class _AlgorithmState extends State<Algorithm> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    //builder: (context) => GanttChart(prs),
-                    ),
+                 // builder: (context) => GanttChart(prs),
+                ),
               );
             },
           ),
