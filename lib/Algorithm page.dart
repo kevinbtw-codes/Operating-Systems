@@ -8,6 +8,7 @@ import 'package:os_project/Learn%20Pages/LRTLearn.dart';
 import 'package:os_project/Learn%20Pages/PriorityPreLearn.dart';
 import 'package:os_project/Learn%20Pages/RRLearn.dart';
 import 'package:os_project/Learn%20Pages/SRTLearn.dart';
+import 'package:os_project/algorithms/Priority-preemp/Main-priorpreemp.dart';
 import 'package:os_project/algorithms/LRTF/Main-LRTF.dart';
 import 'package:os_project/algorithms/SRTF/Main-SRTF.dart';
 import 'package:os_project/algorithms/Priority-new/Main-priority.dart';
@@ -1257,6 +1258,13 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                                   textColor: Colors.white,
                                   onPressed: () {
                                     // Perform some action
+                                    Navigator.push(
+                                      context,
+                                      new MaterialPageRoute(
+                                        builder: (context) =>
+                                            new MyPrioritypreempApp(),
+                                      ),
+                                    );
                                   },
                                   child: const Text(
                                     'START',
