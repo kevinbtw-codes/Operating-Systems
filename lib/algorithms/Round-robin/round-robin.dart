@@ -14,6 +14,8 @@ class Process {
   int tat;
   int wt;
   int tq;
+  List<int> list_start = [];
+  List<int> list_end = [];
 
   Process(this.at, this.bt);
 
@@ -72,6 +74,8 @@ List<Process> rralgo(List<Process> l, int tq) {
     item.ct = item.start_time = item.tat = item.wt = 0;
     item.remain_time = item.bt;
     item.started = false;
+    item.list_start = [];
+    item.list_end = [];
   }
 
   lgantt.sort((a, b) => a.at.compareTo(b.at));
@@ -139,6 +143,7 @@ void fillfq(List<Process> l, List<Process> fq, int i) {
 int processexec(List<Process> rq, int time, List<Process> fq, int tq,
     List<Process> lgantt) {
   int time1 = 0;
+  rq[0].list_start.add(time);
   if (rq[0].started == false) {
     rq[0].start_time = time;
     rq[0].started = true;
@@ -147,6 +152,7 @@ int processexec(List<Process> rq, int time, List<Process> fq, int tq,
   if (rq[0].remain_time <= tq) {
     rq[0].ct = rq[0].remain_time + time;
     time1 = rq[0].ct;
+    rq[0].list_end.add(time1);
     rq[0].remain_time = 0;
     rq[0].tat = rq[0].ct - rq[0].at;
     rq[0].wt = rq[0].tat - rq[0].bt;
@@ -155,6 +161,7 @@ int processexec(List<Process> rq, int time, List<Process> fq, int tq,
     rq[0].ct = tq + time;
     rq[0].remain_time = rq[0].remain_time - tq;
     time1 = rq[0].ct;
+    rq[0].list_end.add(rq[0].ct);
     fillrq(rq, time1, lgantt);
     rq.add(rq[0]);
     rq.removeAt(0);
