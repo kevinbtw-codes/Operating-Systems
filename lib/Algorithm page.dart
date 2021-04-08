@@ -8,6 +8,7 @@ import 'package:os_project/Learn%20Pages/LRTLearn.dart';
 import 'package:os_project/Learn%20Pages/PriorityPreLearn.dart';
 import 'package:os_project/Learn%20Pages/RRLearn.dart';
 import 'package:os_project/Learn%20Pages/SRTLearn.dart';
+import 'package:os_project/algorithms/SRTF/Main-SRTF.dart';
 import 'package:os_project/algorithms/Priority-new/Main-priority.dart';
 import 'package:os_project/algorithms/Round-robin/Main-rr.dart';
 import 'package:os_project/algorithms/Shortest job First/Main-SJF.dart';
@@ -49,7 +50,6 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
       flag6 = true,
       flag7 = true,
       flag8 = true;
-
 
   _buildCard({
     Config config,
@@ -878,7 +878,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                           Padding(
                             padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
                             child: AutoSizeText(
-                              "Shortest Remaining Time",
+                              "Shortest Remaining Time First",
                               style: TextStyle(
                                 fontSize: 30,
                                 fontWeight: FontWeight.bold,
@@ -923,7 +923,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                           Padding(
                             padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
                             child: AutoSizeText(
-                              "Shortest Remaining Time",
+                              "Shortest Remaining Time First",
                               style: TextStyle(
                                 fontSize: 30,
                                 fontWeight: FontWeight.bold,
@@ -968,6 +968,12 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                                   textColor: Colors.white,
                                   onPressed: () {
                                     // Perform some action
+                                    Navigator.push(
+                                      context,
+                                      new MaterialPageRoute(
+                                        builder: (context) => new MysrtfApp(),
+                                      ),
+                                    );
                                   },
                                   child: const Text(
                                     'START',
