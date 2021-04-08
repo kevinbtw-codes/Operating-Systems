@@ -89,7 +89,7 @@ class FirstScreen extends StatelessWidget {
                 Container(
                   //padding: EdgeInsets.only(bottom: 100.0),
                   child: Align(
-                    alignment: Alignment.bottomCenter,
+                    alignment: Alignment.center,
                     child: RaisedButton(
                       color: Color(0xFF22456D),
                       child: Text(
