@@ -85,7 +85,10 @@ List<Process> srtfalgo(List<Process> l) {
   for (var item in lgantt) {
     item.ct = item.start_time = item.tat = item.wt = 0;
     item.remain_time = item.bt;
+    item.started = false;
   }
+
+  // printprocess(lgantt);
 
   lganttsortsrt(lgantt);
   int time = 0;
@@ -103,6 +106,7 @@ List<Process> srtfalgo(List<Process> l) {
         if (rq[0].started == false) {
           rq[0].started = true;
           rq[0].start_time = time;
+          // printprocess(rq);
         }
         rq[0].ct = rq[0].remain_time + time;
         time = rq[0].ct;
@@ -110,10 +114,12 @@ List<Process> srtfalgo(List<Process> l) {
         rq[0].tat = rq[0].ct - rq[0].at;
         rq[0].wt = rq[0].tat - rq[0].bt;
         fillfq(rq, fq, 0);
+        // printprocess(fq);
       }
       break;
     }
   }
+
   fq.sort((a, b) => a.pid.compareTo(b.pid));
   return fq;
 }

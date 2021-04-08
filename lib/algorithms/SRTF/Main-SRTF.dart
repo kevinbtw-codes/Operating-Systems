@@ -184,6 +184,7 @@ class _AlgorithmState extends State<Algorithm> {
                               ),
                               child: Text("Submit"),
                               onPressed: () {
+                                // print(prs);
                                 add(control1, control2);
                                 Navigator.of(context).pop();
                               }),
