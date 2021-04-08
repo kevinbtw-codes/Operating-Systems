@@ -67,8 +67,8 @@ class FirstScreen extends StatelessWidget {
                 ),*/
 
                 Container(
-                  height: MediaQuery.of(context).size.height * 0.6,
-                  //padding: EdgeInsets.only(top: 150),
+                  height: MediaQuery.of(context).size.height * 0.55,
+                  padding: EdgeInsets.only(bottom: 0),
                   child: Align(
                     alignment: Alignment.bottomCenter,
                     child: RaisedButton(
@@ -89,10 +89,10 @@ class FirstScreen extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  height: MediaQuery.of(context).size.height * 0.05,
+                  height: MediaQuery.of(context).size.height * 0.1,
                   // width: 320,
                   //alignment: Alignment.center,
-                  // padding: EdgeInsets.only(top: 100),
+                  padding: EdgeInsets.only(bottom: 0),
                   child: Align(
                     alignment: Alignment.bottomCenter,
                     child: FloatingActionButton.extended(
@@ -105,10 +105,10 @@ class FirstScreen extends StatelessWidget {
                       label: Text(
                         'ABOUT US',
                         style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold),
+                            color: Colors.black, fontWeight: FontWeight.bold),
                       ),
-                      icon: Icon(Icons.group_outlined),
-                      backgroundColor: Color(0xFFEE97D0),
+                      icon: Icon(Icons.group_outlined,color: Colors.black),
+                      backgroundColor: Colors.white,
                     ),
                   ),
                 ),
