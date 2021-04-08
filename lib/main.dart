@@ -5,6 +5,7 @@ import 'package:os_project/PageReplacement.dart';
 import 'package:os_project/animation1.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:os_project/swiper_pagination.dart';
+import 'package:os_project/ui%20pages/About%20Us.dart';
 import 'Algorithm page.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
@@ -20,6 +21,7 @@ void main() {
       '/second': (context) => IntroTwoPage(),
       '/third': (context) => WaveDemoApp(),
       '/fourth': (context) => PageReplacement(),
+      //'/fifth':(context)=> AboutUs(),
     },
   ));
 }
@@ -41,12 +43,12 @@ class FirstScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Container(
+                /*Container(
                   width: 320,
                   alignment: Alignment.center,
                   child: Text(
                     " ",
-                    style: TextStyle(fontSize: 32.0, color: Colors.deepOrange),
+                    style: TextStyle(fontSize: 100.0, color: Colors.black),
                   ),
                 ),
                 Container(
@@ -57,28 +59,52 @@ class FirstScreen extends StatelessWidget {
                     text: [
                       "",
                     ],
-                    textStyle: TextStyle(
-                      fontSize: 28.0,
-                      color: Colors.black
-                    ),
+                    textStyle: TextStyle(fontSize: 28.0, color: Colors.black),
                     textAlign: TextAlign.start,
                     transitionHeight: 86,
                   ),
-                  height: MediaQuery.of(context).size.height*0.4,
-                ),
-                RaisedButton(
-                  color: Color(0xFF22456D),
-                  child: Text(
-                    'LAUNCH',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
+                  height: MediaQuery.of(context).size.height * 0.4,
+                ),*/
+                Container(
+                  //padding: EdgeInsets.only(bottom: 100.0),
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: FloatingActionButton.extended(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => AboutUs()),
+                        ); // Add your onPressed code here!
+                      },
+                      label: Text(
+                        'ABOUT US',
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                      icon: Icon(Icons.group_outlined),
+                      backgroundColor: Color(0xFFEE97D0),
                     ),
                   ),
-                  onPressed: () {
-                    // Navigate to the second screen using a named route.
-                    Navigator.pushNamed(context, '/second');
-                  },
+                ),
+                Container(
+                  //padding: EdgeInsets.only(bottom: 100.0),
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: RaisedButton(
+                      color: Color(0xFF22456D),
+                      child: Text(
+                        'LAUNCH',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      onPressed: () {
+                        // Navigate to the second screen using a named route.
+                        Navigator.pushNamed(context, '/second');
+                      },
+                    ),
+                  ),
                 ),
               ],
             ))));
