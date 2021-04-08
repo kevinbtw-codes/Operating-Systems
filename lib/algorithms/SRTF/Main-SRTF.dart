@@ -257,7 +257,7 @@ class _AlgorithmState extends State<Algorithm> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => GanttChart(prs),
+                 // builder: (context) => GanttChart(prs),
                 ),
               );
             },
