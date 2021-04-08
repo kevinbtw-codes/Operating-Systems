@@ -239,21 +239,7 @@ class _AlgorithmState extends State<Algorithm> {
         fabColor: Color(0xffc3ebef),
         children: <Widget>[
           IconButton(
-            iconSize: 30,
-            icon: Icon(Icons.settings_input_component_rounded),
-            onPressed: () {
-              prs.sort((a, b) => a.pid.compareTo(b.pid));
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => sjfio_page(),
-                  //
-                ),
-              );
-            },
-          ),
-          IconButton(
-            iconSize: 30,
+            iconSize: 40,
             icon: Icon(Icons.table_chart_rounded),
             onPressed: () {
               prs.sort((a, b) => a.pid.compareTo(b.pid));
@@ -266,7 +252,7 @@ class _AlgorithmState extends State<Algorithm> {
             },
           ),
           IconButton(
-            iconSize: 30,
+            iconSize: 40,
             icon: Icon(Icons.bar_chart),
             onPressed: () {
               prs.sort((a, b) => a.pid.compareTo(b.pid));
@@ -279,7 +265,7 @@ class _AlgorithmState extends State<Algorithm> {
             },
           ),
           IconButton(
-            iconSize: 30,
+            iconSize: 40,
             icon: Icon(Icons.add_circle),
             onPressed: () {
               createaddDialog(context, prs);

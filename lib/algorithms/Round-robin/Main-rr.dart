@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'package:os_project/Algorithm%20page.dart';
+// import 'round-robin-algo.dart';
 import 'round-robin.dart';
 //import 'table.dart';
 import 'gantt.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'dart:async';
-//import 'Main-fcfsio.dart';
 import 'package:fab_circular_menu/fab_circular_menu.dart';
 
 void main() {
@@ -346,21 +346,9 @@ class _AlgorithmState extends State<Algorithm> {
         fabColor: Color(0xffc3ebef),
         //fabCloseColor: Colors.transparent,
         children: <Widget>[
+
           IconButton(
-            iconSize: 20,
-            icon: Icon(Icons.settings_input_component_rounded),
-            onPressed: () {
-              prs.sort((a, b) => a.pid.compareTo(b.pid));
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    //builder: (context) => fcfsio_page(),
-                    ),
-              );
-            },
-          ),
-          IconButton(
-            iconSize: 20,
+            iconSize: 30,
             icon: Icon(Icons.table_chart_rounded),
             onPressed: () {
               prs.sort((a, b) => a.pid.compareTo(b.pid));
@@ -373,27 +361,27 @@ class _AlgorithmState extends State<Algorithm> {
             },
           ),
           IconButton(
-            iconSize: 20,
+            iconSize: 30,
             icon: Icon(Icons.bar_chart),
             onPressed: () {
               prs.sort((a, b) => a.pid.compareTo(b.pid));
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => GanttChart(prs),
-                    ),
+                  builder: (context) => GanttChart(prs),
+                ),
               );
             },
           ),
           IconButton(
-            iconSize: 20,
+            iconSize: 30,
             icon: Icon(Icons.add_circle),
             onPressed: () {
               createaddDialog(context, prs, timeq);
             },
           ),
           IconButton(
-            iconSize: 20,
+            iconSize: 30,
             icon: Icon(Icons.more_time_rounded),
             onPressed: () {
               createtqDialog(context, prs, timeq);
@@ -550,6 +538,10 @@ class _AlgorithmState extends State<Algorithm> {
                                 ),
                                 child: Text("Submit"),
                                 onPressed: () {
+                                  // print("LOL");
+                                  // print(prs);
+                                  // print(prs[1].list_start);
+                                  // print(prs[1].list_end);
                                   editprs(index, econtrol1, econtrol2);
                                   Navigator.of(context).pop();
                                 }),

@@ -23,37 +23,42 @@ class _GanttChartState extends State<GanttChart> {
 
   @override
   Widget build(BuildContext context) {
-    List<Process> prsNew;
-    List<Process> prsadd;
-    List<Process> ready=[];
+    List<Process> prsNew = [];
+    List<Process> prsadd = [];
     prsNew = prs.toList();
-    prsNew.sort((a, b) => (a.at).compareTo(b.at));
-    ready.insert(0,Process(prsNew[0].at, prsNew[0].bt));// adding the first process in ready
 
     if (prsNew.length >= 1) {
       int i = 0;
-      int current_time=prsNew[0].at; // the time currently
-      while (ready.length>0 ) {
-        //print(prsNew[i].ct < prsNew[i + 1].at);
-        if (prsNew[i].bt > prsNew[i].tq) { // to check that if burst time of process is greater than tq than process executes for tq only
-          prsadd.add(Process(current_time, prsNew[i].tq)); //adding process in list to be printed
-          prsNew[i].bt = prsNew[i].bt - prsNew[i].tq; // changing burst time to time left
-          current_time=current_time+prsNew[i].tq; //updating current time
-          ready.add(Process(current_time, prsNew[i].bt));
+      for (i = 0; i < prsNew.length; i++) {
+        for (int list_index = 0;
+            list_index < prsNew[i].list_end.length;
+            list_index++) {
+          prsadd.add(Process(prsNew[i].at, prsNew[i].bt));
+          prsadd[prsadd.length - 1].start_time =
+              prsNew[i].list_start[list_index];
+          prsadd[prsadd.length - 1].ct = prsNew[i].list_end[list_index];
+          prsadd[prsadd.length - 1].pid = prsNew[i].pid;
         }
-        else {
-          prsadd.add(Process(current_time, prsNew[i].bt)); // if burst time of process is lesser than tq then whole process execute
-          current_time=current_time+prsNew[i].bt; //updating current time
-          ready.removeWhere((item) => item.pid == i);
-        }
-        if (prsNew[i+1].at < current_time) {
-          ready.add(Process(prsNew[i+1].at, prsNew[i+1].bt));
+      }
+    }
+
+    prsadd.sort((a, b) => (a.start_time).compareTo(b.start_time));
+
+    if (prsNew.length >= 1) {
+      int i = 0;
+      while (i < prsadd.length - 1) {
+        if (prsadd[i].ct < prsadd[i + 1].start_time) {
+          prsadd.add(
+              Process(prsadd[i].ct, prsadd[i + 1].start_time - prsadd[i].ct));
+          prsadd[prsadd.length - 1].pid = "Idle";
+          prsadd[prsadd.length - 1].ct = prsadd[i + 1].start_time;
+          prsadd[prsadd.length - 1].start_time = prsadd[i].ct;
         }
         i += 1;
       }
     }
 
-    print(prsNew);
+    prsadd.sort((a, b) => (a.start_time).compareTo(b.start_time));
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -96,42 +101,77 @@ class _GanttChartState extends State<GanttChart> {
                   builder: TimelineTileBuilder.fromStyle(
                     contentsAlign: ContentsAlign.alternating,
                     contentsBuilder: (context, index) =>
-                        Container(
-                          margin: EdgeInsets.all(7),
-                          decoration: BoxDecoration(
-                            color: Color(0XFFF36735),
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(10),
-                                topRight: Radius.circular(10),
-                                bottomLeft: Radius.circular(10),
-                                bottomRight: Radius.circular(10)),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 3,
-                                blurRadius: 5,
-                                offset: Offset(
-                                    0, 3), // changes position of shadow
+                        prsadd[index].pid == "Idle"
+                            ? Container(
+                                margin: EdgeInsets.all(7),
+                                decoration: BoxDecoration(
+                                  color: Colors.orange[300],
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(10),
+                                      topRight: Radius.circular(10),
+                                      bottomLeft: Radius.circular(10),
+                                      bottomRight: Radius.circular(10)),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0.6),
+                                      spreadRadius: 3,
+                                      blurRadius: 5,
+                                      offset: Offset(
+                                          0, 3), // changes position of shadow
+                                    ),
+                                  ],
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Text(
+                                    prsadd[index].pid.toString() +
+                                        "\nTime: " +
+                                        (prsadd[index].start_time).toString() +
+                                        " to " +
+                                        (prsadd[index].ct).toString(),
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              )
+                            : Container(
+                                margin: EdgeInsets.all(7),
+                                decoration: BoxDecoration(
+                                  color: Color(0XFFF36735),
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(10),
+                                      topRight: Radius.circular(10),
+                                      bottomLeft: Radius.circular(10),
+                                      bottomRight: Radius.circular(10)),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0.5),
+                                      spreadRadius: 3,
+                                      blurRadius: 5,
+                                      offset: Offset(
+                                          0, 3), // changes position of shadow
+                                    ),
+                                  ],
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Text(
+                                    prsadd[index].pid.toString() +
+                                        "\nTime: " +
+                                        (prsadd[index].start_time).toString() +
+                                        " to " +
+                                        (prsadd[index].ct).toString(),
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
                               ),
-                            ],
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Text(
-                              prsadd[index].pid.toString() +
-                                  "\nTime: " +
-                                  (prsadd[index].ct - prsadd[index].bt)
-                                      .toString() +
-                                  " to " +
-                                  (prsadd[index].ct).toString(),
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20.0,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
                     itemCount: prsadd.length,
                   ),
                 ),
