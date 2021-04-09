@@ -203,7 +203,8 @@ int processexec(
     }
     time1 = time;
     return time1;
-  } else {
+  }
+  else {
     rq[0].list_start.add(time);
     //normal sjf
     if (rq[0].started == false) {
