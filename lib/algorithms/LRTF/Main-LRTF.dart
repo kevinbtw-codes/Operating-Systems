@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import '../../Algorithm page.dart';
-import 'lrtf-algo.dart';
+import 'lrtf.dart';
 import 'table.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'dart:async';
 import 'dart:math';
-//import 'gantt.dart';
+import 'gantt.dart';
 import 'package:fab_circular_menu/fab_circular_menu.dart';
 
 main(List<String> args) {
@@ -262,7 +262,7 @@ class _AlgorithmState extends State<Algorithm> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    //builder: (context) => GanttChart(prs),
+                    builder: (context) => GanttChart(prs),
                     ),
               );
             },

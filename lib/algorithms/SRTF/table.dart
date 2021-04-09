@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lazy_data_table/lazy_data_table.dart';
-import 'srtf-algo.dart';
+import 'srtf.dart';
 
 class TheTable extends StatefulWidget {
   List<Process> prs;
