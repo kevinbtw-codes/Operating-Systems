@@ -89,46 +89,33 @@ List<ioprocess> fcfsioalgo(List<ioprocess> l) {
           break;
         } else {
           //3 - false - only ioqueue is not empty
-          if (time >= ioqueue[0].ioexit) {
-            //4 true - ioq[0] has arrived
-            fillrq(readyq, time, ioqueue);
-            print("readyq after filling it from ioq at time - " +
-                time.toString());
-            printpid(readyq);
-            print("ioq at that time");
-            printpid(ioqueue);
-            time = processexec(readyq, time, finishedq, ioqueue);
-          } else {
-            //4 false - ioq[0] has not arrived
-            //here x = ioq[0].ioexit - time , x = duration of idle state,
-            // between time and ioq[0].ioexit machine is in idle state
+          if (time < ioqueue[0].ioexit) {
             time = ioqueue[0].ioexit;
-            fillrq(readyq, time, ioqueue);
-            print(
-                "readyq after filling it from ioq when ioq[0] has not arrived at time - " +
-                    time.toString());
-            printpid(readyq);
-            time = processexec(readyq, time, finishedq, ioqueue);
           }
+          fillrq(readyq, time, ioqueue);
+          printpid(readyq);
+          printpid(ioqueue);
+          time = processexec(readyq, time, finishedq, ioqueue);
         }
       } else {
         //2 false - lgantt is not empty
         if (ioqueue.isEmpty) {
           //3 true - ioqueue and readyq both are empty
-          if (time >= lgantt[0].at) {
-            //4 true - process from lgantt has arrived
-            fillrq(readyq, time, lgantt);
-            time = processexec(readyq, time, finishedq, ioqueue);
-          } else {
-            //4 false - process from lgantt has not arrived
-            //here x = lgantt[0].at - time , x = duration of idle state,
-            // between time and lgantt[0].at machine is in idle state
+          if (time < lgantt[0].at) {
             time = lgantt[0].at;
-            fillrq(readyq, time, lgantt);
-            time = processexec(readyq, time, finishedq, ioqueue);
           }
+          fillrq(readyq, time, lgantt);
+          time = processexec(readyq, time, finishedq, ioqueue);
         } else {
           //3 false - only readyq is empty
+          if (lgantt[0].at > time && ioqueue[0].ioexit > time) {
+            if (lgantt[0].at < ioqueue[0].ioexit) {
+              time = lgantt[0].at;
+            }
+            if (lgantt[0].at >= ioqueue[0].ioexit) {
+              time = ioqueue[0].ioexit;
+            }
+          }
           fillrq(readyq, time, lgantt);
           fillrq(readyq, time, ioqueue);
           time = processexec(readyq, time, finishedq, ioqueue);
@@ -136,19 +123,13 @@ List<ioprocess> fcfsioalgo(List<ioprocess> l) {
       }
     } else {
       //1 readyq is not empty
-      if (lgantt.isNotEmpty) {
-        fillrq(readyq, time, lgantt);
-      }
-      if (ioqueue.isNotEmpty) {
-        fillrq(readyq, time, ioqueue);
-      }
+      fillrq(readyq, time, lgantt);
+      fillrq(readyq, time, ioqueue);
+
       time = processexec(readyq, time, finishedq, ioqueue);
-      if (lgantt.isNotEmpty) {
-        fillrq(readyq, time, lgantt);
-      }
-      if (ioqueue.isNotEmpty) {
-        fillrq(readyq, time, ioqueue);
-      }
+
+      fillrq(readyq, time, lgantt);
+      fillrq(readyq, time, ioqueue);
     }
   }
 
@@ -194,29 +175,31 @@ void fillrq(List<ioprocess> readyq, int time, List<ioprocess> l) {
   int i = 0;
   int count = 0;
   l.sort((a, b) => a.at.compareTo(b.at));
-  if (l[0].io == false) {
-    while (l.isNotEmpty && count < l.length) {
-      if (l[i].at <= time) {
-        readyq.add(l[i]);
-        l.removeAt(i);
-        count--;
-      } else {
-        i++;
+  if (l.isNotEmpty) {
+    if (l[0].io == false) {
+      while (l.isNotEmpty && count < l.length) {
+        if (l[i].at <= time) {
+          readyq.add(l[i]);
+          l.removeAt(i);
+          count--;
+        } else {
+          i++;
+        }
+        count++;
       }
-      count++;
-    }
-  } else {
-    while (l.isNotEmpty && count < l.length) {
-      if (l[i].ioexit <= time) {
-        readyq.add(l[i]);
-        l.removeAt(i);
-        count--;
-      } else {
-        i++;
+    } else {
+      while (l.isNotEmpty && count < l.length) {
+        if (l[i].ioexit <= time) {
+          readyq.add(l[i]);
+          l.removeAt(i);
+          count--;
+        } else {
+          i++;
+        }
+        count++;
       }
-      count++;
+      l.sort((a, b) => a.ioexit.compareTo(b.ioexit));
     }
-    l.sort((a, b) => a.ioexit.compareTo(b.ioexit));
   }
 
   if (readyq.isNotEmpty) {

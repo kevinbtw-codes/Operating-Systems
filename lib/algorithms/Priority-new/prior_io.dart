@@ -132,19 +132,21 @@ List<ioprocess> priorioalgo(List<ioprocess> l) {
         //2 false - lgantt is not empty
         if (ioqueue.isEmpty) {
           //3 true - ioqueue and readyq both are empty
-          if (time >= lgantt[0].at) {
-            //4 true - process from lgantt has arrived
-            fillrq(readyq, time, lgantt);
-            time = processexec(readyq, time, finishedq, ioqueue);
-          } else {
-            //4 false - process from lgantt has not arrived
-            //here idle state time = lgantt[0].at - time
+          if (time < lgantt[0].at) {
             time = lgantt[0].at;
-            fillrq(readyq, time, lgantt);
-            time = processexec(readyq, time, finishedq, ioqueue);
           }
+          fillrq(readyq, time, lgantt);
+          time = processexec(readyq, time, finishedq, ioqueue);
         } else {
           //3 false - only readyq is empty
+          if (lgantt[0].at > time && ioqueue[0].ioexit > time) {
+            if (lgantt[0].at < ioqueue[0].ioexit) {
+              time = lgantt[0].at;
+            }
+            if (lgantt[0].at >= ioqueue[0].ioexit) {
+              time = ioqueue[0].ioexit;
+            }
+          }
           fillrq(readyq, time, lgantt);
           fillrq(readyq, time, ioqueue);
           time = processexec(readyq, time, finishedq, ioqueue);
@@ -152,19 +154,13 @@ List<ioprocess> priorioalgo(List<ioprocess> l) {
       }
     } else {
       //1 readyq is not empty
-      if (lgantt.isNotEmpty) {
-        fillrq(readyq, time, lgantt);
-      }
-      if (ioqueue.isNotEmpty) {
-        fillrq(readyq, time, ioqueue);
-      }
+      fillrq(readyq, time, lgantt);
+      fillrq(readyq, time, ioqueue);
+
       time = processexec(readyq, time, finishedq, ioqueue);
-      if (lgantt.isNotEmpty) {
-        fillrq(readyq, time, lgantt);
-      }
-      if (ioqueue.isNotEmpty) {
-        fillrq(readyq, time, ioqueue);
-      }
+
+      fillrq(readyq, time, lgantt);
+      fillrq(readyq, time, ioqueue);
     }
   }
 
@@ -222,29 +218,31 @@ void fillrq(List<ioprocess> readyq, int time, List<ioprocess> l) {
   int i = 0;
   int count = 0;
   l.sort((a, b) => a.at.compareTo(b.at));
-  if (l[0].io == false) {
-    while (l.isNotEmpty && count < l.length) {
-      if (l[i].at <= time) {
-        readyq.add(l[i]);
-        l.removeAt(i);
-        count--;
-      } else {
-        i++;
+  if (l.isNotEmpty) {
+    if (l[0].io == false) {
+      while (l.isNotEmpty && count < l.length) {
+        if (l[i].at <= time) {
+          readyq.add(l[i]);
+          l.removeAt(i);
+          count--;
+        } else {
+          i++;
+        }
+        count++;
       }
-      count++;
-    }
-  } else {
-    while (l.isNotEmpty && count < l.length) {
-      if (l[i].ioexit <= time) {
-        readyq.add(l[i]);
-        l.removeAt(i);
-        count--;
-      } else {
-        i++;
+    } else {
+      while (l.isNotEmpty && count < l.length) {
+        if (l[i].ioexit <= time) {
+          readyq.add(l[i]);
+          l.removeAt(i);
+          count--;
+        } else {
+          i++;
+        }
+        count++;
       }
-      count++;
+      l.sort((a, b) => a.ioexit.compareTo(b.ioexit));
     }
-    l.sort((a, b) => a.ioexit.compareTo(b.ioexit));
   }
 
   if (readyq.isNotEmpty) {
