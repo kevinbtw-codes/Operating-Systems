@@ -35,3 +35,15 @@ android/local.properties
 .pub-cache/
 .pub/
 build/
+
+# Miscellaneous
+*.class
+*.lock
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
