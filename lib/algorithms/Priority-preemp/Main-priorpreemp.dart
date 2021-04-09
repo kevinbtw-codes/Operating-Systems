@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import '../../Algorithm page.dart';
-import 'priorpreemp-algo.dart';
+import 'prior-preemp.dart';
 import 'table.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'dart:async';
 import 'dart:math';
-//import 'gantt.dart';
+import 'gantt.dart';
 import 'package:fab_circular_menu/fab_circular_menu.dart';
 
 void main() {
@@ -32,7 +32,7 @@ class Algorithm extends StatefulWidget {
 class _AlgorithmState extends State<Algorithm> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final GlobalKey<LiquidPullToRefreshState> _refreshIndicatorKey =
-      GlobalKey<LiquidPullToRefreshState>();
+  GlobalKey<LiquidPullToRefreshState>();
 
   ScrollController _scrollController;
 
@@ -292,8 +292,8 @@ class _AlgorithmState extends State<Algorithm> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => TheTable(prs),
-                    ),
+                  builder: (context) => TheTable(prs),
+                ),
               );
             },
           ),
@@ -305,8 +305,8 @@ class _AlgorithmState extends State<Algorithm> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    //builder: (context) => GanttChart(prs),
-                    ),
+                  builder: (context) => GanttChart(prs),
+                ),
               );
             },
           ),
@@ -386,7 +386,7 @@ class _AlgorithmState extends State<Algorithm> {
                                         horizontal: 20.0, vertical: 10),
                                     child: Column(
                                       mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                      MainAxisAlignment.center,
                                       children: <Widget>[
                                         Text(
                                           'at:',
@@ -418,7 +418,7 @@ class _AlgorithmState extends State<Algorithm> {
                                         horizontal: 20.0, vertical: 10),
                                     child: Column(
                                       mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                      MainAxisAlignment.center,
                                       children: <Widget>[
                                         Text(
                                           'bt:',
@@ -486,13 +486,13 @@ class _AlgorithmState extends State<Algorithm> {
                             child: Container(
                               child: Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
+                                MainAxisAlignment.spaceEvenly,
                                 children: [
                                   RaisedButton(
                                       elevation: 8.0,
                                       shape: RoundedRectangleBorder(
                                         borderRadius:
-                                            BorderRadius.circular(12.0),
+                                        BorderRadius.circular(12.0),
                                       ),
                                       child: Text("Cancel"),
                                       onPressed: () {
@@ -505,7 +505,7 @@ class _AlgorithmState extends State<Algorithm> {
                                       elevation: 8.0,
                                       shape: RoundedRectangleBorder(
                                         borderRadius:
-                                            BorderRadius.circular(12.0),
+                                        BorderRadius.circular(12.0),
                                       ),
                                       child: Text("Submit"),
                                       onPressed: () {
