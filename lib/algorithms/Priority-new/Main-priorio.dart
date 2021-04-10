@@ -112,7 +112,7 @@ class _priorio_pageState extends State<priorio_page> {
                           Text(
                             'Priority:',
                             style: TextStyle(
-                              color: Color(0xFF22456D),
+                              //color: Color(0xFF22456D),
                               fontWeight: FontWeight.bold,
                               fontSize: 20,
                             ),
