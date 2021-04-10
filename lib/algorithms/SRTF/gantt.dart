@@ -1,7 +1,7 @@
+import 'srtf.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:timelines/timelines.dart';
-import 'srtf.dart';
 
 class GanttChart extends StatefulWidget {
   List<Process> prs;
