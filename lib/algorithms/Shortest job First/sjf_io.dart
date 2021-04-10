@@ -222,29 +222,31 @@ void fillrq(List<ioprocess> readyq, int time, List<ioprocess> l) {
   int i = 0;
   int count = 0;
   l.sort((a, b) => a.at.compareTo(b.at));
-  if (l[0].io == false) {
-    while (l.isNotEmpty && count < l.length) {
-      if (l[i].at <= time) {
-        readyq.add(l[i]);
-        l.removeAt(i);
-        count--;
-      } else {
-        i++;
+  if (l.isNotEmpty) {
+    if (l[0].io == false) {
+      while (l.isNotEmpty && count < l.length) {
+        if (l[i].at <= time) {
+          readyq.add(l[i]);
+          l.removeAt(i);
+          count--;
+        } else {
+          i++;
+        }
+        count++;
       }
-      count++;
-    }
-  } else {
-    while (l.isNotEmpty && count < l.length) {
-      if (l[i].ioexit <= time) {
-        readyq.add(l[i]);
-        l.removeAt(i);
-        count--;
-      } else {
-        i++;
+    } else {
+      while (l.isNotEmpty && count < l.length) {
+        if (l[i].ioexit <= time) {
+          readyq.add(l[i]);
+          l.removeAt(i);
+          count--;
+        } else {
+          i++;
+        }
+        count++;
       }
-      count++;
+      l.sort((a, b) => a.ioexit.compareTo(b.ioexit));
     }
-    l.sort((a, b) => a.ioexit.compareTo(b.ioexit));
   }
 
   if (readyq.isNotEmpty) {

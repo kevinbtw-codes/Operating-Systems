@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../Algorithm page.dart';
-import 'srtf-algo.dart';
+import 'srtf.dart';
 import 'table.dart';
+import 'gantt.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'dart:async';
@@ -257,7 +258,7 @@ class _AlgorithmState extends State<Algorithm> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                 // builder: (context) => GanttChart(prs),
+                  builder: (context) => GanttChart(prs),
                 ),
               );
             },
