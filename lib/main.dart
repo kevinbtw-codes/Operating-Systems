@@ -67,7 +67,7 @@ class FirstScreen extends StatelessWidget {
                 ),*/
 
                 Container(
-                  height: MediaQuery.of(context).size.height * 0.55,
+                  height: MediaQuery.of(context).size.height * 0.565,
                   padding: EdgeInsets.only(bottom: 0),
                   child: Align(
                     alignment: Alignment.bottomCenter,
