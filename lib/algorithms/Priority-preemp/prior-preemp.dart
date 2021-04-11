@@ -176,24 +176,21 @@ int processexec(
         time = lgantt[0].at;
         fillrq(rq, time, lgantt);
       }
-
       rq[0].list_start.add(time);
       if (rq[0].started == false) {
         rq[0].started = true;
         print(rq[0].pid + " started at " + time.toString());
         rq[0].start_time = time;
       }
-
       print(rq[0].pid + " at time " + time.toString());
       rq[0].remain_time -= 1;
       time += 1;
       rq[0].ct = time;
-
+      rq[0].list_end.add(time);
       if (rq[0].remain_time == 0) {
-        time1 = rq[0].ct;
         rq[0].tat = rq[0].ct - rq[0].at;
         rq[0].wt = rq[0].tat - rq[0].bt;
-        rq[0].list_end.add(time1);
+     //   rq[0].list_end.add(time1);
         print(rq[0].pid + " ended at " + time.toString());
         fillfq(rq, fq, 0);
       }
@@ -203,7 +200,8 @@ int processexec(
     }
     time1 = time;
     return time1;
-  } else {
+  }
+  else {
     rq[0].list_start.add(time);
     //normal ljf
     if (rq[0].started == false) {
@@ -212,8 +210,8 @@ int processexec(
     }
     rq[0].ct = rq[0].remain_time + time;
     time = rq[0].ct;
-    time1 = rq[0].ct;
-    rq[0].list_end.add(time1);
+  //  time1 = rq[0].ct;
+    rq[0].list_end.add(time);
     rq[0].remain_time = 0;
     rq[0].tat = rq[0].ct - rq[0].at;
     rq[0].wt = rq[0].tat - rq[0].bt;

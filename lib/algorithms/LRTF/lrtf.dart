@@ -183,7 +183,7 @@ int processexec(
       time += 1;
       rq[0].ct = time;
       if (rq[0].remain_time == 0) {
-        time1=rq[0].ct;
+        time1 = rq[0].ct;
         rq[0].list_end.add(time1);
         print(rq[0].pid + " ended at " + time.toString());
         fillfq(rq, fq, 0);
@@ -196,7 +196,7 @@ int processexec(
     return time1;
   }
   else {
-    rq[0].list_start.add(time1);
+    rq[0].list_start.add(time);
     //normal ljf
     if (rq[0].started == false) {
       rq[0].started = true;
