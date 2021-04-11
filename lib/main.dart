@@ -67,7 +67,7 @@ class FirstScreen extends StatelessWidget {
                 ),*/
 
                 Container(
-                  height: MediaQuery.of(context).size.height * 0.55,
+                  height: MediaQuery.of(context).size.height * 0.565,
                   padding: EdgeInsets.only(bottom: 0),
                   child: Align(
                     alignment: Alignment.bottomCenter,
@@ -80,7 +80,6 @@ class FirstScreen extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-
                       onPressed: () {
                         // Navigate to the second screen using a named route.
                         Navigator.pushNamed(context, '/second');
@@ -107,7 +106,7 @@ class FirstScreen extends StatelessWidget {
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.bold),
                       ),
-                      icon: Icon(Icons.group_outlined,color: Colors.black),
+                      icon: Icon(Icons.group_outlined, color: Colors.black),
                       backgroundColor: Colors.white,
                     ),
                   ),

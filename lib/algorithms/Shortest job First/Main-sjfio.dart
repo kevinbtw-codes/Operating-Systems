@@ -113,7 +113,7 @@ class _sjfio_pageState extends State<sjfio_page> {
                                 Text(
                                   'AT:',
                                   style: TextStyle(
-                                    color: Color(0xFF22456D),
+                                    color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20,
                                   ),
@@ -186,7 +186,7 @@ class _sjfio_pageState extends State<sjfio_page> {
                                 Text(
                                   'BT1:',
                                   style: TextStyle(
-                                    color: Color(0xFF22456D),
+                                    color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20,
                                   ),

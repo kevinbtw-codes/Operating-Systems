@@ -52,9 +52,19 @@ class _GanttChartState extends State<GanttChart> {
   int viewRangeToFitScreen = 6;
   Animation<double> width;
 
+  final List<Color> GanttColors = [
+    Color(0xFFC3EBEF),
+    Color(0xFFEE97D0),
+    Color(0xFF22456D),
+    Color(0XFFF36735),
+  ];
+  //List colors = [Colors.red, Colors.green, Colors.yellow];
   Color randomColorGenerator() {
-    var r = new Random();
-    return Color.fromRGBO(r.nextInt(256), r.nextInt(256), r.nextInt(256), 0.75);
+    return GanttColors[new Random().nextInt(3)];
+
+    //var r = new Random();
+    //return
+    //Color.fromRGBO(r.nextInt(256), r.nextInt(256), r.nextInt(256), 0.75);
   }
 
   int calculateTimeBetween(int from, int to) {
@@ -120,7 +130,7 @@ class _GanttChartState extends State<GanttChart> {
 
     return Container(
       height: 44.0,
-      color: color.withAlpha(100),
+      color: color.withAlpha(500),
       child: Row(
         children: headerItems,
       ),

@@ -46,7 +46,25 @@ class Process {
   }
 }
 
+/*void main(List<String> arguments) {
+  List<Process> prs = List<Process>();
+  prs.add(Process(0, 8, 3));
+  prs.add(Process(1, 2, 4));
+  prs.add(Process(3, 4, 4));
+  prs.add(Process(4, 1, 5));
+  prs.add(Process(5, 6, 2));
+  prs.add(Process(6, 5, 6));
+  prs.add(Process(10, 1, 1));
 
+  assignPid(prs);
+  List<Process> sjf = List.from(prs);
+
+  print('\n1.LRTF Algo\n');
+  sjf.sort((a, b) => a.at.compareTo(b.at));
+  prs = priorpreempalgo(prs);
+  //sjf.sort((a, b) => a.pid.compareTo(b.pid));
+  printprocess(sjf);
+} */
 
 void lganttsortprior(List<Process> l) {
   l.sort((a, b) => a.at.compareTo(b.at));
@@ -170,9 +188,12 @@ int processexec(
       rq[0].remain_time -= 1;
       time += 1;
       rq[0].ct = time;
-      rq[0].list_end.add(time);
-      if (rq[0].remain_time == 0) {
 
+      if (rq[0].remain_time == 0) {
+        time1 = rq[0].ct;
+        rq[0].tat = rq[0].ct - rq[0].at;
+        rq[0].wt = rq[0].tat - rq[0].bt;
+        rq[0].list_end.add(time1);
         print(rq[0].pid + " ended at " + time.toString());
         fillfq(rq, fq, 0);
       }
@@ -182,8 +203,7 @@ int processexec(
     }
     time1 = time;
     return time1;
-  }
-  else {
+  } else {
     rq[0].list_start.add(time);
     //normal ljf
     if (rq[0].started == false) {
@@ -192,8 +212,8 @@ int processexec(
     }
     rq[0].ct = rq[0].remain_time + time;
     time = rq[0].ct;
-   // time1=rq[0].ct;
-    rq[0].list_end.add(time);
+    time1 = rq[0].ct;
+    rq[0].list_end.add(time1);
     rq[0].remain_time = 0;
     rq[0].tat = rq[0].ct - rq[0].at;
     rq[0].wt = rq[0].tat - rq[0].bt;

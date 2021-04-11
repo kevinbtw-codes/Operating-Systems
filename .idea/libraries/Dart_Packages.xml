@@ -509,7 +509,7 @@
         <entry key="wave">
           <value>
             <list>
-              <option value="$PROJECT_DIR$/../../../../src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/wave-0.1.0/lib" />
+              <option value="$PROJECT_DIR$/../../../../src/flutter/flutter/.pub-cache/git/wave-0377d3b06b8df762d481e64bf4057d73fdafdaa2/lib" />
             </list>
           </value>
         </entry>
@@ -537,6 +537,7 @@
       </option>
     </properties>
     <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../../../src/flutter/flutter/.pub-cache/git/wave-0377d3b06b8df762d481e64bf4057d73fdafdaa2/lib" />
       <root url="file://$PROJECT_DIR$/../../../../src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/animated_text_kit-3.1.2/lib" />
       <root url="file://$PROJECT_DIR$/../../../../src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/archive-2.0.13/lib" />
       <root url="file://$PROJECT_DIR$/../../../../src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/args-1.6.0/lib" />
@@ -606,7 +607,6 @@
       <root url="file://$PROJECT_DIR$/../../../../src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/typed_data-1.3.0-nullsafety.3/lib" />
       <root url="file://$PROJECT_DIR$/../../../../src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/uuid-2.2.2/lib" />
       <root url="file://$PROJECT_DIR$/../../../../src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.0-nullsafety.3/lib" />
-      <root url="file://$PROJECT_DIR$/../../../../src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/wave-0.1.0/lib" />
       <root url="file://$PROJECT_DIR$/../../../../src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/win32-1.7.4+1/lib" />
       <root url="file://$PROJECT_DIR$/../../../../src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/xdg_directories-0.1.2/lib" />
       <root url="file://$PROJECT_DIR$/../../../../src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/xml-4.5.1/lib" />
@@ -615,7 +615,6 @@
       <root url="file://$PROJECT_DIR$/../../../../src/flutter/flutter/packages/flutter_test/lib" />
     </CLASSES>
     <JAVADOC />
-    <LIBRARY_FILE />
     <SOURCES />
   </library>
 </component>

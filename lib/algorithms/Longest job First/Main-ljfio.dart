@@ -112,7 +112,7 @@ class _ljfio_pageState extends State<ljfio_page> {
                                 Text(
                                   'AT:',
                                   style: TextStyle(
-                                    color: Color(0xFF22456D),
+                                    //color: Color(0xFF22456D),
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20,
                                   ),
@@ -185,7 +185,7 @@ class _ljfio_pageState extends State<ljfio_page> {
                                 Text(
                                   'BT1:',
                                   style: TextStyle(
-                                    color: Color(0xFF22456D),
+                                    //color: Color(0xFF22456D),
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20,
                                   ),
