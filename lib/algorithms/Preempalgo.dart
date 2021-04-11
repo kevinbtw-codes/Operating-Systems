@@ -155,7 +155,10 @@ List<Process> srtfalgo(List<Process> l) {
     time = processexec(rq, time, fq, lgantt, false);
     break;
   }
-
+  for (var item in fq) {
+    item.tat = item.ct - item.at;
+    item.wt = item.tat - item.bt;
+  }
   fq.sort((a, b) => a.pid.compareTo(b.pid));
   return fq;
 }
@@ -224,10 +227,9 @@ void fillfq(List<Process> l, List<Process> fq, int i) {
 int processexec(List<Process> rq, int time, List<Process> fq,
     List<Process> lgantt, bool algo) {
   int time1 = 0;
-
+  print("started preemption");
   //preemption
   while (lgantt.isNotEmpty || rq.isNotEmpty) {
-    print("started preemption");
     if (rq.isEmpty) {
       if (lgantt.isEmpty) {
         break;

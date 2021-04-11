@@ -1,4 +1,5 @@
-import 'srtf.dart';
+//import 'srtf.dart';
+import 'package:os_project/algorithms/Preempalgo.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:timelines/timelines.dart';
@@ -30,11 +31,11 @@ class _GanttChartState extends State<GanttChart> {
       int i = 0;
       for (i = 0; i < prsNew.length; i++) {
         for (int list_index = 0;
-        list_index < prsNew[i].list_end.length;
-        list_index++) {
+            list_index < prsNew[i].list_end.length;
+            list_index++) {
           prsadd.add(Process(prsNew[i].at, prsNew[i].bt));
           prsadd[prsadd.length - 1].start_time =
-          prsNew[i].list_start[list_index];
+              prsNew[i].list_start[list_index];
           prsadd[prsadd.length - 1].ct = prsNew[i].list_end[list_index];
           prsadd[prsadd.length - 1].pid = prsNew[i].pid;
         }
@@ -100,77 +101,77 @@ class _GanttChartState extends State<GanttChart> {
                   builder: TimelineTileBuilder.fromStyle(
                     contentsAlign: ContentsAlign.alternating,
                     contentsBuilder: (context, index) =>
-                    prsadd[index].pid == "Idle"
-                        ? Container(
-                      margin: EdgeInsets.all(7),
-                      decoration: BoxDecoration(
-                        color: Colors.orange[300],
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(10),
-                            topRight: Radius.circular(10),
-                            bottomLeft: Radius.circular(10),
-                            bottomRight: Radius.circular(10)),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.6),
-                            spreadRadius: 3,
-                            blurRadius: 5,
-                            offset: Offset(
-                                0, 3), // changes position of shadow
-                          ),
-                        ],
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Text(
-                          prsadd[index].pid.toString() +
-                              "\nTime: " +
-                              (prsadd[index].start_time).toString() +
-                              " to " +
-                              (prsadd[index].ct).toString(),
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    )
-                        : Container(
-                      margin: EdgeInsets.all(7),
-                      decoration: BoxDecoration(
-                        color: Color(0XFFF36735),
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(10),
-                            topRight: Radius.circular(10),
-                            bottomLeft: Radius.circular(10),
-                            bottomRight: Radius.circular(10)),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.5),
-                            spreadRadius: 3,
-                            blurRadius: 5,
-                            offset: Offset(
-                                0, 3), // changes position of shadow
-                          ),
-                        ],
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Text(
-                          prsadd[index].pid.toString() +
-                              "\nTime: " +
-                              (prsadd[index].start_time).toString() +
-                              " to " +
-                              (prsadd[index].ct).toString(),
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ),
+                        prsadd[index].pid == "Idle"
+                            ? Container(
+                                margin: EdgeInsets.all(7),
+                                decoration: BoxDecoration(
+                                  color: Colors.orange[300],
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(10),
+                                      topRight: Radius.circular(10),
+                                      bottomLeft: Radius.circular(10),
+                                      bottomRight: Radius.circular(10)),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0.6),
+                                      spreadRadius: 3,
+                                      blurRadius: 5,
+                                      offset: Offset(
+                                          0, 3), // changes position of shadow
+                                    ),
+                                  ],
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Text(
+                                    prsadd[index].pid.toString() +
+                                        "\nTime: " +
+                                        (prsadd[index].start_time).toString() +
+                                        " to " +
+                                        (prsadd[index].ct).toString(),
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              )
+                            : Container(
+                                margin: EdgeInsets.all(7),
+                                decoration: BoxDecoration(
+                                  color: Color(0XFFF36735),
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(10),
+                                      topRight: Radius.circular(10),
+                                      bottomLeft: Radius.circular(10),
+                                      bottomRight: Radius.circular(10)),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0.5),
+                                      spreadRadius: 3,
+                                      blurRadius: 5,
+                                      offset: Offset(
+                                          0, 3), // changes position of shadow
+                                    ),
+                                  ],
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Text(
+                                    prsadd[index].pid.toString() +
+                                        "\nTime: " +
+                                        (prsadd[index].start_time).toString() +
+                                        " to " +
+                                        (prsadd[index].ct).toString(),
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
                     itemCount: prsadd.length,
                   ),
                 ),
