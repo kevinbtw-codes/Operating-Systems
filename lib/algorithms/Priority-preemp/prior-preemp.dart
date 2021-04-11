@@ -188,10 +188,9 @@ int processexec(
       rq[0].remain_time -= 1;
       time += 1;
       rq[0].ct = time;
-
+      rq[0].list_end.add(time);
       if (rq[0].remain_time == 0) {
-        time1=rq[0].ct;
-        rq[0].list_end.add(time1);
+        //time1=rq[0].ct;
         print(rq[0].pid + " ended at " + time.toString());
         fillfq(rq, fq, 0);
       }
@@ -211,8 +210,8 @@ int processexec(
     }
     rq[0].ct = rq[0].remain_time + time;
     time = rq[0].ct;
-    time1=rq[0].ct;
-    rq[0].list_end.add(time1);
+   // time1=rq[0].ct;
+    rq[0].list_end.add(time);
     rq[0].remain_time = 0;
     rq[0].tat = rq[0].ct - rq[0].at;
     rq[0].wt = rq[0].tat - rq[0].bt;
