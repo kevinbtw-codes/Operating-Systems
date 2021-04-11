@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../Algorithm page.dart';
-import 'lrtf.dart';
+//import 'lrtf.dart';
+import 'package:os_project/algorithms/Preempalgo.dart';
 import 'table.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
@@ -249,8 +250,8 @@ class _AlgorithmState extends State<Algorithm> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => TheTable(prs),
-                    ),
+                  builder: (context) => TheTable(prs),
+                ),
               );
             },
           ),
@@ -262,8 +263,8 @@ class _AlgorithmState extends State<Algorithm> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => GanttChart(prs),
-                    ),
+                  builder: (context) => GanttChart(prs),
+                ),
               );
             },
           ),

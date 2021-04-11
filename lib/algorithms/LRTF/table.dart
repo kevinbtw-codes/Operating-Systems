@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lazy_data_table/lazy_data_table.dart';
-import 'lrtf.dart';
+//import 'lrtf.dart';
+import 'package:os_project/algorithms/Preempalgo.dart';
 
 class TheTable extends StatefulWidget {
   List<Process> prs;
@@ -61,8 +62,8 @@ class _TheTableState extends State<TheTable> {
                   dataCellBuilder: (i, j) => Center(
                     child: (j == 0)
                         ? Text(
-                      prs[i].pid,
-                    )
+                            prs[i].pid,
+                          )
                         : Text(thing(i, j).toString()),
                   ),
                 ),
