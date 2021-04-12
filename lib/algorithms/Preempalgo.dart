@@ -45,7 +45,7 @@ class Process {
   }
 }
 
-void main(List<String> arguments) {
+/*void main(List<String> arguments) {
   List<Process> prsl = List<Process>();
   List<Process> prss = [];
   prsl.add(Process(1, 2));
@@ -73,7 +73,7 @@ void main(List<String> arguments) {
   sjf = srtfalgo(sjf);
   printprocess(sjf);
 }
-
+*/
 void lganttsortlrt(List<Process> l) {
   l.sort((a, b) => a.at.compareTo(b.at));
   for (int j = 1; j < l.length; j++) {
@@ -249,7 +249,7 @@ int processexec(List<Process> rq, int time, List<Process> fq,
     rq[0].remain_time -= 1;
     time += 1;
     rq[0].ct = time;
-    if (rq[0].remain_time == 0) {
+    if (rq[0].remain_time <= 0) {
       //print(rq[0].pid + " ended at " + time.toString());
       rq[0].tat = rq[0].ct - rq[0].at;
       rq[0].wt = rq[0].tat - rq[0].bt;
