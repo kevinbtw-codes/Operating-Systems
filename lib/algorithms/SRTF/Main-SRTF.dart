@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../Algorithm page.dart';
 import 'srtf.dart';
+//import 'package:os_project/algorithms/Preempalgo.dart';
 import 'table.dart';
 import 'gantt.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -31,7 +32,7 @@ class Algorithm extends StatefulWidget {
 class _AlgorithmState extends State<Algorithm> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final GlobalKey<LiquidPullToRefreshState> _refreshIndicatorKey =
-  GlobalKey<LiquidPullToRefreshState>();
+      GlobalKey<LiquidPullToRefreshState>();
 
   ScrollController _scrollController;
 

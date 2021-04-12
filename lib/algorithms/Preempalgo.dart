@@ -45,7 +45,7 @@ class Process {
   }
 }
 
-void main(List<String> arguments) {
+/*void main(List<String> arguments) {
   List<Process> prsl = List<Process>();
   List<Process> prss = [];
   prsl.add(Process(1, 2));
@@ -73,7 +73,7 @@ void main(List<String> arguments) {
   sjf = srtfalgo(sjf);
   printprocess(sjf);
 }
-
+*/
 void lganttsortlrt(List<Process> l) {
   l.sort((a, b) => a.at.compareTo(b.at));
   for (int j = 1; j < l.length; j++) {
@@ -155,7 +155,10 @@ List<Process> srtfalgo(List<Process> l) {
     time = processexec(rq, time, fq, lgantt, false);
     break;
   }
-
+  for (var item in fq) {
+    item.tat = item.ct - item.at;
+    item.wt = item.tat - item.bt;
+  }
   fq.sort((a, b) => a.pid.compareTo(b.pid));
   return fq;
 }
@@ -224,10 +227,9 @@ void fillfq(List<Process> l, List<Process> fq, int i) {
 int processexec(List<Process> rq, int time, List<Process> fq,
     List<Process> lgantt, bool algo) {
   int time1 = 0;
-
+  print("started preemption");
   //preemption
   while (lgantt.isNotEmpty || rq.isNotEmpty) {
-    print("started preemption");
     if (rq.isEmpty) {
       if (lgantt.isEmpty) {
         break;
@@ -247,7 +249,7 @@ int processexec(List<Process> rq, int time, List<Process> fq,
     rq[0].remain_time -= 1;
     time += 1;
     rq[0].ct = time;
-    if (rq[0].remain_time == 0) {
+    if (rq[0].remain_time <= 0) {
       //print(rq[0].pid + " ended at " + time.toString());
       rq[0].tat = rq[0].ct - rq[0].at;
       rq[0].wt = rq[0].tat - rq[0].bt;

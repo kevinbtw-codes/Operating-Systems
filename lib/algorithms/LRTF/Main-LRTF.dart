@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../Algorithm page.dart';
-//import 'lrtf.dart';
-import 'package:os_project/algorithms/Preempalgo.dart';
+import 'lrtf.dart';
+//import 'package:os_project/algorithms/Preempalgo.dart';
 import 'table.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
