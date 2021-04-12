@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:timelines/timelines.dart';
 import 'Main-LJF.dart';
-import 'LJF-algo.dart';
+import 'package:os_project/algorithms/NonPreempalgo.dart';
+//import 'LJF-algo.dart';
 import 'dart:math';
 
 class GanttChart extends StatefulWidget {

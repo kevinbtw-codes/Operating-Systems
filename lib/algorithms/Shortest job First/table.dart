@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lazy_data_table/lazy_data_table.dart';
-import 'SJF-algo.dart';
+import 'package:os_project/algorithms/NonPreempalgo.dart';
+//import 'SJF-algo.dart';
 
 class TheTable extends StatefulWidget {
   List<Process> prs;
@@ -51,7 +52,7 @@ class _TheTableState extends State<TheTable> {
                   tableDimensions: LazyDataTableDimensions(
                     columnHeaderHeight: 50,
                     cellHeight: 50,
-                    cellWidth:(MediaQuery.of(context).size.width)/6,
+                    cellWidth: (MediaQuery.of(context).size.width) / 6,
                   ),
                   columnHeaderBuilder: (i) =>
                       Center(child: Text(colum_head[i].toUpperCase())),
