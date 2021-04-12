@@ -750,7 +750,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                           Padding(
                             padding: const EdgeInsets.fromLTRB(30, 105, 30, 0),
                             child: AutoSizeText(
-                              "Longest Job First (SJF) is an algorithm in which the process having the largest execution time is chosen for the next execution.",
+                              "Longest Job First (LJF) is an algorithm in which the process having the largest execution time is chosen for the next execution.",
                               style: TextStyle(
                                 fontSize: 19,
                                 color: Colors.brown[700],
