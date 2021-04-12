@@ -60,6 +60,18 @@ class _GanttChartState extends State<GanttChart> {
 
     prsadd.sort((a, b) => (a.start_time).compareTo(b.start_time));
 
+    if (prsNew.length >= 1) {
+      int i = 0;
+      while (i < prsadd.length - 1) {
+        if (prsadd[i].pid == prsadd[i + 1].pid) {
+          prsadd[i].ct = prsadd[i + 1].ct;
+          prsadd.removeAt(i + 1);
+        } else {
+          i += 1;
+        }
+      }
+    }
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(

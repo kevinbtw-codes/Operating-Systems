@@ -750,7 +750,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                           Padding(
                             padding: const EdgeInsets.fromLTRB(30, 105, 30, 0),
                             child: AutoSizeText(
-                              "Longest Job First (SJF) is an algorithm in which the process having the largest execution time is chosen for the next execution.",
+                              "Longest Job First (LJF) is an algorithm in which the process having the largest execution time is chosen for the next execution.",
                               style: TextStyle(
                                 fontSize: 19,
                                 color: Colors.brown[700],
@@ -1037,7 +1037,7 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                           Padding(
                             padding: const EdgeInsets.fromLTRB(30, 105, 30, 0),
                             child: AutoSizeText(
-                              "This is the simplest scheduling algorithm. It simply queues processes in the order that they arrive in the ready queue.",
+                              "In this process scheduling algorithm(LRT),the process with the highest amount of time remaining until completion is selected to execute.",
                               style: TextStyle(
                                 fontSize: 19,
                                 color: Colors.brown[700],
@@ -1178,9 +1178,9 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.fromLTRB(30, 105, 30, 0),
+                            padding: const EdgeInsets.fromLTRB(30, 105, 30,0),
                             child: AutoSizeText(
-                              "The process with the smallest amount of time remaining until completion is selected to execute.",
+                              "If a task with higher priority than the current task being executed arrives then the control of the CPU is taken from the current task and given to the higher priority task. ",
                               style: TextStyle(
                                 fontSize: 19,
                                 color: Colors.brown[700],

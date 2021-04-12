@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:os_project/algorithms/FCFS/fcfs.dart';
+//import 'package:os_project/algorithms/FCFS/fcfs.dart';
+import 'package:os_project/algorithms/NonPreempalgo.dart';
 import 'package:timelines/timelines.dart';
-import 'fcfs.dart';
+//import 'fcfs.dart';
 import 'Main-fcfs.dart';
 import 'dart:math';
 
