@@ -251,7 +251,6 @@ int processexec(List<Process> rq, int time, List<Process> fq,
     rq[0].remain_time -= 1;
     time += 1;
     rq[0].ct = time;
-    rq[0].list_end.add(time);
     if (rq[0].remain_time == 0) {
       //print(rq[0].pid + " ended at " + time.toString());
       rq[0].tat = rq[0].ct - rq[0].at;
