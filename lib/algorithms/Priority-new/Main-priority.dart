@@ -356,11 +356,9 @@ class _AlgorithmState extends State<Algorithm> {
 
     void deleteprs(int index) {
       setState(() {
-        if (prs.length > 0) {
-          prs.removeAt(index);
+        prs.removeAt(index);
+        if (prs.isNotEmpty) {
           prs = priorityalgo(prs);
-          //initialpriorsort(prs);
-          //prs.sort((a, b) => a.pid.compareTo(b.pid));
         } else {
           setState(() {});
         }
@@ -665,9 +663,7 @@ class _AlgorithmState extends State<Algorithm> {
               color: Color(0XFFF36735),
               icon: Icons.delete_rounded,
               onTap: () {
-                prs.removeAt(index);
                 deleteprs(index);
-                //setState(() {});
               },
             ),
           ),
