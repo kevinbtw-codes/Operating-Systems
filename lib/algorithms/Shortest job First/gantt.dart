@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:timelines/timelines.dart';
 import 'Main-SJF.dart';
-import 'SJF-algo.dart';
+import 'package:os_project/algorithms/NonPreempalgo.dart';
+//import 'SJF-algo.dart';
 import 'dart:math';
 //
 
