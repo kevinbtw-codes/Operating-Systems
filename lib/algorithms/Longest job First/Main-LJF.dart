@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:os_project/algorithms/Longest%20job%20First/Main-ljfio.dart';
 import '../../Algorithm page.dart';
-import 'LJF-algo.dart';
+//import 'LJF-algo.dart';
+import 'package:os_project/algorithms/NonPreempalgo.dart';
 import 'table.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';

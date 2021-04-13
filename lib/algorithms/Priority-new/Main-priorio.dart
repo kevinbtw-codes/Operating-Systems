@@ -434,14 +434,13 @@ class _priorio_pageState extends State<priorio_page> {
     void deleteprs(int index) {
       setState(() {
         print("Length of prs is " + prs.length.toString());
-        if (prs.length > 0) {
-          prs.removeAt(index);
-          //prs.sort((a, b) => a.at.compareTo(b.at));
-          if (prs.isNotEmpty) {
-            prs = priorioalgo(prs);
-            prs.sort((a, b) => a.pid.compareTo(b.pid));
-          }
+        prs.removeAt(index);
+
+        if (prs.isNotEmpty) {
+          prs = priorioalgo(prs);
+          prs.sort((a, b) => a.pid.compareTo(b.pid));
         }
+
         print("Length of prs is " + prs.length.toString());
         printprocess(prs);
       });
@@ -813,7 +812,8 @@ class _priorio_pageState extends State<priorio_page> {
               onTap: () {
                 setState(() {
                   prs.removeAt(index);
-                  print("length of prs is " + prs.length.toString());
+                  deleteprs(index);
+                  //print("length of prs is " + prs.length.toString());
                 });
                 //deleteprs(index);
               },

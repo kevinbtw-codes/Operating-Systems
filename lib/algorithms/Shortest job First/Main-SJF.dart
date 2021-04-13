@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:os_project/algorithms/Shortest%20job%20First/Main-sjfio.dart';
 import '../../Algorithm page.dart';
-import 'SJF-algo.dart';
+import 'package:os_project/algorithms/NonPreempalgo.dart';
+//import 'SJF-algo.dart';
 import 'table.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
