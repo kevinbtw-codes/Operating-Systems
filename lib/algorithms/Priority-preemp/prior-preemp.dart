@@ -172,12 +172,12 @@ int processexec(
     //preemption
     print("started preemption");
     while (lgantt.isNotEmpty) {
-      rq[0].list_start.add(time);
+
       if (rq.isEmpty) {
         time = lgantt[0].at;
         fillrq(rq, time, lgantt);
       }
-
+      rq[0].list_start.add(time);
       if (rq[0].started == false) {
         rq[0].started = true;
         print(rq[0].pid + " started at " + time.toString());
@@ -188,17 +188,15 @@ int processexec(
       rq[0].remain_time -= 1;
       time += 1;
       rq[0].ct = time;
-
+      rq[0].list_end.add(rq[0].ct);
       if (rq[0].remain_time == 0) {
-        time1=rq[0].ct;
-        rq[0].list_end.add(rq[0].ct);
+
         rq[0].tat = rq[0].ct - rq[0].at;
         rq[0].wt = rq[0].tat - rq[0].bt;
         print(rq[0].pid + " ended at " + time.toString());
         fillfq(rq, fq, 0);
       }
       if (lgantt.isNotEmpty) {
-        rq[0].list_end.add(rq[0].ct);
         fillrq(rq, time, lgantt);
       }
 
