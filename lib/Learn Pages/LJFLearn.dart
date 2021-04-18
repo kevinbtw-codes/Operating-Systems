@@ -162,7 +162,7 @@ class _HomePageState extends State<LJFLearn> {
                         FadeAnimation(
                             1.6,
                             Text(
-                              "Longest Job First (SJF) is an algorithm in which the process having the longest execution time is chosen for the next execution. This scheduling method can be preemptive or non-preemptive. It significantly reduces the average waiting time for other processes awaiting execution.",
+                              "Longest Job First (LJF) is an algorithm in which the process having the longest execution time is chosen for the next execution. This scheduling method can be preemptive or non-preemptive. It significantly reduces the average waiting time for other processes awaiting execution.",
                               //textAlign: TextAlign.justify,
                               style:
                                   TextStyle(color: Colors.white, fontSize: 16),
