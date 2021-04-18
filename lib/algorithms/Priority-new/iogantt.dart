@@ -40,12 +40,14 @@ class _GanttChartState extends State<GanttChart> {
     prs.sort((a, b) => a.start_time.compareTo(b.start_time));
     if (prs.length >= 1) {
       fromTime = prs[0].at;
+      prs.sort((a, b) => a.ct.compareTo(b.ct));
       toTime = prs[prs.length - 1].ct;
     } else {
       fromTime = 0;
       toTime = 4;
     }
     viewRange = toTime;
+    prs.sort((a, b) => a.start_time.compareTo(b.start_time));
   }
 
   List<String> usersInChart;
