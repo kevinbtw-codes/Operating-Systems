@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'package:os_project/algorithms/FCFS/Main-fcfs.dart';
-import 'fcfs_io.dart';
+//import 'fcfs_io.dart';
 import 'iogantt.dart';
 import 'iotable.dart';
-//import 'Main-fcfsio.dart';
+import 'package:os_project/algorithms/NonPreempalgo.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'dart:async';
 import 'package:fab_circular_menu/fab_circular_menu.dart';
@@ -380,11 +380,9 @@ class _fcfsio_pageState extends State<fcfsio_page> {
 
     void deleteprs(int index) {
       setState(() {
-        if (prs.length > 0) {
-          prs.removeAt(index);
-          prs.sort((a, b) => a.at.compareTo(b.at));
+        prs.removeAt(index);
+        if (prs.isNotEmpty) {
           prs = fcfsioalgo(prs);
-          prs.sort((a, b) => a.pid.compareTo(b.pid));
         }
       });
     }
@@ -723,7 +721,6 @@ class _fcfsio_pageState extends State<fcfsio_page> {
               color: Color(0XFFF36735),
               icon: Icons.delete_rounded,
               onTap: () {
-                //prs.removeAt(index);
                 deleteprs(index);
               },
             ),

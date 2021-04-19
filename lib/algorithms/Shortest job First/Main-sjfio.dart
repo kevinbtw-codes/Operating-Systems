@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'package:os_project/algorithms/Shortest%20job%20First/Main-SJF.dart';
-import 'sjf_io.dart';
-//import 'SJF-algo.dart';
+//import 'sjf_io.dart';
+import 'package:os_project/algorithms/NonPreempalgo.dart';
 import 'iogantt.dart';
 import 'iotable.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -290,7 +290,7 @@ class _sjfio_pageState extends State<sjfio_page> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('SJN IO'),
+        title: Text('SJF IO'),
         backgroundColor: Color(0xff22456d),
       ),
       body: Column(

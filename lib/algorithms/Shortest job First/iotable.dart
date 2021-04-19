@@ -1,9 +1,7 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lazy_data_table/lazy_data_table.dart';
-//import 'SJF-algo.dart';
-import 'sjf_io.dart';
+import 'package:os_project/algorithms/NonPreempalgo.dart';
 
 class TheTable extends StatefulWidget {
   List<ioprocess> prs;
@@ -12,22 +10,22 @@ class TheTable extends StatefulWidget {
   _TheTableState createState() => _TheTableState(prs);
 }
 
-  class _TheTableState extends State<TheTable> {
+class _TheTableState extends State<TheTable> {
   List<ioprocess> prs;
   _TheTableState(this.prs);
   final List colum_head = [
-  'pid',
-  'at',
-  'bt1',
-  'bt2',
-  'iobt',
-  'ct',
-  'tat',
-  'wt'
+    'pid',
+    'at',
+    'bt1',
+    'bt2',
+    'iobt',
+    'ct',
+    'tat',
+    'wt'
   ];
   final int j = 0;
   int thing(i, j) {
-  return prs[i].tablevalue(j);
+    return prs[i].tablevalue(j);
   }
 
   @override
@@ -62,15 +60,15 @@ class TheTable extends StatefulWidget {
                   tableDimensions: LazyDataTableDimensions(
                     columnHeaderHeight: 50,
                     cellHeight: 50,
-                    cellWidth:(MediaQuery.of(context).size.width)/8,
+                    cellWidth: (MediaQuery.of(context).size.width) / 8,
                   ),
                   columnHeaderBuilder: (i) =>
                       Center(child: Text(colum_head[i].toUpperCase())),
                   dataCellBuilder: (i, j) => Center(
                     child: (j == 0)
                         ? Text(
-                      prs[i].pid,
-                    )
+                            prs[i].pid,
+                          )
                         : Text(thing(i, j).toString()),
                   ),
                 ),
@@ -81,4 +79,4 @@ class TheTable extends StatefulWidget {
       ),
     );
   }
-  }
+}

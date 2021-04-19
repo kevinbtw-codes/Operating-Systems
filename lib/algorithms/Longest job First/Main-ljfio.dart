@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'package:os_project/algorithms/Longest%20job%20First/Main-LJF.dart';
-import 'ljf_io.dart';
+import 'package:os_project/algorithms/NonPreempalgo.dart';
+//import 'ljf_io.dart';
 import 'iogantt.dart';
 import 'iotable.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -388,10 +389,8 @@ class _ljfio_pageState extends State<ljfio_page> {
     void deleteprs(int index) {
       setState(() {
         prs.removeAt(index);
-        //prs.sort((a, b) => a.at.compareTo(b.at));
         if (prs.isNotEmpty) {
           prs = ljfioalgo(prs);
-          prs.sort((a, b) => a.pid.compareTo(b.pid));
           print("Length of prs is " + prs.length.toString());
           printprocess(prs);
         }
@@ -729,7 +728,6 @@ class _ljfio_pageState extends State<ljfio_page> {
               icon: Icons.delete_rounded,
               onTap: () {
                 setState(() {
-                  //prs.removeAt(index);
                   deleteprs(index);
                   print("length of prs is " + prs.length.toString());
                 });

@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'ljf_io.dart';
+import 'package:os_project/algorithms/NonPreempalgo.dart';
+//import 'ljf_io.dart';
 import 'dart:math';
-import 'LJF-algo.dart';
+//import 'LJF-algo.dart';
 
 class GanttChart extends StatefulWidget {
   AnimationController animationController;

@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:os_project/algorithms/FCFS/fcfs_io.dart';
+//import 'package:os_project/algorithms/FCFS/fcfs_io.dart';
 import 'dart:math';
-import 'fcfs.dart';
+import 'package:os_project/algorithms/NonPreempalgo.dart';
+//import 'fcfs.dart';
 
 class GanttChart extends StatefulWidget {
   AnimationController animationController;
