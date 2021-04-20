@@ -207,37 +207,13 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                             ),
                           ),
                           ButtonBar(
-                            buttonMinWidth: 100,
+                            buttonMinWidth: 120,
                             buttonHeight: 50,
                             alignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Padding(
                                 padding:
-                                    const EdgeInsets.fromLTRB(50, 120, 30, 0),
-                                child: RaisedButton(
-                                  color: Color(0XFF22456D),
-                                  textColor: Colors.white,
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      new MaterialPageRoute(
-                                        builder: (context) => new FCFSLearn(),
-                                      ),
-                                    );
-                                    //code
-                                  },
-                                  child: const Text(
-                                    'LEARN',
-                                    style: TextStyle(
-                                      fontSize: 19,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.fromLTRB(0, 120, 50, 0),
+                                    const EdgeInsets.fromLTRB(30, 120, 50, 30),
                                 child: RaisedButton(
                                   color: Color(0XFF22456D),
                                   textColor: Colors.white,
@@ -357,33 +333,10 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                             buttonHeight: 50,
                             alignment: MainAxisAlignment.spaceEvenly,
                             children: [
+
                               Padding(
                                 padding:
-                                    const EdgeInsets.fromLTRB(50, 120, 30, 0),
-                                child: RaisedButton(
-                                  color: Color(0XFFF36735),
-                                  textColor: Colors.white,
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      new MaterialPageRoute(
-                                        builder: (context) =>
-                                            new priorityLearn(),
-                                      ),
-                                    );
-                                  },
-                                  child: const Text(
-                                    'LEARN',
-                                    style: TextStyle(
-                                      fontSize: 19,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.fromLTRB(0, 120, 50, 0),
+                                const EdgeInsets.fromLTRB(30, 120, 50, 30),
                                 child: RaisedButton(
                                   color: Color(0XFFF36735),
                                   textColor: Colors.white,
@@ -503,33 +456,10 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                             buttonHeight: 50,
                             alignment: MainAxisAlignment.spaceEvenly,
                             children: [
+
                               Padding(
                                 padding:
-                                    const EdgeInsets.fromLTRB(50, 120, 30, 0),
-                                child: RaisedButton(
-                                  color: Color(0XFF22456D),
-                                  textColor: Colors.white,
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      new MaterialPageRoute(
-                                        builder: (context) => new SJFLearn(),
-                                      ),
-                                    );
-                                    //code
-                                  },
-                                  child: const Text(
-                                    'LEARN',
-                                    style: TextStyle(
-                                      fontSize: 19,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.fromLTRB(0, 120, 50, 0),
+                                const EdgeInsets.fromLTRB(30, 120, 50, 30),
                                 child: RaisedButton(
                                   color: Color(0XFF22456D),
                                   textColor: Colors.white,
@@ -649,27 +579,10 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                             buttonHeight: 50,
                             alignment: MainAxisAlignment.spaceEvenly,
                             children: [
+
                               Padding(
                                 padding:
-                                    const EdgeInsets.fromLTRB(50, 120, 30, 0),
-                                child: RaisedButton(
-                                  color: Color(0XFFFF36735),
-                                  textColor: Colors.white,
-                                  onPressed: () {
-                                    // Perform some action
-                                  },
-                                  child: const Text(
-                                    'LEARN',
-                                    style: TextStyle(
-                                      fontSize: 19,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.fromLTRB(0, 120, 50, 0),
+                                const EdgeInsets.fromLTRB(30, 120, 50, 30),
                                 child: RaisedButton(
                                   color: Color(0XFFFF36735),
                                   textColor: Colors.white,
@@ -789,27 +702,10 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                             buttonHeight: 50,
                             alignment: MainAxisAlignment.spaceEvenly,
                             children: [
+
                               Padding(
                                 padding:
-                                    const EdgeInsets.fromLTRB(50, 120, 30, 0),
-                                child: RaisedButton(
-                                  color: Color(0XFF22456D),
-                                  textColor: Colors.white,
-                                  onPressed: () {
-                                    // Perform some action
-                                  },
-                                  child: const Text(
-                                    'LEARN',
-                                    style: TextStyle(
-                                      fontSize: 19,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.fromLTRB(0, 120, 50, 0),
+                                const EdgeInsets.fromLTRB(30, 120, 50, 30),
                                 child: RaisedButton(
                                   color: Color(0XFF22456D),
                                   textColor: Colors.white,
@@ -929,27 +825,10 @@ class _WaveDemoHomePageState extends State<WaveDemoHomePage> {
                             buttonHeight: 50,
                             alignment: MainAxisAlignment.spaceEvenly,
                             children: [
+
                               Padding(
                                 padding:
-                                    const EdgeInsets.fromLTRB(50, 120, 30, 0),
-                                child: RaisedButton(
-                                  color: Color(0XFFF36735),
-                                  textColor: Colors.white,
-                                  onPressed: () {
-                                    // Perform some action
-                                  },
-                                  child: const Text(
-                                    'LEARN',
-                                    style: TextStyle(
-                                      fontSize: 19,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.fromLTRB(0, 120, 50, 0),
+                                const EdgeInsets.fromLTRB(30, 120, 50, 30),
                                 child: RaisedButton(
                                   color: Color(0XFFF36735),
                                   textColor: Colors.white,

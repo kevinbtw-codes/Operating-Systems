@@ -168,9 +168,12 @@ class _IntroTwoPageState extends State<IntroTwoPage> {
   }
 
   Widget _buildButtons() {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Container(
       margin:
-          const EdgeInsets.only(top: 0, bottom: 20.0, left: 180.0, right: 180),
+          const EdgeInsets.only(top: 0, bottom: 30.0, left: 160 , right: 150),
+      //height: 180,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[

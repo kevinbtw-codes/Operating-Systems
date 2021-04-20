@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lazy_data_table/lazy_data_table.dart';
-import 'ljf_io.dart';
+import 'package:os_project/algorithms/NonPreempalgo.dart';
+//import 'ljf_io.dart';
 
 class TheTable extends StatefulWidget {
   List<ioprocess> prs;
@@ -34,7 +35,7 @@ class _TheTableState extends State<TheTable> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor:Color(0xff22456d),
+          backgroundColor: Color(0xff22456d),
           leading: IconButton(
             icon: Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () {
@@ -61,7 +62,7 @@ class _TheTableState extends State<TheTable> {
                   tableDimensions: LazyDataTableDimensions(
                     columnHeaderHeight: 50,
                     cellHeight: 50,
-                    cellWidth:(MediaQuery.of(context).size.width)/8,
+                    cellWidth: (MediaQuery.of(context).size.width) / 8,
                   ),
                   columnHeaderBuilder: (i) =>
                       Center(child: Text(colum_head[i].toUpperCase())),
