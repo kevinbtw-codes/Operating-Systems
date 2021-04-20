@@ -17,7 +17,7 @@ class Process {
   @override
   String toString() {
     // ignore: unnecessary_this
-    return '${this.pid}\t${this.at}\t${this.bt}\t${this.ct}\t${this.start_time}\t\t${this.tat}\t${this.wt}';
+    return '${this.pid}\t${this.at}\t${this.bt}\t${this.priority}\t${this.ct}\t${this.start_time}\t\t${this.tat}\t${this.wt}';
   }
 
   void printatbt() {
@@ -31,10 +31,12 @@ class Process {
       case 2:
         return this.bt;
       case 3:
-        return this.ct;
+        return this.priority;
       case 4:
-        return this.tat;
+        return this.ct;
       case 5:
+        return this.tat;
+      case 6:
         return this.wt;
       default:
         return 0;
